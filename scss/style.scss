@@ -1,0 +1,96 @@
+:root {
+  --primary-color: #262d4000;
+  --secondary-color: #f9f9fb00;
+  --tertiary-color: #6e6af400;
+  --home-first-color: #544df000;
+  --home-second-color: #6e6af400;
+  --text-color: #000000;
+  --neutral-color: #43474e;
+}
+
+:root .dark {
+  --primary-color: #262d4000;
+  --secondary-color: #28263300;
+  --tertiary-color: #6f6af500;
+  --home-first-color: #3e465700;
+  --home-second-color: #48526600;
+  --text-color: #ffffff;
+  --neutral-color: #43474e;
+}
+
+body {
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem 8rem;
+    font-family: josefInSansMedium;
+    background-color: var(--primary-color);
+  }
+
+  .header {
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .logo {
+        font-size: 3rem;
+      }
+
+      .wrapper {
+        display: flex;
+        gap: 4rem;
+
+        .menu {
+          display: flex;
+          gap: 2rem;
+          color: var(--neutral-color);
+        }
+      }
+    }
+  }
+
+  .home {
+    display: flex;
+    margin-top: 8rem;
+
+    .contactWrapper {
+      display: flex;
+      transform: rotate(-90deg);
+      margin-top: 8rem;
+      gap: 2rem;
+
+      img {
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        //&:hover {
+        //  color: red;
+        //  filter: invert(42%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%);
+      }
+    }
+  }
+
+  .nameWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    h1 {
+      font-size: 4rem;
+      color: var(--text-color);
+    }
+
+    h2 {
+      color: var(--neutral-color);
+    }
+  }
+}
+
+// TODO: HOW CONTAINER SHOULD BE?!
+// TODO: ICONS COLOR
+// TODO: THEME
+// TODO: MENU RESPONSIVE
+// TODO: SUPPORTS
