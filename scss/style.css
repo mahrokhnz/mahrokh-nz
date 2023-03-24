@@ -24,6 +24,9 @@ body .container {
   padding: 4rem 8rem;
   font-family: josefInSansMedium;
   background-color: var(--primary-color);
+  height: 100vh;
+  border: 5px red solid;
+  box-sizing: border-box;
 }
 body .header .navbar {
   display: flex;
@@ -69,6 +72,23 @@ body .nameWrapper h1 {
 }
 body .nameWrapper h2 {
   color: var(--neutral-color);
+}
+body span {
+  font-size: 1.3rem;
+  color: var(--neutral-color);
+}
+body .companies {
+  display: flex;
+  align-self: center;
+  margin-top: 2rem;
+  gap: 9rem;
+}
+body .companies li img {
+  width: 5rem;
+  height: 5rem;
+}
+body .companies li img:not(.active) {
+  filter: grayscale(90%);
 }
 
 /*# sourceMappingURL=style.css.map */
