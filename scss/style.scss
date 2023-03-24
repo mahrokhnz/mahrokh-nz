@@ -25,6 +25,9 @@ body {
     padding: 4rem 8rem;
     font-family: josefInSansMedium;
     background-color: var(--primary-color);
+    height: 100vh;
+    border: 5px red solid;
+    box-sizing: border-box;
   }
 
   .header {
@@ -87,10 +90,34 @@ body {
       color: var(--neutral-color);
     }
   }
+
+  span {
+    font-size: 1.3rem;
+    color: var(--neutral-color);
+  }
+
+  .companies {
+    display: flex;
+    align-self: center;
+    margin-top: 2rem;
+    gap: 9rem;
+
+    li {
+      img {
+        width: 5rem;
+        height: 5rem;
+
+        &:not(.active) {
+          filter: grayscale(90%);
+        }
+      }
+    }
+  }
 }
 
 // TODO: HOW CONTAINER SHOULD BE?!
 // TODO: ICONS COLOR
+// TODO: ICONS LINKS
 // TODO: THEME
 // TODO: MENU RESPONSIVE
 // TODO: SUPPORTS
