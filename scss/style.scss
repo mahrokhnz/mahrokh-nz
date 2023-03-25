@@ -1,19 +1,19 @@
 :root {
-  --primary-color: #262d4000;
-  --secondary-color: #f9f9fb00;
-  --tertiary-color: #6e6af400;
-  --home-first-color: #544df000;
-  --home-second-color: #6e6af400;
+  --primary-color: #fff;
+  --secondary-color: #f9f9fb;
+  --tertiary-color: #6e6af4;
+  --home-first-color: #544df0;
+  --home-second-color: #6e6af4;
   --text-color: #000000;
   --neutral-color: #43474e;
 }
 
 :root .dark {
-  --primary-color: #262d4000;
+  --primary-color: #272d40;
   --secondary-color: #28263300;
   --tertiary-color: #6f6af500;
-  --home-first-color: #3e465700;
-  --home-second-color: #48526600;
+  --home-first-color: #3e4657;
+  --home-second-color: #485266;
   --text-color: #ffffff;
   --neutral-color: #43474e;
 }
@@ -26,7 +26,6 @@ body {
     font-family: josefInSansMedium;
     background-color: var(--primary-color);
     height: 100vh;
-    border: 5px red solid;
     box-sizing: border-box;
   }
 
@@ -67,13 +66,49 @@ body {
       transform: rotate(-90deg);
       margin-top: 8rem;
       gap: 2rem;
+      z-index: 1;
 
-      img {
-        width: 2rem;
-        height: 2rem;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
+      .iconWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.2rem;
+        box-sizing: border-box;
+        border-radius: 0.3rem;
+        border: 2px var(--primary-color) solid;
+        transition: border 0.3s ease-in-out;
+
+        &:hover {
+          border: 2px var(--home-second-color) solid;
+        }
+
+        img {
+          width: 2rem;
+          height: 2rem;
+          cursor: pointer;
+          box-sizing: border-box;
+        }
       }
+    }
+  }
+
+  svg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+
+    .frontWave {
+      fill: var(--home-first-color);
+    }
+
+    .backWave {
+      fill: var(--home-second-color);
+    }
+
+    circle {
+      fill: var(--primary-color);
     }
   }
 
@@ -117,7 +152,6 @@ body {
   .about {
     display: flex;
     justify-content: space-between;
-    gap: 1.5rem;
     margin-top: 3.5rem;
 
     .imageWrapper {
@@ -141,14 +175,15 @@ body {
       p {
         font-size: 1rem;
         color: var(--neutral-color);
+        line-height: 1.8;
       }
     }
   }
 }
 
 // TODO: HOW CONTAINER SHOULD BE?!
-// TODO: ICONS COLOR
-// TODO: ICONS LINKS
+// TODO: SNAP FOR SECTIONS
 // TODO: THEME
 // TODO: MENU RESPONSIVE
 // TODO: SUPPORTS
+// TODO: WAVES SHAPE
