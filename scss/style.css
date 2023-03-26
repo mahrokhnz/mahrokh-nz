@@ -31,6 +31,9 @@ body a {
   text-decoration: none;
   color: currentColor;
 }
+body h1 {
+  font-size: 2.8rem;
+}
 body .header .navbar {
   display: flex;
   align-items: center;
@@ -138,13 +141,36 @@ body .about .aboutWrapper {
   gap: 1rem;
   width: 30rem;
 }
-body .about .aboutWrapper h1 {
-  font-size: 2.8rem;
-}
 body .about .aboutWrapper p {
   font-size: 1rem;
   color: var(--neutral-color);
   line-height: 1.8;
+}
+body .skills {
+  display: flex;
+  justify-content: space-between;
+}
+body .skills .column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+body .skills .column .skill {
+  display: flex;
+  border: 1px red solid;
+}
+body .skills .column .skill h3 {
+  width: 12rem;
+}
+body .skills .column .skill .wrapper {
+  display: flex;
+  gap: 1.2rem;
+}
+body .skills .column .skill .wrapper .circle {
+  border: 1px blue solid;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */

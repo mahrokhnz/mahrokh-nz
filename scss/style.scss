@@ -34,6 +34,10 @@ body {
     color: currentColor;
   }
 
+  h1 {
+    font-size: 2.8rem;
+  }
+
   .header {
     .navbar {
       display: flex;
@@ -168,14 +172,42 @@ body {
       gap: 1rem;
       width: 30rem;
 
-      h1 {
-        font-size: 2.8rem;
-      }
-
       p {
         font-size: 1rem;
         color: var(--neutral-color);
         line-height: 1.8;
+      }
+    }
+  }
+
+  .skills {
+    display: flex;
+    justify-content: space-between;
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+
+      .skill {
+        display: flex;
+        border: 1px red solid;
+
+        h3 {
+          width: 12rem;
+        }
+
+        .wrapper {
+          display: flex;
+          gap: 1.2rem;
+
+          .circle {
+            border: 1px blue solid;
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 50%;
+          }
+        }
       }
     }
   }
