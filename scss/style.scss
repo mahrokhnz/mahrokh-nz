@@ -34,6 +34,10 @@ body {
     color: currentColor;
   }
 
+  h1 {
+    font-size: 2.8rem;
+  }
+
   .header {
     .navbar {
       display: flex;
@@ -168,14 +172,64 @@ body {
       gap: 1rem;
       width: 30rem;
 
-      h1 {
-        font-size: 2.8rem;
-      }
-
       p {
         font-size: 1rem;
         color: var(--neutral-color);
         line-height: 1.8;
+      }
+    }
+  }
+
+  #skills {
+    .skillHeader {
+      align-self: center;
+    }
+
+    .skills {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 4rem;
+
+      .column {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        .skill {
+          display: flex;
+
+          h3 {
+            font-size: 1.4rem;
+            width: 18rem;
+          }
+
+          .wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+
+            .circle {
+              width: 1.2rem;
+              height: 1.2rem;
+              border-radius: 50%;
+              background-color: var(--neutral-color);
+              opacity: 0.1;
+              transition: opacity 0.3s ease-in-out;
+
+              &:hover {
+                &:not(.active) {
+                  background-color: var(--home-second-color);
+                  opacity: 0.3;
+                }
+              }
+            }
+
+            .active {
+              background-color: var(--home-second-color);
+              opacity: 1;
+            }
+          }
+        }
       }
     }
   }

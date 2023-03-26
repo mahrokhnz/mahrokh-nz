@@ -31,6 +31,9 @@ body a {
   text-decoration: none;
   color: currentColor;
 }
+body h1 {
+  font-size: 2.8rem;
+}
 body .header .navbar {
   display: flex;
   align-items: center;
@@ -138,13 +141,51 @@ body .about .aboutWrapper {
   gap: 1rem;
   width: 30rem;
 }
-body .about .aboutWrapper h1 {
-  font-size: 2.8rem;
-}
 body .about .aboutWrapper p {
   font-size: 1rem;
   color: var(--neutral-color);
   line-height: 1.8;
+}
+body #skills .skillHeader {
+  align-self: center;
+}
+body #skills .skills {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+body #skills .skills .column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+body #skills .skills .column .skill {
+  display: flex;
+}
+body #skills .skills .column .skill h3 {
+  font-size: 1.4rem;
+  width: 18rem;
+}
+body #skills .skills .column .skill .wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+body #skills .skills .column .skill .wrapper .circle {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: var(--neutral-color);
+  opacity: 0.1;
+  transition: opacity 0.3s ease-in-out;
+}
+body #skills .skills .column .skill .wrapper .circle:hover:not(.active) {
+  background-color: var(--home-second-color);
+  opacity: 0.3;
+}
+body #skills .skills .column .skill .wrapper .active {
+  background-color: var(--home-second-color);
+  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */
