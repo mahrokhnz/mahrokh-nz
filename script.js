@@ -1,5 +1,7 @@
 const front = document.querySelector(".firstColumn");
 const back = document.querySelector(".secondColumn");
+const light = document.querySelector(".themeLight");
+const dark = document.querySelector(".themeDark");
 
 const skills = [
   {
@@ -127,4 +129,18 @@ skills.map((skill) => {
   wrapper.classList.add("wrapper");
 
   circleMaker(wrapper, skill.count);
+});
+
+light.addEventListener("click", () => {
+  light.classList.remove("active");
+  dark.classList.add("active");
+
+  document.body.classList.add('dark')
+});
+
+dark.addEventListener("click", () => {
+  dark.classList.remove("active");
+  light.classList.add("active");
+
+  document.body.classList.remove('dark')
 });

@@ -44,7 +44,18 @@ body .header .navbar .logo {
 }
 body .header .navbar .wrapper {
   display: flex;
-  gap: 4rem;
+  gap: 2.3rem;
+}
+body .header .navbar .wrapper .theme {
+  cursor: pointer;
+  display: none;
+}
+body .header .navbar .wrapper .theme .light, body .header .navbar .wrapper .theme .dark {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+body .header .navbar .wrapper .active {
+  display: block;
 }
 body .header .navbar .wrapper .menu {
   display: flex;
