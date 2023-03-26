@@ -180,32 +180,54 @@ body {
     }
   }
 
-  .skills {
-    display: flex;
-    justify-content: space-between;
+  #skills {
+    .skillHeader {
+      align-self: center;
+    }
 
-    .column {
+    .skills {
       display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
+      justify-content: space-between;
+      margin-top: 4rem;
 
-      .skill {
+      .column {
         display: flex;
-        border: 1px red solid;
+        flex-direction: column;
+        gap: 2rem;
 
-        h3 {
-          width: 12rem;
-        }
-
-        .wrapper {
+        .skill {
           display: flex;
-          gap: 1.2rem;
 
-          .circle {
-            border: 1px blue solid;
-            width: 1.2rem;
-            height: 1.2rem;
-            border-radius: 50%;
+          h3 {
+            font-size: 1.4rem;
+            width: 18rem;
+          }
+
+          .wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+
+            .circle {
+              width: 1.2rem;
+              height: 1.2rem;
+              border-radius: 50%;
+              background-color: var(--neutral-color);
+              opacity: 0.1;
+              transition: opacity 0.3s ease-in-out;
+
+              &:hover {
+                &:not(.active) {
+                  background-color: var(--home-second-color);
+                  opacity: 0.3;
+                }
+              }
+            }
+
+            .active {
+              background-color: var(--home-second-color);
+              opacity: 1;
+            }
           }
         }
       }
