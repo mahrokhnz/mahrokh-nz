@@ -50,7 +50,21 @@ body {
 
       .wrapper {
         display: flex;
-        gap: 4rem;
+        gap: 2.3rem;
+
+        .theme {
+          cursor: pointer;
+          display: none;
+
+          .light, .dark {
+            width: 1.2rem;
+            height: 1.2rem;
+          }
+        }
+
+        .active {
+          display: block;
+        }
 
         .menu {
           display: flex;
@@ -241,3 +255,8 @@ body {
 // TODO: MENU RESPONSIVE
 // TODO: SUPPORTS
 // TODO: WAVES SHAPE
+// TODO: IMAGE FOR HOME :)
+// TODO: SKILL SECTION SHOULD HAVE ANIMATION
+
+// TODO: CHECK COLORS FOR THEME
+// TODO: SHOULD KEEP CHOSEN THEME FOR USER
