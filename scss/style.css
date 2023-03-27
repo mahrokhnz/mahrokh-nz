@@ -203,8 +203,7 @@ body .education {
   justify-content: center;
   position: relative;
   background-color: var(--secondary-color);
-  margin-left: -8rem;
-  margin-right: -7rem;
+  margin: -4rem -5rem -4rem -8rem;
   border-radius: 0.2rem;
   height: 100vh;
 }
