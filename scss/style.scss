@@ -1,21 +1,19 @@
 :root {
   --primary-color: #fff;
   --secondary-color: #f9f9fb;
-  --tertiary-color: #6e6af4;
-  --home-first-color: #544df0;
-  --home-second-color: #6e6af4;
+  --first-wave-color: #544df0;
+  --second-wave-color: #6e6af4;
   --text-color: #000000;
-  --neutral-color: #43474e;
+  --neutral-color: #808188;
 }
 
 :root .dark {
   --primary-color: #272d40;
-  --secondary-color: #28263300;
-  --tertiary-color: #6f6af500;
-  --home-first-color: #3e4657;
-  --home-second-color: #485266;
+  --secondary-color: #282633;
+  --first-wave-color: #3e4657;
+  --second-wave-color: #485266;
   --text-color: #ffffff;
-  --neutral-color: #43474e;
+  --neutral-color: #808188;
 }
 
 body {
@@ -36,6 +34,7 @@ body {
 
   h1 {
     font-size: 2.8rem;
+    color: var(--text-color);
   }
 
   .header {
@@ -46,10 +45,12 @@ body {
 
       .logo {
         font-size: 3rem;
+        color: var(--text-color);
       }
 
       .wrapper {
         display: flex;
+        align-items: center;
         gap: 2.3rem;
 
         .theme {
@@ -57,8 +58,8 @@ body {
           display: none;
 
           .light, .dark {
-            width: 1.2rem;
-            height: 1.2rem;
+            width: 1.5rem;
+            height: 1.5rem;
           }
         }
 
@@ -97,7 +98,7 @@ body {
         transition: border 0.3s ease-in-out;
 
         &:hover {
-          border: 2px var(--home-second-color) solid;
+          border: 2px var(--second-wave-color) solid;
         }
 
         img {
@@ -118,11 +119,11 @@ body {
     z-index: 0;
 
     .frontWave {
-      fill: var(--home-first-color);
+      fill: var(--first-wave-color);
     }
 
     .backWave {
-      fill: var(--home-second-color);
+      fill: var(--second-wave-color);
     }
 
     circle {
@@ -153,16 +154,13 @@ body {
   .companies {
     display: flex;
     margin-left: 2rem;
+    margin-top: 1.7rem;
     gap: 8rem;
 
     li {
       img {
         width: 4rem;
         height: 4rem;
-
-        &:not(.active) {
-          filter: grayscale(90%);
-        }
       }
     }
   }
@@ -170,12 +168,12 @@ body {
   .about {
     display: flex;
     justify-content: space-between;
-    margin-top: 3.5rem;
+    margin-top: 2.6rem;
 
     .imageWrapper {
       img {
         width: 30rem;
-        height: 30.1rem;
+        height: 30rem;
         object-fit: cover;
       }
     }
@@ -194,54 +192,53 @@ body {
     }
   }
 
-  #skills {
-    .skillHeader {
-      align-self: center;
-    }
+  .skillHeader {
+    align-self: center;
+  }
 
-    .skills {
+  .skills {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+
+    .column {
       display: flex;
-      justify-content: space-between;
-      margin-top: 4rem;
+      flex-direction: column;
+      gap: 2rem;
 
-      .column {
+      .skill {
         display: flex;
-        flex-direction: column;
-        gap: 2rem;
 
-        .skill {
+        h3 {
+          font-size: 1.4rem;
+          width: 18rem;
+          color: var(--text-color);
+        }
+
+        .wrapper {
           display: flex;
+          align-items: center;
+          gap: 0.4rem;
 
-          h3 {
-            font-size: 1.4rem;
-            width: 18rem;
-          }
+          .circle {
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 50%;
+            background-color: var(--neutral-color);
+            opacity: 0.1;
+            transition: opacity 0.3s ease-in-out;
 
-          .wrapper {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-
-            .circle {
-              width: 1.2rem;
-              height: 1.2rem;
-              border-radius: 50%;
-              background-color: var(--neutral-color);
-              opacity: 0.1;
-              transition: opacity 0.3s ease-in-out;
-
-              &:hover {
-                &:not(.active) {
-                  background-color: var(--home-second-color);
-                  opacity: 0.3;
-                }
+            &:hover {
+              &:not(.active) {
+                background-color: var(--second-wave-color);
+                opacity: 0.3;
               }
             }
+          }
 
-            .active {
-              background-color: var(--home-second-color);
-              opacity: 1;
-            }
+          .active {
+            background-color: var(--second-wave-color);
+            opacity: 1;
           }
         }
       }
