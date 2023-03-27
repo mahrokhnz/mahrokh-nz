@@ -1,6 +1,6 @@
 :root {
   --primary-color: #fff;
-  --secondary-color: #f9f9fb;
+  --secondary-color: #e2e2e7;
   --first-wave-color: #544df0;
   --second-wave-color: #6e6af4;
   --text-color: #000000;
@@ -97,20 +97,20 @@ body .home .contactWrapper .iconWrapper img {
   cursor: pointer;
   box-sizing: border-box;
 }
-body svg {
+body .svgContainer {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 0;
 }
-body svg .frontWave {
+body .svgContainer .frontWave {
   fill: var(--first-wave-color);
 }
-body svg .backWave {
+body .svgContainer .backWave {
   fill: var(--second-wave-color);
 }
-body svg circle {
+body .svgContainer circle {
   fill: var(--primary-color);
 }
 body .nameWrapper {
@@ -203,8 +203,7 @@ body .education {
   justify-content: center;
   position: relative;
   background-color: var(--secondary-color);
-  margin-left: -8rem;
-  margin-right: -7rem;
+  margin: -4rem -5rem -4rem -8rem;
   border-radius: 0.2rem;
   height: 100vh;
 }
@@ -215,18 +214,26 @@ body .education h1 {
 body .education .cardWrapper {
   display: flex;
 }
+body .education .cardWrapper .svgContainer {
+  fill: var(--secondary-color);
+}
 body .education .cardWrapper .card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   left: 20%;
   top: 38%;
   width: 20rem;
   height: 13.33rem;
   position: absolute;
   transform: translateX(-50%);
-  background-color: red;
   color: #fff;
-  transition-property: left, width, height;
+  transition-property: background-color, left, width, height;
   transition: 0.3s ease-in-out;
   cursor: pointer;
+  padding: 2rem;
+  border-radius: 0.2rem;
+  background-color: var(--primary-color);
 }
 body .education .cardWrapper .card.active {
   left: 50%;
@@ -235,6 +242,50 @@ body .education .cardWrapper .card.active {
   height: 20rem;
   z-index: 10;
   cursor: default;
+}
+body .education .cardWrapper .card.active .universityWrapper h2 {
+  font-size: 1.4rem;
+}
+body .education .cardWrapper .card.active .universityWrapper img {
+  width: 10rem;
+  height: 10rem;
+}
+body .education .cardWrapper .card.active .infoWrapper h3 {
+  font-size: 1rem;
+}
+body .education .cardWrapper .card.active .infoWrapper span {
+  font-size: 1rem;
+}
+body .education .cardWrapper .card .universityWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+body .education .cardWrapper .card .universityWrapper h2 {
+  font-size: 1rem;
+  transition: font-size 0.3s ease-in-out;
+  color: var(--text-color);
+}
+body .education .cardWrapper .card .universityWrapper img {
+  width: 5rem;
+  height: 5rem;
+  transition-property: width, height;
+  transition: 0.3s ease-in-out;
+}
+body .education .cardWrapper .card .infoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+body .education .cardWrapper .card .infoWrapper h3 {
+  font-size: 0.6rem;
+  transition: font-size 0.3s ease-in-out;
+  color: var(--text-color);
+}
+body .education .cardWrapper .card .infoWrapper span {
+  font-size: 0.6rem;
+  transition: font-size 0.3s ease-in-out;
 }
 
 /*# sourceMappingURL=style.css.map */
