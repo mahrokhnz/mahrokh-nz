@@ -116,7 +116,7 @@ body {
     }
   }
 
-  svg {
+  .svgContainer {
     position: absolute;
     left: 0;
     right: 0;
@@ -261,6 +261,10 @@ body {
 
     .cardWrapper {
       display: flex;
+
+      .svgContainer {
+        fill: var(--secondary-color);
+      }
 
       .card {
         display: flex;

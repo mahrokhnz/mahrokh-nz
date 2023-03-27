@@ -97,20 +97,20 @@ body .home .contactWrapper .iconWrapper img {
   cursor: pointer;
   box-sizing: border-box;
 }
-body svg {
+body .svgContainer {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   z-index: 0;
 }
-body svg .frontWave {
+body .svgContainer .frontWave {
   fill: var(--first-wave-color);
 }
-body svg .backWave {
+body .svgContainer .backWave {
   fill: var(--second-wave-color);
 }
-body svg circle {
+body .svgContainer circle {
   fill: var(--primary-color);
 }
 body .nameWrapper {
@@ -213,6 +213,9 @@ body .education h1 {
 }
 body .education .cardWrapper {
   display: flex;
+}
+body .education .cardWrapper .svgContainer {
+  fill: var(--secondary-color);
 }
 body .education .cardWrapper .card {
   display: flex;
