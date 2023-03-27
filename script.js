@@ -5,6 +5,7 @@ const dark = document.querySelector(".themeDark");
 const bachelor = document.querySelector(".bachelor");
 const master = document.querySelector(".master");
 
+// Skills Section
 const skills = [
   {
     column: 1,
@@ -92,6 +93,14 @@ const skills = [
   },
 ];
 
+const activeCircle = (circle) => {
+  setInterval(() => {
+    circle.classList.add("active");
+  }, 1500);
+
+  // TODO: SHOULD KEEP CIRCLES SW AND COLORIZE THEM INORDER!
+};
+
 const circleMaker = (parent, count, all = 10) => {
   let i = 0;
   let j = 0;
@@ -102,7 +111,7 @@ const circleMaker = (parent, count, all = 10) => {
     circle.classList.add("circle");
 
     if (j < count) {
-      circle.classList.add("active");
+      activeCircle(circle);
 
       j++;
     }
@@ -133,6 +142,7 @@ skills.map((skill) => {
   circleMaker(wrapper, skill.count);
 });
 
+// Change Theme
 light.addEventListener("click", () => {
   light.classList.remove("active");
   dark.classList.add("active");
@@ -147,6 +157,7 @@ dark.addEventListener("click", () => {
   document.body.classList.remove("dark");
 });
 
+// Degree's Slider
 master.addEventListener("click", () => {
   master.classList.add("active");
   bachelor.classList.remove("active");
