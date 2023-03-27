@@ -2,6 +2,8 @@ const front = document.querySelector(".firstColumn");
 const back = document.querySelector(".secondColumn");
 const light = document.querySelector(".themeLight");
 const dark = document.querySelector(".themeDark");
+const bachelor = document.querySelector(".bachelor");
+const master = document.querySelector(".master");
 
 const skills = [
   {
@@ -135,12 +137,22 @@ light.addEventListener("click", () => {
   light.classList.remove("active");
   dark.classList.add("active");
 
-  document.body.classList.add('dark')
+  document.body.classList.add("dark");
 });
 
 dark.addEventListener("click", () => {
   dark.classList.remove("active");
   light.classList.add("active");
 
-  document.body.classList.remove('dark')
+  document.body.classList.remove("dark");
+});
+
+master.addEventListener("click", () => {
+  master.classList.add("active");
+  bachelor.classList.remove("active");
+});
+
+bachelor.addEventListener("click", () => {
+  bachelor.classList.add("active");
+  master.classList.remove("active");
 });

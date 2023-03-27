@@ -37,6 +37,11 @@ body {
     color: var(--text-color);
   }
 
+  .sectionHeader {
+    align-self: center;
+    margin-bottom: 4rem;
+  }
+
   .header {
     .navbar {
       display: flex;
@@ -192,14 +197,9 @@ body {
     }
   }
 
-  .skillHeader {
-    align-self: center;
-  }
-
   .skills {
     display: flex;
     justify-content: space-between;
-    margin-top: 4rem;
 
     .column {
       display: flex;
@@ -240,6 +240,49 @@ body {
             background-color: var(--second-wave-color);
             opacity: 1;
           }
+        }
+      }
+    }
+  }
+
+  .education {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: var(--secondary-color);
+    margin-left: -8rem;
+    margin-right: -7rem;
+    border-radius: 0.2rem;
+    height: 100vh;
+
+    h1 {
+      align-self: unset;
+      margin: 4rem auto 0;
+    }
+
+    .cardWrapper {
+      display: flex;
+
+      .card {
+        left: 20%;
+        top: 38%;
+        width: 20rem;
+        height: 13.33rem;
+        position: absolute;
+        transform: translateX(-50%);
+        background-color: red;
+        color: #fff;
+        transition-property: left, width, height;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+
+        &.active {
+          left: 50%;
+          top: 30%;
+          width: 30rem;
+          height: 20rem;
+          z-index: 10;
+          cursor: default;
         }
       }
     }
