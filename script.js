@@ -5,6 +5,8 @@ const dark = document.querySelector(".themeDark");
 const bachelor = document.querySelector(".bachelor");
 const master = document.querySelector(".master");
 
+// Skills Section
+const activeCircles = [];
 const skills = [
   {
     column: 1,
@@ -51,7 +53,7 @@ const skills = [
   {
     column: 1,
     row: 1,
-    title: "Ubunto",
+    title: "Ubuntu",
     count: 4,
   },
   {
@@ -92,6 +94,18 @@ const skills = [
   },
 ];
 
+const activateCircle = () => {
+  for (let i = 0; i < activeCircles.length; i++) {
+    activeCircles[i].classList.add("active");
+  }
+};
+
+const deactivateCircle = () => {
+  for (let i = 0; i < activeCircles.length; i++) {
+    activeCircles[i].classList.remove("active");
+  }
+};
+
 const circleMaker = (parent, count, all = 10) => {
   let i = 0;
   let j = 0;
@@ -102,10 +116,11 @@ const circleMaker = (parent, count, all = 10) => {
     circle.classList.add("circle");
 
     if (j < count) {
-      circle.classList.add("active");
+      activeCircles.push(circle);
 
       j++;
     }
+
     i++;
   }
 };
@@ -133,6 +148,21 @@ skills.map((skill) => {
   circleMaker(wrapper, skill.count);
 });
 
+document.addEventListener("scroll", () => {
+  const windowHeight = window.innerHeight;
+  const windowPosition = window.scrollY;
+
+  if (
+    windowPosition > 1.5 * windowHeight &&
+    windowPosition < 2.5 * windowHeight
+  ) {
+    activateCircle();
+  } else {
+    deactivateCircle();
+  }
+});
+
+// Change Theme
 light.addEventListener("click", () => {
   light.classList.remove("active");
   dark.classList.add("active");
@@ -147,6 +177,7 @@ dark.addEventListener("click", () => {
   document.body.classList.remove("dark");
 });
 
+// Degree's Slider
 master.addEventListener("click", () => {
   master.classList.add("active");
   bachelor.classList.remove("active");
