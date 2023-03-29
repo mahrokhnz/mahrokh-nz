@@ -16,6 +16,11 @@
   --neutral-color: #808188;
 }
 
+html {
+  scroll-snap-type: y mandatory;
+
+}
+
 body {
   .container {
     display: flex;
@@ -24,7 +29,9 @@ body {
     font-family: josefInSansMedium;
     background-color: var(--primary-color);
     height: 100vh;
+    width: 100vw;
     box-sizing: border-box;
+    scroll-snap-align: end;
   }
 
   a {
@@ -400,16 +407,107 @@ body {
   }
 }
 
-// TODO: HOW CONTAINER SHOULD BE?!
-// TODO: SNAP FOR SECTIONS
-// TODO: THEME
-// TODO: MENU RESPONSIVE
-// TODO: SUPPORTS
+// Devices that don't support gap in flex
+@supports (-webkit-touch-callout: none) and (not(translate: none)) {
+  body {
+    .menu {
+      *:not(:last-child) {
+        margin-inline-end: 2rem;
+      }
+    }
+
+    .contactWrapper {
+      *:not(:last-child) {
+        margin-inline-end: 2rem;
+      }
+    }
+
+    .header {
+      .navbar {
+        .wrapper {
+          *:not(:last-child) {
+            margin-inline-end: 2.3rem;
+          }
+        }
+      }
+    }
+
+    .nameWrapper {
+      *:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .companies {
+      *:not(:last-child) {
+        margin-inline-end: 8rem;
+      }
+    }
+
+    .about {
+      *:not(:last-child) {
+        margin-inline-end: 10rem;
+      }
+
+      .aboutWrapper {
+        *:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .skills {
+      .column {
+        *:not(:last-child) {
+          margin-bottom: 2rem;
+        }
+
+        .skill {
+          .wrapper {
+            *:not(:last-child) {
+              margin-inline-end: 0.4rem;
+            }
+          }
+        }
+      }
+    }
+
+    .education {
+      .cardWrapper {
+        .card {
+          *:not(:last-child) {
+            margin-bottom: 2rem;
+          }
+
+          .universityWrapper {
+            *:not(:last-child) {
+              margin-inline-end: 2rem;
+            }
+          }
+
+          .infoWrapper {
+            *:not(:last-child) {
+              margin-bottom: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    #footer {
+      *:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+
+      .footer {
+        *:not(:last-child) {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+}
+
+
 // TODO: WAVES SHAPE
-// TODO: IMAGE FOR HOME :)
-// TODO: SKILL SECTION SHOULD HAVE ANIMATION
-
-// TODO: CHECK COLORS FOR THEME
-// TODO: SHOULD KEEP CHOSEN THEME FOR USER
-
 // TODO: ADD LANGUAGE?
