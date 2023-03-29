@@ -193,4 +193,4 @@ bachelor.addEventListener("click", () => {
 const date = new Date();
 const year = date.getFullYear();
 
-footer.innerHTML = `© ${year} Mahrokh Iran, Tehran. All rights reserved.`;
+footer.innerHTML = `© ${year} Mahrokh Tehran, Iran. All rights reserved.`;
