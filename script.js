@@ -6,6 +6,7 @@ const bachelor = document.querySelector(".bachelor");
 const master = document.querySelector(".master");
 
 // Skills Section
+const activeCircles = [];
 const skills = [
   {
     column: 1,
@@ -52,7 +53,7 @@ const skills = [
   {
     column: 1,
     row: 1,
-    title: "Ubunto",
+    title: "Ubuntu",
     count: 4,
   },
   {
@@ -93,12 +94,16 @@ const skills = [
   },
 ];
 
-const activeCircle = (circle) => {
-  setInterval(() => {
-    circle.classList.add("active");
-  }, 1500);
+const activateCircle = () => {
+  for (let i = 0; i < activeCircles.length; i++) {
+    activeCircles[i].classList.add("active");
+  }
+};
 
-  // TODO: SHOULD KEEP CIRCLES SW AND COLORIZE THEM INORDER!
+const deactivateCircle = () => {
+  for (let i = 0; i < activeCircles.length; i++) {
+    activeCircles[i].classList.remove("active");
+  }
 };
 
 const circleMaker = (parent, count, all = 10) => {
@@ -111,10 +116,11 @@ const circleMaker = (parent, count, all = 10) => {
     circle.classList.add("circle");
 
     if (j < count) {
-      activeCircle(circle);
+      activeCircles.push(circle);
 
       j++;
     }
+
     i++;
   }
 };
@@ -140,6 +146,20 @@ skills.map((skill) => {
   wrapper.classList.add("wrapper");
 
   circleMaker(wrapper, skill.count);
+});
+
+document.addEventListener("scroll", () => {
+  const windowHeight = window.innerHeight;
+  const windowPosition = window.scrollY;
+
+  if (
+    windowPosition > 1.5 * windowHeight &&
+    windowPosition < 2.5 * windowHeight
+  ) {
+    activateCircle();
+  } else {
+    deactivateCircle();
+  }
 });
 
 // Change Theme
