@@ -85,6 +85,8 @@ body {
       justify-content: space-between;
 
       .logo {
+        display: flex;
+        align-items: center;
 
         .moon {
           font-size: 3rem;
@@ -92,7 +94,7 @@ body {
         }
 
         .face {
-          font-size: 2.5rem;
+          font-size: 2rem;
           color: var(--neutral-color);
         }
       }
