@@ -73,9 +73,13 @@ body .header .navbar {
   align-items: center;
   justify-content: space-between;
 }
-body .header .navbar .logo {
+body .header .navbar .logo .moon {
   font-size: 3rem;
   color: var(--text-color);
+}
+body .header .navbar .logo .face {
+  font-size: 2.5rem;
+  color: var(--neutral-color);
 }
 body .header .navbar .wrapper {
   display: flex;
