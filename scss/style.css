@@ -16,6 +16,10 @@
   --neutral-color: #808188;
 }
 
+html {
+  scroll-snap-type: y mandatory;
+}
+
 body .container {
   display: flex;
   flex-direction: column;
@@ -23,7 +27,9 @@ body .container {
   font-family: josefInSansMedium;
   background-color: var(--primary-color);
   height: 100vh;
+  width: 100vw;
   box-sizing: border-box;
+  scroll-snap-align: end;
 }
 body a {
   text-decoration: none;
@@ -325,6 +331,51 @@ body #footer .separator {
 body #footer .copyWrite {
   font-size: 0.8rem;
   align-self: center;
+}
+
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+  body .menu *:not(:last-child) {
+    margin-inline-end: 2rem;
+  }
+  body .contactWrapper *:not(:last-child) {
+    margin-inline-end: 2rem;
+  }
+  body .header .navbar .wrapper *:not(:last-child) {
+    margin-inline-end: 2.3rem;
+  }
+  body .nameWrapper *:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  body .companies *:not(:last-child) {
+    margin-inline-end: 8rem;
+  }
+  body .about *:not(:last-child) {
+    margin-inline-end: 10rem;
+  }
+  body .about .aboutWrapper *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  body .skills .column *:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  body .skills .column .skill .wrapper *:not(:last-child) {
+    margin-inline-end: 0.4rem;
+  }
+  body .education .cardWrapper .card *:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  body .education .cardWrapper .card .universityWrapper *:not(:last-child) {
+    margin-inline-end: 2rem;
+  }
+  body .education .cardWrapper .card .infoWrapper *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  body #footer *:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  body #footer .footer *:not(:last-child) {
+    margin-bottom: 2rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
