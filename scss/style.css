@@ -37,6 +37,37 @@ body .sectionHeader {
   align-self: center;
   margin-bottom: 4rem;
 }
+body .menu {
+  display: flex;
+  gap: 2rem;
+  color: var(--neutral-color);
+}
+body .contactWrapper {
+  display: flex;
+  transform: rotate(-90deg);
+  margin-top: 8rem;
+  gap: 2rem;
+  z-index: 1;
+}
+body .contactWrapper .iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+  box-sizing: border-box;
+  border-radius: 0.3rem;
+  border: 2px var(--primary-color) solid;
+  transition: border 0.3s ease-in-out;
+}
+body .contactWrapper .iconWrapper:hover {
+  border: 2px var(--second-wave-color) solid;
+}
+body .contactWrapper .iconWrapper img {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  box-sizing: border-box;
+}
 body .header .navbar {
   display: flex;
   align-items: center;
@@ -62,40 +93,9 @@ body .header .navbar .wrapper .theme .light, body .header .navbar .wrapper .them
 body .header .navbar .wrapper .active {
   display: block;
 }
-body .header .navbar .wrapper .menu {
-  display: flex;
-  gap: 2rem;
-  color: var(--neutral-color);
-}
 body .home {
   display: flex;
   margin-top: 8rem;
-}
-body .home .contactWrapper {
-  display: flex;
-  transform: rotate(-90deg);
-  margin-top: 8rem;
-  gap: 2rem;
-  z-index: 1;
-}
-body .home .contactWrapper .iconWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.2rem;
-  box-sizing: border-box;
-  border-radius: 0.3rem;
-  border: 2px var(--primary-color) solid;
-  transition: border 0.3s ease-in-out;
-}
-body .home .contactWrapper .iconWrapper:hover {
-  border: 2px var(--second-wave-color) solid;
-}
-body .home .contactWrapper .iconWrapper img {
-  width: 2rem;
-  height: 2rem;
-  cursor: pointer;
-  box-sizing: border-box;
 }
 body .svgContainer {
   position: absolute;
@@ -286,6 +286,33 @@ body .education .cardWrapper .card .infoWrapper h3 {
 body .education .cardWrapper .card .infoWrapper span {
   font-size: 0.6rem;
   transition: font-size 0.3s ease-in-out;
+}
+body #footer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  padding: 4rem 8rem;
+  height: unset;
+}
+body #footer .footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+body #footer .footer .contactWrapper {
+  transform: rotate(0);
+  margin-top: 0;
+}
+body #footer .separator {
+  height: 0.1rem;
+  background-color: var(--neutral-color);
+  opacity: 0.5;
+}
+body #footer .copyWrite {
+  font-size: 0.8rem;
+  align-self: center;
 }
 
 /*# sourceMappingURL=style.css.map */
