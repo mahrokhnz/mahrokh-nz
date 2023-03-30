@@ -1,3 +1,5 @@
+@use "mixin";
+
 :root {
   --primary-color: #fff;
   --secondary-color: #e2e2e7;
@@ -18,7 +20,6 @@
 
 html {
   scroll-snap-type: y mandatory;
-
 }
 
 body {
@@ -26,11 +27,15 @@ body {
     display: flex;
     flex-direction: column;
     padding: 4rem 8rem;
-    font-family: josefInSansMedium;
+    font-family: josefInSansMedium, serif;
     background-color: var(--primary-color);
     height: 100vh;
     box-sizing: border-box;
     scroll-snap-align: end;
+
+    @include mixin.respond-to('desktop') {
+      padding: 4rem 6rem;
+    }
   }
 
   a {
@@ -189,10 +194,9 @@ body {
   .about {
     display: flex;
     gap: 10rem;
+    margin-left: -7.8rem;
 
     .imageWrapper {
-      margin-left: -7.8rem;
-
       img {
         width: 30rem;
         height: 38rem;
