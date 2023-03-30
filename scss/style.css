@@ -1,457 +1,383 @@
 :root {
-    --primary-color: #fff;
-    --secondary-color: #e2e2e7;
-    --first-wave-color: #544df0;
-    --second-wave-color: #6e6af4;
-    --text-color: #000000;
-    --neutral-color: #808188;
+  --primary-color: #fff;
+  --secondary-color: #e2e2e7;
+  --first-wave-color: #544df0;
+  --second-wave-color: #6e6af4;
+  --text-color: #000000;
+  --neutral-color: #808188;
 }
 
 :root .dark {
-    --primary-color: #272d40;
-    --secondary-color: #282633;
-    --first-wave-color: #3e4657;
-    --second-wave-color: #485266;
-    --text-color: #ffffff;
-    --neutral-color: #808188;
+  --primary-color: #272d40;
+  --secondary-color: #282633;
+  --first-wave-color: #3e4657;
+  --second-wave-color: #485266;
+  --text-color: #ffffff;
+  --neutral-color: #808188;
 }
 
 html {
-    scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;
 }
 
 body .container {
-    display: flex;
-    flex-direction: column;
-    padding: 4rem 8rem;
-    font-family: josefInSansMedium, serif;
-    background-color: var(--primary-color);
-    height: 100vh;
-    box-sizing: border-box;
-    scroll-snap-align: end;
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 8rem;
+  font-family: josefInSansMedium, serif;
+  background-color: var(--primary-color);
+  height: 100vh;
+  box-sizing: border-box;
+  scroll-snap-align: end;
 }
-
 @media (max-width: 1281px) {
-    body .container {
-        padding: 4rem 6rem;
-    }
+  body .container {
+    padding: 4rem 6rem;
+  }
 }
-
 body a {
-    text-decoration: none;
-    color: currentColor;
+  text-decoration: none;
+  color: currentColor;
 }
-
 body h1 {
-    font-size: 2.8rem;
-    color: var(--text-color);
+  font-size: 2.8rem;
+  color: var(--text-color);
 }
-
 body .sectionHeader {
-    align-self: center;
-    margin-bottom: 4rem;
+  align-self: center;
+  margin-bottom: 4rem;
 }
-
 body .menu {
-    display: flex;
-    gap: 2rem;
-    color: var(--neutral-color);
+  display: flex;
+  gap: 2rem;
+  color: var(--neutral-color);
 }
-
 body .contactWrapper {
-    display: flex;
-    transform: rotate(-90deg);
-    margin-top: 8rem;
-    gap: 2rem;
-    z-index: 1;
+  display: flex;
+  transform: rotate(-90deg);
+  margin-top: 8rem;
+  gap: 2rem;
+  z-index: 1;
 }
-
 body .contactWrapper .iconWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.2rem;
-    box-sizing: border-box;
-    border-radius: 0.3rem;
-    border: 2px var(--primary-color) solid;
-    transition: border 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem;
+  box-sizing: border-box;
+  border-radius: 0.3rem;
+  border: 2px var(--primary-color) solid;
+  transition: border 0.3s ease-in-out;
 }
-
 body .contactWrapper .iconWrapper:hover {
-    border: 2px var(--second-wave-color) solid;
+  border: 2px var(--second-wave-color) solid;
 }
-
 body .contactWrapper .iconWrapper img {
-    width: 2rem;
-    height: 2rem;
-    cursor: pointer;
-    box-sizing: border-box;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  box-sizing: border-box;
 }
-
 body .header .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-
 body .header .navbar .logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
-
 body .header .navbar .logo .moon {
-    font-size: 3rem;
-    color: var(--text-color);
+  font-size: 3rem;
+  color: var(--text-color);
 }
-
 body .header .navbar .logo .face {
-    font-size: 2rem;
-    color: var(--neutral-color);
+  font-size: 2rem;
+  color: var(--neutral-color);
 }
-
 body .header .navbar .wrapper {
-    display: flex;
-    align-items: center;
-    gap: 2.3rem;
+  display: flex;
+  align-items: center;
+  gap: 2.3rem;
 }
-
 body .header .navbar .wrapper .theme {
-    cursor: pointer;
-    display: none;
+  cursor: pointer;
+  display: none;
 }
-
 body .header .navbar .wrapper .theme .light, body .header .navbar .wrapper .theme .dark {
-    width: 1.5rem;
-    height: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
-
 body .header .navbar .wrapper .active {
-    display: block;
+  display: block;
 }
-
 body .home {
-    display: flex;
-    margin-top: 8rem;
+  display: flex;
+  margin-top: 8rem;
 }
-
 body .svgContainer {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
 }
-
 body .svgContainer .frontWave {
-    fill: var(--first-wave-color);
+  fill: var(--first-wave-color);
 }
-
 body .svgContainer .backWave {
-    fill: var(--second-wave-color);
+  fill: var(--second-wave-color);
 }
-
 body .svgContainer circle {
-    fill: var(--primary-color);
+  fill: var(--primary-color);
 }
-
 body .nameWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
-
 body .nameWrapper h1 {
-    font-size: 4rem;
-    color: var(--text-color);
+  font-size: 4rem;
+  color: var(--text-color);
 }
-
 body .nameWrapper h2 {
-    color: var(--neutral-color);
+  color: var(--neutral-color);
 }
-
 body span {
-    font-size: 1.3rem;
-    color: var(--neutral-color);
+  font-size: 1.3rem;
+  color: var(--neutral-color);
 }
-
 body .companies {
-    display: flex;
-    margin-left: 2rem;
-    margin-top: 1.7rem;
-    gap: 8rem;
+  display: flex;
+  margin-left: 2rem;
+  margin-top: 1.7rem;
+  gap: 8rem;
 }
-
 body .companies li img {
-    width: 4rem;
-    height: 4rem;
+  width: 4rem;
+  height: 4rem;
 }
-
 body .about {
-    display: flex;
-    gap: 10rem;
-    margin-left: -7.8rem;
+  display: flex;
+  gap: 10rem;
+  margin-left: -7.8rem;
 }
-
 body .about .imageWrapper img {
-    width: 30rem;
-    height: 38rem;
-    border-top-right-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
-    object-fit: cover;
+  width: 30rem;
+  height: 38rem;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  object-fit: cover;
 }
-
 body .about .aboutWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2.5rem 0;
 }
-
 body .about .aboutWrapper p {
-    font-size: 1rem;
-    color: var(--neutral-color);
-    line-height: 1.8;
+  font-size: 1rem;
+  color: var(--neutral-color);
+  line-height: 1.8;
 }
-
 body .skills {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
-
 body .skills .column {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
-
 body .skills .column .skill {
-    display: flex;
+  display: flex;
 }
-
 body .skills .column .skill h3 {
-    font-size: 1.4rem;
-    width: 18rem;
-    color: var(--text-color);
+  font-size: 1.4rem;
+  width: 18rem;
+  color: var(--text-color);
 }
-
 body .skills .column .skill .wrapper {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
-
 body .skills .column .skill .wrapper .circle {
-    width: 1.2rem;
-    height: 1.2rem;
-    border-radius: 50%;
-    background-color: var(--neutral-color);
-    opacity: 0.1;
-    transition: opacity 0.3s ease-in-out;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background-color: var(--neutral-color);
+  opacity: 0.1;
+  transition: opacity 0.3s ease-in-out;
 }
-
 body .skills .column .skill .wrapper .circle:hover:not(.active) {
-    background-color: var(--second-wave-color);
-    opacity: 0.3;
+  background-color: var(--second-wave-color);
+  opacity: 0.3;
 }
-
 body .skills .column .skill .wrapper .active {
-    background-color: var(--second-wave-color);
-    opacity: 1;
+  background-color: var(--second-wave-color);
+  opacity: 1;
 }
-
 body .education {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    background-color: var(--secondary-color);
-    margin: -4rem -5rem -4rem -8rem;
-    border-radius: 0.2rem;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  background-color: var(--secondary-color);
+  margin: -4rem -5rem -4rem -8rem;
+  border-radius: 0.2rem;
+  height: 100vh;
 }
-
 body .education h1 {
-    align-self: unset;
-    margin: 4rem auto 0;
+  align-self: unset;
+  margin: 4rem auto 0;
 }
-
 body .education .cardWrapper {
-    display: flex;
+  display: flex;
 }
-
 body .education .cardWrapper .svgContainer {
-    fill: var(--secondary-color);
+  fill: var(--secondary-color);
 }
-
 body .education .cardWrapper .card {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    left: 20%;
-    top: 38%;
-    width: 20rem;
-    height: 13.33rem;
-    position: absolute;
-    transform: translateX(-50%);
-    color: #fff;
-    transition-property: background-color, left, width, height;
-    transition: 0.3s ease-in-out;
-    cursor: pointer;
-    padding: 2rem;
-    border-radius: 0.2rem;
-    background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  left: 20%;
+  top: 38%;
+  width: 20rem;
+  height: 13.33rem;
+  position: absolute;
+  transform: translateX(-50%);
+  color: #fff;
+  transition-property: background-color, left, width, height;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  padding: 2rem;
+  border-radius: 0.2rem;
+  background-color: var(--primary-color);
 }
-
 body .education .cardWrapper .card.active {
-    left: 50%;
-    top: 30%;
-    width: 30rem;
-    height: 20rem;
-    z-index: 10;
-    cursor: default;
+  left: 50%;
+  top: 30%;
+  width: 30rem;
+  height: 20rem;
+  z-index: 10;
+  cursor: default;
 }
-
 body .education .cardWrapper .card.active .universityWrapper h2 {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 }
-
 body .education .cardWrapper .card.active .universityWrapper img {
-    width: 10rem;
-    height: 10rem;
+  width: 10rem;
+  height: 10rem;
 }
-
 body .education .cardWrapper .card.active .infoWrapper h3 {
-    font-size: 1rem;
+  font-size: 1rem;
 }
-
 body .education .cardWrapper .card.active .infoWrapper span {
-    font-size: 1rem;
+  font-size: 1rem;
 }
-
 body .education .cardWrapper .card .universityWrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
 }
-
 body .education .cardWrapper .card .universityWrapper h2 {
-    font-size: 1rem;
-    transition: font-size 0.3s ease-in-out;
-    color: var(--text-color);
+  font-size: 1rem;
+  transition: font-size 0.3s ease-in-out;
+  color: var(--text-color);
 }
-
 body .education .cardWrapper .card .universityWrapper img {
-    width: 5rem;
-    height: 5rem;
-    transition-property: width, height;
-    transition: 0.3s ease-in-out;
+  width: 5rem;
+  height: 5rem;
+  transition-property: width, height;
+  transition: 0.3s ease-in-out;
 }
-
 body .education .cardWrapper .card .infoWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
-
 body .education .cardWrapper .card .infoWrapper h3 {
-    font-size: 0.6rem;
-    transition: font-size 0.3s ease-in-out;
-    color: var(--text-color);
+  font-size: 0.6rem;
+  transition: font-size 0.3s ease-in-out;
+  color: var(--text-color);
 }
-
 body .education .cardWrapper .card .infoWrapper span {
-    font-size: 0.6rem;
-    transition: font-size 0.3s ease-in-out;
+  font-size: 0.6rem;
+  transition: font-size 0.3s ease-in-out;
 }
-
 body #footer {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    justify-content: center;
-    padding: 4rem 8rem;
-    height: unset;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  padding: 4rem 8rem;
+  height: unset;
 }
-
 body #footer .footer {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
 }
-
 body #footer .footer .contactWrapper {
-    transform: rotate(0);
-    margin-top: 0;
+  transform: rotate(0);
+  margin-top: 0;
 }
-
 body #footer .separator {
-    height: 0.1rem;
-    background-color: var(--neutral-color);
-    opacity: 0.5;
+  height: 0.1rem;
+  background-color: var(--neutral-color);
+  opacity: 0.5;
 }
-
 body #footer .copyWrite {
-    font-size: 0.8rem;
-    align-self: center;
+  font-size: 0.8rem;
+  align-self: center;
 }
 
 @supports (-webkit-touch-callout: none) and (not (translate: none)) {
-    body .menu *:not(:last-child) {
-        margin-inline-end: 2rem;
-    }
-
-    body .contactWrapper *:not(:last-child) {
-        margin-inline-end: 2rem;
-    }
-
-    body .header .navbar .wrapper *:not(:last-child) {
-        margin-inline-end: 2.3rem;
-    }
-
-    body .nameWrapper *:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    body .companies *:not(:last-child) {
-        margin-inline-end: 8rem;
-    }
-
-    body .about *:not(:last-child) {
-        margin-inline-end: 10rem;
-    }
-
-    body .about .aboutWrapper *:not(:last-child) {
-        margin-bottom: 1rem;
-    }
-
-    body .skills .column *:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    body .skills .column .skill .wrapper *:not(:last-child) {
-        margin-inline-end: 0.4rem;
-    }
-
-    body .education .cardWrapper .card *:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    body .education .cardWrapper .card .universityWrapper *:not(:last-child) {
-        margin-inline-end: 2rem;
-    }
-
-    body .education .cardWrapper .card .infoWrapper *:not(:last-child) {
-        margin-bottom: 1rem;
-    }
-
-    body #footer *:not(:last-child) {
-        margin-bottom: 2rem;
-    }
-
-    body #footer .footer *:not(:last-child) {
-        margin-bottom: 2rem;
-    }
+  body .menu *:not(:last-child) {
+    margin-inline-end: 2rem;
+  }
+  body .contactWrapper *:not(:last-child) {
+    margin-inline-end: 2rem;
+  }
+  body .header .navbar .wrapper *:not(:last-child) {
+    margin-inline-end: 2.3rem;
+  }
+  body .nameWrapper *:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  body .companies *:not(:last-child) {
+    margin-inline-end: 8rem;
+  }
+  body .about *:not(:last-child) {
+    margin-inline-end: 10rem;
+  }
+  body .about .aboutWrapper *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  body .skills .column *:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  body .skills .column .skill .wrapper *:not(:last-child) {
+    margin-inline-end: 0.4rem;
+  }
+  body .education .cardWrapper .card *:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  body .education .cardWrapper .card .universityWrapper *:not(:last-child) {
+    margin-inline-end: 2rem;
+  }
+  body .education .cardWrapper .card .infoWrapper *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  body #footer *:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  body #footer .footer *:not(:last-child) {
+    margin-bottom: 2rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
