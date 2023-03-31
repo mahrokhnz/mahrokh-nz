@@ -30,9 +30,24 @@ body .container {
   box-sizing: border-box;
   scroll-snap-align: end;
 }
-@media (max-width: 1281px) {
+@media (max-width: 1300px) {
   body .container {
     padding: 4rem 6rem;
+  }
+}
+@media (max-width: 940px) {
+  body .container {
+    padding: 4rem;
+  }
+}
+@media (max-width: 840px) {
+  body .container {
+    padding: 2rem 4rem;
+  }
+}
+@media (max-width: 465px) {
+  body .container {
+    padding: 2rem;
   }
 }
 body a {
@@ -43,9 +58,19 @@ body h1 {
   font-size: 2.8rem;
   color: var(--text-color);
 }
+@media (max-width: 840px) {
+  body h1 {
+    font-size: 2.2rem;
+  }
+}
 body .sectionHeader {
   align-self: center;
   margin-bottom: 4rem;
+}
+@media (max-width: 840px) {
+  body .sectionHeader {
+    margin-bottom: 2rem;
+  }
 }
 body .menu {
   display: flex;
@@ -189,13 +214,48 @@ body .skills .column {
   flex-direction: column;
   gap: 2rem;
 }
+@media (max-width: 840px) {
+  body .skills .column {
+    gap: 1.5rem;
+  }
+}
 body .skills .column .skill {
   display: flex;
+  gap: 0.2rem;
 }
 body .skills .column .skill h3 {
   font-size: 1.4rem;
   width: 18rem;
   color: var(--text-color);
+}
+@media (max-width: 1400px) {
+  body .skills .column .skill h3 {
+    width: 15rem;
+  }
+}
+@media (max-width: 1300px) {
+  body .skills .column .skill h3 {
+    font-size: 1.2rem;
+    width: 12rem;
+  }
+}
+@media (max-width: 1120px) {
+  body .skills .column .skill h3 {
+    font-size: 1rem;
+    width: 9rem;
+  }
+}
+@media (max-width: 940px) {
+  body .skills .column .skill h3 {
+    font-size: 0.8rem;
+    width: 8rem;
+  }
+}
+@media (max-width: 400px) {
+  body .skills .column .skill h3 {
+    font-size: 0.6rem;
+    width: 5rem;
+  }
 }
 body .skills .column .skill .wrapper {
   display: flex;
@@ -210,6 +270,18 @@ body .skills .column .skill .wrapper .circle {
   opacity: 0.1;
   transition: opacity 0.3s ease-in-out;
 }
+@media (max-width: 1025px) {
+  body .skills .column .skill .wrapper .circle {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
+}
+@media (max-width: 400px) {
+  body .skills .column .skill .wrapper .circle {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+}
 body .skills .column .skill .wrapper .circle:hover:not(.active) {
   background-color: var(--second-wave-color);
   opacity: 0.3;
@@ -217,6 +289,13 @@ body .skills .column .skill .wrapper .circle:hover:not(.active) {
 body .skills .column .skill .wrapper .active {
   background-color: var(--second-wave-color);
   opacity: 1;
+}
+@media (max-width: 840px) {
+  body .skills {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
 }
 body .education {
   display: flex;
@@ -255,6 +334,11 @@ body .education .cardWrapper .card {
   border-radius: 0.2rem;
   background-color: var(--primary-color);
 }
+@media (max-width: 1300px) {
+  body .education .cardWrapper .card {
+    width: 18rem;
+  }
+}
 body .education .cardWrapper .card.active {
   left: 50%;
   top: 30%;
@@ -262,6 +346,11 @@ body .education .cardWrapper .card.active {
   height: 20rem;
   z-index: 10;
   cursor: default;
+}
+@media (max-width: 1300px) {
+  body .education .cardWrapper .card.active {
+    width: 28rem;
+  }
 }
 body .education .cardWrapper .card.active .universityWrapper h2 {
   font-size: 1.4rem;
