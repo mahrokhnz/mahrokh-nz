@@ -16,6 +16,10 @@
   --neutral-color: #808188;
 }
 
+html {
+  scroll-snap-type: y mandatory;
+}
+
 body .container {
   display: flex;
   flex-direction: column;
