@@ -18,6 +18,7 @@
   --neutral-color: #808188;
 }
 
+
 html {
   scroll-snap-type: y mandatory;
 }
@@ -36,6 +37,18 @@ body {
     @include mixin.respond-to('desktop') {
       padding: 4rem 6rem;
     }
+
+    @include mixin.respond-to('tablet') {
+      padding: 4rem;
+    }
+
+    @include mixin.respond-to('small-tablet') {
+      padding: 2rem 4rem;
+    }
+
+    @include mixin.respond-to('ipad') {
+      padding: 2rem;
+    }
   }
 
   a {
@@ -46,11 +59,19 @@ body {
   h1 {
     font-size: 2.8rem;
     color: var(--text-color);
+
+    @include mixin.respond-to('small-tablet') {
+      font-size: 2.2rem;
+    }
   }
 
   .sectionHeader {
     align-self: center;
     margin-bottom: 4rem;
+
+    @include mixin.respond-to('small-tablet') {
+      margin-bottom: 2rem;
+    }
   }
 
   .menu {
@@ -177,17 +198,11 @@ body {
     color: var(--neutral-color);
   }
 
-  .companies {
-    display: flex;
-    margin-left: 2rem;
-    margin-top: 1.7rem;
-    gap: 8rem;
+  .responsiveHeader {
+    display: none;
 
-    li {
-      img {
-        width: 4rem;
-        height: 4rem;
-      }
+    @include mixin.respond-to('small-tablet') {
+      display: block;
     }
   }
 
@@ -196,6 +211,27 @@ body {
     gap: 10rem;
     margin-left: -7.8rem;
 
+    @include mixin.respond-to('desktop') {
+      margin-left: -5.8rem;
+    }
+
+    @include mixin.respond-to('small-desktop') {
+      gap: 5rem;
+    }
+
+    @include mixin.respond-to('big-tablet') {
+      gap: 3rem;
+    }
+
+    @include mixin.respond-to('tablet') {
+      margin-left: -3.8rem;
+      gap: 2rem;
+    }
+
+    @include mixin.respond-to('small-tablet') {
+      margin-left: 0;
+    }
+
     .imageWrapper {
       img {
         width: 30rem;
@@ -203,6 +239,38 @@ body {
         border-top-right-radius: 1.5rem;
         border-bottom-right-radius: 1.5rem;
         object-fit: cover;
+
+        @include mixin.respond-to('small-desktop') {
+          width: 28rem;
+          height: 36rem;
+        }
+
+        @include mixin.respond-to('big-tablet') {
+          width: 26rem;
+          height: 34rem;
+        }
+
+        @include mixin.respond-to('tablet') {
+          width: 24rem;
+          height: 32rem;
+        }
+
+        @include mixin.respond-to('small-tablet') {
+          width: 20rem;
+          height: 20rem;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+
+        @include mixin.respond-to('big-ipad') {
+          width: 17rem;
+          height: 17rem;
+        }
+
+        @include mixin.respond-to('smart-phone') {
+          width: 14rem;
+          height: 14rem;
+        }
       }
     }
 
@@ -212,11 +280,50 @@ body {
       gap: 1rem;
       padding: 2.5rem 0;
 
+      h1 {
+        @include mixin.respond-to('small-tablet') {
+          display: none;
+        }
+      }
+
+      @include mixin.respond-to('big-tablet') {
+        padding: 2rem 0;
+      }
+
+      @include mixin.respond-to('tablet') {
+        padding: 1.7rem 0;
+      }
+
+      @include mixin.respond-to('small-tablet') {
+        padding: 0;
+      }
+
       p {
         font-size: 1rem;
         color: var(--neutral-color);
         line-height: 1.8;
+
+        @include mixin.respond-to('big-tablet') {
+          font-size: 0.95rem;
+        }
+
+        @include mixin.respond-to('tablet') {
+          font-size: 0.85rem;
+        }
+
+        @include mixin.respond-to('big-ipad') {
+          font-size: 0.75rem;
+        }
+
+        @include mixin.respond-to('smart-phone') {
+          font-size: 0.65rem;
+        }
       }
+    }
+
+    @include mixin.respond-to('small-tablet') {
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -229,13 +336,42 @@ body {
       flex-direction: column;
       gap: 2rem;
 
+      @include mixin.respond-to('small-tablet') {
+        gap: 1.5rem;
+      }
+
       .skill {
         display: flex;
+        gap: 0.2rem;
 
         h3 {
           font-size: 1.4rem;
           width: 18rem;
           color: var(--text-color);
+
+          @include mixin.respond-to('big-desktop') {
+            width: 15rem;
+          }
+
+          @include mixin.respond-to('desktop') {
+            font-size: 1.2rem;
+            width: 12rem;
+          }
+
+          @include mixin.respond-to('small-desktop') {
+            font-size: 1rem;
+            width: 9rem;
+          }
+
+          @include mixin.respond-to('tablet') {
+            font-size: 0.8rem;
+            width: 8rem;
+          }
+
+          @include mixin.respond-to('smart-phone') {
+            font-size: 0.6rem;
+            width: 5rem;
+          }
         }
 
         .wrapper {
@@ -251,6 +387,16 @@ body {
             opacity: 0.1;
             transition: opacity 0.3s ease-in-out;
 
+            @include mixin.respond-to('big-tablet') {
+              width: 0.9rem;
+              height: 0.9rem;
+            }
+
+            @include mixin.respond-to('smart-phone') {
+              width: 0.6rem;
+              height: 0.6rem;
+            }
+
             &:hover {
               &:not(.active) {
                 background-color: var(--second-wave-color);
@@ -265,6 +411,12 @@ body {
           }
         }
       }
+    }
+
+    @include mixin.respond-to('small-tablet') {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
     }
   }
 
@@ -307,6 +459,10 @@ body {
         border-radius: 0.2rem;
         background-color: var(--primary-color);
 
+        @include mixin.respond-to('desktop') {
+          width: 18rem;
+        }
+
         &.active {
           left: 50%;
           top: 30%;
@@ -314,6 +470,10 @@ body {
           height: 20rem;
           z-index: 10;
           cursor: default;
+
+          @include mixin.respond-to('desktop') {
+            width: 28rem;
+          }
 
           .universityWrapper {
             h2 {

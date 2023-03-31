@@ -1,9 +1,13 @@
 $breakpoints: (
-        'desktop': 1281px,
+        'big-desktop': 1400px,
+        'desktop': 1300px,
+        'small-desktop': 1120px,
         'big-tablet': 1025px,
-        'tablet': 801px,
-        'ipad': 600px,
-        'smart-phone': 480px,
+        'tablet': 940px,
+        'small-tablet': 840px,
+        'big-ipad': 640px,
+        'ipad': 465px,
+        'smart-phone': 400px,
         'phone': 320px
 ) !default;
 
