@@ -211,6 +211,13 @@ body .about {
 @media (max-width: 840px) {
   body .about {
     margin-left: 0;
+    gap: 1rem;
+  }
+}
+@media (max-width: 380px) {
+  body .about {
+    margin-left: 0;
+    gap: 0.5rem;
   }
 }
 body .about .imageWrapper img {
@@ -256,6 +263,12 @@ body .about .imageWrapper img {
   body .about .imageWrapper img {
     width: 14rem;
     height: 14rem;
+  }
+}
+@media (max-width: 380px) {
+  body .about .imageWrapper img {
+    width: 10rem;
+    height: 10rem;
   }
 }
 body .about .aboutWrapper {
@@ -309,6 +322,11 @@ body .about .aboutWrapper p {
     font-size: 0.65rem;
   }
 }
+@media (max-width: 380px) {
+  body .about .aboutWrapper p {
+    font-size: 0.55rem;
+  }
+}
 @media (max-width: 840px) {
   body .about {
     flex-direction: column;
@@ -327,6 +345,11 @@ body .skills .column {
 @media (max-width: 840px) {
   body .skills .column {
     gap: 1.5rem;
+  }
+}
+@media (max-width: 380px) {
+  body .skills .column {
+    gap: 1.2rem;
   }
 }
 body .skills .column .skill {
@@ -405,6 +428,11 @@ body .skills .column .skill .wrapper .active {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
+  }
+}
+@media (max-width: 380px) {
+  body .skills {
+    gap: 1.2rem;
   }
 }
 body .education {

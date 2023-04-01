@@ -232,6 +232,12 @@ body {
 
     @include mixin.respond-to('small-tablet') {
       margin-left: 0;
+      gap: 1rem;
+    }
+
+    @include mixin.respond-to('phone') {
+      margin-left: 0;
+      gap: 0.5rem;
     }
 
     .imageWrapper {
@@ -272,6 +278,11 @@ body {
         @include mixin.respond-to('smart-phone') {
           width: 14rem;
           height: 14rem;
+        }
+
+        @include mixin.respond-to('phone') {
+          width: 10rem;
+          height: 10rem;
         }
       }
     }
@@ -320,6 +331,10 @@ body {
         @include mixin.respond-to('smart-phone') {
           font-size: 0.65rem;
         }
+
+        @include mixin.respond-to('phone') {
+          font-size: 0.55rem;
+        }
       }
     }
 
@@ -340,6 +355,10 @@ body {
 
       @include mixin.respond-to('small-tablet') {
         gap: 1.5rem;
+      }
+
+      @include mixin.respond-to('phone') {
+        gap: 1.2rem;
       }
 
       .skill {
@@ -419,6 +438,10 @@ body {
       flex-direction: column;
       align-items: center;
       gap: 1.5rem;
+    }
+
+    @include mixin.respond-to('phone') {
+      gap: 1.2rem;
     }
   }
 
@@ -834,3 +857,4 @@ body {
 
 // TODO: WAVES SHAPE
 // TODO: ADD LANGUAGE?
+// TODO: SUPPORTS FOR RESPONSIVES
