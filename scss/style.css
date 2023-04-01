@@ -690,7 +690,6 @@ body #footer {
   flex-direction: column;
   gap: 2rem;
   justify-content: center;
-  padding: 4rem 8rem;
   height: unset;
 }
 body #footer .footer {
@@ -698,6 +697,11 @@ body #footer .footer {
   align-items: center;
   flex-direction: column;
   gap: 2rem;
+}
+@media (max-width: 380px) {
+  body #footer .footer .menu li {
+    font-size: 0.7rem;
+  }
 }
 body #footer .footer .contactWrapper {
   transform: rotate(0);
@@ -711,6 +715,11 @@ body #footer .separator {
 body #footer .copyWrite {
   font-size: 0.8rem;
   align-self: center;
+}
+@media (max-width: 380px) {
+  body #footer .copyWrite {
+    font-size: 0.5rem;
+  }
 }
 
 @supports (-webkit-touch-callout: none) and (not (translate: none)) {

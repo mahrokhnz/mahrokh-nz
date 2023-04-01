@@ -691,7 +691,6 @@ body {
     flex-direction: column;
     gap: 2rem;
     justify-content: center;
-    padding: 4rem 8rem;
     height: unset;
 
     .footer {
@@ -699,6 +698,14 @@ body {
       align-items: center;
       flex-direction: column;
       gap: 2rem;
+
+      .menu {
+        li {
+          @include mixin.respond-to('phone') {
+            font-size: 0.7rem;
+          }
+        }
+      }
 
       .contactWrapper {
         transform: rotate(0);
@@ -715,6 +722,10 @@ body {
     .copyWrite {
       font-size: 0.8rem;
       align-self: center;
+
+      @include mixin.respond-to('phone') {
+        font-size: 0.5rem;
+      }
     }
   }
 }
