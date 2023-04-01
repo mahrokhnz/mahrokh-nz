@@ -2,6 +2,7 @@
 
 :root {
   --primary-color: #fff;
+  --primary-res-color: #fff;
   --secondary-color: #e2e2e7;
   --first-wave-color: #544df0;
   --second-wave-color: #6e6af4;
@@ -11,6 +12,7 @@
 
 :root .dark {
   --primary-color: #272d40;
+  --primary-res-color: #272d40;
   --secondary-color: #282633;
   --first-wave-color: #3e4657;
   --second-wave-color: #485266;
@@ -230,6 +232,12 @@ body {
 
     @include mixin.respond-to('small-tablet') {
       margin-left: 0;
+      gap: 1rem;
+    }
+
+    @include mixin.respond-to('phone') {
+      margin-left: 0;
+      gap: 0.5rem;
     }
 
     .imageWrapper {
@@ -270,6 +278,11 @@ body {
         @include mixin.respond-to('smart-phone') {
           width: 14rem;
           height: 14rem;
+        }
+
+        @include mixin.respond-to('phone') {
+          width: 10rem;
+          height: 10rem;
         }
       }
     }
@@ -318,6 +331,10 @@ body {
         @include mixin.respond-to('smart-phone') {
           font-size: 0.65rem;
         }
+
+        @include mixin.respond-to('phone') {
+          font-size: 0.55rem;
+        }
       }
     }
 
@@ -338,6 +355,10 @@ body {
 
       @include mixin.respond-to('small-tablet') {
         gap: 1.5rem;
+      }
+
+      @include mixin.respond-to('phone') {
+        gap: 1.2rem;
       }
 
       .skill {
@@ -418,6 +439,10 @@ body {
       align-items: center;
       gap: 1.5rem;
     }
+
+    @include mixin.respond-to('phone') {
+      gap: 1.2rem;
+    }
   }
 
   .education {
@@ -429,13 +454,46 @@ body {
     border-radius: 0.2rem;
     height: 100vh;
 
+    @include mixin.respond-to('desktop') {
+      margin: -4rem -3rem -4rem -6rem;
+    }
+
+    @include mixin.respond-to('tablet') {
+      margin: -4rem -1rem -4rem -4rem;
+      flex-direction: column;
+      justify-content: unset;
+    }
+
+    @include mixin.respond-to('small-tablet') {
+      margin: -2rem -1rem -2rem -4rem;
+    }
+
+    @include mixin.respond-to('big-ipad') {
+      margin: -2rem -4rem;
+    }
+
     h1 {
       align-self: unset;
       margin: 4rem auto 0;
+
+      @include mixin.respond-to('tablet') {
+        margin-bottom: 4rem;
+      }
+
+      @include mixin.respond-to('small-tablet') {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
     }
 
     .cardWrapper {
       display: flex;
+
+      @include mixin.respond-to('tablet') {
+        flex-direction: column;
+        gap: 1rem;
+        align-self: center;
+      }
 
       .svgContainer {
         fill: var(--secondary-color);
@@ -459,8 +517,34 @@ body {
         border-radius: 0.2rem;
         background-color: var(--primary-color);
 
-        @include mixin.respond-to('desktop') {
+        @include mixin.respond-to('big-desktop') {
+          filter: blur(0.1rem);
+        }
+
+        @include mixin.respond-to('tablet') {
+          filter: blur(0);
+          position: unset;
+          transform: translateX(0);
+          width: unset;
+          height: unset;
+          padding: 1.5rem;
+          cursor: default;
+        }
+
+        @include mixin.respond-to('big-ipad') {
+          width: 23rem;
+        }
+
+        @include mixin.respond-to('ipad') {
+          width: 20rem;
+        }
+
+        @include mixin.respond-to('phone') {
           width: 18rem;
+        }
+
+        @include mixin.respond-to('phone') {
+          padding: 1.2rem;
         }
 
         &.active {
@@ -471,28 +555,81 @@ body {
           z-index: 10;
           cursor: default;
 
-          @include mixin.respond-to('desktop') {
-            width: 28rem;
+          @include mixin.respond-to('big-desktop') {
+            filter: blur(0);
+          }
+
+          @include mixin.respond-to('tablet') {
+            width: unset;
+            height: unset;
+            padding: 1.5rem;
+          }
+
+          @include mixin.respond-to('big-ipad') {
+            width: 23rem;
+          }
+
+          @include mixin.respond-to('ipad') {
+            width: 20rem;
+          }
+
+          @include mixin.respond-to('phone') {
+            width: 18rem;
+            padding: 1.2rem;
           }
 
           .universityWrapper {
             h2 {
               font-size: 1.4rem;
+
+              @include mixin.respond-to('tablet') {
+                font-size: 1.2rem;
+              }
+
+              @include mixin.respond-to('ipad') {
+                font-size: 1rem;
+              }
             }
 
             img {
               width: 10rem;
               height: 10rem;
+
+              @include mixin.respond-to('tablet') {
+                width: 7rem;
+                height: 7rem;
+              }
+
+              @include mixin.respond-to('ipad') {
+                width: 5rem;
+                height: 5rem;
+              }
             }
           }
 
           .infoWrapper {
             h3 {
               font-size: 1rem;
+
+              @include mixin.respond-to('tablet') {
+                font-size: 0.8rem;
+              }
+
+              @include mixin.respond-to('ipad') {
+                font-size: 0.6rem;
+              }
             }
 
             span {
               font-size: 1rem;
+
+              @include mixin.respond-to('tablet') {
+                font-size: 0.8rem;
+              }
+
+              @include mixin.respond-to('ipad') {
+                font-size: 0.6rem;
+              }
             }
           }
         }
@@ -507,6 +644,14 @@ body {
             font-size: 1rem;
             transition: font-size 0.3s ease-in-out;
             color: var(--text-color);
+
+            @include mixin.respond-to('tablet') {
+              font-size: 1.2rem;
+            }
+
+            @include mixin.respond-to('ipad') {
+              font-size: 1rem;
+            }
           }
 
           img {
@@ -514,6 +659,17 @@ body {
             height: 5rem;
             transition-property: width, height;
             transition: 0.3s ease-in-out;
+            object-fit: contain;
+
+            @include mixin.respond-to('tablet') {
+              width: 7rem;
+              height: 7rem;
+            }
+
+            @include mixin.respond-to('ipad') {
+              width: 5rem;
+              height: 5rem;
+            }
           }
         }
 
@@ -526,11 +682,27 @@ body {
             font-size: 0.6rem;
             transition: font-size 0.3s ease-in-out;
             color: var(--text-color);
+
+            @include mixin.respond-to('tablet') {
+              font-size: 0.8rem;
+            }
+
+            @include mixin.respond-to('ipad') {
+              font-size: 0.6rem;
+            }
           }
 
           span {
             font-size: 0.6rem;
             transition: font-size 0.3s ease-in-out;
+
+            @include mixin.respond-to('tablet') {
+              font-size: 0.8rem;
+            }
+
+            @include mixin.respond-to('ipad') {
+              font-size: 0.6rem;
+            }
           }
         }
       }
@@ -542,7 +714,6 @@ body {
     flex-direction: column;
     gap: 2rem;
     justify-content: center;
-    padding: 4rem 8rem;
     height: unset;
 
     .footer {
@@ -550,6 +721,14 @@ body {
       align-items: center;
       flex-direction: column;
       gap: 2rem;
+
+      .menu {
+        li {
+          @include mixin.respond-to('phone') {
+            font-size: 0.7rem;
+          }
+        }
+      }
 
       .contactWrapper {
         transform: rotate(0);
@@ -566,6 +745,10 @@ body {
     .copyWrite {
       font-size: 0.8rem;
       align-self: center;
+
+      @include mixin.respond-to('phone') {
+        font-size: 0.5rem;
+      }
     }
   }
 }
@@ -674,3 +857,4 @@ body {
 
 // TODO: WAVES SHAPE
 // TODO: ADD LANGUAGE?
+// TODO: SUPPORTS FOR RESPONSIVES
