@@ -127,6 +127,75 @@ body .header .navbar .wrapper {
   align-items: center;
   gap: 2.3rem;
 }
+@media (max-width: 840px) {
+  body .header .navbar .wrapper .headerMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--neutral-color);
+    color: var(--text-color);
+    z-index: 5;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+  body .header .navbar .wrapper .headerMenu li {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+  body .header .navbar .wrapper .headerMenu.openMenu {
+    transform: translateX(0);
+  }
+}
+body .header .navbar .wrapper .hamburgerMenu {
+  display: none;
+}
+@media (max-width: 840px) {
+  body .header .navbar .wrapper .hamburgerMenu {
+    height: 22px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 6;
+  }
+  body .header .navbar .wrapper .hamburgerMenu .line {
+    display: block;
+    height: 0.15rem;
+    width: 100%;
+    border-radius: 10px;
+    background: var(--text-color);
+  }
+  body .header .navbar .wrapper .hamburgerMenu .line1 {
+    transform-origin: 0 0;
+    transition: transform 0.4s ease-in-out;
+  }
+  body .header .navbar .wrapper .hamburgerMenu .line2 {
+    transition: transform 0.2s ease-in-out;
+  }
+  body .header .navbar .wrapper .hamburgerMenu .line3 {
+    transform-origin: 0 100%;
+    transition: transform 0.4s ease-in-out;
+  }
+}
+body .header .navbar .wrapper .hamburgerMenu.open .line1 {
+  transform: rotate(45deg);
+}
+body .header .navbar .wrapper .hamburgerMenu.open .line2 {
+  transform: scaleY(0);
+}
+body .header .navbar .wrapper .hamburgerMenu.open .line3 {
+  transform: rotate(-45deg);
+}
+body .header .navbar .wrapper .hamburgerMenu.open .headerMenu {
+  display: block;
+}
 body .header .navbar .wrapper .theme {
   cursor: pointer;
   display: none;
@@ -166,6 +235,16 @@ body .nameWrapper {
 body .nameWrapper h1 {
   font-size: 4rem;
   color: var(--text-color);
+}
+@media (max-width: 1120px) {
+  body .nameWrapper h1 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 940px) {
+  body .nameWrapper h1 {
+    font-size: 2.5rem;
+  }
 }
 body .nameWrapper h2 {
   color: var(--neutral-color);
