@@ -138,6 +138,88 @@ body {
         align-items: center;
         gap: 2.3rem;
 
+        .headerMenu {
+          @include mixin.respond-to('small-tablet') {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: var(--neutral-color);
+            color: var(--text-color);
+            z-index: 5;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+
+            li {
+              font-size: 1.5rem;
+              text-transform: uppercase;
+            }
+
+            &.openMenu {
+              transform: translateX(0);
+            }
+          }
+        }
+
+        .hamburgerMenu {
+          display: none;
+
+          @include mixin.respond-to('small-tablet') {
+            height: 22px;
+            width: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            z-index: 6;
+
+            .line {
+              display: block;
+              height: 0.15rem;
+              width: 100%;
+              border-radius: 10px;
+              background: var(--text-color);
+            }
+
+            .line1 {
+              transform-origin: 0 0;
+              transition: transform 0.4s ease-in-out;
+            }
+
+            .line2 {
+              transition: transform 0.2s ease-in-out;
+            }
+
+            .line3 {
+              transform-origin: 0 100%;
+              transition: transform 0.4s ease-in-out;
+            }
+          }
+
+          &.open {
+            .line1 {
+              transform: rotate(45deg);
+            }
+
+            .line2 {
+              transform: scaleY(0);
+            }
+
+            .line3 {
+              transform: rotate(-45deg);
+            }
+
+            .headerMenu {
+              display: block;
+            }
+          }
+        }
+
         .theme {
           cursor: pointer;
           display: none;
@@ -188,6 +270,14 @@ body {
     h1 {
       font-size: 4rem;
       color: var(--text-color);
+
+      @include mixin.respond-to('small-desktop') {
+        font-size: 3rem;
+      }
+
+      @include mixin.respond-to('tablet') {
+        font-size: 2.5rem;
+      }
     }
 
     h2 {

@@ -5,6 +5,8 @@ const dark = document.querySelector(".themeDark");
 const bachelor = document.querySelector(".bachelor");
 const master = document.querySelector(".master");
 const footer = document.querySelector(".copyWrite");
+const hamburgerMenu = document.querySelector(".hamburgerMenu");
+const headerMenu = document.querySelector(".headerMenu");
 
 // Skills Section
 const activeCircles = [];
@@ -194,3 +196,9 @@ const date = new Date();
 const year = date.getFullYear();
 
 footer.innerHTML = `© ${year} Mahrokh Tehran, Iran. All rights reserved.`;
+
+//Responsive Menu
+hamburgerMenu.addEventListener("click", () => {
+  hamburgerMenu.classList.toggle("open");
+  headerMenu.classList.toggle("openMenu");
+});
