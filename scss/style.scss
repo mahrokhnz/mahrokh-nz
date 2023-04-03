@@ -89,6 +89,15 @@ body {
     gap: 2rem;
     z-index: 1;
 
+    @include mixin.respond-to('small-tablet') {
+      transform: rotate(-90deg) translateY(-140%);
+    }
+
+    @include mixin.respond-to('big-ipad') {
+      transform: rotate(0);
+      margin-top: 0;
+    }
+
     .iconWrapper {
       display: flex;
       align-items: center;
@@ -109,6 +118,11 @@ body {
         cursor: pointer;
         box-sizing: border-box;
       }
+
+      @include mixin.respond-to('small-tablet') {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
     }
   }
 
@@ -125,11 +139,19 @@ body {
         .moon {
           font-size: 3rem;
           color: var(--text-color);
+
+          @include mixin.respond-to('ipad') {
+            font-size: 2.5rem;
+          }
         }
 
         .face {
           font-size: 2rem;
           color: var(--neutral-color);
+
+          @include mixin.respond-to('ipad') {
+            font-size: 1.5rem;
+          }
         }
       }
 
@@ -137,6 +159,10 @@ body {
         display: flex;
         align-items: center;
         gap: 2.3rem;
+
+        @include mixin.respond-to('ipad') {
+          gap: 1rem;
+        }
 
         .headerMenu {
           @include mixin.respond-to('small-tablet') {
@@ -240,6 +266,12 @@ body {
   .home {
     display: flex;
     margin-top: 8rem;
+    max-width: 60rem;
+
+    @include mixin.respond-to('big-ipad') {
+      flex-direction: column-reverse;
+      gap: 4rem;
+    }
   }
 
   .svgContainer {
@@ -267,6 +299,15 @@ body {
     flex-direction: column;
     gap: 2rem;
 
+    @include mixin.respond-to('small-tablet') {
+      transform: translateX(-10%);
+    }
+
+    @include mixin.respond-to('big-ipad') {
+      transform: translateX(0);
+      gap: 1rem;
+    }
+
     h1 {
       font-size: 4rem;
       color: var(--text-color);
@@ -277,6 +318,10 @@ body {
 
       @include mixin.respond-to('tablet') {
         font-size: 2.5rem;
+      }
+
+      @include mixin.respond-to('small-tablet') {
+        font-size: 2rem;
       }
     }
 

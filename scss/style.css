@@ -86,6 +86,17 @@ body .contactWrapper {
   gap: 2rem;
   z-index: 1;
 }
+@media (max-width: 840px) {
+  body .contactWrapper {
+    transform: rotate(-90deg) translateY(-140%);
+  }
+}
+@media (max-width: 640px) {
+  body .contactWrapper {
+    transform: rotate(0);
+    margin-top: 0;
+  }
+}
 body .contactWrapper .iconWrapper {
   display: flex;
   align-items: center;
@@ -105,6 +116,12 @@ body .contactWrapper .iconWrapper img {
   cursor: pointer;
   box-sizing: border-box;
 }
+@media (max-width: 840px) {
+  body .contactWrapper .iconWrapper {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
 body .header .navbar {
   display: flex;
   align-items: center;
@@ -118,14 +135,29 @@ body .header .navbar .logo .moon {
   font-size: 3rem;
   color: var(--text-color);
 }
+@media (max-width: 465px) {
+  body .header .navbar .logo .moon {
+    font-size: 2.5rem;
+  }
+}
 body .header .navbar .logo .face {
   font-size: 2rem;
   color: var(--neutral-color);
+}
+@media (max-width: 465px) {
+  body .header .navbar .logo .face {
+    font-size: 1.5rem;
+  }
 }
 body .header .navbar .wrapper {
   display: flex;
   align-items: center;
   gap: 2.3rem;
+}
+@media (max-width: 465px) {
+  body .header .navbar .wrapper {
+    gap: 1rem;
+  }
 }
 @media (max-width: 840px) {
   body .header .navbar .wrapper .headerMenu {
@@ -210,6 +242,13 @@ body .header .navbar .wrapper .active {
 body .home {
   display: flex;
   margin-top: 8rem;
+  max-width: 60rem;
+}
+@media (max-width: 640px) {
+  body .home {
+    flex-direction: column-reverse;
+    gap: 4rem;
+  }
 }
 body .svgContainer {
   position: absolute;
@@ -232,6 +271,17 @@ body .nameWrapper {
   flex-direction: column;
   gap: 2rem;
 }
+@media (max-width: 840px) {
+  body .nameWrapper {
+    transform: translateX(-10%);
+  }
+}
+@media (max-width: 640px) {
+  body .nameWrapper {
+    transform: translateX(0);
+    gap: 1rem;
+  }
+}
 body .nameWrapper h1 {
   font-size: 4rem;
   color: var(--text-color);
@@ -244,6 +294,11 @@ body .nameWrapper h1 {
 @media (max-width: 940px) {
   body .nameWrapper h1 {
     font-size: 2.5rem;
+  }
+}
+@media (max-width: 840px) {
+  body .nameWrapper h1 {
+    font-size: 2rem;
   }
 }
 body .nameWrapper h2 {
