@@ -250,6 +250,11 @@ body .home {
     gap: 4rem;
   }
 }
+@media (max-width: 400px) {
+  body .home {
+    align-items: center;
+  }
+}
 body .svgContainer {
   position: absolute;
   left: 0;
@@ -280,6 +285,11 @@ body .nameWrapper {
   body .nameWrapper {
     transform: translateX(0);
     gap: 1rem;
+  }
+}
+@media (max-width: 400px) {
+  body .nameWrapper {
+    text-align: center;
   }
 }
 body .nameWrapper h1 {

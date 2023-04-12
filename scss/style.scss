@@ -272,6 +272,10 @@ body {
       flex-direction: column-reverse;
       gap: 4rem;
     }
+
+    @include mixin.respond-to('smart-phone') {
+      align-items: center;
+    }
   }
 
   .svgContainer {
@@ -306,6 +310,10 @@ body {
     @include mixin.respond-to('big-ipad') {
       transform: translateX(0);
       gap: 1rem;
+    }
+
+    @include mixin.respond-to('smart-phone') {
+      text-align: center;
     }
 
     h1 {
