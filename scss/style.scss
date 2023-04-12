@@ -343,6 +343,14 @@ body {
     }
   }
 
+  #aboutMe {
+    justify-content: center;
+
+    @include mixin.respond-to('small-tablet') {
+      justify-content: unset;
+    }
+  }
+
   .about {
     display: flex;
     gap: 10rem;
@@ -476,6 +484,14 @@ body {
     @include mixin.respond-to('small-tablet') {
       flex-direction: column;
       align-items: center;
+    }
+  }
+
+  #skills {
+    justify-content: center;
+
+    @include mixin.respond-to('small-tablet') {
+      justify-content: unset;
     }
   }
 
@@ -908,7 +924,21 @@ body {
         .wrapper {
           *:not(:last-child) {
             margin-inline-end: 2.3rem;
+
+            @include mixin.respond-to('ipad') {
+              *:not(:last-child) {
+                margin-inline-end: 1rem;
+              }
+            }
           }
+        }
+      }
+    }
+
+    .home {
+      @include mixin.respond-to('big-ipad') {
+        *:not(:last-child) {
+          margin-bottom: 4rem;
         }
       }
     }
@@ -916,6 +946,12 @@ body {
     .nameWrapper {
       *:not(:last-child) {
         margin-bottom: 2rem;
+      }
+
+      @include mixin.respond-to('big-ipad') {
+        *:not(:last-child) {
+          margin-bottom: 1rem;
+        }
       }
     }
 
@@ -935,6 +971,36 @@ body {
           margin-bottom: 1rem;
         }
       }
+
+      @include mixin.respond-to('small-desktop') {
+        *:not(:last-child) {
+          margin-inline-end: 5rem;
+        }
+      }
+
+      @include mixin.respond-to('big-tablet') {
+        *:not(:last-child) {
+          margin-inline-end: 3rem;
+        }
+      }
+
+      @include mixin.respond-to('tablet') {
+        *:not(:last-child) {
+          margin-inline-end: 2rem;
+        }
+      }
+
+      @include mixin.respond-to('small-tablet') {
+        *:not(:last-child) {
+          margin-inline-end: 1rem;
+        }
+      }
+
+      @include mixin.respond-to('phone') {
+        *:not(:last-child) {
+          margin-inline-end: 0.5rem;
+        }
+      }
     }
 
     .skills {
@@ -943,12 +1009,36 @@ body {
           margin-bottom: 2rem;
         }
 
+        @include mixin.respond-to('small-tablet') {
+          *:not(:last-child) {
+            margin-bottom: 1.5rem;
+          }
+        }
+
+        @include mixin.respond-to('phone') {
+          *:not(:last-child) {
+            margin-bottom: 1.2rem;
+          }
+        }
+
         .skill {
           .wrapper {
             *:not(:last-child) {
               margin-inline-end: 0.4rem;
             }
           }
+        }
+      }
+
+      @include mixin.respond-to('small-tablet') {
+        *:not(:last-child) {
+          margin-bottom: 1.5rem;
+        }
+      }
+
+      @include mixin.respond-to('phone') {
+        *:not(:last-child) {
+          margin-bottom: 1.2rem;
         }
       }
     }
@@ -972,6 +1062,12 @@ body {
             }
           }
         }
+
+        @include mixin.respond-to('tablet') {
+          *:not(:last-child) {
+            margin-bottom: 1rem;
+          }
+        }
       }
     }
 
@@ -992,5 +1088,4 @@ body {
 
 // TODO: WAVES SHAPE
 // TODO: ADD LANGUAGE?
-// TODO: SUPPORTS FOR RESPONSIVE
 // TODO: HIDE SCROLL-Y WHEN MENU OPEN

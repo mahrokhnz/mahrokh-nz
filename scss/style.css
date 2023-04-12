@@ -316,6 +316,14 @@ body .responsiveHeader {
     display: block;
   }
 }
+body #aboutMe {
+  justify-content: center;
+}
+@media (max-width: 840px) {
+  body #aboutMe {
+    justify-content: unset;
+  }
+}
 body .about {
   display: flex;
   gap: 10rem;
@@ -465,6 +473,14 @@ body .about .aboutWrapper p {
   body .about {
     flex-direction: column;
     align-items: center;
+  }
+}
+body #skills {
+  justify-content: center;
+}
+@media (max-width: 840px) {
+  body #skills {
+    justify-content: unset;
   }
 }
 body .skills {
@@ -894,8 +910,23 @@ body #footer .copyWrite {
   body .header .navbar .wrapper *:not(:last-child) {
     margin-inline-end: 2.3rem;
   }
+  @media (max-width: 465px) {
+    body .header .navbar .wrapper *:not(:last-child) *:not(:last-child) {
+      margin-inline-end: 1rem;
+    }
+  }
+  @media (max-width: 640px) {
+    body .home *:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+  }
   body .nameWrapper *:not(:last-child) {
     margin-bottom: 2rem;
+  }
+  @media (max-width: 640px) {
+    body .nameWrapper *:not(:last-child) {
+      margin-bottom: 1rem;
+    }
   }
   body .companies *:not(:last-child) {
     margin-inline-end: 8rem;
@@ -906,11 +937,56 @@ body #footer .copyWrite {
   body .about .aboutWrapper *:not(:last-child) {
     margin-bottom: 1rem;
   }
+  @media (max-width: 1120px) {
+    body .about *:not(:last-child) {
+      margin-inline-end: 5rem;
+    }
+  }
+  @media (max-width: 1025px) {
+    body .about *:not(:last-child) {
+      margin-inline-end: 3rem;
+    }
+  }
+  @media (max-width: 940px) {
+    body .about *:not(:last-child) {
+      margin-inline-end: 2rem;
+    }
+  }
+  @media (max-width: 840px) {
+    body .about *:not(:last-child) {
+      margin-inline-end: 1rem;
+    }
+  }
+  @media (max-width: 380px) {
+    body .about *:not(:last-child) {
+      margin-inline-end: 0.5rem;
+    }
+  }
   body .skills .column *:not(:last-child) {
     margin-bottom: 2rem;
   }
+  @media (max-width: 840px) {
+    body .skills .column *:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+  @media (max-width: 380px) {
+    body .skills .column *:not(:last-child) {
+      margin-bottom: 1.2rem;
+    }
+  }
   body .skills .column .skill .wrapper *:not(:last-child) {
     margin-inline-end: 0.4rem;
+  }
+  @media (max-width: 840px) {
+    body .skills *:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+  @media (max-width: 380px) {
+    body .skills *:not(:last-child) {
+      margin-bottom: 1.2rem;
+    }
   }
   body .education .cardWrapper .card *:not(:last-child) {
     margin-bottom: 2rem;
@@ -920,6 +996,11 @@ body #footer .copyWrite {
   }
   body .education .cardWrapper .card .infoWrapper *:not(:last-child) {
     margin-bottom: 1rem;
+  }
+  @media (max-width: 940px) {
+    body .education .cardWrapper *:not(:last-child) {
+      margin-bottom: 1rem;
+    }
   }
   body #footer *:not(:last-child) {
     margin-bottom: 2rem;
