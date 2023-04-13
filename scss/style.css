@@ -21,6 +21,11 @@
 html {
   scroll-snap-type: y mandatory;
 }
+@media (max-width: 465px) {
+  html {
+    scroll-snap-type: none;
+  }
+}
 
 body .container {
   display: flex;
