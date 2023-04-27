@@ -20,7 +20,6 @@
   --neutral-color: #808188;
 }
 
-
 html {
   scroll-snap-type: y mandatory;
 
@@ -30,6 +29,24 @@ html {
 }
 
 body {
+  &.dark {
+    .languageIconDark {
+      display: block;
+    }
+
+    .languageIconLight {
+      display: none;
+    }
+  }
+
+  .languageIconDark {
+    display: none;
+  }
+
+  .languageIconLight {
+    display: block;
+  }
+
   .container {
     display: flex;
     flex-direction: column;
@@ -164,8 +181,8 @@ body {
         align-items: center;
         gap: 2.3rem;
 
-        @include mixin.respond-to('ipad') {
-          gap: 1rem;
+        @include mixin.respond-to('big-ipad') {
+          gap: 0.8rem;
         }
 
         .headerMenu {
@@ -262,6 +279,50 @@ body {
 
         .active {
           display: block;
+        }
+
+        .language {
+          cursor: pointer;
+          position: relative;
+
+          .languageIcon {
+            width: 1.5rem;
+            height: 1.5rem;
+          }
+
+          .languageWrapper {
+            display: none;
+
+            &.active {
+              display: flex;
+              align-items: center;
+              position: absolute;
+              flex-direction: column;
+              background-color: var(--second-wave-color);
+              gap: 10px;
+              padding: 8px;
+              top: 130%;
+              left: 50%;
+              transform: translateX(-50%);
+              border-radius: 5px;
+
+              .lang {
+                padding: 10px 20px;
+                border-radius: 5px;
+                color: #fff;
+                font-size: 1rem;
+
+                @include mixin.respond-to('big-ipad') {
+                  padding: 8px 18px;
+                  font-size: 0.8rem;
+                }
+
+                &.active {
+                  background-color: var(--first-wave-color);
+                }
+              }
+            }
+          }
         }
       }
     }
@@ -939,86 +1000,117 @@ body {
 
             @include mixin.respond-to('ipad') {
               *:not(:last-child) {
-                margin-inline-end: 1rem;
+                margin-inline-end: 0.8rem;
+              }
+            }
+          }
+
+          .language {
+            .languageWrapper {
+
+              &.active {
+                *:not(:last-child) {
+                  margin-bottom: 10rem;
+                }
               }
             }
           }
         }
       }
-    }
 
-    .home {
-      @include mixin.respond-to('big-ipad') {
-        *:not(:last-child) {
-          margin-bottom: 4rem;
-        }
-      }
-    }
-
-    .nameWrapper {
-      *:not(:last-child) {
-        margin-bottom: 2rem;
-      }
-
-      @include mixin.respond-to('big-ipad') {
-        *:not(:last-child) {
-          margin-bottom: 1rem;
-        }
-      }
-    }
-
-    .companies {
-      *:not(:last-child) {
-        margin-inline-end: 8rem;
-      }
-    }
-
-    .about {
-      *:not(:last-child) {
-        margin-inline-end: 10rem;
-      }
-
-      .aboutWrapper {
-        *:not(:last-child) {
-          margin-bottom: 1rem;
+      .home {
+        @include mixin.respond-to('big-ipad') {
+          *:not(:last-child) {
+            margin-bottom: 4rem;
+          }
         }
       }
 
-      @include mixin.respond-to('small-desktop') {
-        *:not(:last-child) {
-          margin-inline-end: 5rem;
-        }
-      }
-
-      @include mixin.respond-to('big-tablet') {
-        *:not(:last-child) {
-          margin-inline-end: 3rem;
-        }
-      }
-
-      @include mixin.respond-to('tablet') {
-        *:not(:last-child) {
-          margin-inline-end: 2rem;
-        }
-      }
-
-      @include mixin.respond-to('small-tablet') {
-        *:not(:last-child) {
-          margin-inline-end: 1rem;
-        }
-      }
-
-      @include mixin.respond-to('phone') {
-        *:not(:last-child) {
-          margin-inline-end: 0.5rem;
-        }
-      }
-    }
-
-    .skills {
-      .column {
+      .nameWrapper {
         *:not(:last-child) {
           margin-bottom: 2rem;
+        }
+
+        @include mixin.respond-to('big-ipad') {
+          *:not(:last-child) {
+            margin-bottom: 1rem;
+          }
+        }
+      }
+
+      .companies {
+        *:not(:last-child) {
+          margin-inline-end: 8rem;
+        }
+      }
+
+      .about {
+        *:not(:last-child) {
+          margin-inline-end: 10rem;
+        }
+
+        .aboutWrapper {
+          *:not(:last-child) {
+            margin-bottom: 1rem;
+          }
+        }
+
+        @include mixin.respond-to('small-desktop') {
+          *:not(:last-child) {
+            margin-inline-end: 5rem;
+          }
+        }
+
+        @include mixin.respond-to('big-tablet') {
+          *:not(:last-child) {
+            margin-inline-end: 3rem;
+          }
+        }
+
+        @include mixin.respond-to('tablet') {
+          *:not(:last-child) {
+            margin-inline-end: 2rem;
+          }
+        }
+
+        @include mixin.respond-to('small-tablet') {
+          *:not(:last-child) {
+            margin-inline-end: 1rem;
+          }
+        }
+
+        @include mixin.respond-to('phone') {
+          *:not(:last-child) {
+            margin-inline-end: 0.5rem;
+          }
+        }
+      }
+
+      .skills {
+        .column {
+          *:not(:last-child) {
+            margin-bottom: 2rem;
+          }
+
+          @include mixin.respond-to('small-tablet') {
+            *:not(:last-child) {
+              margin-bottom: 1.5rem;
+            }
+          }
+
+          @include mixin.respond-to('phone') {
+            *:not(:last-child) {
+              margin-bottom: 1.2rem;
+            }
+          }
+
+          .skill {
+            .wrapper {
+              *:not(:last-child) {
+                margin-inline-end: 0.4rem;
+              }
+            }
+          }
         }
 
         @include mixin.respond-to('small-tablet') {
@@ -1032,65 +1124,45 @@ body {
             margin-bottom: 1.2rem;
           }
         }
+      }
 
-        .skill {
-          .wrapper {
+      .education {
+        .cardWrapper {
+          .card {
             *:not(:last-child) {
-              margin-inline-end: 0.4rem;
+              margin-bottom: 2rem;
             }
-          }
-        }
-      }
 
-      @include mixin.respond-to('small-tablet') {
-        *:not(:last-child) {
-          margin-bottom: 1.5rem;
-        }
-      }
+            .universityWrapper {
+              *:not(:last-child) {
+                margin-inline-end: 2rem;
+              }
+            }
 
-      @include mixin.respond-to('phone') {
-        *:not(:last-child) {
-          margin-bottom: 1.2rem;
-        }
-      }
-    }
-
-    .education {
-      .cardWrapper {
-        .card {
-          *:not(:last-child) {
-            margin-bottom: 2rem;
-          }
-
-          .universityWrapper {
-            *:not(:last-child) {
-              margin-inline-end: 2rem;
+            .infoWrapper {
+              *:not(:last-child) {
+                margin-bottom: 1rem;
+              }
             }
           }
 
-          .infoWrapper {
+          @include mixin.respond-to('tablet') {
             *:not(:last-child) {
               margin-bottom: 1rem;
             }
           }
         }
-
-        @include mixin.respond-to('tablet') {
-          *:not(:last-child) {
-            margin-bottom: 1rem;
-          }
-        }
-      }
-    }
-
-    #footer {
-      *:not(:last-child) {
-        margin-bottom: 2rem;
       }
 
-      .footer {
+      #footer {
         *:not(:last-child) {
           margin-bottom: 2rem;
+        }
+
+        .footer {
+          *:not(:last-child) {
+            margin-bottom: 2rem;
+          }
         }
       }
     }
@@ -1099,4 +1171,3 @@ body {
 
 
 // TODO: WAVES SHAPE
-// TODO: ADD LANGUAGE?

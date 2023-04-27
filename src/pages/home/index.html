@@ -6,9 +6,9 @@
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <link href="scss/style.css" rel="stylesheet">
-    <link href="styles/reset.css" rel="stylesheet">
-    <link href="styles/fonts.css" rel="stylesheet">
-    <title>Mahrokh's Website</title>
+    <link href="../../styles/reset.css" rel="stylesheet">
+    <link href="../../styles/fonts.css" rel="stylesheet">
+    <title data-i18n-key="title">Mahrokh's Website</title>
 </head>
 <body class="dark scrollController">
 <div class="container" id="home">
@@ -20,22 +20,33 @@
             </div>
             <div class="wrapper">
                 <ul class="menu headerMenu">
-                    <li class="menuItem"><a href="#home">Home</a></li>
-                    <li class="menuItem"><a href="#aboutMe">About Me</a></li>
-                    <li class="menuItem"><a href="#skills">Skills</a></li>
-                    <li class="menuItem"><a href="#education">Education</a></li>
+                    <li class="menuItem"><a data-i18n-key="menu.home" href="#home">Home</a></li>
+                    <li class="menuItem"><a data-i18n-key="menu.aboutMe" href="#aboutMe">About Me</a></li>
+                    <li class="menuItem"><a data-i18n-key="menu.skills" href="#skills">Skills</a></li>
+                    <li class="menuItem"><a data-i18n-key="menu.education" href="#education">Education</a></li>
                 </ul>
+                <div class="language">
+                    <img alt="Glob Icon" class="languageIcon languageIconDark"
+                         src="../../assets/icons/globe-light1.svg"/>
+                    <img alt="Glob Icon" class="languageIcon languageIconLight"
+                         src="../../assets/icons/globe-light2.svg"/>
+                    <div class="languageWrapper">
+                        <span class="lang en active">En</span>
+                        <span class="lang fa">Fa</span>
+                    </div>
+                </div>
                 <div class="themeLight theme">
-                    <img alt="Sun Icon" class="light" src="assets/icons/moon-over-sun-light.svg">
+                    <img alt="Sun Icon" class="light" src="../../assets/icons/moon-over-sun-light.svg">
                 </div>
                 <div class="themeDark theme active">
-                    <img alt="Moon Icon" class="dark" src="assets/icons/moon-light.svg">
+                    <img alt="Moon Icon" class="dark" src="../../assets/icons/moon-light.svg">
                 </div>
                 <div class="hamburgerMenu">
                     <span class="line line1"></span>
                     <span class="line line2"></span>
                     <span class="line line3"></span>
                 </div>
+
             </div>
         </nav>
     </header>
@@ -43,13 +54,13 @@
     <section class="home">
         <aside class="contactWrapper">
             <a class="iconWrapper" href="https://www.hackerrank.com/mahrokhnz" target="_blank">
-                <img alt="Hackerrank Icon" src="assets/icons/hackerrank.svg">
+                <img alt="Hackerrank Icon" src="../../assets/icons/hackerrank.svg">
             </a>
             <a class="iconWrapper" href="https://www.linkedin.com/in/mahrokh-nabizadeh-335326144/" target="_blank">
-                <img alt="linkedin Icon" src="assets/icons/linkedin.svg">
+                <img alt="linkedin Icon" src="../../assets/icons/linkedin.svg">
             </a>
             <a class="iconWrapper" href="https://github.com/mahrokhnz" target="_blank">
-                <img alt="Github Icon" src="assets/icons/square-github.svg">
+                <img alt="Github Icon" src="../../assets/icons/square-github.svg">
             </a>
         </aside>
         <div class="nameWrapper">
@@ -113,7 +124,7 @@
     <h1 class="sectionHeader responsiveHeader">About Me.</h1>
     <section class="about">
         <div class="imageWrapper">
-            <img alt="Mahrokh Nabizadeh" src="assets/images/Mahrokh-Nabizadeh.jpg">
+            <img alt="Mahrokh Nabizadeh" src="../../assets/images/Mahrokh-Nabizadeh.jpg">
         </div>
         <div class="aboutWrapper">
             <h1>About Me.</h1>
@@ -157,7 +168,7 @@
             <div class="card bachelor active">
                 <div class="universityWrapper">
                     <img alt="University of Tehran"
-                         src="assets/images/logos/universities/University_of_Tehran.svg.png">
+                         src="../../assets/images/logos/universities/University_of_Tehran.svg.png">
                     <h2>University of Tehran</h2>
                 </div>
 
@@ -169,7 +180,7 @@
             <div class="card master">
                 <div class="universityWrapper">
                     <img alt="University of Science And Culture"
-                         src="assets/images/logos/universities/University_of_Science_&_Culture.png">
+                         src="../../assets/images/logos/universities/University_of_Science_&_Culture.png">
                     <h2>University of Science and Culture</h2>
                 </div>
 
@@ -233,13 +244,13 @@
 
         <div class="contactWrapper">
             <a class="iconWrapper" href="https://www.hackerrank.com/mahrokhnz" target="_blank">
-                <img alt="Hackerrank Icon" src="assets/icons/hackerrank.svg">
+                <img alt="Hackerrank Icon" src="../../assets/icons/hackerrank.svg">
             </a>
             <a class="iconWrapper" href="https://www.linkedin.com/in/mahrokh-nabizadeh-335326144/" target="_blank">
-                <img alt="linkedin Icon" src="assets/icons/linkedin.svg">
+                <img alt="linkedin Icon" src="../../assets/icons/linkedin.svg">
             </a>
             <a class="iconWrapper" href="https://github.com/mahrokhnz" target="_blank">
-                <img alt="Github Icon" src="assets/icons/square-github.svg">
+                <img alt="Github Icon" src="../../assets/icons/square-github.svg">
             </a>
         </div>
     </section>
@@ -247,6 +258,7 @@
     <span class="copyWrite"></span>
 </footer>
 
+<script src="lang.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
