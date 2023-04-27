@@ -679,7 +679,12 @@ body .education {
 }
 @media (max-width: 640px) {
   body .education {
-    margin: -2rem -4rem;
+    margin: -2rem -4rem -2rem -4rem;
+  }
+}
+@media (max-width: 465px) {
+  body .education {
+    margin: -2rem;
   }
 }
 body .education h1 {

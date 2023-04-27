@@ -693,7 +693,11 @@ body {
     }
 
     @include mixin.respond-to('big-ipad') {
-      margin: -2rem -4rem;
+      margin: -2rem -4rem -2rem -4rem;
+    }
+
+    @include mixin.respond-to('ipad') {
+      margin: -2rem;
     }
 
     h1 {
