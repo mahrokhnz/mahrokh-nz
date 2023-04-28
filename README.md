@@ -1,3 +1,2 @@
 Hello!
-My name is Mahrokh,
-I love coding and it's challanges, playing piano and waching movie.
+My name is Mahrokh, I love coding and it's challenges, playing piano and watching movie.

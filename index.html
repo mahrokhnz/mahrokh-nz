@@ -6,9 +6,9 @@
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <link href="scss/style.css" rel="stylesheet">
-    <link href="../../styles/reset.css" rel="stylesheet">
-    <link href="../../styles/fonts.css" rel="stylesheet">
-    <title data-i18n-key="title">Mahrokh's Website</title>
+    <link href="styles/reset.css" rel="stylesheet">
+    <link href="styles/fonts.css" rel="stylesheet">
+    <title data-i18n-key="title"></title>
 </head>
 <body class="dark scrollController">
 <div class="container" id="home">
@@ -20,26 +20,26 @@
             </div>
             <div class="wrapper">
                 <ul class="menu headerMenu">
-                    <li class="menuItem"><a data-i18n-key="menu.home" href="#home">Home</a></li>
-                    <li class="menuItem"><a data-i18n-key="menu.aboutMe" href="#aboutMe">About Me</a></li>
-                    <li class="menuItem"><a data-i18n-key="menu.skills" href="#skills">Skills</a></li>
-                    <li class="menuItem"><a data-i18n-key="menu.education" href="#education">Education</a></li>
+                    <li class="menuItem"><a data-i18n-key="home" href="#home"></a></li>
+                    <li class="menuItem"><a data-i18n-key="aboutMe" href="#aboutMe"></a></li>
+                    <li class="menuItem"><a data-i18n-key="skills" href="#skills"></a></li>
+                    <li class="menuItem"><a data-i18n-key="education" href="#education"></a></li>
                 </ul>
                 <div class="language">
                     <img alt="Glob Icon" class="languageIcon languageIconDark"
-                         src="../../assets/icons/globe-light1.svg"/>
+                         src="assets/icons/globe-light1.svg"/>
                     <img alt="Glob Icon" class="languageIcon languageIconLight"
-                         src="../../assets/icons/globe-light2.svg"/>
+                         src="assets/icons/globe-light2.svg"/>
                     <div class="languageWrapper">
-                        <span class="lang en active">En</span>
-                        <span class="lang fa">Fa</span>
+                        <span class="lang en active" data-i18n-key="en"></span>
+                        <span class="lang fa" data-i18n-key="fa"></span>
                     </div>
                 </div>
                 <div class="themeLight theme">
-                    <img alt="Sun Icon" class="light" src="../../assets/icons/moon-over-sun-light.svg">
+                    <img alt="Sun Icon" class="light" src="assets/icons/moon-over-sun-light.svg">
                 </div>
                 <div class="themeDark theme active">
-                    <img alt="Moon Icon" class="dark" src="../../assets/icons/moon-light.svg">
+                    <img alt="Moon Icon" class="dark" src="assets/icons/moon-light.svg">
                 </div>
                 <div class="hamburgerMenu">
                     <span class="line line1"></span>
@@ -54,18 +54,18 @@
     <section class="home">
         <aside class="contactWrapper">
             <a class="iconWrapper" href="https://www.hackerrank.com/mahrokhnz" target="_blank">
-                <img alt="Hackerrank Icon" src="../../assets/icons/hackerrank.svg">
+                <img alt="Hackerrank Icon" src="assets/icons/hackerrank.svg">
             </a>
             <a class="iconWrapper" href="https://www.linkedin.com/in/mahrokh-nabizadeh-335326144/" target="_blank">
-                <img alt="linkedin Icon" src="../../assets/icons/linkedin.svg">
+                <img alt="linkedin Icon" src="assets/icons/linkedin.svg">
             </a>
             <a class="iconWrapper" href="https://github.com/mahrokhnz" target="_blank">
-                <img alt="Github Icon" src="../../assets/icons/square-github.svg">
+                <img alt="Github Icon" src="assets/icons/square-github.svg">
             </a>
         </aside>
         <div class="nameWrapper">
-            <h1>I'm Mahrokh Nabizadeh.</h1>
-            <h2>Frontend Developer</h2>
+            <h1 data-i18n-key="name"></h1>
+            <h2 data-i18n-key="career"></h2>
         </div>
     </section>
     <svg class="svgContainer" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
@@ -121,38 +121,21 @@
     </svg>
 </div>
 <div class="container" id="aboutMe">
-    <h1 class="sectionHeader responsiveHeader">About Me.</h1>
+    <h1 class="sectionHeader responsiveHeader" data-i18n-key="aboutMe"></h1>
     <section class="about">
         <div class="imageWrapper">
-            <img alt="Mahrokh Nabizadeh" src="../../assets/images/Mahrokh-Nabizadeh.jpg">
+            <img alt="Mahrokh Nabizadeh" src="assets/images/Mahrokh-Nabizadeh.jpg">
         </div>
         <div class="aboutWrapper">
-            <h1>About Me.</h1>
-            <p>
-                Hello, welcome to my website :)
-                <br/>
-                I was born in 1997 in Tehran.
-                I've got my bachelor's degree in mechanical engineering at University of Tehran
-                and my master's degree in MBA at University of Science and Culture.
-                I worked on creating contents for websites and social media, and creating videos and image contents
-                about 4 years.
-                <br/>
-                Then I was attracted to programming...
-                <br/>
-                At first, I learned programming mostly through self-learning, and
-                then I developed it in my work environment.
-                I have been programming for about 2 years now.
-                <br/>
-                I play Piano and watching movies in my free time, and I work on different programming challenges,
-                as you can see them in my GitHub and HackerRank accounts.
-                I love to seek new thing that challenges me!
+            <h1 data-i18n-key="aboutMe"></h1>
+            <p data-i18n-key="aboutMeText">
             </p>
         </div>
     </section>
 </div>
 
 <div class="container" id="skills">
-    <h1 class="sectionHeader">skills.</h1>
+    <h1 class="sectionHeader" data-i18n-key="skills"></h1>
     <section class="skills">
         <div class="column firstColumn">
         </div>
@@ -163,30 +146,30 @@
 
 <div class="container" id="education">
     <section class="education">
-        <h1 class="sectionHeader">Education.</h1>
+        <h1 class="sectionHeader" data-i18n-key="education"></h1>
         <div class="cardWrapper">
             <div class="card bachelor active">
                 <div class="universityWrapper">
                     <img alt="University of Tehran"
-                         src="../../assets/images/logos/universities/University_of_Tehran.svg.png">
-                    <h2>University of Tehran</h2>
+                         src="assets/images/logos/universities/University_of_Tehran.svg.png">
+                    <h2 data-i18n-key="bachelorUniName"></h2>
                 </div>
 
                 <div class="infoWrapper">
-                    <h3>Bachelor's degree, Mechanical Engineering</h3>
-                    <span>Sep 2015 - Sep 2019</span>
+                    <h3 data-i18n-key="bachelorUniDegree"></h3>
+                    <span data-i18n-key="bachelorUniTime"></span>
                 </div>
             </div>
             <div class="card master">
                 <div class="universityWrapper">
                     <img alt="University of Science And Culture"
-                         src="../../assets/images/logos/universities/University_of_Science_&_Culture.png">
-                    <h2>University of Science and Culture</h2>
+                         src="assets/images/logos/universities/University_of_Science_&_Culture.png">
+                    <h2 data-i18n-key="masterUniName"></h2>
                 </div>
 
                 <div class="infoWrapper">
-                    <h3>Masters's degree, Mater of Business Administration - MBA, Strategy</h3>
-                    <span>Sep 2019 - Sep 2022</span>
+                    <h3 data-i18n-key="masterUniDegree"></h3>
+                    <span data-i18n-key="masterUniTime"></span>
                 </div>
             </div>
             <svg class="svgContainer" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
@@ -236,21 +219,21 @@
 <footer class="container" id="footer">
     <section class="footer">
         <ul class="menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#aboutMe">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
+            <li><a data-i18n-key="home" href="#home"></a></li>
+            <li><a data-i18n-key="aboutMe" href="#aboutMe"></a></li>
+            <li><a data-i18n-key="skills" href="#skills"></a></li>
+            <li><a data-i18n-key="education" href="#education"></a></li>
         </ul>
 
         <div class="contactWrapper">
             <a class="iconWrapper" href="https://www.hackerrank.com/mahrokhnz" target="_blank">
-                <img alt="Hackerrank Icon" src="../../assets/icons/hackerrank.svg">
+                <img alt="Hackerrank Icon" src="assets/icons/hackerrank.svg">
             </a>
             <a class="iconWrapper" href="https://www.linkedin.com/in/mahrokh-nabizadeh-335326144/" target="_blank">
-                <img alt="linkedin Icon" src="../../assets/icons/linkedin.svg">
+                <img alt="linkedin Icon" src="assets/icons/linkedin.svg">
             </a>
             <a class="iconWrapper" href="https://github.com/mahrokhnz" target="_blank">
-                <img alt="Github Icon" src="../../assets/icons/square-github.svg">
+                <img alt="Github Icon" src="assets/icons/square-github.svg">
             </a>
         </div>
     </section>
@@ -258,7 +241,7 @@
     <span class="copyWrite"></span>
 </footer>
 
-<!--<script src="lang.js"></script>-->
-<script src="script.js"></script>
+<script src="scripts/lang.js"></script>
+<script src="scripts/script.js"></script>
 </body>
 </html>
