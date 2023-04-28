@@ -27,6 +27,17 @@ html {
   }
 }
 
+html:lang(fa):root .container {
+  font-family: iranSans, serif;
+}
+html:lang(fa):root .container .home {
+  direction: rtl;
+  max-width: unset;
+}
+html:lang(fa):root .container .aboutWrapper, html:lang(fa):root .container .menu, html:lang(fa):root .container .card {
+  direction: rtl;
+}
+
 body.dark .languageIconDark {
   display: block;
 }
@@ -351,6 +362,7 @@ body .nameWrapper {
 body .nameWrapper h1 {
   font-size: 4rem;
   color: var(--text-color);
+  line-height: 1.5;
 }
 @media (max-width: 1120px) {
   body .nameWrapper h1 {

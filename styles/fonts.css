@@ -1,0 +1,42 @@
+@font-face {
+    font-family: josefInSansBold;
+    src: url("../assets/fonts/josefinSans/JosefinSans-Bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: josefInSansItalic;
+    src: url("../assets/fonts/josefinSans/JosefinSans-Italic.ttf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: josefInSansLight;
+    src: url("../assets/fonts/josefinSans/JosefinSans-Light.ttf");
+}
+
+@font-face {
+    font-family: josefInSansMedium;
+    src: url("../assets/fonts/josefinSans/JosefinSans-Medium.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: josefInSansRegular;
+    src: url("../assets/fonts/josefinSans/JosefinSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: josefInSansSemiBold;
+    src: url("../assets/fonts/josefinSans/JosefinSans-SemiBold.ttf");
+}
+
+@font-face {
+    font-family: josefInSansThin;
+    src: url("../assets/fonts/josefinSans/JosefinSans-Thin.ttf");
+}
+
+@font-face {
+    font-family: iranSans;
+    src: url("../assets/fonts/iranSans/FontsFree-Net-ir_sans.ttf");
+}

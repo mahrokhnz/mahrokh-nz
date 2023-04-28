@@ -28,6 +28,21 @@ html {
   }
 }
 
+html:lang(fa):root {
+  .container {
+    font-family: iranSans, serif;
+
+    .home {
+      direction: rtl;
+      max-width: unset;
+    }
+
+    .aboutWrapper, .menu, .card {
+      direction: rtl;
+    }
+  }
+}
+
 body {
   &.dark {
     .languageIconDark {
@@ -384,6 +399,7 @@ body {
     h1 {
       font-size: 4rem;
       color: var(--text-color);
+      line-height: 1.5;
 
       @include mixin.respond-to('small-desktop') {
         font-size: 3rem;

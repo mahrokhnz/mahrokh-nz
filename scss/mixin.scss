@@ -27,3 +27,12 @@ $breakpoints: (
         + "Available breakpoints are: #{map-keys($breakpoints)}.";
   }
 }
+
+$languages: en, fa;
+@mixin i18n-font-family($name) {
+  @each $lang in $languages {
+    &:lang(#{$lang}) {
+      font-family: $name;
+    }
+  }
+}
