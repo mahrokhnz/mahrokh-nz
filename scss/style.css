@@ -561,6 +561,55 @@ body #skills {
     justify-content: unset;
   }
 }
+body .projectsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+body .projectsContainer .projects {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+body .projectsContainer .projects .challengeLink {
+  height: 20rem;
+  color: #fff;
+  transition-property: background-color, left, width, height;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  padding: 2rem;
+  border-radius: 0.2rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  flex-grow: 1;
+}
+body .projectsContainer .projects .challengeLink .challenge {
+  color: #fff;
+  transition-property: background-color, left, width, height;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  padding: 2rem;
+  border-radius: 0.2rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+body .projectsContainer .buttonLink {
+  align-self: center;
+}
+body .projectsContainer .buttonLink button {
+  width: 20rem;
+  height: 5rem;
+  cursor: pointer;
+  border: none;
+  background-color: var(--secondary-color);
+  font-size: 2.2rem;
+  color: var(--neutral-color);
+  border-radius: 0.2rem;
+}
 body .skills {
   display: flex;
   justify-content: space-between;

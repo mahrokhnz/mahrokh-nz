@@ -584,6 +584,61 @@ body {
     }
   }
 
+  .projectsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    .projects {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+
+      .challengeLink {
+        height: 20rem;
+        color: #fff;
+        transition-property: background-color, left, width, height;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+        padding: 2rem;
+        border-radius: 0.2rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        overflow: hidden;
+        flex-grow: 1;
+
+        .challenge {
+          color: #fff;
+          transition-property: background-color, left, width, height;
+          transition: 0.3s ease-in-out;
+          cursor: pointer;
+          padding: 2rem;
+          border-radius: 0.2rem;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          overflow: hidden;
+        }
+      }
+    }
+
+    .buttonLink {
+      align-self: center;
+
+      button {
+        width: 20rem;
+        height: 5rem;
+        cursor: pointer;
+        border: none;
+        background-color: var(--secondary-color);
+        font-size: 2.2rem;
+        color: var(--neutral-color);
+        border-radius: 0.2rem;
+      }
+    }
+  }
+
   .skills {
     display: flex;
     justify-content: space-between;
