@@ -46,13 +46,7 @@ const skills = [
     {
         column: 1,
         row: 1,
-        title: "GitHub",
-        count: 7,
-    },
-    {
-        column: 1,
-        row: 1,
-        title: "GitLab",
+        title: "Git",
         count: 7,
     },
     {
