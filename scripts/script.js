@@ -1,7 +1,6 @@
 const front = document.querySelector(".firstColumn");
 const back = document.querySelector(".secondColumn");
-const light = document.querySelector(".themeLight");
-const dark = document.querySelector(".themeDark");
+const theme = document.querySelectorAll(".theme");
 const bachelor = document.querySelector(".bachelor");
 const master = document.querySelector(".master");
 const footer = document.querySelector(".copyWrite");
@@ -9,6 +8,7 @@ const hamburgerMenu = document.querySelector(".hamburgerMenu");
 const headerMenu = document.querySelector(".headerMenu");
 const scroll = document.querySelector(".scrollController");
 const menuItems = document.querySelectorAll(".menuItem");
+const html = document.querySelector('html')
 
 // Skills Section
 const activeCircles = [];
@@ -162,19 +162,19 @@ document.addEventListener("scroll", () => {
 });
 
 // Change Theme
-light.addEventListener("click", () => {
-    light.classList.remove("active");
-    dark.classList.add("active");
+const setTheme = (theme) => {
+    html.setAttribute('data-theme', theme)
+}
 
-    document.body.classList.add("dark");
-});
+const toggleTheme = () => {
+    const currentTheme = html.getAttribute('data-theme');
 
-dark.addEventListener("click", () => {
-    dark.classList.remove("active");
-    light.classList.add("active");
+    setTheme(currentTheme === 'dark' ? 'light' : 'dark')
+}
 
-    document.body.classList.remove("dark");
-});
+theme.forEach((item) => {
+    item.addEventListener("click", toggleTheme);
+})
 
 // Degree's Slider
 master.addEventListener("click", () => {
