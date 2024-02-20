@@ -1,18 +1,18 @@
-const front = document.querySelector(".firstColumn");
-const back = document.querySelector(".secondColumn");
-const theme = document.querySelectorAll(".theme");
-const bachelor = document.querySelector(".bachelor");
-const master = document.querySelector(".master");
-const footer = document.querySelector(".copyWrite");
-const hamburgerMenu = document.querySelector(".hamburgerMenu");
-const headerMenu = document.querySelector(".headerMenu");
-const scroll = document.querySelector(".scrollController");
-const menuItems = document.querySelectorAll(".menuItem");
-const html = document.querySelector('html')
+const front: HTMLElement = document.querySelector(".firstColumn");
+const back: HTMLElement = document.querySelector(".secondColumn");
+const theme: NodeListOf<Element> = document.querySelectorAll(".theme");
+const bachelor: HTMLElement = document.querySelector(".bachelor");
+const master: HTMLElement = document.querySelector(".master");
+const footer: HTMLElement = document.querySelector(".copyWrite");
+const hamburgerMenu: HTMLElement = document.querySelector(".hamburgerMenu");
+const headerMenu: HTMLElement = document.querySelector(".headerMenu");
+const scroll: HTMLElement = document.querySelector(".scrollController");
+const menuItems: NodeListOf<Element> = document.querySelectorAll(".menuItem");
+const html: HTMLElement = document.querySelector('html')
 
 // Skills Section
-const activeCircles = [];
-const skills = [
+const activeCircles: Array<HTMLElement> = [];
+const skills: Array<object> = [
     {
         column: 1,
         row: 1,
@@ -106,8 +106,8 @@ const deactivateCircle = () => {
 };
 
 const circleMaker = (parent, count, all = 10) => {
-    let i = 0;
-    let j = 0;
+    let i: number = 0;
+    let j: number = 0;
     while (i < all) {
         const circle = document.createElement("div");
         parent.appendChild(circle);
@@ -124,7 +124,7 @@ const circleMaker = (parent, count, all = 10) => {
     }
 };
 
-skills.map((skill) => {
+skills.map((skill: object) => {
     const newSkill = document.createElement("div");
 
     if (skill.column === 1) {
@@ -162,7 +162,7 @@ document.addEventListener("scroll", () => {
 });
 
 // Change Theme
-const setTheme = (theme) => {
+const setTheme = (theme: string) => {
     html.setAttribute('data-theme', theme)
 }
 
@@ -172,7 +172,7 @@ const toggleTheme = () => {
     setTheme(currentTheme === 'dark' ? 'light' : 'dark')
 }
 
-theme.forEach((item) => {
+theme.forEach((item: HTMLElement) => {
     item.addEventListener("click", toggleTheme);
 })
 
@@ -188,8 +188,8 @@ bachelor.addEventListener("click", () => {
 });
 
 // Footer Copy Write
-const date = new Date();
-const year = date.getFullYear();
+const date: Date = new Date();
+const year: number = date.getFullYear();
 
 footer.innerHTML = `© ${year} Mahrokh Tehran, Iran. All rights reserved.`;
 
@@ -204,7 +204,7 @@ hamburgerMenu.addEventListener("click", () => {
     }
 });
 
-menuItems.forEach((menuItem) => {
+menuItems.forEach((menuItem: HTMLElement) => {
     menuItem.addEventListener('click', () => {
         headerMenu.classList.remove("openMenu");
         hamburgerMenu.classList.remove("open");

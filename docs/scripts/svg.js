@@ -40,8 +40,7 @@ const verticalPath = `<svg class="svgContainer" viewBox="0 0 1440 320" xmlns="ht
         <circle cx="90" cy="300" fill="currentColor" r="5"/>
         <circle cx="110" cy="300" fill="currentColor" r="5"/>
         <circle cx="130" cy="300" fill="currentColor" r="5"/>
-    </svg>`
-
+    </svg>`;
 const horizontalPath = `<svg class="svgContainer" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="900" cy="90" fill="currentColor" r="5"/>
                 <circle cx="920" cy="90" fill="currentColor" r="5"/>
@@ -83,15 +82,12 @@ const horizontalPath = `<svg class="svgContainer" viewBox="0 0 1440 320" xmlns="
                 <circle cx="1000" cy="170" fill="currentColor" r="5"/>
                 <circle cx="1020" cy="170" fill="currentColor" r="5"/>
             </svg>
-`
-
+`;
 class svgPath extends HTMLElement {
-    direction = this.getAttribute('direction')
-
-    constructor() {
-        super();
-        this.innerHTML = this.direction === 'vertical' ? verticalPath : horizontalPath;
-    }
+  direction = this.getAttribute('direction');
+  constructor() {
+    super();
+    this.innerHTML = this.direction === 'vertical' ? verticalPath : horizontalPath;
+  }
 }
-
-customElements.define('svg-path', svgPath)
+customElements.define('svg-path', svgPath);
