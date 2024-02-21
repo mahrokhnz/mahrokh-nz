@@ -22,7 +22,7 @@ async function setLocale(newLocale) {
 }
 
 async function fetchTranslationsFor(newLocale: TLocale): Promise<JSON> {
-    const response = await fetch(`../../lang/${newLocale}.json`);
+    const response = await fetch(`lang/${newLocale}.json`);
     return response.json()
 }
 

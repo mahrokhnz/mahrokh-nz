@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-// babel src/lang -d docs/lang && babel src/assets -d docs/assets --copy-files && babel src/index.html -d docs --copy-files
+// // babel src/lang -d docs/lang && babel src/assets -d docs/assets --copy-files && babel src/index.html -d docs --copy-files
 
 const docsDir = path.resolve(process.cwd(), './docs');
 const srcDir = path.resolve(process.cwd(), './src');
@@ -41,15 +41,38 @@ fs.cpSync(
 );
 
 // fix html
+const replaceRegex = (match, data, replace) => {
+    data = data.replace(match, replace)
 
-const regexFixer = (data, match) => {
-    data = data.replace(match, `.js`)
+    return matchRegex(data)
+}
+
+const matchRegex = (data, currentData = null) => {
+    const replacedData = currentData ?? data
+
+    const scriptsRegex = /\.ts/gm
+    const scriptsMatch = scriptsRegex.exec(replacedData)
+
+    const stylesRegex = /sass\/style.sass/gm
+    const stylesMatch = stylesRegex.exec(replacedData)
+
+    if (scriptsMatch) {
+        return replaceRegex(scriptsMatch, replacedData, `.js`)
+    } else if (stylesMatch) {
+        return replaceRegex(stylesMatch, replacedData, `styles/style.css`)
+    } else {
+        return replacedData
+    }
 }
 
 fs.readFile('src/index.html', 'utf8', (err, data) => {
-    const scriptsRegex = /\.ts/gm
-    const match = scriptsRegex.exec(data)
-    fixer(data, match)
+   const replacedData = matchRegex(data)
 
-    console.log(data)
+    fs.writeFile('docs/index.html', replacedData, err => {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log('Successfully Modified')
+        }
+    })
 })
