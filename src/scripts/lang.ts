@@ -1,11 +1,12 @@
-const lang = document.querySelector(".language");
-const langWrapper = document.querySelector(".languageWrapper");
-const langValueEn = document.querySelector(".en");
-const langValueFa = document.querySelector(".fa");
+const lang: HTMLElement = document.querySelector(".language");
+const langWrapper: HTMLElement = document.querySelector(".languageWrapper");
+const langValueEn: HTMLElement = document.querySelector(".en");
+const langValueFa: HTMLElement = document.querySelector(".fa");
 
-const defaultLocale = "en";
-let locale;
-let translations = {};
+type TLocale = "en" | "fa"
+const defaultLocale: TLocale = "en";
+let locale: TLocale;
+let translations: object = {};
 
 document.addEventListener("DOMContentLoaded", () => {
     void setLocale(defaultLocale);
@@ -20,8 +21,8 @@ async function setLocale(newLocale) {
     translatePage();
 }
 
-async function fetchTranslationsFor(newLocale) {
-    const response = await fetch(`../../lang/${newLocale}.json`);
+async function fetchTranslationsFor(newLocale: TLocale): Promise<JSON> {
+    const response = await fetch(`lang/${newLocale}.json`);
     return response.json()
 }
 
@@ -31,7 +32,7 @@ function translatePage() {
         .forEach(translateElement);
 }
 
-function translateElement(element) {
+function translateElement(element: HTMLElement) {
     const key = element.getAttribute("data-i18n-key");
     element.innerText = translations[key]
 }
@@ -46,7 +47,7 @@ langValueEn.addEventListener('click', () => {
     if (!langValueEn.classList.contains('active')) {
         langValueFa.classList.remove('active')
         langValueEn.classList.add('active')
-        setLocale('en')
+        void setLocale('en')
 
         document.querySelector("html").lang = 'en'
     }
@@ -56,7 +57,7 @@ langValueFa.addEventListener('click', () => {
     if (!langValueFa.classList.contains('active')) {
         langValueEn.classList.remove('active')
         langValueFa.classList.add('active')
-        setLocale('fa')
+        void setLocale('fa')
 
         document.querySelector("html").lang = 'fa'
     }

@@ -1,0 +1,936 @@
+@use 'mixin'
+
+\:root
+  --primary-color: #272d40
+  --primary-res-color: #272d40
+  --secondary-color: #282633
+  --first-wave-color: #3e4657
+  --second-wave-color: #485266
+  --text-color: #ffffff
+  --neutral-color: #808188
+
+html[data-theme='light']:root
+    --primary-color: #fff
+    --primary-res-color: #fff
+    --secondary-color: #e2e2e7
+    --first-wave-color: #544df0
+    --second-wave-color: #6e6af4
+    --text-color: #000000
+    --neutral-color: #808188
+
+$primary-color: var(--primary-color)
+$primary-res-color: var(--primary-res-color)
+$secondary-color: var(--secondary-color)
+$first-wave-color: var(--first-wave-color)
+$second-wave-color: var(--second-wave-color)
+$text-color: var(--text-color)
+$neutral-color: var(--neutral-color)
+
+html:lang(fa):root
+  .container
+    font-family: iranSans, serif
+
+    .home
+      direction: rtl
+      max-width: unset
+
+
+    .aboutWrapper, .menu, .card
+      direction: rtl
+
+html
+  scroll-snap-type: y mandatory
+
+  @include mixin.respond-to('ipad')
+    scroll-snap-type: none
+
+
+  &[data-theme='light']
+    .languageIconDark
+      display: none
+
+    .languageIconLight
+      display: block
+
+    .darkTheme
+      display: none
+
+    .lightTheme
+      display: block
+
+  .languageIconDark
+    display: block
+
+  .languageIconLight
+    display: none
+
+  .darkTheme
+    display: block
+
+  .lightTheme
+    display: none
+
+  .container
+    display: flex
+    flex-direction: column
+    padding: 4rem 8rem
+    font-family: josefInSansMedium, serif
+    background-color: $primary-color
+    height: 100vh
+    box-sizing: border-box
+    scroll-snap-align: end
+
+    @include mixin.respond-to('desktop')
+      padding: 4rem 6rem
+
+    @include mixin.respond-to('tablet')
+      padding: 4rem
+
+    @include mixin.respond-to('small-tablet')
+      padding: 2rem 4rem
+
+    @include mixin.respond-to('ipad')
+      padding: 2rem
+
+  a
+    text-decoration: none
+    color: currentColor
+
+  h1
+    font-size: 2.8rem
+    color: $text-color
+
+    @include mixin.respond-to('small-tablet')
+      font-size: 2.2rem
+
+  .sectionHeader
+    align-self: center
+    margin-bottom: 4rem
+
+    @include mixin.respond-to('small-tablet')
+      margin-bottom: 2rem
+
+  .menu
+    display: flex
+    gap: 2rem
+    color: $neutral-color
+
+  .contactWrapper
+    display: flex
+    transform: rotate(-90deg)
+    margin-top: 8rem
+    gap: 2rem
+    z-index: 1
+
+    @include mixin.respond-to('small-tablet')
+      transform: rotate(-90deg) translateY(-140%)
+
+    @include mixin.respond-to('big-ipad')
+      transform: rotate(0)
+      margin-top: 0
+
+    .iconWrapper
+      display: flex
+      align-items: center
+      justify-content: center
+      padding: 0.2rem
+      box-sizing: border-box
+      border-radius: 0.3rem
+      border: 2px $primary-color solid
+      transition: border 0.3s ease-in-out
+
+      &:hover
+        border: 2px $second-wave-color solid
+
+      img
+        width: 2rem
+        height: 2rem
+        cursor: pointer
+        box-sizing: border-box
+
+      @include mixin.respond-to('small-tablet')
+        width: 1.5rem
+        height: 1.5rem
+
+  .header
+    .navbar
+      display: flex
+      align-items: center
+      justify-content: space-between
+
+      .logo
+        display: flex
+        align-items: center
+
+        .moon
+          font-size: 3rem
+          color: $text-color
+
+          @include mixin.respond-to('ipad')
+            font-size: 2.5rem
+
+        .face
+          font-size: 2rem
+          color: $neutral-color
+
+          @include mixin.respond-to('ipad')
+            font-size: 1.5rem
+
+      .wrapper
+        display: flex
+        align-items: center
+        gap: 2.3rem
+
+        @include mixin.respond-to('big-ipad')
+          gap: 0.8rem
+
+        .headerMenu
+          @include mixin.respond-to('small-tablet')
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            background-color: $neutral-color
+            color: $text-color
+            z-index: 5
+            transform: translateX(-100%)
+            transition: transform 0.3s ease-in-out
+
+            li
+              font-size: 1.5rem
+              text-transform: uppercase
+
+            &.openMenu
+              transform: translateX(0)
+
+        .hamburgerMenu
+          display: none
+
+          @include mixin.respond-to('small-tablet')
+            height: 22px
+            width: 30px
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            cursor: pointer
+            z-index: 6
+
+            .line
+              display: block
+              height: 0.15rem
+              width: 100%
+              border-radius: 10px
+              background: $text-color
+
+            .line1
+              transform-origin: 0 0
+              transition: transform 0.4s ease-in-out
+
+            .line2
+              transition: transform 0.2s ease-in-out
+
+            .line3
+              transform-origin: 0 100%
+              transition: transform 0.4s ease-in-out
+
+          &.open
+            .line1
+              transform: rotate(45deg)
+
+            .line2
+              transform: scaleY(0)
+
+            .line3
+              transform: rotate(-45deg)
+
+            .headerMenu
+              display: block
+
+        .theme
+          cursor: pointer
+          width: 1.5rem
+          height: 1.5rem
+
+        .language
+          cursor: pointer
+          position: relative
+
+          .languageIcon
+            width: 1.5rem
+            height: 1.5rem
+
+          .languageWrapper
+            display: none
+
+            &.active
+              display: flex
+              align-items: center
+              position: absolute
+              flex-direction: column
+              background-color: $second-wave-color
+              gap: 10px
+              padding: 8px
+              top: 130%
+              left: 50%
+              transform: translateX(-50%)
+              border-radius: 5px
+
+              .lang
+                padding: 10px 20px
+                border-radius: 5px
+                color: #fff
+                font-size: 1rem
+
+                @include mixin.respond-to('big-ipad')
+                  padding: 8px 18px
+                  font-size: 0.8rem
+
+                &.active
+                  background-color: $first-wave-color
+
+  .home
+    display: flex
+    margin-top: 8rem
+    max-width: 60rem
+
+    @include mixin.respond-to('big-ipad')
+      flex-direction: column-reverse
+      gap: 4rem
+
+    @include mixin.respond-to('smart-phone')
+      align-items: center
+
+  .svgContainer
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 0
+
+    .frontWave
+      fill: $first-wave-color
+
+    .backWave
+      fill: $second-wave-color
+
+    circle
+      fill: $primary-color
+
+  .nameWrapper
+    display: flex
+    flex-direction: column
+    gap: 2rem
+
+    @include mixin.respond-to('small-tablet')
+      transform: translateX(-10%)
+
+    @include mixin.respond-to('big-ipad')
+      transform: translateX(0)
+      gap: 1rem
+
+    @include mixin.respond-to('smart-phone')
+      text-align: center
+
+    h1
+      font-size: 4rem
+      color: $text-color
+      line-height: 1.5
+
+      @include mixin.respond-to('small-desktop')
+        font-size: 3rem
+
+      @include mixin.respond-to('tablet')
+        font-size: 2.5rem
+
+      @include mixin.respond-to('small-tablet')
+        font-size: 2rem
+
+    h2
+      color: $neutral-color
+
+  span
+    font-size: 1.3rem
+    color: $neutral-color
+
+  .responsiveHeader
+    display: none
+
+    @include mixin.respond-to('small-tablet')
+      display: block
+
+  #aboutMe
+    justify-content: center
+
+    @include mixin.respond-to('small-tablet')
+      justify-content: unset
+
+  .about
+    display: flex
+    gap: 10rem
+    margin-left: -7.8rem
+
+    @include mixin.respond-to('desktop')
+      margin-left: -5.8rem
+
+    @include mixin.respond-to('small-desktop')
+      gap: 5rem
+
+    @include mixin.respond-to('big-tablet')
+      gap: 3rem
+
+    @include mixin.respond-to('tablet')
+      margin-left: -3.8rem
+      gap: 2rem
+
+    @include mixin.respond-to('small-tablet')
+      margin-left: 0
+      gap: 1rem
+
+    @include mixin.respond-to('phone')
+      margin-left: 0
+      gap: 0.5rem
+
+    .imageWrapper
+      img
+        width: 30rem
+        height: 38rem
+        border-top-right-radius: 1.5rem
+        border-bottom-right-radius: 1.5rem
+        object-fit: cover
+
+        @include mixin.respond-to('small-desktop')
+          width: 28rem
+          height: 36rem
+
+        @include mixin.respond-to('big-tablet')
+          width: 26rem
+          height: 34rem
+
+        @include mixin.respond-to('tablet')
+          width: 24rem
+          height: 32rem
+
+        @include mixin.respond-to('small-tablet')
+          width: 20rem
+          height: 20rem
+          border-top-right-radius: 0
+          border-bottom-right-radius: 0
+
+        @include mixin.respond-to('big-ipad')
+          width: 17rem
+          height: 17rem
+
+        @include mixin.respond-to('smart-phone')
+          width: 14rem
+          height: 14rem
+
+        @include mixin.respond-to('phone')
+          width: 10rem
+          height: 10rem
+
+    .aboutWrapper
+      display: flex
+      flex-direction: column
+      gap: 1rem
+      padding: 2.5rem 0
+
+      h1
+        @include mixin.respond-to('small-tablet')
+          display: none
+
+      @include mixin.respond-to('big-tablet')
+        padding: 2rem 0
+
+      @include mixin.respond-to('tablet')
+        padding: 1.7rem 0
+
+      @include mixin.respond-to('small-tablet')
+        padding: 0
+
+      p
+        font-size: 1rem
+        color: $neutral-color
+        line-height: 1.8
+
+        @include mixin.respond-to('big-tablet')
+          font-size: 0.95rem
+
+        @include mixin.respond-to('tablet')
+          font-size: 0.85rem
+
+        @include mixin.respond-to('big-ipad')
+          font-size: 0.75rem
+
+        @include mixin.respond-to('smart-phone')
+          font-size: 0.65rem
+
+        @include mixin.respond-to('phone')
+          font-size: 0.55rem
+
+    @include mixin.respond-to('small-tablet')
+      flex-direction: column
+      align-items: center
+
+  #skills
+    justify-content: center
+
+    @include mixin.respond-to('small-tablet')
+      justify-content: unset
+  .skills
+    display: flex
+    justify-content: space-between
+
+    .column
+      display: flex
+      flex-direction: column
+      gap: 2rem
+
+      @include mixin.respond-to('small-tablet')
+        gap: 1.5rem
+
+      @include mixin.respond-to('phone')
+        gap: 1.2rem
+
+      .skill
+        display: flex
+        gap: 0.2rem
+
+        h3
+          font-size: 1.4rem
+          width: 18rem
+          color: $text-color
+
+          @include mixin.respond-to('big-desktop')
+            width: 15rem
+
+          @include mixin.respond-to('desktop')
+            font-size: 1.2rem
+            width: 12rem
+
+          @include mixin.respond-to('small-desktop')
+            font-size: 1rem
+            width: 9rem
+
+          @include mixin.respond-to('tablet')
+            font-size: 0.8rem
+            width: 8rem
+
+          @include mixin.respond-to('smart-phone')
+            font-size: 0.6rem
+            width: 5rem
+
+        .wrapper
+          display: flex
+          align-items: center
+          gap: 0.4rem
+
+          .circle
+            width: 1.2rem
+            height: 1.2rem
+            border-radius: 50%
+            background-color: $neutral-color
+            opacity: 0.1
+            transition: opacity 0.3s ease-in-out
+
+            @include mixin.respond-to('big-tablet')
+              width: 0.9rem
+              height: 0.9rem
+
+            @include mixin.respond-to('smart-phone')
+              width: 0.6rem
+              height: 0.6rem
+
+            &:hover
+              &:not(.active)
+                background-color: $second-wave-color
+                opacity: 0.3
+
+          .active
+            background-color: $second-wave-color
+            opacity: 1
+
+    @include mixin.respond-to('small-tablet')
+      flex-direction: column
+      align-items: center
+      gap: 1.5rem
+
+    @include mixin.respond-to('phone')
+      gap: 1.2rem
+
+  .education
+    display: flex
+    justify-content: center
+    position: relative
+    background-color: $secondary-color
+    margin: -4rem -5rem -4rem -8rem
+    border-radius: 0.2rem
+    height: 100vh
+
+    @include mixin.respond-to('desktop')
+      margin: -4rem -3rem -4rem -6rem
+
+    @include mixin.respond-to('tablet')
+      margin: -4rem -1rem -4rem -4rem
+      flex-direction: column
+      justify-content: unset
+
+    @include mixin.respond-to('small-tablet')
+      margin: -2rem -1rem -2rem -4rem
+
+    @include mixin.respond-to('big-ipad')
+      margin: -2rem -4rem -2rem -4rem
+
+    @include mixin.respond-to('ipad')
+      margin: -2rem
+
+    h1
+      align-self: unset
+      margin: 4rem auto 0
+
+      @include mixin.respond-to('tablet')
+        margin-bottom: 4rem
+
+      @include mixin.respond-to('small-tablet')
+        margin-top: 2rem
+        margin-bottom: 2rem
+
+    .cardWrapper
+      display: flex
+
+      @include mixin.respond-to('tablet')
+        flex-direction: column
+        gap: 1rem
+        align-self: center
+
+      .svgContainer
+        fill: $secondary-color
+
+      .card
+        display: flex
+        flex-direction: column
+        gap: 2rem
+        left: 20%
+        top: 38%
+        width: 20rem
+        height: 13.33rem
+        position: absolute
+        transform: translateX(-50%)
+        color: #fff
+        transition-property: background-color, left, width, height
+        transition: 0.3s ease-in-out
+        cursor: pointer
+        padding: 2rem
+        border-radius: 0.2rem
+        background-color: $primary-color
+
+        @include mixin.respond-to('big-desktop')
+          filter: blur(0.1rem)
+
+        @include mixin.respond-to('tablet')
+          filter: blur(0)
+          position: unset
+          transform: translateX(0)
+          width: unset
+          height: unset
+          padding: 1.5rem
+          cursor: default
+
+        @include mixin.respond-to('big-ipad')
+          width: 23rem
+
+        @include mixin.respond-to('ipad')
+          width: 20rem
+
+        @include mixin.respond-to('phone')
+          width: 18rem
+
+        @include mixin.respond-to('phone')
+          padding: 1.2rem
+
+        &.active
+          left: 50%
+          top: 30%
+          width: 30rem
+          height: 20rem
+          z-index: 10
+          cursor: default
+
+          @include mixin.respond-to('big-desktop')
+            filter: blur(0)
+
+          @include mixin.respond-to('tablet')
+            width: unset
+            height: unset
+            padding: 1.5rem
+
+          @include mixin.respond-to('big-ipad')
+            width: 23rem
+
+          @include mixin.respond-to('ipad')
+            width: 20rem
+
+          @include mixin.respond-to('phone')
+            width: 18rem
+            padding: 1.2rem
+
+          .universityWrapper
+            h2
+              font-size: 1.4rem
+
+              @include mixin.respond-to('tablet')
+                font-size: 1.2rem
+
+              @include mixin.respond-to('ipad')
+                font-size: 1rem
+
+            img
+              width: 10rem
+              height: 10rem
+
+              @include mixin.respond-to('tablet')
+                width: 7rem
+                height: 7rem
+
+              @include mixin.respond-to('ipad')
+                width: 5rem
+                height: 5rem
+
+          .infoWrapper
+            h3
+              font-size: 1rem
+
+              @include mixin.respond-to('tablet')
+                font-size: 0.8rem
+
+              @include mixin.respond-to('ipad')
+                font-size: 0.6rem
+
+            span
+              font-size: 1rem
+
+              @include mixin.respond-to('tablet')
+                font-size: 0.8rem
+
+              @include mixin.respond-to('ipad')
+                font-size: 0.6rem
+
+        .universityWrapper
+          display: flex
+          align-items: center
+          justify-content: space-between
+          gap: 2rem
+
+          h2
+            font-size: 1rem
+            transition: font-size 0.3s ease-in-out
+            color: $text-color
+
+            @include mixin.respond-to('tablet')
+              font-size: 1.2rem
+
+            @include mixin.respond-to('ipad')
+              font-size: 1rem
+
+          img
+            width: 5rem
+            height: 5rem
+            transition-property: width, height
+            transition: 0.3s ease-in-out
+            object-fit: contain
+
+            @include mixin.respond-to('tablet')
+              width: 7rem
+              height: 7rem
+
+            @include mixin.respond-to('ipad')
+              width: 5rem
+              height: 5rem
+
+        .infoWrapper
+          display: flex
+          flex-direction: column
+          gap: 1rem
+
+          h3
+            font-size: 0.6rem
+            transition: font-size 0.3s ease-in-out
+            color: $text-color
+
+            @include mixin.respond-to('tablet')
+              font-size: 0.8rem
+
+            @include mixin.respond-to('ipad')
+              font-size: 0.6rem
+
+          span
+            font-size: 0.6rem
+            transition: font-size 0.3s ease-in-out
+
+            @include mixin.respond-to('tablet')
+              font-size: 0.8rem
+
+            @include mixin.respond-to('ipad')
+              font-size: 0.6rem
+
+  #footer
+    display: flex
+    flex-direction: column
+    gap: 2rem
+    justify-content: center
+    height: unset
+
+    .footer
+      display: flex
+      align-items: center
+      flex-direction: column
+      gap: 2rem
+
+      .menu
+        li
+          @include mixin.respond-to('phone')
+            font-size: 0.7rem
+
+      .contactWrapper
+        transform: rotate(0)
+        margin-top: 0
+
+    .separator
+      height: 0.1rem
+      background-color: $neutral-color
+      opacity: 0.5
+
+    .copyWrite
+      font-size: 0.8rem
+      align-self: center
+
+      @include mixin.respond-to('phone')
+        font-size: 0.5rem
+
+// Devices that don't support gap in flex
+@supports (-webkit-touch-callout: none) and (not(translate: none))
+  body
+    .menu
+      *:not(:last-child)
+        margin-inline-end: 2rem
+
+    .contactWrapper
+      *:not(:last-child)
+        margin-inline-end: 2rem
+
+    .header
+      .navbar
+        .wrapper
+          *:not(:last-child)
+            margin-inline-end: 2.3rem
+
+            @include mixin.respond-to('ipad')
+              *:not(:last-child)
+                margin-inline-end: 0.8rem
+
+          .language
+            .languageWrapper
+              &.active
+                *:not(:last-child)
+                  margin-bottom: 10rem
+
+      .home
+        @include mixin.respond-to('big-ipad')
+          *:not(:last-child)
+            margin-bottom: 4rem
+
+      .nameWrapper
+        *:not(:last-child)
+          margin-bottom: 2rem
+
+        @include mixin.respond-to('big-ipad')
+          *:not(:last-child)
+            margin-bottom: 1rem
+
+      .companies
+        *:not(:last-child)
+          margin-inline-end: 8rem
+
+      .about
+        *:not(:last-child)
+          margin-inline-end: 10rem
+
+        .aboutWrapper
+          *:not(:last-child)
+            margin-bottom: 1rem
+
+        @include mixin.respond-to('small-desktop')
+          *:not(:last-child)
+            margin-inline-end: 5rem
+
+        @include mixin.respond-to('big-tablet')
+          *:not(:last-child)
+            margin-inline-end: 3rem
+
+        @include mixin.respond-to('tablet')
+          *:not(:last-child)
+            margin-inline-end: 2rem
+
+        @include mixin.respond-to('small-tablet')
+          *:not(:last-child)
+            margin-inline-end: 1rem
+
+        @include mixin.respond-to('phone')
+          *:not(:last-child)
+            margin-inline-end: 0.5rem
+
+      .skills
+        .column
+          *:not(:last-child)
+            margin-bottom: 2rem
+
+          @include mixin.respond-to('small-tablet')
+            *:not(:last-child)
+              margin-bottom: 1.5rem
+
+          @include mixin.respond-to('phone')
+            *:not(:last-child)
+              margin-bottom: 1.2rem
+
+          .skill
+            .wrapper
+              *:not(:last-child)
+                margin-inline-end: 0.4rem
+
+        @include mixin.respond-to('small-tablet')
+          *:not(:last-child)
+            margin-bottom: 1.5rem
+
+        @include mixin.respond-to('phone')
+          *:not(:last-child)
+            margin-bottom: 1.2rem
+
+      .education
+        .cardWrapper
+          .card
+            *:not(:last-child)
+              margin-bottom: 2rem
+
+            .universityWrapper
+              *:not(:last-child)
+                margin-inline-end: 2rem
+
+            .infoWrapper
+              *:not(:last-child)
+                margin-bottom: 1rem
+
+          @include mixin.respond-to('tablet')
+            *:not(:last-child)
+              margin-bottom: 1rem
+
+      #footer
+        *:not(:last-child)
+          margin-bottom: 2rem
+
+        .footer
+          *:not(:last-child)
+            margin-bottom: 2rem
