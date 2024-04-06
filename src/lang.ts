@@ -1,20 +1,20 @@
-const lang: HTMLElement = document.querySelector(".language");
-const langWrapper: HTMLElement = document.querySelector(".languageWrapper");
-const langValueEn: HTMLElement = document.querySelector(".en");
-const langValueFa: HTMLElement = document.querySelector(".fa");
+const htmlNode: HTMLElement = document.documentElement
+const lang: Element = document.querySelector(".language")!;
+const langWrapper: Element = document.querySelector(".languageWrapper")!;
+const langValueEn: Element = document.querySelector(".en")!;
+const langValueFa: Element = document.querySelector(".fa")!;
 
 type TLocale = "en" | "fa"
 const defaultLocale: TLocale = "en";
 let locale: TLocale;
-let translations: object = {};
+let translations: {[key: string]: any} = {};
 
-document.addEventListener("DOMContentLoaded", () => {
-    void setLocale(defaultLocale);
+document.addEventListener("DOMContentLoaded", () => {    void setLocale(defaultLocale);
 });
 
-async function setLocale(newLocale) {
+async function setLocale(newLocale: TLocale) {
     if (newLocale === locale) return;
-    const newTranslations =
+    const newTranslations: object =
         await fetchTranslationsFor(newLocale);
     locale = newLocale;
     translations = newTranslations;
@@ -27,13 +27,13 @@ async function fetchTranslationsFor(newLocale: TLocale): Promise<JSON> {
 }
 
 function translatePage() {
-    document
-        .querySelectorAll("[data-i18n-key]")
-        .forEach(translateElement);
+    const i18nKey: NodeListOf<HTMLElement> = document.querySelectorAll("[data-i18n-key]")
+
+    i18nKey.forEach((key: HTMLElement) => {translateElement(key)})
 }
 
 function translateElement(element: HTMLElement) {
-    const key = element.getAttribute("data-i18n-key");
+    const key: string = element.getAttribute("data-i18n-key")!;
     element.innerText = translations[key]
 }
 
@@ -49,7 +49,7 @@ langValueEn.addEventListener('click', () => {
         langValueEn.classList.add('active')
         void setLocale('en')
 
-        document.querySelector("html").lang = 'en'
+        htmlNode.lang = 'en'
     }
 })
 
@@ -59,7 +59,7 @@ langValueFa.addEventListener('click', () => {
         langValueFa.classList.add('active')
         void setLocale('fa')
 
-        document.querySelector("html").lang = 'fa'
+        htmlNode.lang = 'fa'
     }
 })
 
