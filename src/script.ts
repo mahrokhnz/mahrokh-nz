@@ -1,18 +1,29 @@
-const front: HTMLElement = document.querySelector(".firstColumn");
-const back: HTMLElement = document.querySelector(".secondColumn");
-const theme: NodeListOf<Element> = document.querySelectorAll(".theme");
-const bachelor: HTMLElement = document.querySelector(".bachelor");
-const master: HTMLElement = document.querySelector(".master");
-const footer: HTMLElement = document.querySelector(".copyWrite");
-const hamburgerMenu: HTMLElement = document.querySelector(".hamburgerMenu");
-const headerMenu: HTMLElement = document.querySelector(".headerMenu");
-const scroll: HTMLElement = document.querySelector(".scrollController");
-const menuItems: NodeListOf<Element> = document.querySelectorAll(".menuItem");
-const html: HTMLElement = document.querySelector('html')
+const html: HTMLElement = document.documentElement
+const scrollBar: HTMLElement = document.body
+const front: Element = document.querySelector(".firstColumn")!;
+const back: Element = document.querySelector(".secondColumn")!;
+const theme: NodeListOf<Element> = document.querySelectorAll(".theme")!;
+const bachelor: Element = document.querySelector(".bachelor")!;
+const master: Element = document.querySelector(".master")!;
+const footer: Element = document.querySelector(".copyWrite")!;
+const hamburgerMenu: Element = document.querySelector(".hamburgerMenu")!;
+const headerMenu: Element = document.querySelector(".headerMenu")!;
+const menuItems: NodeListOf<Element> = document.querySelectorAll(".menuItem")!;
+
+import './lang.ts'
+import './svg.ts'
 
 // Skills Section
 const activeCircles: Array<HTMLElement> = [];
-const skills: Array<object> = [
+
+type TSkill = {
+    column: number,
+    row: number,
+    title: string,
+    count: number
+}
+
+const skills: Array<TSkill> = [
     {
         column: 1,
         row: 1,
@@ -105,7 +116,7 @@ const deactivateCircle = () => {
     }
 };
 
-const circleMaker = (parent, count, all = 10) => {
+const circleMaker = (parent: Element, count: number, all = 10) => {
     let i: number = 0;
     let j: number = 0;
     while (i < all) {
@@ -124,7 +135,7 @@ const circleMaker = (parent, count, all = 10) => {
     }
 };
 
-skills.map((skill: object) => {
+skills.map((skill: TSkill) => {
     const newSkill = document.createElement("div");
 
     if (skill.column === 1) {
@@ -172,7 +183,7 @@ const toggleTheme = () => {
     setTheme(currentTheme === 'dark' ? 'light' : 'dark')
 }
 
-theme.forEach((item: HTMLElement) => {
+theme.forEach((item: Element) => {
     item.addEventListener("click", toggleTheme);
 })
 
@@ -191,24 +202,24 @@ bachelor.addEventListener("click", () => {
 const date: Date = new Date();
 const year: number = date.getFullYear();
 
-footer.innerHTML = `© ${year} Mahrokh Tehran, Iran. All rights reserved.`;
+footer.innerHTML = `© ${year} MAHrokh &#t127769 Tehran, Iran. All rights reserved.`;
 
 //Responsive Menu
 hamburgerMenu.addEventListener("click", () => {
-    scroll.style.overflowY = 'unset'
+    scrollBar.style.overflowY = 'unset'
     hamburgerMenu.classList.toggle("open");
     headerMenu.classList.toggle("openMenu");
 
     if (hamburgerMenu.classList.contains("open")) {
-        scroll.style.overflowY = 'hidden'
+        scrollBar.style.overflowY = 'hidden'
     }
 });
 
-menuItems.forEach((menuItem: HTMLElement) => {
+menuItems.forEach((menuItem: Element) => {
     menuItem.addEventListener('click', () => {
         headerMenu.classList.remove("openMenu");
         hamburgerMenu.classList.remove("open");
         hamburgerMenu.classList.remove("open");
-        scroll.style.overflowY = 'unset'
+        scrollBar.style.overflowY = 'unset'
     })
 })

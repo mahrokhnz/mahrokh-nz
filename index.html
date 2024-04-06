@@ -5,12 +5,12 @@
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <link href="styles/style.css" rel="stylesheet">
-    <link href="styles/reset.css" rel="stylesheet">
-    <link href="styles/fonts.css" rel="stylesheet">
+    <link href="src/styles/reset.css" rel="stylesheet">
+    <link href="src/styles/fonts.css" rel="stylesheet">
+    <link href="src/styles/style.sass" rel="stylesheet">
     <title data-i18n-key="title"></title>
 </head>
-<body class="scrollController">
+<body>
 <div class="container" id="home">
     <header class="header">
         <nav class="navbar">
@@ -27,9 +27,9 @@
                 </ul>
                 <div class="language">
                     <img alt="Glob Icon" class="languageIcon languageIconDark"
-                         src="assets/icons/globe-light1.svg"/>
+                         src="/icons/globe-light1.svg"/>
                     <img alt="Glob Icon" class="languageIcon languageIconLight"
-                         src="assets/icons/globe-light2.svg"/>
+                         src="/icons/globe-light2.svg"/>
                     <div class="languageWrapper">
                         <span class="lang en active" data-i18n-key="en"></span>
                         <span class="lang fa" data-i18n-key="fa"></span>
@@ -37,10 +37,10 @@
                 </div>
 
                 <div class="lightTheme theme">
-                    <img alt="Sun Icon" src="assets/icons/moon-over-sun-light.svg">
+                    <img alt="Sun Icon" src="/icons/moon-over-sun-light.svg">
                 </div>
                 <div class="darkTheme theme">
-                    <img alt="Moon Icon" src="assets/icons/moon-light.svg">
+                    <img alt="Moon Icon" src="/icons/moon-light.svg">
                 </div>
                 <div class="hamburgerMenu">
                     <span class="line line1"></span>
@@ -55,19 +55,19 @@
     <section class="home">
         <aside class="contactWrapper">
             <a class="iconWrapper" href="https://www.instagram.com/mahrokhnz/" target="_blank">
-                <img alt="Instagram Icon" src="assets/icons/instagram.svg">
+                <img alt="Instagram Icon" src="/icons/instagram.svg">
             </a>
             <a class="iconWrapper" href="https://twitter.com/mahrokhnz" target="_blank">
-                <img alt="Twitter Icon" src="assets/icons/twitter.svg">
+                <img alt="Twitter Icon" src="/icons/twitter.svg">
             </a>
             <a class="iconWrapper" href="https://www.linkedin.com/in/mahrokh-nabizadeh-335326144/" target="_blank">
-                <img alt="linkedin Icon" src="assets/icons/linkedin.svg">
+                <img alt="linkedin Icon" src="/icons/linkedin.svg">
             </a>
             <a class="iconWrapper" href="https://www.hackerrank.com/mahrokhnz" target="_blank">
-                <img alt="Hackerrank Icon" src="assets/icons/hackerrank.svg">
+                <img alt="Hackerrank Icon" src="/icons/hackerrank.svg">
             </a>
             <a class="iconWrapper" href="https://github.com/mahrokhnz" target="_blank">
-                <img alt="Github Icon" src="assets/icons/square-github.svg">
+                <img alt="Github Icon" src="/icons/square-github.svg">
             </a>
         </aside>
         <div class="nameWrapper">
@@ -93,7 +93,7 @@
     <h1 class="sectionHeader responsiveHeader" data-i18n-key="aboutMe"></h1>
     <section class="about">
         <div class="imageWrapper">
-            <img alt="Mahrokh Nabizadeh" src="assets/images/Mahrokh-Nabizadeh.jpg">
+            <img alt="Mahrokh Nabizadeh" src="/images/Mahrokh-Nabizadeh.jpg">
         </div>
         <div class="aboutWrapper">
             <h1 data-i18n-key="aboutMe"></h1>
@@ -120,7 +120,7 @@
             <div class="card bachelor active">
                 <div class="universityWrapper">
                     <img alt="University of Tehran"
-                         src="assets/images/logos/universities/University_of_Tehran.svg.png">
+                         src="/images/logos/universities/University_of_Tehran.svg.png">
                     <h2 data-i18n-key="bachelorUniName"></h2>
                 </div>
 
@@ -132,7 +132,7 @@
             <div class="card master">
                 <div class="universityWrapper">
                     <img alt="University of Science And Culture"
-                         src="assets/images/logos/universities/University_of_Science_&_Culture.png">
+                         src="/images/logos/universities/University_of_Science_&_Culture.png">
                     <h2 data-i18n-key="masterUniName"></h2>
                 </div>
 
@@ -156,19 +156,19 @@
 
         <div class="contactWrapper">
             <a class="iconWrapper" href="https://github.com/mahrokhnz" target="_blank">
-                <img alt="Github Icon" src="assets/icons/square-github.svg">
+                <img alt="Github Icon" src="/icons/square-github.svg">
             </a>
             <a class="iconWrapper" href="https://www.hackerrank.com/mahrokhnz" target="_blank">
-                <img alt="Hackerrank Icon" src="assets/icons/hackerrank.svg">
+                <img alt="Hackerrank Icon" src="/icons/hackerrank.svg">
             </a>
             <a class="iconWrapper" href="https://www.linkedin.com/in/mahrokh-nabizadeh-335326144/" target="_blank">
-                <img alt="linkedin Icon" src="assets/icons/linkedin.svg">
+                <img alt="linkedin Icon" src="/icons/linkedin.svg">
             </a>
             <a class="iconWrapper" href="https://twitter.com/mahrokhnz" target="_blank">
-                <img alt="Twitter Icon" src="assets/icons/twitter.svg">
+                <img alt="Twitter Icon" src="/icons/twitter.svg">
             </a>
             <a class="iconWrapper" href="https://www.instagram.com/mahrokhnz/" target="_blank">
-                <img alt="Instagram Icon" src="assets/icons/instagram.svg">
+                <img alt="Instagram Icon" src="/icons/instagram.svg">
             </a>
         </div>
     </section>
@@ -176,8 +176,6 @@
     <span class="copyWrite"></span>
 </footer>
 
-<script src="scripts/lang.js"></script>
-<script src="scripts/svg.js"></script>
-<script src="scripts/script.js"></script>
+<script type="module" src="src/script.ts"></script>
 </body>
 </html>
