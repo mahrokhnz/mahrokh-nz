@@ -10,6 +10,9 @@ const hamburgerMenu: Element = document.querySelector(".hamburgerMenu")!;
 const headerMenu: Element = document.querySelector(".headerMenu")!;
 const menuItems: NodeListOf<Element> = document.querySelectorAll(".menuItem")!;
 
+import './lang.ts'
+import './svg.ts'
+
 // Skills Section
 const activeCircles: Array<HTMLElement> = [];
 
