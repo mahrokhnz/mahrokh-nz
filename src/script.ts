@@ -202,7 +202,7 @@ bachelor.addEventListener("click", () => {
 const date: Date = new Date();
 const year: number = date.getFullYear();
 
-footer.innerHTML = `© ${year} MAHrokh &#t127769 Tehran, Iran. All rights reserved.`;
+footer.innerHTML = `© ${year} MAHrokh Tehran, Iran. All rights reserved.`;
 
 //Responsive Menu
 hamburgerMenu.addEventListener("click", () => {
