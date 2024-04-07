@@ -1,7 +1,7 @@
 # Personal Website
-This is my personal website that I'm working on it every once in a while.
+This is my personal website that I update it every once in a while.
 
-This project is written by **html**, **sass**, **css**, **typescript** and it uses **vite** as a build tool. it supports two languages *English* and *Persian* and has two themes *Dark* and *Light*.
+This project is written by **HTML**, **Sass**, **css**, **Typescript** and it uses **Vite** as a build tool. it supports two languages *English* and *Persian* and has two themes *Dark* and *Light*.
 
 By typing `npm run build` in terminal, the build folder in name of *dist* will be created.
 
