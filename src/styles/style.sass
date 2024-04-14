@@ -2,7 +2,6 @@
 
 \:root
   --primary-color: #272d40
-  --primary-res-color: #272d40
   --secondary-color: #282633
   --first-wave-color: #3e4657
   --second-wave-color: #485266
@@ -11,7 +10,6 @@
 
 html[data-theme='light']:root
     --primary-color: #fff
-    --primary-res-color: #fff
     --secondary-color: #e2e2e7
     --first-wave-color: #544df0
     --second-wave-color: #6e6af4
@@ -19,7 +17,6 @@ html[data-theme='light']:root
     --neutral-color: #808188
 
 $primary-color: var(--primary-color)
-$primary-res-color: var(--primary-res-color)
 $secondary-color: var(--secondary-color)
 $first-wave-color: var(--first-wave-color)
 $second-wave-color: var(--second-wave-color)
@@ -34,9 +31,11 @@ html:lang(fa):root
       direction: rtl
       max-width: unset
 
-
     .aboutWrapper, .menu, .card
       direction: rtl
+
+  #projects
+    direction: rtl
 
 html
   scroll-snap-type: y mandatory
@@ -475,11 +474,66 @@ html
       flex-direction: column
       align-items: center
 
+  #projects
+    .projectHeader
+      align-self: flex-start
+
+    .projects
+      display: flex
+      flex-direction: column
+
+      .row
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-right: -8rem
+        margin-left: -8rem
+        padding: 1.5rem 8rem
+        transition: background-color 0.3s ease-in-out
+
+        .column
+          display: flex
+          flex-direction: column
+          gap: 1.4rem
+
+          span
+            color: var(--text-color)
+            font-size: 1.8rem
+
+          p
+            color: var(--neutral-color)
+            font-size: 1rem
+
+        img
+          object-fit: cover
+          width: 15rem
+          height: 8rem
+
+        &:hover
+          background-color: var(--secondary-color)
+
+      .moreLink
+        align-self: center
+        margin-top: 1rem
+        cursor: pointer
+
+        .more
+          cursor: pointer
+          width: 12rem
+          font-size: 1.2rem
+          padding: 0.8rem
+          border: none
+          box-shadow: var(--second-wave-color) 5px 5px
+          background-color: var(--first-wave-color)
+          border-radius: 1.5rem
+          color: #ffffff
+
   #skills
     justify-content: center
 
     @include mixin.respond-to('small-tablet')
       justify-content: unset
+
   .skills
     display: flex
     justify-content: space-between
