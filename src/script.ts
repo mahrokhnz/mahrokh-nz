@@ -163,8 +163,8 @@ document.addEventListener("scroll", () => {
     const windowPosition = window.scrollY;
 
     if (
-        windowPosition > 1.5 * windowHeight &&
-        windowPosition < 2.5 * windowHeight
+        windowPosition > 2.5 * windowHeight &&
+        windowPosition < 3.5 * windowHeight
     ) {
         activateCircle();
     } else {
