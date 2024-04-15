@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <link href="scss/style.css" rel="stylesheet">
-    <link href="styles/reset.css" rel="stylesheet">
-    <link href="styles/fonts.css" rel="stylesheet">
+    <link href="src/styles/reset.css" rel="stylesheet">
+    <link href="src/styles/fonts.css" rel="stylesheet">
+    <link href="src/styles/style.sass" rel="stylesheet">
     <title data-i18n-key="title"></title>
 </head>
-<body class="dark scrollController">
+<body>
 <div class="container" id="home">
     <header class="header">
         <nav class="navbar">
@@ -27,19 +27,20 @@
                 </ul>
                 <div class="language">
                     <img alt="Glob Icon" class="languageIcon languageIconDark"
-                         src="assets/icons/globe-light1.svg"/>
+                         src="/icons/globe-light1.svg"/>
                     <img alt="Glob Icon" class="languageIcon languageIconLight"
-                         src="assets/icons/globe-light2.svg"/>
+                         src="/icons/globe-light2.svg"/>
                     <div class="languageWrapper">
                         <span class="lang en active" data-i18n-key="en"></span>
                         <span class="lang fa" data-i18n-key="fa"></span>
                     </div>
                 </div>
-                <div class="themeLight theme">
-                    <img alt="Sun Icon" class="light" src="assets/icons/moon-over-sun-light.svg">
+
+                <div class="lightTheme theme">
+                    <img alt="Sun Icon" src="/icons/moon-over-sun-light.svg">
                 </div>
-                <div class="themeDark theme active">
-                    <img alt="Moon Icon" class="dark" src="assets/icons/moon-light.svg">
+                <div class="darkTheme theme">
+                    <img alt="Moon Icon" src="/icons/moon-light.svg">
                 </div>
                 <div class="hamburgerMenu">
                     <span class="line line1"></span>
@@ -53,14 +54,20 @@
 
     <section class="home">
         <aside class="contactWrapper">
-            <a class="iconWrapper" href="https://www.hackerrank.com/mahrokhnz" target="_blank">
-                <img alt="Hackerrank Icon" src="assets/icons/hackerrank.svg">
+            <a class="iconWrapper" href="https://www.instagram.com/mahrokhnz/" target="_blank">
+                <img alt="Instagram Icon" src="/icons/instagram.svg">
+            </a>
+            <a class="iconWrapper" href="https://twitter.com/mahrokhnz" target="_blank">
+                <img alt="Twitter Icon" src="/icons/twitter.svg">
             </a>
             <a class="iconWrapper" href="https://www.linkedin.com/in/mahrokh-nabizadeh-335326144/" target="_blank">
-                <img alt="linkedin Icon" src="assets/icons/linkedin.svg">
+                <img alt="linkedin Icon" src="/icons/linkedin.svg">
+            </a>
+            <a class="iconWrapper" href="https://www.hackerrank.com/mahrokhnz" target="_blank">
+                <img alt="Hackerrank Icon" src="/icons/hackerrank.svg">
             </a>
             <a class="iconWrapper" href="https://github.com/mahrokhnz" target="_blank">
-                <img alt="Github Icon" src="assets/icons/square-github.svg">
+                <img alt="Github Icon" src="/icons/square-github.svg">
             </a>
         </aside>
         <div class="nameWrapper">
@@ -68,6 +75,7 @@
             <h2 data-i18n-key="career"></h2>
         </div>
     </section>
+
     <svg class="svgContainer" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
         <path class="backWave"
               d="M0,32L48,53.3C96,75,192,117,288,117.3C384,117,480,75,576,80C672,85,768,139,864,154.7C960,171,1056,149,1152,133.3C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
@@ -77,54 +85,15 @@
               d="M0,128L80,117.3C160,107,320,85,480,106.7C640,128,800,192,960,224C1120,256,1280,256,1360,256L1440,256L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
               fill="currentColor"
               fill-opacity="1"></path>
-        <circle cx="50" cy="180" fill="currentColor" r="5"/>
-        <circle cx="70" cy="180" fill="currentColor" r="5"/>
-        <circle cx="90" cy="180" fill="currentColor" r="5"/>
-        <circle cx="110" cy="180" fill="currentColor" r="5"/>
-        <circle cx="130" cy="180" fill="currentColor" r="5"/>
-
-        <circle cx="50" cy="200" fill="currentColor" r="5"/>
-        <circle cx="70" cy="200" fill="currentColor" r="5"/>
-        <circle cx="90" cy="200" fill="currentColor" r="5"/>
-        <circle cx="110" cy="200" fill="currentColor" r="5"/>
-        <circle cx="130" cy="200" fill="currentColor" r="5"/>
-
-        <circle cx="50" cy="220" fill="currentColor" r="5"/>
-        <circle cx="70" cy="220" fill="currentColor" r="5"/>
-        <circle cx="90" cy="220" fill="currentColor" r="5"/>
-        <circle cx="110" cy="220" fill="currentColor" r="5"/>
-        <circle cx="130" cy="220" fill="currentColor" r="5"/>
-
-        <circle cx="50" cy="240" fill="currentColor" r="5"/>
-        <circle cx="70" cy="240" fill="currentColor" r="5"/>
-        <circle cx="90" cy="240" fill="currentColor" r="5"/>
-        <circle cx="110" cy="240" fill="currentColor" r="5"/>
-        <circle cx="130" cy="240" fill="currentColor" r="5"/>
-
-        <circle cx="50" cy="260" fill="currentColor" r="5"/>
-        <circle cx="70" cy="260" fill="currentColor" r="5"/>
-        <circle cx="90" cy="260" fill="currentColor" r="5"/>
-        <circle cx="110" cy="260" fill="currentColor" r="5"/>
-        <circle cx="130" cy="260" fill="currentColor" r="5"/>
-
-        <circle cx="50" cy="280" fill="currentColor" r="5"/>
-        <circle cx="70" cy="280" fill="currentColor" r="5"/>
-        <circle cx="90" cy="280" fill="currentColor" r="5"/>
-        <circle cx="110" cy="280" fill="currentColor" r="5"/>
-        <circle cx="130" cy="280" fill="currentColor" r="5"/>
-
-        <circle cx="50" cy="300" fill="currentColor" r="5"/>
-        <circle cx="70" cy="300" fill="currentColor" r="5"/>
-        <circle cx="90" cy="300" fill="currentColor" r="5"/>
-        <circle cx="110" cy="300" fill="currentColor" r="5"/>
-        <circle cx="130" cy="300" fill="currentColor" r="5"/>
     </svg>
+
+    <svg-path direction="vertical"></svg-path>
 </div>
 <div class="container" id="aboutMe">
     <h1 class="sectionHeader responsiveHeader" data-i18n-key="aboutMe"></h1>
     <section class="about">
         <div class="imageWrapper">
-            <img alt="Mahrokh Nabizadeh" src="assets/images/Mahrokh-Nabizadeh.jpg">
+            <img alt="Mahrokh Nabizadeh" src="/images/personal/Mahrokh-Nabizadeh.jpg">
         </div>
         <div class="aboutWrapper">
             <h1 data-i18n-key="aboutMe"></h1>
@@ -135,32 +104,49 @@
 </div>
 
 <div class="container" id="projects">
-    <h1 class="sectionHeader" data-i18n-key="projects"></h1>
+<!--    Todo: Responsive-->
+    <h1 class="sectionHeader projectHeader" data-i18n-key="projects"></h1>
+    <section class="projects">
+        <a class="row" href="https://mahrokhnz.github.io/100-days-of-code/" target="_blank">
+            <div class="column">
+                <span data-i18n-key="100days"></span>
+                <p data-i18n-key="100daysDescription"></p>
+            </div>
 
-    <main class="projectsContainer">
-        <section class="projects">
-            <a class="challengeLink" href="https://mahrokhnz.github.io/100DaysOfCode/projects/weather/"
-               style="background-image: url('assets/images/projects/weather.png')"
-               target="_blank">
-            </a>
-            <a class="challengeLink" href="https://mahrokhnz.github.io/100DaysOfCode/projects/piano/"
-               style="background-image: url('assets/images/projects/piano.png')" target="_blank">
-            </a>
-            <a class="challengeLink" href="https://mahrokhnz.github.io/100DaysOfCode/projects/snake_game/"
-               style="background-image: url('assets/images/projects/snake_game.png')" target="_blank">
-            </a>
-            <a class="challengeLink" href="https://mahrokhnz.github.io/100DaysOfCode/projects/snake_game/"
-               style="background-image: url('assets/images/projects/weather.png')"
-               target="_blank">
-            </a>
-        </section>
-        <a class="buttonLink" href="https://mahrokhnz.github.io/100DaysOfCode/" target="_blank">
-            <button data-i18n-key="button">
-
-            </button>
+            <img src="/images/projects/100-days-of-code.jpeg" alt="100 days of code">
         </a>
-    </main>
 
+        <a class="row" href="https://github.com/mahrokhnz/react-js" target="_blank">
+            <div class="column">
+                <span data-i18n-key="react"></span>
+                <p data-i18n-key="reactDescription"></p>
+            </div>
+
+            <img src="/images/projects/react.png" alt="React">
+        </a>
+
+        <a class="row" href="https://github.com/mahrokhnz/data-structure" target="_blank">
+            <div class="column">
+                <span data-i18n-key="structure"></span>
+                <p data-i18n-key="structureDescription"></p>
+            </div>
+
+            <img src="/images/projects/data-structures.jpg" alt="Data Structure">
+        </a>
+
+        <a class="row" href="https://github.com/mahrokhnz/chatroom" target="_blank">
+            <div class="column">
+                <span data-i18n-key="chatroom"></span>
+                <p data-i18n-key="chatroomDescription"></p>
+            </div>
+
+            <img src="/images/projects/chatroom.png" alt="Chatroom">
+        </a>
+
+        <a class="moreLink" href="https://github.com/mahrokhnz?tab=repositories" target="_blank">
+            <button class="more" data-i18n-key="more">View More</button>
+        </a>
+    </section>
 </div>
 
 <div class="container" id="skills">
@@ -180,7 +166,7 @@
             <div class="card bachelor active">
                 <div class="universityWrapper">
                     <img alt="University of Tehran"
-                         src="assets/images/logos/universities/University_of_Tehran.svg.png">
+                         src="/images/logos/universities/University_of_Tehran.svg.png">
                     <h2 data-i18n-key="bachelorUniName"></h2>
                 </div>
 
@@ -192,7 +178,7 @@
             <div class="card master">
                 <div class="universityWrapper">
                     <img alt="University of Science And Culture"
-                         src="assets/images/logos/universities/University_of_Science_&_Culture.png">
+                         src="/images/logos/universities/University_of_Science_&_Culture.png">
                     <h2 data-i18n-key="masterUniName"></h2>
                 </div>
 
@@ -201,47 +187,7 @@
                     <span data-i18n-key="masterUniTime"></span>
                 </div>
             </div>
-            <svg class="svgContainer" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="900" cy="90" fill="currentColor" r="5"/>
-                <circle cx="920" cy="90" fill="currentColor" r="5"/>
-                <circle cx="940" cy="90" fill="currentColor" r="5"/>
-                <circle cx="960" cy="90" fill="currentColor" r="5"/>
-                <circle cx="980" cy="90" fill="currentColor" r="5"/>
-                <circle cx="1000" cy="90" fill="currentColor" r="5"/>
-                <circle cx="1020" cy="90" fill="currentColor" r="5"/>
-
-                <circle cx="900" cy="110" fill="currentColor" r="5"/>
-                <circle cx="920" cy="110" fill="currentColor" r="5"/>
-                <circle cx="940" cy="110" fill="currentColor" r="5"/>
-                <circle cx="960" cy="110" fill="currentColor" r="5"/>
-                <circle cx="980" cy="110" fill="currentColor" r="5"/>
-                <circle cx="1000" cy="110" fill="currentColor" r="5"/>
-                <circle cx="1020" cy="110" fill="currentColor" r="5"/>
-
-                <circle cx="900" cy="130" fill="currentColor" r="5"/>
-                <circle cx="920" cy="130" fill="currentColor" r="5"/>
-                <circle cx="940" cy="130" fill="currentColor" r="5"/>
-                <circle cx="960" cy="130" fill="currentColor" r="5"/>
-                <circle cx="980" cy="130" fill="currentColor" r="5"/>
-                <circle cx="1000" cy="130" fill="currentColor" r="5"/>
-                <circle cx="1020" cy="130" fill="currentColor" r="5"/>
-
-                <circle cx="900" cy="150" fill="currentColor" r="5"/>
-                <circle cx="920" cy="150" fill="currentColor" r="5"/>
-                <circle cx="940" cy="150" fill="currentColor" r="5"/>
-                <circle cx="960" cy="150" fill="currentColor" r="5"/>
-                <circle cx="980" cy="150" fill="currentColor" r="5"/>
-                <circle cx="1000" cy="150" fill="currentColor" r="5"/>
-                <circle cx="1020" cy="150" fill="currentColor" r="5"/>
-
-                <circle cx="900" cy="170" fill="currentColor" r="5"/>
-                <circle cx="920" cy="170" fill="currentColor" r="5"/>
-                <circle cx="940" cy="170" fill="currentColor" r="5"/>
-                <circle cx="960" cy="170" fill="currentColor" r="5"/>
-                <circle cx="980" cy="170" fill="currentColor" r="5"/>
-                <circle cx="1000" cy="170" fill="currentColor" r="5"/>
-                <circle cx="1020" cy="170" fill="currentColor" r="5"/>
-            </svg>
+            <svg-path direction="horizontal"></svg-path>
         </div>
     </section>
 </div>
@@ -255,14 +201,20 @@
         </ul>
 
         <div class="contactWrapper">
+            <a class="iconWrapper" href="https://github.com/mahrokhnz" target="_blank">
+                <img alt="Github Icon" src="/icons/square-github.svg">
+            </a>
             <a class="iconWrapper" href="https://www.hackerrank.com/mahrokhnz" target="_blank">
-                <img alt="Hackerrank Icon" src="assets/icons/hackerrank.svg">
+                <img alt="Hackerrank Icon" src="/icons/hackerrank.svg">
             </a>
             <a class="iconWrapper" href="https://www.linkedin.com/in/mahrokh-nabizadeh-335326144/" target="_blank">
-                <img alt="linkedin Icon" src="assets/icons/linkedin.svg">
+                <img alt="linkedin Icon" src="/icons/linkedin.svg">
             </a>
-            <a class="iconWrapper" href="https://github.com/mahrokhnz" target="_blank">
-                <img alt="Github Icon" src="assets/icons/square-github.svg">
+            <a class="iconWrapper" href="https://twitter.com/mahrokhnz" target="_blank">
+                <img alt="Twitter Icon" src="/icons/twitter.svg">
+            </a>
+            <a class="iconWrapper" href="https://www.instagram.com/mahrokhnz/" target="_blank">
+                <img alt="Instagram Icon" src="/icons/instagram.svg">
             </a>
         </div>
     </section>
@@ -270,7 +222,6 @@
     <span class="copyWrite"></span>
 </footer>
 
-<script src="scripts/lang.js"></script>
-<script src="scripts/script.js"></script>
+<script type="module" src="src/script.ts"></script>
 </body>
 </html>

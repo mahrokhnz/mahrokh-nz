@@ -1,18 +1,29 @@
-const front = document.querySelector(".firstColumn");
-const back = document.querySelector(".secondColumn");
-const light = document.querySelector(".themeLight");
-const dark = document.querySelector(".themeDark");
-const bachelor = document.querySelector(".bachelor");
-const master = document.querySelector(".master");
-const footer = document.querySelector(".copyWrite");
-const hamburgerMenu = document.querySelector(".hamburgerMenu");
-const headerMenu = document.querySelector(".headerMenu");
-const scroll = document.querySelector(".scrollController");
-const menuItems = document.querySelectorAll(".menuItem");
+const html: HTMLElement = document.documentElement
+const scrollBar: HTMLElement = document.body
+const front: Element = document.querySelector(".firstColumn")!;
+const back: Element = document.querySelector(".secondColumn")!;
+const theme: NodeListOf<Element> = document.querySelectorAll(".theme")!;
+const bachelor: Element = document.querySelector(".bachelor")!;
+const master: Element = document.querySelector(".master")!;
+const footer: Element = document.querySelector(".copyWrite")!;
+const hamburgerMenu: Element = document.querySelector(".hamburgerMenu")!;
+const headerMenu: Element = document.querySelector(".headerMenu")!;
+const menuItems: NodeListOf<Element> = document.querySelectorAll(".menuItem")!;
+
+import './lang.ts'
+import './svg.ts'
 
 // Skills Section
-const activeCircles = [];
-const skills = [
+const activeCircles: Array<HTMLElement> = [];
+
+type TSkill = {
+    column: number,
+    row: number,
+    title: string,
+    count: number
+}
+
+const skills: Array<TSkill> = [
     {
         column: 1,
         row: 1,
@@ -46,13 +57,7 @@ const skills = [
     {
         column: 1,
         row: 1,
-        title: "GitHub",
-        count: 7,
-    },
-    {
-        column: 1,
-        row: 1,
-        title: "GitLab",
+        title: "Git",
         count: 7,
     },
     {
@@ -111,9 +116,9 @@ const deactivateCircle = () => {
     }
 };
 
-const circleMaker = (parent, count, all = 10) => {
-    let i = 0;
-    let j = 0;
+const circleMaker = (parent: Element, count: number, all = 10) => {
+    let i: number = 0;
+    let j: number = 0;
     while (i < all) {
         const circle = document.createElement("div");
         parent.appendChild(circle);
@@ -130,7 +135,7 @@ const circleMaker = (parent, count, all = 10) => {
     }
 };
 
-skills.map((skill) => {
+skills.map((skill: TSkill) => {
     const newSkill = document.createElement("div");
 
     if (skill.column === 1) {
@@ -158,8 +163,8 @@ document.addEventListener("scroll", () => {
     const windowPosition = window.scrollY;
 
     if (
-        windowPosition > 1.5 * windowHeight &&
-        windowPosition < 2.5 * windowHeight
+        windowPosition > 2.5 * windowHeight &&
+        windowPosition < 3.5 * windowHeight
     ) {
         activateCircle();
     } else {
@@ -168,19 +173,19 @@ document.addEventListener("scroll", () => {
 });
 
 // Change Theme
-light.addEventListener("click", () => {
-    light.classList.remove("active");
-    dark.classList.add("active");
+const setTheme = (theme: string) => {
+    html.setAttribute('data-theme', theme)
+}
 
-    document.body.classList.add("dark");
-});
+const toggleTheme = () => {
+    const currentTheme = html.getAttribute('data-theme');
 
-dark.addEventListener("click", () => {
-    dark.classList.remove("active");
-    light.classList.add("active");
+    setTheme(currentTheme === 'dark' ? 'light' : 'dark')
+}
 
-    document.body.classList.remove("dark");
-});
+theme.forEach((item: Element) => {
+    item.addEventListener("click", toggleTheme);
+})
 
 // Degree's Slider
 master.addEventListener("click", () => {
@@ -194,27 +199,27 @@ bachelor.addEventListener("click", () => {
 });
 
 // Footer Copy Write
-const date = new Date();
-const year = date.getFullYear();
+const date: Date = new Date();
+const year: number = date.getFullYear();
 
-footer.innerHTML = `© ${year} Mahrokh Tehran, Iran. All rights reserved.`;
+footer.innerHTML = `© ${year} MAHrokh Tehran, Iran. All rights reserved.`;
 
 //Responsive Menu
 hamburgerMenu.addEventListener("click", () => {
-    scroll.style.overflowY = 'unset'
+    scrollBar.style.overflowY = 'unset'
     hamburgerMenu.classList.toggle("open");
     headerMenu.classList.toggle("openMenu");
 
     if (hamburgerMenu.classList.contains("open")) {
-        scroll.style.overflowY = 'hidden'
+        scrollBar.style.overflowY = 'hidden'
     }
 });
 
-menuItems.forEach((menuItem) => {
+menuItems.forEach((menuItem: Element) => {
     menuItem.addEventListener('click', () => {
         headerMenu.classList.remove("openMenu");
         hamburgerMenu.classList.remove("open");
         hamburgerMenu.classList.remove("open");
-        scroll.style.overflowY = 'unset'
+        scrollBar.style.overflowY = 'unset'
     })
 })

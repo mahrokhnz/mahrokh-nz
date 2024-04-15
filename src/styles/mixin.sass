@@ -1,0 +1,17 @@
+$breakpoints: ('big-desktop': 1400px,'desktop': 1300px,'small-desktop': 1120px,'big-tablet': 1025px,'tablet': 940px,'small-tablet': 840px,'big-ipad': 640px,'ipad': 465px,'smart-phone': 400px,'phone': 380px)
+
+
+@mixin respond-to($breakpoint)
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint)
+    // Prints a media query based on the value
+    @media (max-width: map-get($breakpoints, $breakpoint))
+      @content
+  @else
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "+ "Available breakpoints are: #{map-keys($breakpoints)}."
+
+$languages: en, fa
+@mixin i18n-font-family($name)
+  @each $lang in $languages
+    &:lang(#{$lang})
+      font-family: $name
