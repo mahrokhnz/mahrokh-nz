@@ -43,7 +43,6 @@ html
   @include mixin.respond-to('ipad')
     scroll-snap-type: none
 
-
   &[data-theme='light']
     .languageIconDark
       display: none
@@ -90,6 +89,7 @@ html
 
     @include mixin.respond-to('ipad')
       padding: 2rem
+      height: unset
 
   a
     text-decoration: none
@@ -150,216 +150,220 @@ html
         width: 1.5rem
         height: 1.5rem
 
-  .header
-    .navbar
-      display: flex
-      align-items: center
-      justify-content: space-between
+  #home
+    @include mixin.respond-to('ipad')
+      height: 100vh
 
-      .logo
+    .header
+      .navbar
         display: flex
         align-items: center
+        justify-content: space-between
 
-        .moon
-          font-size: 3rem
-          color: $text-color
+        .logo
+          display: flex
+          align-items: center
 
-          @include mixin.respond-to('ipad')
-            font-size: 2.5rem
-
-        .face
-          font-size: 2rem
-          color: $neutral-color
-
-          @include mixin.respond-to('ipad')
-            font-size: 1.5rem
-
-      .wrapper
-        display: flex
-        align-items: center
-        gap: 2.3rem
-
-        @include mixin.respond-to('big-ipad')
-          gap: 0.8rem
-
-        .headerMenu
-          @include mixin.respond-to('small-tablet')
-            display: flex
-            flex-direction: column
-            align-items: center
-            justify-content: center
-            position: absolute
-            top: 0
-            right: 0
-            bottom: 0
-            left: 0
-            background-color: $neutral-color
+          .moon
+            font-size: 3rem
             color: $text-color
-            z-index: 5
-            transform: translateX(-100%)
-            transition: transform 0.3s ease-in-out
 
-            li
+            @include mixin.respond-to('ipad')
+              font-size: 2.5rem
+
+          .face
+            font-size: 2rem
+            color: $neutral-color
+
+            @include mixin.respond-to('ipad')
               font-size: 1.5rem
-              text-transform: uppercase
 
-            &.openMenu
-              transform: translateX(0)
+        .wrapper
+          display: flex
+          align-items: center
+          gap: 2.3rem
 
-        .hamburgerMenu
-          display: none
+          @include mixin.respond-to('big-ipad')
+            gap: 0.8rem
 
-          @include mixin.respond-to('small-tablet')
-            height: 22px
-            width: 30px
-            display: flex
-            flex-direction: column
-            justify-content: space-between
+          .headerMenu
+            @include mixin.respond-to('small-tablet')
+              display: flex
+              flex-direction: column
+              align-items: center
+              justify-content: center
+              position: absolute
+              top: 0
+              right: 0
+              bottom: 0
+              left: 0
+              background-color: $neutral-color
+              color: $text-color
+              z-index: 5
+              transform: translateX(-100%)
+              transition: transform 0.3s ease-in-out
+
+              li
+                font-size: 1.5rem
+                text-transform: uppercase
+
+              &.openMenu
+                transform: translateX(0)
+
+          .hamburgerMenu
+            display: none
+
+            @include mixin.respond-to('small-tablet')
+              height: 22px
+              width: 30px
+              display: flex
+              flex-direction: column
+              justify-content: space-between
+              cursor: pointer
+              z-index: 6
+
+              .line
+                display: block
+                height: 0.15rem
+                width: 100%
+                border-radius: 10px
+                background: $text-color
+
+              .line1
+                transform-origin: 0 0
+                transition: transform 0.4s ease-in-out
+
+              .line2
+                transition: transform 0.2s ease-in-out
+
+              .line3
+                transform-origin: 0 100%
+                transition: transform 0.4s ease-in-out
+
+            &.open
+              .line1
+                transform: rotate(45deg)
+
+              .line2
+                transform: scaleY(0)
+
+              .line3
+                transform: rotate(-45deg)
+
+              .headerMenu
+                display: block
+
+          .theme
             cursor: pointer
-            z-index: 6
-
-            .line
-              display: block
-              height: 0.15rem
-              width: 100%
-              border-radius: 10px
-              background: $text-color
-
-            .line1
-              transform-origin: 0 0
-              transition: transform 0.4s ease-in-out
-
-            .line2
-              transition: transform 0.2s ease-in-out
-
-            .line3
-              transform-origin: 0 100%
-              transition: transform 0.4s ease-in-out
-
-          &.open
-            .line1
-              transform: rotate(45deg)
-
-            .line2
-              transform: scaleY(0)
-
-            .line3
-              transform: rotate(-45deg)
-
-            .headerMenu
-              display: block
-
-        .theme
-          cursor: pointer
-          width: 1.5rem
-          height: 1.5rem
-
-        .language
-          cursor: pointer
-          position: relative
-
-          .languageIcon
             width: 1.5rem
             height: 1.5rem
 
-          .languageWrapper
-            display: none
+          .language
+            cursor: pointer
+            position: relative
 
-            &.active
-              display: flex
-              align-items: center
-              position: absolute
-              flex-direction: column
-              background-color: $second-wave-color
-              gap: 10px
-              padding: 8px
-              top: 130%
-              left: 50%
-              transform: translateX(-50%)
-              border-radius: 5px
+            .languageIcon
+              width: 1.5rem
+              height: 1.5rem
 
-              .lang
-                padding: 10px 20px
+            .languageWrapper
+              display: none
+
+              &.active
+                display: flex
+                align-items: center
+                position: absolute
+                flex-direction: column
+                background-color: $second-wave-color
+                gap: 10px
+                padding: 8px
+                top: 130%
+                left: 50%
+                transform: translateX(-50%)
                 border-radius: 5px
-                color: #fff
-                font-size: 1rem
 
-                @include mixin.respond-to('big-ipad')
-                  padding: 8px 18px
-                  font-size: 0.8rem
+                .lang
+                  padding: 10px 20px
+                  border-radius: 5px
+                  color: #fff
+                  font-size: 1rem
 
-                &.active
-                  background-color: $first-wave-color
+                  @include mixin.respond-to('big-ipad')
+                    padding: 8px 18px
+                    font-size: 0.8rem
 
-  .home
-    display: flex
-    margin-top: 8rem
-    max-width: 60rem
+                  &.active
+                    background-color: $first-wave-color
 
-    @include mixin.respond-to('big-ipad')
-      flex-direction: column-reverse
-      gap: 4rem
+    .home
+      display: flex
+      margin-top: 8rem
+      max-width: 60rem
 
-    @include mixin.respond-to('smart-phone')
-      align-items: center
+      @include mixin.respond-to('big-ipad')
+        flex-direction: column-reverse
+        gap: 4rem
 
-  .svgContainer
-    position: absolute
-    left: 0
-    right: 0
-    bottom: 0
-    z-index: 0
+      @include mixin.respond-to('smart-phone')
+        align-items: center
 
-    .frontWave
-      fill: $first-wave-color
+    .svgContainer
+      position: absolute
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 0
 
-    .backWave
-      fill: $second-wave-color
+      .frontWave
+        fill: $first-wave-color
 
-    circle
-      fill: $primary-color
+      .backWave
+        fill: $second-wave-color
 
-  .nameWrapper
-    display: flex
-    flex-direction: column
-    gap: 2rem
+      circle
+        fill: $primary-color
 
-    @include mixin.respond-to('small-tablet')
-      transform: translateX(-10%)
-
-    @include mixin.respond-to('big-ipad')
-      transform: translateX(0)
-      gap: 1rem
-
-    @include mixin.respond-to('smart-phone')
-      text-align: center
-
-    h1
-      font-size: 4rem
-      color: $text-color
-      line-height: 1.5
-
-      @include mixin.respond-to('small-desktop')
-        font-size: 3rem
-
-      @include mixin.respond-to('tablet')
-        font-size: 2.5rem
+    .nameWrapper
+      display: flex
+      flex-direction: column
+      gap: 2rem
 
       @include mixin.respond-to('small-tablet')
-        font-size: 2rem
+        transform: translateX(-10%)
 
-    h2
+      @include mixin.respond-to('big-ipad')
+        transform: translateX(0)
+        gap: 1rem
+
+      @include mixin.respond-to('smart-phone')
+        text-align: center
+
+      h1
+        font-size: 4rem
+        color: $text-color
+        line-height: 1.5
+
+        @include mixin.respond-to('small-desktop')
+          font-size: 3rem
+
+        @include mixin.respond-to('tablet')
+          font-size: 2.5rem
+
+        @include mixin.respond-to('small-tablet')
+          font-size: 2rem
+
+      h2
+        color: $neutral-color
+
+    span
+      font-size: 1.3rem
       color: $neutral-color
 
-  span
-    font-size: 1.3rem
-    color: $neutral-color
+    .responsiveHeader
+      display: none
 
-  .responsiveHeader
-    display: none
-
-    @include mixin.respond-to('small-tablet')
-      display: block
+      @include mixin.respond-to('small-tablet')
+        display: block
 
   #aboutMe
     justify-content: center
@@ -490,6 +494,30 @@ html
         margin-left: -8rem
         padding: 1.5rem 8rem
         transition: background-color 0.3s ease-in-out
+        font-size: 1.8rem
+
+        @include mixin.respond-to('desktop')
+          margin-right: -6rem
+          margin-left: -6rem
+          padding: 1.5rem 6rem
+
+        @include mixin.respond-to('tablet')
+          margin-right: -4rem
+          margin-left: -4rem
+          padding: 1.5rem 4rem
+
+        @include mixin.respond-to('small-tablet')
+          gap: 1.5rem
+
+        @include mixin.respond-to('big-ipad')
+          flex-direction: column-reverse
+          align-items: flex-start
+          gap: 1.2rem
+
+        @include mixin.respond-to('ipad')
+          margin-right: -2rem
+          margin-left: -2rem
+          padding: 1rem 2rem
 
         .column
           display: flex
@@ -500,22 +528,52 @@ html
             color: var(--text-color)
             font-size: 1.8rem
 
+            @include mixin.respond-to('big-desktop')
+              font-size: 1.5rem
+
+            @include mixin.respond-to('ipad')
+              font-size: 1.3rem
+
           p
             color: var(--neutral-color)
             font-size: 1rem
+
+            @include mixin.respond-to('big-desktop')
+              font-size: 0.9rem
+
+            @include mixin.respond-to('ipad')
+              font-size: 0.8rem
 
         img
           object-fit: cover
           width: 15rem
           height: 8rem
 
+          @include mixin.respond-to('big-tablet')
+            width: 13rem
+            height: 7rem
+
+          @include mixin.respond-to('ipad')
+            width: 12rem
+            height: 6rem
+
         &:hover
           background-color: var(--secondary-color)
+
+      .responsive
+        @include mixin.respond-to('big-ipad')
+          display: none
 
       .moreLink
         align-self: center
         margin-top: 1rem
         cursor: pointer
+
+        @include mixin.respond-to('big-ipad')
+          margin-top: 2rem
+
+        @include mixin.respond-to('ipad')
+          margin-top: 1rem
 
         .more
           cursor: pointer
@@ -528,9 +586,11 @@ html
           border-radius: 1.5rem
           color: #ffffff
 
-  #skills
-    justify-content: center
+          @include mixin.respond-to('small-tablet')
+            width: 10rem
+            font-size: 1rem
 
+  #skills
     @include mixin.respond-to('small-tablet')
       justify-content: unset
 
@@ -551,6 +611,7 @@ html
 
       .skill
         display: flex
+        justify-content: space-between
         gap: 0.2rem
 
         h3
@@ -570,7 +631,6 @@ html
             width: 9rem
 
           @include mixin.respond-to('tablet')
-            font-size: 0.8rem
             width: 8rem
 
           @include mixin.respond-to('smart-phone')
@@ -609,7 +669,6 @@ html
 
     @include mixin.respond-to('small-tablet')
       flex-direction: column
-      align-items: center
       gap: 1.5rem
 
     @include mixin.respond-to('phone')
