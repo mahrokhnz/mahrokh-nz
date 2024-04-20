@@ -1,7 +1,21 @@
-const canvas: HTMLCanvasElement = document.getElementById("myCanvas")!;
-const ctx = canvas.getContext("2d");
+const canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d")!;
 
-const numberOfStars = (width) => {
+type TStar = {
+    x: number,
+    y: number,
+    r: number,
+    color: string,
+    sx: number,
+    sy: number,
+}
+
+type TMouse = {
+    x: number,
+    y: number,
+}
+
+const numberOfStars = (width: number) => {
     if (width > 1500) {
         return 250
     } else if (width > 1000) {
@@ -13,7 +27,7 @@ const numberOfStars = (width) => {
     }
 }
 
-const headerBoundary = (width) => {
+const headerBoundary = (width: number) => {
     if (width > 1000) {
         return 120
     } else if (width > 200) {
@@ -24,7 +38,7 @@ const headerBoundary = (width) => {
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let mouseP = {x: 0, y: 0}
+let mouseP: TMouse = {x: 0, y: 0}
 
 const stars = new Array(numberOfStars(screen.width)).fill(0).map(() => ({
     x: Math.random() * canvas.width,
@@ -68,13 +82,13 @@ function animate() {
 
 requestAnimationFrame(animate)
 
-const pythagoras = (firstPoint, secondPoint) => {
+const pythagoras = (firstPoint: TStar | TMouse, secondPoint: TStar) => {
     const xd = Math.abs(firstPoint.x - secondPoint.x)
     const yd = Math.abs(firstPoint.y - secondPoint.y)
     return Math.sqrt(Math.pow(xd, 2) + Math.pow(yd, 2))
 }
 
-const detectLines = (nearStars) => {
+const detectLines = (nearStars: Array<TStar>) => {
     for (let i = 0; i < nearStars.length; i++) {
         for (let j = 1; j < nearStars.length - 1; j++) {
             const diff = pythagoras(nearStars[i], nearStars[j])
@@ -91,12 +105,12 @@ const detectLines = (nearStars) => {
     }
 }
 
-const detectStars = (mouse) => {
-    const nearStars = []
+const detectStars = (mouse: TMouse) => {
+    const nearStars: Array<TStar> = []
     stars.forEach((star) => {
         const diff = pythagoras(mouse, star)
 
-        if (diff < 150 && star.y > headerBoundary(screen.width)) {
+        if (diff < 150 && star.y > headerBoundary(screen.width)!) {
             nearStars.push(star)
         }
     })
@@ -104,13 +118,7 @@ const detectStars = (mouse) => {
     detectLines(nearStars)
 }
 
-canvas.addEventListener("mousemove", (e) => {
-    mouseP = {x: e.pageX, y: e.pageY}
-
-    detectStars(mouseP)
-});
-
-canvas.addEventListener("touchmove", (e) => {
+canvas.addEventListener("mousemove", (e: MouseEvent) => {
     mouseP = {x: e.pageX, y: e.pageY}
 
     detectStars(mouseP)
