@@ -30,6 +30,7 @@ html:lang(fa):root
     .home
       direction: rtl
       max-width: unset
+      align-self: end
 
     .aboutWrapper, .menu, .card
       direction: rtl
@@ -38,6 +39,7 @@ html:lang(fa):root
     direction: rtl
 
 html
+  overflow-x: hidden
   scroll-snap-type: y mandatory
 
   @include mixin.respond-to('ipad')
@@ -151,10 +153,14 @@ html
         height: 1.5rem
 
   #home
+    overflow-x: hidden
+
     @include mixin.respond-to('ipad')
       height: 100vh
 
     .header
+      z-index: 5
+
       .navbar
         display: flex
         align-items: center
@@ -299,6 +305,7 @@ html
       display: flex
       margin-top: 8rem
       max-width: 60rem
+      z-index: 2
 
       @include mixin.respond-to('big-ipad')
         flex-direction: column-reverse
@@ -364,6 +371,12 @@ html
 
       @include mixin.respond-to('small-tablet')
         display: block
+
+    #myCanvas
+      top: 0
+      left: 0
+      position: absolute
+      opacity: 0.6
 
   #aboutMe
     justify-content: center
@@ -478,7 +491,7 @@ html
       flex-direction: column
       align-items: center
 
-  #projects
+  #myProjects
     .projectHeader
       align-self: flex-start
 

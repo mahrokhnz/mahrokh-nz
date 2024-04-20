@@ -12,6 +12,7 @@ const menuItems: NodeListOf<Element> = document.querySelectorAll(".menuItem")!;
 
 import './lang.ts'
 import './svg.ts'
+import './constellation.ts'
 
 // Skills Section
 const activeCircles: Array<HTMLElement> = [];
