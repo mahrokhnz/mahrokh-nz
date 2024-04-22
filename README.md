@@ -1,7 +1,7 @@
 # Personal Website
 This is my personal website that I update it every once in a while.
 
-This project is written by **HTML**, **Sass**, **css**, **Typescript** and it uses **Vite** as a build tool. it supports two languages *English* and *Persian* and has two themes *Dark* and *Light*.
+This project is written by **HTML**, **Sass**, **css**, **Typescript**, and it uses **Vite** as a build tool. it supports two languages *English* and *Persian*, and has two themes *Dark* and *Light*. I tried to use some technologies like Web Components for convenience and cleanliness of my code.
 
 By `npm run build`, the build folder in name of *dist* will be created.
 

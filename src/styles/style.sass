@@ -46,23 +46,14 @@ html
     scroll-snap-type: none
 
   &[data-theme='light']
-    .languageIconDark
-      display: none
-
-    .languageIconLight
-      display: block
+    .languageIcon
+      filter: invert(0%) sepia(82%) saturate(7426%) hue-rotate(32deg) brightness(87%) contrast(117%) !important
 
     .darkTheme
       display: none
 
     .lightTheme
       display: block
-
-  .languageIconDark
-    display: block
-
-  .languageIconLight
-    display: none
 
   .darkTheme
     display: block
@@ -271,6 +262,7 @@ html
             .languageIcon
               width: 1.5rem
               height: 1.5rem
+              filter: invert(100%) sepia(47%) saturate(149%) hue-rotate(208deg) brightness(113%) contrast(100%)
 
             .languageWrapper
               display: none
@@ -377,12 +369,6 @@ html
       left: 0
       position: absolute
       opacity: 0.6
-
-  #aboutMe
-    justify-content: center
-
-    @include mixin.respond-to('small-tablet')
-      justify-content: unset
 
   .about
     display: flex
@@ -550,6 +536,7 @@ html
           p
             color: var(--neutral-color)
             font-size: 1rem
+            line-height: 1.7
 
             @include mixin.respond-to('big-desktop')
               font-size: 0.9rem
