@@ -7,15 +7,23 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "deploy": "tsc && vite build && gh-pages -d dist"
+    "deploy": "tsc && vite build && gh-pages -d dist",
+    "lint": "eslint src --ext .ts"
   },
   "devDependencies": {
+    "eslint": "^9.1.0",
     "gh-pages": "^6.1.1",
     "typescript": "^5.3.3",
     "vite": "^5.2.8"
   },
   "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^7.7.0",
+    "@typescript-eslint/parser": "^7.7.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
     "path": "^0.12.7",
+    "prettier": "^3.2.5",
     "sass": "^1.71.0"
   }
 }
