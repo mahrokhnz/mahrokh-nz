@@ -7,9 +7,10 @@ const langValueFa: Element = document.querySelector(".fa")!;
 type TLocale = "en" | "fa"
 const defaultLocale: TLocale = "en";
 let locale: TLocale;
-let translations: {[key: string]: any} = {};
+let translations: { [key: string]: any } = {};
 
-document.addEventListener("DOMContentLoaded", () => {    void setLocale(defaultLocale);
+document.addEventListener("DOMContentLoaded", () => {
+    void setLocale(defaultLocale);
 });
 
 async function setLocale(newLocale: TLocale) {
@@ -29,7 +30,9 @@ async function fetchTranslationsFor(newLocale: TLocale): Promise<JSON> {
 function translatePage() {
     const i18nKey: NodeListOf<HTMLElement> = document.querySelectorAll("[data-i18n-key]")
 
-    i18nKey.forEach((key: HTMLElement) => {translateElement(key)})
+    i18nKey.forEach((key: HTMLElement) => {
+        translateElement(key)
+    })
 }
 
 function translateElement(element: HTMLElement) {

@@ -13,37 +13,37 @@ const svg: string = `<svg class="svgContainer" viewBox="0 0 1440 320" xmlns="htt
         <circle cx="90" cy="180" fill="currentColor" r="5"/>
         <circle cx="110" cy="180" fill="currentColor" r="5"/>
         <circle cx="130" cy="180" fill="currentColor" r="5"/>
-
+    
         <circle cx="50" cy="200" fill="currentColor" r="5"/>
         <circle cx="70" cy="200" fill="currentColor" r="5"/>
         <circle cx="90" cy="200" fill="currentColor" r="5"/>
         <circle cx="110" cy="200" fill="currentColor" r="5"/>
         <circle cx="130" cy="200" fill="currentColor" r="5"/>
-
+    
         <circle cx="50" cy="220" fill="currentColor" r="5"/>
         <circle cx="70" cy="220" fill="currentColor" r="5"/>
         <circle cx="90" cy="220" fill="currentColor" r="5"/>
         <circle cx="110" cy="220" fill="currentColor" r="5"/>
         <circle cx="130" cy="220" fill="currentColor" r="5"/>
-
+    
         <circle cx="50" cy="240" fill="currentColor" r="5"/>
         <circle cx="70" cy="240" fill="currentColor" r="5"/>
         <circle cx="90" cy="240" fill="currentColor" r="5"/>
         <circle cx="110" cy="240" fill="currentColor" r="5"/>
         <circle cx="130" cy="240" fill="currentColor" r="5"/>
-
+    
         <circle cx="50" cy="260" fill="currentColor" r="5"/>
         <circle cx="70" cy="260" fill="currentColor" r="5"/>
         <circle cx="90" cy="260" fill="currentColor" r="5"/>
         <circle cx="110" cy="260" fill="currentColor" r="5"/>
         <circle cx="130" cy="260" fill="currentColor" r="5"/>
-
+    
         <circle cx="50" cy="280" fill="currentColor" r="5"/>
         <circle cx="70" cy="280" fill="currentColor" r="5"/>
         <circle cx="90" cy="280" fill="currentColor" r="5"/>
         <circle cx="110" cy="280" fill="currentColor" r="5"/>
         <circle cx="130" cy="280" fill="currentColor" r="5"/>
-
+    
         <circle cx="50" cy="300" fill="currentColor" r="5"/>
         <circle cx="70" cy="300" fill="currentColor" r="5"/>
         <circle cx="90" cy="300" fill="currentColor" r="5"/>
@@ -54,7 +54,7 @@ const svg: string = `<svg class="svgContainer" viewBox="0 0 1440 320" xmlns="htt
 class svgComponent extends HTMLElement {
     constructor() {
         super();
-        this.innerHTML =  svg
+        this.innerHTML = svg
     }
 }
 

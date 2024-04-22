@@ -1,4 +1,4 @@
-const canvas = <HTMLCanvasElement> document.getElementById("myCanvas");
+const canvas = <HTMLCanvasElement>document.getElementById("myCanvas");
 const ctx = canvas.getContext("2d")!;
 
 type TStar = {
@@ -117,6 +117,7 @@ const detectStars = (mouse: TMouse) => {
 
     detectLines(nearStars)
 }
+
 
 canvas.addEventListener("mousemove", (e: MouseEvent) => {
     mouseP = {x: e.pageX, y: e.pageY}
