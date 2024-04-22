@@ -10,8 +10,11 @@ const hamburgerMenu: Element = document.querySelector(".hamburgerMenu")!;
 const headerMenu: Element = document.querySelector(".headerMenu")!;
 const menuItems: NodeListOf<Element> = document.querySelectorAll(".menuItem")!;
 
-import './lang.ts'
+import './menu.ts'
 import './svg.ts'
+import './contact.ts'
+import './education.ts'
+import './lang.ts'
 import './constellation.ts'
 
 // Skills Section
@@ -41,7 +44,7 @@ const skills: Array<TSkill> = [
         column: 1,
         row: 1,
         title: "Responsive Web Design",
-        count: 10,
+        count: 9,
     },
     {
         column: 1,
@@ -52,32 +55,50 @@ const skills: Array<TSkill> = [
     {
         column: 1,
         row: 1,
+        title: "Typescript",
+        count: 8,
+    },
+    {
+        column: 1,
+        row: 1,
         title: "React.js",
-        count: 7,
+        count: 8,
     },
     {
         column: 1,
         row: 1,
-        title: "Git",
-        count: 7,
+        title: "Graphql",
+        count: 8,
     },
     {
         column: 1,
         row: 1,
-        title: "Ubuntu",
+        title: "Vite",
+        count: 5,
+    },
+    {
+        column: 1,
+        row: 1,
+        title: "Webpack",
         count: 4,
-    },
-    {
-        column: 1,
-        row: 1,
-        title: "English",
-        count: 9,
     },
     {
         column: 2,
         row: 1,
         title: "Data Structure",
         count: 8,
+    },
+    {
+        column: 2,
+        row: 1,
+        title: "Git",
+        count: 7,
+    },
+    {
+        column: 2,
+        row: 1,
+        title: "Ubuntu",
+        count: 4,
     },
     {
         column: 2,
@@ -100,8 +121,20 @@ const skills: Array<TSkill> = [
     {
         column: 2,
         row: 1,
+        title: "English",
+        count: 9,
+    },
+    {
+        column: 2,
+        row: 1,
         title: "Deno",
         count: 1,
+    },
+    {
+        column: 2,
+        row: 1,
+        title: "Test",
+        count: 2,
     },
 ];
 
