@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>My Resume</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body .resumeContainer {
+        width: 100vw;
+        height: 100vh;
+        padding: 2rem 2.5rem;
+        border: 1px pink solid;
+        display: flex;
+        font-family: cormorantGaramondMedium, serif;
+    }
+
+    body .resumeContainer .menuItem {
+        flex: 0 1 0;
+        min-width: 8rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 1rem;
+        background-color: #282828;
+        color: #fff;
+    }
+
+    body .resumeContainer .content {
+        flex: 1 0 0;
+        border: 1px green solid;
+    }
+
+    body .resumeContainer .menuItem .personalInfo {
+        transform: rotateZ(-90deg) translateX(-90%) translateY(130%);
+        letter-spacing: 0.2rem;
+    }
+
+</style>
+<body>
+<main class="resumeContainer">
+    <aside class="menuItem">
+        <div class="personalInfo">
+            RESUME
+        </div>
+        <div class="workExperience">
+            W E
+        </div>
+        <div class="education">
+            E
+        </div>
+        <div class="skill">
+            S
+        </div>
+    </aside>
+    <aside class="content">
+        Bye
+    </aside>
+</main>
+</body>
+</html>
