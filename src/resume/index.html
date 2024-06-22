@@ -23,16 +23,13 @@
         font-family: cormorantGaramondMedium, serif;
     }
 
-    body .resumeContainer .menuItem {
+    body .resumeContainer .menuItems {
         flex: 0 1 0;
         min-width: 8rem;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        justify-content: space-between;
         padding: 1rem;
         background-color: #282828;
         color: #fff;
+        position: relative;
     }
 
     body .resumeContainer .content {
@@ -40,30 +37,125 @@
         border: 1px green solid;
     }
 
-    body .resumeContainer .menuItem .personalInfo {
-        transform: rotateZ(-90deg) translateX(-90%) translateY(130%);
+    body .resumeContainer .menuItems .personalInfo {
+        transform: rotateZ(-90deg) translateX(-30%) translateY(200%);
         letter-spacing: 0.2rem;
+    }
+
+    body .resumeContainer .menuItems .menuItem {
+        position: absolute;
+        left: 60%;
+    }
+
+    body .resumeContainer .menuItems .workExperience {
+        top: 20%;
+    }
+
+    body .resumeContainer .menuItems .education {
+        top: 50%;
+    }
+
+    body .resumeContainer .menuItems .skill {
+        top: 80%;
+    }
+
+    body .resumeContainer .content {
+        padding: 2.5rem 1.5rem;
+    }
+
+    body .resumeContainer .content .info {
+        display: flex;
+    }
+
+    body .resumeContainer .content .info .nameWrapper {
+        display: flex;
+        flex-direction: column;
+        margin-right: 15rem;
+    }
+
+    body .resumeContainer .content .info .nameWrapper .firstname {
+        font-size: 2.3rem;
+    }
+
+    body .resumeContainer .content .info .nameWrapper .lastname {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    body .resumeContainer .content .info .nameWrapper .profession {
+        font-size: 1rem;
+        letter-spacing: 0.2rem;
+    }
+
+    body .resumeContainer .content .info .socialWrapper {
+        display: flex;
+    }
+
+    body .resumeContainer .content .info .socialWrapper .social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 1rem;
+        width: 1.5rem;
+        background-color: #282828;
+        margin-top: -2.5rem;
+        padding: 2rem 0 1rem 0;
+    }
+
+    body .resumeContainer .content .info .socialWrapper .social .socialImg {
+        width: 0.9rem;
+        height: 0.9rem;
+    }
+
+    body .resumeContainer .content .info .socialWrapper .address {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding-bottom: 1rem;
     }
 
 </style>
 <body>
 <main class="resumeContainer">
-    <aside class="menuItem">
+    <aside class="menuItems">
         <div class="personalInfo">
             RESUME
         </div>
-        <div class="workExperience">
+        <div class="menuItem workExperience">
             W E
         </div>
-        <div class="education">
+        <div class="menuItem education">
             E
         </div>
-        <div class="skill">
+        <div class="menuItem skill">
             S
         </div>
     </aside>
     <aside class="content">
-        Bye
+        <div class="info">
+            <div class="nameWrapper">
+                <span class="firstname">Mahrokh</span>
+                <b class="lastname">Nabizadeh</b>
+                <span class="profession">Frontend Developer</span>
+            </div>
+
+            <div class="socialWrapper">
+                <div class="social">
+                    <img alt="Mobile Icon" class="socialImg" src="../../public/icons/mobile-button-regular.svg">
+                    <img alt="Envelope Icon" class="socialImg" src="../../public/icons/envelope-regular.svg">
+                    <img alt="Globe Icon" class="socialImg" src="../../public/icons/globe-regular.svg">
+                    <img alt="Location Icon" class="socialImg" src="../../public/icons/location-dot-regular.svg">
+                </div>
+                <div class="address">
+                    <span>+98 921 257 93 99</span>
+                    <span>mahrokh.nz@gmail.com</span>
+                    <span>www.mahrokhnz.ir</span>
+                    <span>Tehran, Iran</span>
+                </div>
+            </div>
+        </div>
     </aside>
 </main>
 </body>
