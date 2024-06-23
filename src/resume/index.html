@@ -21,6 +21,7 @@
         border: 1px pink solid;
         display: flex;
         font-family: cormorantGaramondMedium, serif;
+        position: relative;
     }
 
     body .resumeContainer .menuItems {
@@ -48,7 +49,7 @@
     }
 
     body .resumeContainer .menuItems .workExperience {
-        top: 20%;
+        top: 14rem;
     }
 
     body .resumeContainer .menuItems .education {
@@ -89,6 +90,7 @@
 
     body .resumeContainer .content .info .socialWrapper {
         display: flex;
+        gap: 0.8rem;
     }
 
     body .resumeContainer .content .info .socialWrapper .social {
@@ -114,6 +116,19 @@
         align-items: flex-start;
         gap: 1rem;
         padding-bottom: 1rem;
+    }
+
+    body .resumeContainer .content .info .socialWrapper .address {
+        font-size: 0.8rem
+    }
+
+    body .resumeContainer .content .horizontalLine {
+        position: absolute;
+        top: 18rem;
+        left: 7rem;
+        width: 100%;
+        height: 0.1rem;
+        background-color: #bdc3c7;
     }
 
 </style>
@@ -156,6 +171,8 @@
                 </div>
             </div>
         </div>
+
+        <div class="horizontalLine"></div>
     </aside>
 </main>
 </body>
