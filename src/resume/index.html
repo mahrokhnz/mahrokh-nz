@@ -64,7 +64,7 @@
     }
 
     body .resumeContainer .menuItems .education {
-        top: 150mm;
+        top: 175mm;
     }
 
     body .resumeContainer .menuItems .skill {
@@ -128,17 +128,31 @@
 
     body .resumeContainer .content .horizontalLine {
         position: absolute;
-        top: 80mm;
         left: -12mm;
         width: 100%;
         height: 0.5mm;
         background-color: #bdc3c7;
     }
 
+    body .resumeContainer .content .workHorizontalLine {
+        top: 80mm;
+    }
+
+    body .resumeContainer .content .educationHorizontalLine {
+        top: 187mm;
+    }
+
     body .resumeContainer .content .title {
         position: absolute;
-        top: 69mm;
         left: 10mm;
+    }
+
+    body .resumeContainer .content .workTitle {
+        top: 69mm;
+    }
+
+    body .resumeContainer .content .educationTitle {
+        top: 176mm;
     }
 
     body .resumeContainer .content .workExperienceSection {
@@ -156,7 +170,6 @@
 
     body .resumeContainer .content .workExperienceSection .verticalLine {
         position: absolute;
-        top: 2mm;
         left: 35mm;
         width: 0.7mm;
         height: 100%;
@@ -165,8 +178,9 @@
 
     body .resumeContainer .content .workExperienceSection .verticalLine .point {
         position: absolute;
-        width: 3mm;
-        height: 3mm;
+        top: 2mm;
+        width: 2.2mm;
+        height: 2.2mm;
         transform: translateX(-40%);
         border-radius: 5rem;
         background-color: #000;
@@ -190,13 +204,9 @@
         flex-direction: column;
     }
 
-    /*body .resumeContainer .content .section {*/
-    /*    padding: 2rem;*/
-    /*}*/
-
     body .resumeContainer .content .experienceWrapper .date {
         font-size: 5mm;
-        color: #bdc3c7;
+        color: #000;
     }
 
     body .resumeContainer .content .experienceWrapper .experience {
@@ -259,9 +269,8 @@
             </div>
         </div>
 
-        <h3 class="title">WORK EXPERIENCE</h3>
-        <div class="horizontalLine"></div>
-
+        <h3 class="title workTitle">WORK EXPERIENCE</h3>
+        <div class="horizontalLine workHorizontalLine"></div>
         <section class="workExperienceSection section">
             <div class="verticalLine">
                 <span class="point pointOne"></span>
@@ -304,6 +313,9 @@
                 </div>
             </div>
         </section>
+
+        <h3 class="title educationTitle">EDUCATION</h3>
+        <div class="horizontalLine educationHorizontalLine"></div>
     </aside>
 </main>
 </body>
