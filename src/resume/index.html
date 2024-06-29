@@ -14,54 +14,61 @@
         box-sizing: border-box;
     }
 
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /*TODO*/
+        margin-top: 5rem;
+    }
+
     body .resumeContainer {
-        width: 100vw;
-        height: 100vh;
-        padding: 2rem 2.5rem;
-        border: 1px pink solid;
+        width: 210mm;
+        height: 297mm;
         display: flex;
         font-family: cormorantGaramondMedium, serif;
         position: relative;
+        border: 1px black solid;
     }
 
     body .resumeContainer .menuItems {
         flex: 0 1 0;
-        min-width: 8rem;
-        padding: 1rem;
+        min-width: 25mm;
         background-color: #282828;
         color: #fff;
         position: relative;
     }
 
     body .resumeContainer .content {
-        flex: 1 0 0;
-        border: 1px green solid;
+        padding: 10.5mm 10mm;
+        position: relative;
     }
 
     body .resumeContainer .menuItems .personalInfo {
-        transform: rotateZ(-90deg) translateX(-30%) translateY(200%);
-        letter-spacing: 0.2rem;
+        transform: rotateZ(-90deg) translateX(-90%) translateY(100%);
+        letter-spacing: 1.5mm;
     }
 
     body .resumeContainer .menuItems .menuItem {
         position: absolute;
-        left: 60%;
+        left: 13mm;
+    }
+
+    body .resumeContainer .menuItems .menuItem .menuItemImg {
+        width: 8mm;
+        height: 8mm;
     }
 
     body .resumeContainer .menuItems .workExperience {
-        top: 14rem;
+        top: 68mm;
     }
 
     body .resumeContainer .menuItems .education {
-        top: 50%;
+        top: 150mm;
     }
 
     body .resumeContainer .menuItems .skill {
-        top: 80%;
-    }
-
-    body .resumeContainer .content {
-        padding: 2.5rem 1.5rem;
+        top: 200mm;
     }
 
     body .resumeContainer .content .info {
@@ -71,26 +78,26 @@
     body .resumeContainer .content .info .nameWrapper {
         display: flex;
         flex-direction: column;
-        margin-right: 15rem;
+        margin-right: 40mm;
     }
 
     body .resumeContainer .content .info .nameWrapper .firstname {
-        font-size: 2.3rem;
+        font-size: 10mm;
     }
 
     body .resumeContainer .content .info .nameWrapper .lastname {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
+        font-size: 15mm;
+        margin-bottom: 3mm;
     }
 
     body .resumeContainer .content .info .nameWrapper .profession {
-        font-size: 1rem;
-        letter-spacing: 0.2rem;
+        font-size: 5.3mm;
+        letter-spacing: 1.5mm;
     }
 
     body .resumeContainer .content .info .socialWrapper {
         display: flex;
-        gap: 0.8rem;
+        gap: 5mm;
     }
 
     body .resumeContainer .content .info .socialWrapper .social {
@@ -98,37 +105,117 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-end;
-        gap: 1rem;
-        width: 1.5rem;
+        gap: 5mm;
+        width: 8mm;
         background-color: #282828;
-        margin-top: -2.5rem;
-        padding: 2rem 0 1rem 0;
+        margin-top: -10.5mm;
+        padding-bottom: 5mm;
     }
 
     body .resumeContainer .content .info .socialWrapper .social .socialImg {
-        width: 0.9rem;
-        height: 0.9rem;
+        width: 4mm;
+        height: 4mm;
     }
 
     body .resumeContainer .content .info .socialWrapper .address {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-        padding-bottom: 1rem;
-    }
-
-    body .resumeContainer .content .info .socialWrapper .address {
-        font-size: 0.8rem
+        justify-content: center;
+        gap: 5mm;
+        padding-bottom: 5mm;
+        font-size: 3.5mm
     }
 
     body .resumeContainer .content .horizontalLine {
         position: absolute;
-        top: 18rem;
-        left: 7rem;
+        top: 80mm;
+        left: -12mm;
         width: 100%;
-        height: 0.1rem;
+        height: 0.5mm;
         background-color: #bdc3c7;
+    }
+
+    body .resumeContainer .content .title {
+        position: absolute;
+        top: 69mm;
+        left: 10mm;
+    }
+
+    body .resumeContainer .content .workExperienceSection {
+        display: flex;
+        margin-top: 40mm;
+        position: relative;
+    }
+
+    body .resumeContainer .content .workExperienceSection .experiences {
+        display: flex;
+        flex-direction: column;
+        gap: 6mm;
+    }
+
+
+    body .resumeContainer .content .workExperienceSection .verticalLine {
+        position: absolute;
+        top: 2mm;
+        left: 35mm;
+        width: 0.7mm;
+        height: 100%;
+        background-color: #bdc3c7;
+    }
+
+    body .resumeContainer .content .workExperienceSection .verticalLine .point {
+        position: absolute;
+        width: 3mm;
+        height: 3mm;
+        transform: translateX(-40%);
+        border-radius: 5rem;
+        background-color: #000;
+    }
+
+    body .resumeContainer .content .workExperienceSection .verticalLine .pointTwo {
+        top: 27mm;
+    }
+
+    body .resumeContainer .content .workExperienceSection .verticalLine .pointThree {
+        top: 55mm;
+    }
+
+    body .resumeContainer .content .workExperienceSection .experiences .experienceWrapper {
+        display: flex;
+        gap: 24mm;
+    }
+
+    body .resumeContainer .content .workExperienceSection .experiences .experienceWrapper .experience {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /*body .resumeContainer .content .section {*/
+    /*    padding: 2rem;*/
+    /*}*/
+
+    body .resumeContainer .content .experienceWrapper .date {
+        font-size: 5mm;
+        color: #bdc3c7;
+    }
+
+    body .resumeContainer .content .experienceWrapper .experience {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5mm;
+        flex: 1 0 0;
+    }
+
+    body .resumeContainer .content .experienceWrapper .experience .experienceTitle {
+        font-size: 5mm;
+    }
+
+    body .resumeContainer .content .experienceWrapper .experience .info {
+        font-size: 4mm;
+    }
+
+    body .resumeContainer .content .experienceWrapper .experience .moreInfo {
+        font-size: 3.5mm;
     }
 
 </style>
@@ -139,13 +226,13 @@
             RESUME
         </div>
         <div class="menuItem workExperience">
-            W E
+            <img alt="Suitcase Icon" class="menuItemImg" src="../../public/icons/suitcase-regular.svg">
         </div>
         <div class="menuItem education">
-            E
+            <img alt="Graduation Icon" class="menuItemImg" src="../../public/icons/graduation-cap-regular.svg">
         </div>
         <div class="menuItem skill">
-            S
+            <img alt="Pencil Icon" class="menuItemImg" src="../../public/icons/pencil-slash-regular.svg">
         </div>
     </aside>
     <aside class="content">
@@ -172,7 +259,51 @@
             </div>
         </div>
 
+        <h3 class="title">WORK EXPERIENCE</h3>
         <div class="horizontalLine"></div>
+
+        <section class="workExperienceSection section">
+            <div class="verticalLine">
+                <span class="point pointOne"></span>
+                <span class="point pointTwo"></span>
+                <span class="point pointThree"></span>
+            </div>
+            <div class="experiences">
+                <div class="experienceWrapper">
+                    <span class="date">2021 - 2024</span>
+                    <div class="experience">
+                        <h4 class="experienceTitle">Frontend Developer</h4>
+                        <span class="info">Hamresan | Tehran, Iran</span>
+                        <p class="moreInfo">
+                            I worked on different projects of Rasayesh events, Rasayesh event websites, several panels
+                            like attendee, admin, company, and also Pharket website and panels.
+                        </p>
+                    </div>
+                </div>
+                <div class="experienceWrapper">
+                    <span class="date">2020 - 2021</span>
+                    <div class="experience">
+                        <h4 class="experienceTitle">Software Documenter</h4>
+                        <span class="info">Mabna | Tehran, Iran</span>
+                        <p class="moreInfo">
+                            I created many videos and graphic contents for some software of Mabna group. and also I was
+                            admin of Mabna Learning Management System(LMS).
+                        </p>
+                    </div>
+                </div>
+                <div class="experienceWrapper">
+                    <span class="date">2016 - 2020</span>
+                    <div class="experience">
+                        <h4 class="experienceTitle">Content Specialist</h4>
+                        <span class="info">Peyke Bartar | Tehran, Iran</span>
+                        <p class="moreInfo">
+                            I started my work experience in content creating, like visual and written contents. these
+                            experiences were in sub-sets of Peyke Bartar like Zibamoon and Dunro.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </aside>
 </main>
 </body>
