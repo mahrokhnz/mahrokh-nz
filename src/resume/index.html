@@ -64,7 +64,7 @@
     }
 
     body .resumeContainer .menuItems .education {
-        top: 175mm;
+        top: 184mm;
     }
 
     body .resumeContainer .menuItems .skill {
@@ -139,7 +139,7 @@
     }
 
     body .resumeContainer .content .educationHorizontalLine {
-        top: 187mm;
+        top: 196mm;
     }
 
     body .resumeContainer .content .title {
@@ -152,10 +152,10 @@
     }
 
     body .resumeContainer .content .educationTitle {
-        top: 176mm;
+        top: 185mm;
     }
 
-    body .resumeContainer .content .workExperienceSection {
+    body .resumeContainer .content .section {
         display: flex;
         margin-top: 40mm;
         position: relative;
@@ -166,7 +166,6 @@
         flex-direction: column;
         gap: 6mm;
     }
-
 
     body .resumeContainer .content .workExperienceSection .verticalLine {
         position: absolute;
@@ -216,16 +215,24 @@
         flex: 1 0 0;
     }
 
-    body .resumeContainer .content .experienceWrapper .experience .experienceTitle {
+    body .resumeContainer .content .subsectionTitle {
         font-size: 5mm;
     }
 
-    body .resumeContainer .content .experienceWrapper .experience .info {
+    body .resumeContainer .content .info {
         font-size: 4mm;
     }
 
-    body .resumeContainer .content .experienceWrapper .experience .moreInfo {
+    body .resumeContainer .content .moreInfo {
         font-size: 3.5mm;
+    }
+
+    body .resumeContainer .content .educationSection {
+        justify-content: space-between;
+    }
+
+    body .resumeContainer .content .educationSection .degree {
+        width: 60mm;
     }
 
 </style>
@@ -281,7 +288,7 @@
                 <div class="experienceWrapper">
                     <span class="date">2021 - 2024</span>
                     <div class="experience">
-                        <h4 class="experienceTitle">Frontend Developer</h4>
+                        <h4 class="subsectionTitle">Frontend Developer</h4>
                         <span class="info">Hamresan | Tehran, Iran</span>
                         <p class="moreInfo">
                             I worked on different projects of Rasayesh events, Rasayesh event websites, several panels
@@ -292,7 +299,7 @@
                 <div class="experienceWrapper">
                     <span class="date">2020 - 2021</span>
                     <div class="experience">
-                        <h4 class="experienceTitle">Software Documenter</h4>
+                        <h4 class="subsectionTitle">Software Documenter</h4>
                         <span class="info">Mabna | Tehran, Iran</span>
                         <p class="moreInfo">
                             I created many videos and graphic contents for some software of Mabna group. and also I was
@@ -303,7 +310,7 @@
                 <div class="experienceWrapper">
                     <span class="date">2016 - 2020</span>
                     <div class="experience">
-                        <h4 class="experienceTitle">Content Specialist</h4>
+                        <h4 class="subsectionTitle">Content Specialist</h4>
                         <span class="info">Peyke Bartar | Tehran, Iran</span>
                         <p class="moreInfo">
                             I started my work experience in content creating, like visual and written contents. these
@@ -316,6 +323,22 @@
 
         <h3 class="title educationTitle">EDUCATION</h3>
         <div class="horizontalLine educationHorizontalLine"></div>
+        <section class="educationSection section">
+            <div class="degree">
+                <h4 class="subsectionTitle">MASTER OF DEGREE</h4>
+                <span class="info">University of Science and Culture | Tehran, Iran</span>
+                <p class="moreInfo">
+                    I studied MBA, my thesis is about repurchase intention in online retail stores, that I have got
+                    great score in defend session.</p>
+            </div>
+            <div class="degree">
+                <h4 class="subsectionTitle">BACHELOR OF ARTS</h4>
+                <span class="info">University of Tehran | Tehran, Iran</span>
+                <p class="moreInfo">
+                    I studied Mechanical Engineering.
+                </p>
+            </div>
+        </section>
     </aside>
 </main>
 </body>
