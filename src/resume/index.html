@@ -19,7 +19,7 @@
         align-items: center;
         justify-content: center;
         /*TODO*/
-        margin-top: 5rem;
+        margin-bottom: 5rem;
     }
 
     body .resumeContainer {
@@ -60,15 +60,15 @@
     }
 
     body .resumeContainer .menuItems .workExperience {
-        top: 68mm;
+        top: 60mm;
     }
 
     body .resumeContainer .menuItems .education {
-        top: 184mm;
+        top: 169mm;
     }
 
     body .resumeContainer .menuItems .skill {
-        top: 200mm;
+        top: 230mm;
     }
 
     body .resumeContainer .content .info {
@@ -82,16 +82,16 @@
     }
 
     body .resumeContainer .content .info .nameWrapper .firstname {
-        font-size: 10mm;
+        font-size: 9mm;
     }
 
     body .resumeContainer .content .info .nameWrapper .lastname {
-        font-size: 15mm;
-        margin-bottom: 3mm;
+        font-size: 14mm;
+        margin-bottom: 2mm;
     }
 
     body .resumeContainer .content .info .nameWrapper .profession {
-        font-size: 5.3mm;
+        font-size: 4.8mm;
         letter-spacing: 1.5mm;
     }
 
@@ -135,11 +135,15 @@
     }
 
     body .resumeContainer .content .workHorizontalLine {
-        top: 80mm;
+        top: 70mm;
     }
 
     body .resumeContainer .content .educationHorizontalLine {
-        top: 196mm;
+        top: 179mm;
+    }
+
+    body .resumeContainer .content .skillHorizontalLine {
+        top: 240mm;
     }
 
     body .resumeContainer .content .title {
@@ -148,16 +152,20 @@
     }
 
     body .resumeContainer .content .workTitle {
-        top: 69mm;
+        top: 61mm;
     }
 
     body .resumeContainer .content .educationTitle {
-        top: 185mm;
+        top: 170mm;
+    }
+
+    body .resumeContainer .content .skillTitle {
+        top: 231mm;
     }
 
     body .resumeContainer .content .section {
         display: flex;
-        margin-top: 40mm;
+        margin-top: 28mm;
         position: relative;
     }
 
@@ -208,10 +216,13 @@
         color: #000;
     }
 
-    body .resumeContainer .content .experienceWrapper .experience {
+    body .resumeContainer .content .subsection {
         display: flex;
         flex-direction: column;
         gap: 1.5mm;
+    }
+
+    body .resumeContainer .content .experience {
         flex: 1 0 0;
     }
 
@@ -229,10 +240,11 @@
 
     body .resumeContainer .content .educationSection {
         justify-content: space-between;
+        padding-top: 3mm;
     }
 
     body .resumeContainer .content .educationSection .degree {
-        width: 60mm;
+        width: 75mm;
     }
 
 </style>
@@ -287,7 +299,7 @@
             <div class="experiences">
                 <div class="experienceWrapper">
                     <span class="date">2021 - 2024</span>
-                    <div class="experience">
+                    <div class="experience subsection">
                         <h4 class="subsectionTitle">Frontend Developer</h4>
                         <span class="info">Hamresan | Tehran, Iran</span>
                         <p class="moreInfo">
@@ -298,7 +310,7 @@
                 </div>
                 <div class="experienceWrapper">
                     <span class="date">2020 - 2021</span>
-                    <div class="experience">
+                    <div class="experience subsection">
                         <h4 class="subsectionTitle">Software Documenter</h4>
                         <span class="info">Mabna | Tehran, Iran</span>
                         <p class="moreInfo">
@@ -309,7 +321,7 @@
                 </div>
                 <div class="experienceWrapper">
                     <span class="date">2016 - 2020</span>
-                    <div class="experience">
+                    <div class="experience subsection">
                         <h4 class="subsectionTitle">Content Specialist</h4>
                         <span class="info">Peyke Bartar | Tehran, Iran</span>
                         <p class="moreInfo">
@@ -324,20 +336,35 @@
         <h3 class="title educationTitle">EDUCATION</h3>
         <div class="horizontalLine educationHorizontalLine"></div>
         <section class="educationSection section">
-            <div class="degree">
+            <div class="degree subsection">
                 <h4 class="subsectionTitle">MASTER OF DEGREE</h4>
                 <span class="info">University of Science and Culture | Tehran, Iran</span>
                 <p class="moreInfo">
                     I studied MBA, my thesis is about repurchase intention in online retail stores, that I have got
                     great score in defend session.</p>
             </div>
-            <div class="degree">
+            <div class="degree subsection">
                 <h4 class="subsectionTitle">BACHELOR OF ARTS</h4>
                 <span class="info">University of Tehran | Tehran, Iran</span>
                 <p class="moreInfo">
                     I studied Mechanical Engineering.
                 </p>
             </div>
+        </section>
+
+        <h3 class="title skillTitle">SKILLS</h3>
+        <div class="horizontalLine skillHorizontalLine"></div>
+        <section class="section">
+            <ul class="subsection">
+                <h4 class="subsectionTitle">Software</h4>
+                <li>hi</li>
+                <li>hi2</li>
+            </ul>
+            <ul class="subsection">
+                <h4 class="subsectionTitle">Professional</h4>
+                <li>hi3</li>
+                <li>hi4</li>
+            </ul>
         </section>
     </aside>
 </main>
