@@ -16,6 +16,7 @@ import './contact.ts'
 import './education.ts'
 import './lang.ts'
 import './constellation.ts'
+import './download.ts'
 
 // Skills Section
 const activeCircles: Array<HTMLElement> = [];
