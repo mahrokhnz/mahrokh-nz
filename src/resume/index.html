@@ -18,8 +18,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        /*TODO*/
-        margin-bottom: 5rem;
     }
 
     body .resumeContainer {
@@ -212,7 +210,7 @@
     }
 
     body .resumeContainer .content .experienceWrapper .date {
-        font-size: 5mm;
+        font-size: 4mm;
         color: #000;
     }
 
@@ -227,7 +225,7 @@
     }
 
     body .resumeContainer .content .subsectionTitle {
-        font-size: 5mm;
+        font-size: 4.5mm;
     }
 
     body .resumeContainer .content .info {
@@ -245,6 +243,41 @@
 
     body .resumeContainer .content .educationSection .degree {
         width: 75mm;
+    }
+
+    body .resumeContainer .content .skillSection {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 3mm;
+    }
+
+    body .resumeContainer .content .section .wrapper {
+        display: flex;
+        font-size: 4mm;
+        list-style-type: none;
+    }
+
+    body .resumeContainer .content .skillSection {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    body .resumeContainer .content .skillSection .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 3mm;
+    }
+
+    body .resumeContainer .content .skillSection .wrapper .items {
+        font-size: 4mm;
+        list-style-type: none;
+        display: flex;
+        gap: 15mm;
+    }
+
+    body .resumeContainer .content .skillSection .wrapper .items .subsection {
+        font-size: 4mm;
+        list-style-type: none;
     }
 
 </style>
@@ -354,17 +387,45 @@
 
         <h3 class="title skillTitle">SKILLS</h3>
         <div class="horizontalLine skillHorizontalLine"></div>
-        <section class="section">
-            <ul class="subsection">
+        <section class="section skillSection">
+            <div class="wrapper software">
                 <h4 class="subsectionTitle">Software</h4>
-                <li>hi</li>
-                <li>hi2</li>
-            </ul>
-            <ul class="subsection">
+                <div class="items">
+                    <ul class="subsection">
+                        <li>Reactjs</li>
+                        <li>Javascript</li>
+                        <li>Typescript</li>
+                        <li>Stylus</li>
+                        <li>Sass</li>
+                        <li>Css</li>
+                    </ul>
+                    <ul class="subsection">
+                        <li>HTML</li>
+                        <li>Graphql</li>
+                        <li>My sql</li>
+                        <li>Nodejs</li>
+                        <li>Babel</li>
+                        <li>Webpack</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="wrapper professional">
                 <h4 class="subsectionTitle">Professional</h4>
-                <li>hi3</li>
-                <li>hi4</li>
-            </ul>
+                <div class="items">
+                    <ul class="subsection">
+                        <li>Team Work</li>
+                        <li>Planning</li>
+                        <li>Writing Skills</li>
+                        <li>Problem Solving skills</li>
+                        <li>Responsible</li>
+                        <li>Sense of Humor</li>
+                    </ul>
+                    <ul class="subsection">
+                        <li>Leadership</li>
+                        <li>Decision-making Power</li>
+                    </ul>
+                </div>
+            </div>
         </section>
     </aside>
 </main>
