@@ -55,10 +55,22 @@ html
     .lightTheme
       display: block
 
+    .darkDownload
+      display: none
+
+    .lightDownload
+      display: block
+
   .darkTheme
     display: block
 
   .lightTheme
+    display: none
+
+  .darkDownload
+    display: block
+
+  .lightDownload
     display: none
 
   .container
@@ -340,7 +352,7 @@ html
       h1
         font-size: 4rem
         color: $text-color
-        line-height: 1.5
+        line-height: 1.2
 
         @include mixin.respond-to('small-desktop')
           font-size: 3rem
@@ -355,12 +367,14 @@ html
         color: $neutral-color
 
       .resumeButton
-        width: 9rem
-        height: 2rem
+        position: relative
+        align-self: flex-start
+
+        @include mixin.respond-to('smart-phone')
+          align-self: center
 
         button
-          width: 9rem
-          height: 2rem
+          height: 3rem
           background: transparent
           border: 1px var(--text-color) solid
           color: var(--text-color)
@@ -368,6 +382,28 @@ html
           align-self: flex-start
           font-size: 1rem
           cursor: pointer
+          padding: 0 2rem 0 4rem
+          font-weight: 600
+
+          @include mixin.respond-to('small-desktop')
+            height: 2.5rem
+
+          @include mixin.respond-to('small-tablet')
+            font-size: 0.9rem
+            padding: 0 1.5rem 0 3.5rem
+            align-self: center
+
+        .downloadIcon
+          position: absolute
+          top: 50%
+          left: 2rem
+          transform: translate(-50%, -50%)
+          width: 1.3rem
+          height: 1.3rem
+
+          @include mixin.respond-to('small-tablet')
+            width: 1.1rem
+            height: 1.1rem
 
     span
       font-size: 1.3rem
