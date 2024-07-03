@@ -1,6 +1,6 @@
-const resume: Element = document.querySelector(".resumeContainer")!;
+const resume = document.querySelector(".resumeContainer");
 
-import 'https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js'
+// import './html2pdf.bundle.min.js'
 
 html2pdf()
     .set({
