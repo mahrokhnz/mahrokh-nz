@@ -32,6 +32,21 @@ html:lang(fa):root
       max-width: unset
       align-self: end
 
+      .nameWrapper
+        .resumeButton
+          button
+            padding: 0 4rem 0 2rem !important
+
+            @include mixin.respond-to('small-tablet')
+              padding: 0 3.5rem 0 1.5rem
+
+          .downloadIcon
+            position: absolute
+            top: 50% !important
+            left: unset !important
+            right: 2rem !important
+            transform: translateY(-50%)
+
     .aboutWrapper, .menu, .card
       direction: rtl
 
@@ -49,28 +64,16 @@ html
     .languageIcon
       filter: invert(0%) sepia(82%) saturate(7426%) hue-rotate(32deg) brightness(87%) contrast(117%) !important
 
-    .darkTheme
+    .darkTheme, .darkDownload
       display: none
 
-    .lightTheme
+    .lightTheme, .lightDownload
       display: block
 
-    .darkDownload
-      display: none
-
-    .lightDownload
-      display: block
-
-  .darkTheme
+  .darkTheme, .darkDownload
     display: block
 
-  .lightTheme
-    display: none
-
-  .darkDownload
-    display: block
-
-  .lightDownload
+  .lightTheme, .lightDownload
     display: none
 
   .container
@@ -397,7 +400,7 @@ html
           position: absolute
           top: 50%
           left: 2rem
-          transform: translate(-50%, -50%)
+          transform: translateY(-50%)
           width: 1.3rem
           height: 1.3rem
 
