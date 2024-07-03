@@ -1,7 +1,5 @@
 const resume = document.querySelector(".resumeContainer");
 
-// import './html2pdf.bundle.min.js'
-
 html2pdf()
     .set({
         margin: [0, -2, 0, -35],

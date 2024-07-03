@@ -16,8 +16,6 @@ import './contact.ts'
 import './education.ts'
 import './lang.ts'
 import './constellation.ts'
-// import './pages/resume/download.js'
-// import './pages/resume/html2pdf.bundle.min.js'
 
 // Skills Section
 const activeCircles: Array<HTMLElement> = [];
