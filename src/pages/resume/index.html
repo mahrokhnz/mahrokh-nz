@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>My Resume</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+    }
+
+    body .resumeContainer {
+        width: 210mm;
+        height: 297mm;
+        display: flex;
+        font-family: cormorantGaramondMedium, serif;
+        position: relative;
+    }
+
+    body .resumeContainer .menuItems {
+        flex: 0 1 0;
+        min-width: 25mm;
+        background-color: #282828;
+        color: #fff;
+        position: relative;
+    }
+
+    body .resumeContainer .content {
+        padding: 10.5mm 10mm;
+        position: relative;
+    }
+
+    body .resumeContainer .menuItems .personalInfo {
+        transform: rotateZ(-90deg) translateX(-90%) translateY(100%);
+        letter-spacing: 1.5mm;
+    }
+
+    body .resumeContainer .menuItems .menuItem {
+        position: absolute;
+        left: 13mm;
+    }
+
+    body .resumeContainer .menuItems .menuItem .menuItemImg {
+        width: 8mm;
+        height: 8mm;
+    }
+
+    body .resumeContainer .menuItems .workExperience {
+        top: 60mm;
+    }
+
+    body .resumeContainer .menuItems .education {
+        top: 169mm;
+    }
+
+    body .resumeContainer .menuItems .skill {
+        top: 230mm;
+    }
+
+    body .resumeContainer .content .info {
+        display: flex;
+    }
+
+    body .resumeContainer .content .info .nameWrapper {
+        display: flex;
+        flex-direction: column;
+        margin-right: 40mm;
+    }
+
+    body .resumeContainer .content .info .nameWrapper .firstname {
+        font-size: 9mm;
+    }
+
+    body .resumeContainer .content .info .nameWrapper .lastname {
+        font-size: 14mm;
+        margin-bottom: 2mm;
+    }
+
+    body .resumeContainer .content .info .nameWrapper .profession {
+        font-size: 4.8mm;
+        letter-spacing: 1.5mm;
+    }
+
+    body .resumeContainer .content .info .socialWrapper {
+        display: flex;
+        gap: 5mm;
+    }
+
+    body .resumeContainer .content .info .socialWrapper .social {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 5mm;
+        width: 8mm;
+        background-color: #282828;
+        margin-top: -10.5mm;
+        padding-bottom: 5mm;
+    }
+
+    body .resumeContainer .content .info .socialWrapper .social .socialImg {
+        width: 4mm;
+        height: 4mm;
+    }
+
+    body .resumeContainer .content .info .socialWrapper .address {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5mm;
+        padding-bottom: 5mm;
+        font-size: 3.5mm
+    }
+
+    body .resumeContainer .content .horizontalLine {
+        position: absolute;
+        left: -12mm;
+        width: 100%;
+        height: 0.5mm;
+        background-color: #bdc3c7;
+    }
+
+    body .resumeContainer .content .workHorizontalLine {
+        top: 70mm;
+    }
+
+    body .resumeContainer .content .educationHorizontalLine {
+        top: 179mm;
+    }
+
+    body .resumeContainer .content .skillHorizontalLine {
+        top: 240mm;
+    }
+
+    body .resumeContainer .content .title {
+        position: absolute;
+        left: 10mm;
+    }
+
+    body .resumeContainer .content .workTitle {
+        top: 61mm;
+    }
+
+    body .resumeContainer .content .educationTitle {
+        top: 170mm;
+    }
+
+    body .resumeContainer .content .skillTitle {
+        top: 231mm;
+    }
+
+    body .resumeContainer .content .section {
+        display: flex;
+        margin-top: 28mm;
+        position: relative;
+    }
+
+    body .resumeContainer .content .workExperienceSection .experiences {
+        display: flex;
+        flex-direction: column;
+        gap: 6mm;
+    }
+
+    body .resumeContainer .content .workExperienceSection .verticalLine {
+        position: absolute;
+        left: 35mm;
+        width: 0.7mm;
+        height: 100%;
+        background-color: #bdc3c7;
+    }
+
+    body .resumeContainer .content .workExperienceSection .verticalLine .point {
+        position: absolute;
+        top: 2mm;
+        width: 2.2mm;
+        height: 2.2mm;
+        transform: translateX(-40%);
+        border-radius: 5rem;
+        background-color: #000;
+    }
+
+    body .resumeContainer .content .workExperienceSection .verticalLine .pointTwo {
+        top: 29mm;
+    }
+
+    body .resumeContainer .content .workExperienceSection .verticalLine .pointThree {
+        top: 57mm;
+    }
+
+    body .resumeContainer .content .workExperienceSection .experiences .experienceWrapper {
+        display: flex;
+        gap: 24mm;
+    }
+
+    body .resumeContainer .content .workExperienceSection .experiences .experienceWrapper .experience {
+        display: flex;
+        flex-direction: column;
+    }
+
+    body .resumeContainer .content .experienceWrapper .date {
+        font-size: 4mm;
+        color: #000;
+        margin-top: 1mm;
+    }
+
+    body .resumeContainer .content .subsection {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5mm;
+    }
+
+    body .resumeContainer .content .experience {
+        flex: 1 0 0;
+    }
+
+    body .resumeContainer .content .subsectionTitle {
+        font-size: 4.5mm;
+    }
+
+    body .resumeContainer .content .info {
+        font-size: 4mm;
+    }
+
+    body .resumeContainer .content .moreInfo {
+        font-size: 3.5mm;
+    }
+
+    body .resumeContainer .content .educationSection {
+        justify-content: space-between;
+        padding-top: 3mm;
+    }
+
+    body .resumeContainer .content .educationSection .degree {
+        width: 75mm;
+    }
+
+    body .resumeContainer .content .skillSection {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 3mm;
+    }
+
+    body .resumeContainer .content .section .wrapper {
+        display: flex;
+        font-size: 4mm;
+        list-style-type: none;
+    }
+
+    body .resumeContainer .content .skillSection {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    body .resumeContainer .content .skillSection .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 3mm;
+    }
+
+    body .resumeContainer .content .skillSection .wrapper .items {
+        font-size: 4mm;
+        list-style-type: none;
+        display: flex;
+        gap: 15mm;
+    }
+
+    body .resumeContainer .content .skillSection .wrapper .items .subsection {
+        font-size: 4mm;
+        list-style-type: none;
+    }
+
+</style>
+<body>
+<main class="resumeContainer">
+    <aside class="menuItems">
+        <div class="personalInfo">
+            RESUME
+        </div>
+        <div class="menuItem workExperience">
+            <img alt="Suitcase Icon" class="menuItemImg" src="../../../public/icons/suitcase-regular.svg">
+        </div>
+        <div class="menuItem education">
+            <img alt="Graduation Icon" class="menuItemImg" src="../../../public/icons/graduation-cap-regular.svg">
+        </div>
+        <div class="menuItem skill">
+            <img alt="Pencil Icon" class="menuItemImg" src="../../../public/icons/pencil-slash-regular.svg">
+        </div>
+    </aside>
+    <aside class="content">
+        <div class="info">
+            <div class="nameWrapper">
+                <span class="firstname">Mahrokh</span>
+                <b class="lastname">Nabizadeh</b>
+                <span class="profession">Frontend Developer</span>
+            </div>
+
+            <div class="socialWrapper">
+                <div class="social">
+                    <img alt="Mobile Icon" class="socialImg" src="../../../public/icons/mobile-button-regular.svg">
+                    <img alt="Envelope Icon" class="socialImg" src="../../../public/icons/envelope-regular.svg">
+                    <img alt="Globe Icon" class="socialImg" src="../../../public/icons/globe-regular.svg">
+                    <img alt="Location Icon" class="socialImg" src="../../../public/icons/location-dot-regular.svg">
+                </div>
+                <div class="address">
+                    <span>-</span>
+                    <span>mahrokh.nz@gmail.com</span>
+                    <span>www.mahrokhnz.ir</span>
+                    <span>Tehran, Iran</span>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="title workTitle">WORK EXPERIENCE</h3>
+        <div class="horizontalLine workHorizontalLine"></div>
+        <section class="workExperienceSection section">
+            <div class="verticalLine">
+                <span class="point pointOne"></span>
+                <span class="point pointTwo"></span>
+                <span class="point pointThree"></span>
+            </div>
+            <div class="experiences">
+                <div class="experienceWrapper">
+                    <span class="date">2021 - 2024</span>
+                    <div class="experience subsection">
+                        <h4 class="subsectionTitle">Frontend Developer</h4>
+                        <span class="info">Hamresan | Tehran, Iran</span>
+                        <p class="moreInfo">
+                            I worked on different projects like Rasayesh event websites, Rasayesh style guide,
+                            several panels
+                            like attendee, admin, company, and also Pharket website and panels.
+                        </p>
+                    </div>
+                </div>
+                <div class="experienceWrapper">
+                    <span class="date">2020 - 2021</span>
+                    <div class="experience subsection">
+                        <h4 class="subsectionTitle">Software Documenter</h4>
+                        <span class="info">Mabna | Tehran, Iran</span>
+                        <p class="moreInfo">
+                            I created many videos and graphic contents for some software of Mabna group. and also I was
+                            admin of Mabna Learning Management System(LMS).
+                        </p>
+                    </div>
+                </div>
+                <div class="experienceWrapper">
+                    <span class="date">2016 - 2020</span>
+                    <div class="experience subsection">
+                        <h4 class="subsectionTitle">Content Specialist</h4>
+                        <span class="info">Peyke Bartar | Tehran, Iran</span>
+                        <p class="moreInfo">
+                            I started my work experience in content creating, like visual and written contents. these
+                            experiences were in sub-sets of Peyke Bartar like Zibamoon and Dunro.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h3 class="title educationTitle">EDUCATION</h3>
+        <div class="horizontalLine educationHorizontalLine"></div>
+        <section class="educationSection section">
+            <div class="degree subsection">
+                <h4 class="subsectionTitle">MASTER OF DEGREE</h4>
+                <span class="info">University of Science and Culture | Tehran, Iran</span>
+                <p class="moreInfo">
+                    I studied MBA, my thesis is about repurchase intention in online retail stores, that I have got
+                    great score in defend session.</p>
+            </div>
+            <div class="degree subsection">
+                <h4 class="subsectionTitle">BACHELOR OF ARTS</h4>
+                <span class="info">University of Tehran | Tehran, Iran</span>
+                <p class="moreInfo">
+                    I studied Mechanical Engineering.
+                </p>
+            </div>
+        </section>
+
+        <h3 class="title skillTitle">SKILLS</h3>
+        <div class="horizontalLine skillHorizontalLine"></div>
+        <section class="section skillSection">
+            <div class="wrapper software">
+                <h4 class="subsectionTitle">Software</h4>
+                <div class="items">
+                    <ul class="subsection">
+                        <li>Reactjs</li>
+                        <li>Javascript</li>
+                        <li>Typescript</li>
+                        <li>Stylus</li>
+                        <li>Sass</li>
+                        <li>Css</li>
+                    </ul>
+                    <ul class="subsection">
+                        <li>HTML</li>
+                        <li>Graphql</li>
+                        <li>My sql</li>
+                        <li>Nodejs</li>
+                        <li>Babel</li>
+                        <li>Webpack</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="wrapper professional">
+                <h4 class="subsectionTitle">Professional</h4>
+                <div class="items">
+                    <ul class="subsection">
+                        <li>Team Work</li>
+                        <li>Planning</li>
+                        <li>Writing Skills</li>
+                        <li>Problem Solving skills</li>
+                        <li>Responsible</li>
+                        <li>Sense of Humor</li>
+                    </ul>
+                    <ul class="subsection">
+                        <li>Leadership</li>
+                        <li>Decision-making Power</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </aside>
+</main>
+<script crossorigin="anonymous"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="download.js" type="module"></script>
+</body>
+</html>
