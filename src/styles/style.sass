@@ -57,7 +57,7 @@ html
   overflow-x: hidden
   scroll-snap-type: y mandatory
 
-  @include mixin.respond-to('ipad')
+  @include mixin.respond-to('small-tablet')
     scroll-snap-type: none
 
   &[data-theme='light']
@@ -97,7 +97,6 @@ html
 
     @include mixin.respond-to('ipad')
       padding: 2rem
-      height: unset
 
   a
     text-decoration: none
@@ -538,6 +537,10 @@ html
     .projects
       display: flex
       flex-direction: column
+
+      .noResponsiveItem
+        @include mixin.respond-to('smart-phone')
+          display: none !important
 
       .row
         display: flex

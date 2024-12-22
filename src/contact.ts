@@ -9,12 +9,6 @@ const contact: string = `
         <a class="iconWrapper" href="https://www.linkedin.com/in/mahrokh-nabizadeh-335326144/" target="_blank">
             <img alt="linkedin Icon" src="/icons/linkedin.svg">
         </a>
-        <a class="iconWrapper" href="https://twitter.com/mahrokhnz" target="_blank">
-            <img alt="Twitter Icon" src="/icons/twitter.svg">
-        </a>
-        <a class="iconWrapper" href="https://www.instagram.com/mahrokhnz/" target="_blank">
-            <img alt="Instagram Icon" src="/icons/instagram.svg">
-        </a>
     </div>
 `
 

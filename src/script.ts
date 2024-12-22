@@ -22,7 +22,6 @@ const activeCircles: Array<HTMLElement> = [];
 
 type TSkill = {
     column: number,
-    row: number,
     title: string,
     count: number
 }
@@ -30,111 +29,93 @@ type TSkill = {
 const skills: Array<TSkill> = [
     {
         column: 1,
-        row: 1,
-        title: "Html",
+        title: "Reactjs",
         count: 9,
     },
     {
         column: 1,
-        row: 1,
-        title: "CSS (Stylus/Sass)",
+        title: "Nextjs",
+        count: 6,
+    },
+    {
+        column: 1,
+        title: "Javascript",
         count: 9,
     },
     {
         column: 1,
-        row: 1,
-        title: "Responsive Web Design",
-        count: 9,
-    },
-    {
-        column: 1,
-        row: 1,
-        title: "JavaScript",
-        count: 8,
-    },
-    {
-        column: 1,
-        row: 1,
         title: "Typescript",
         count: 8,
     },
     {
         column: 1,
-        row: 1,
-        title: "React.js",
-        count: 8,
+        title: "HTML",
+        count: 9,
     },
     {
         column: 1,
-        row: 1,
-        title: "Graphql",
-        count: 8,
+        title: "CSS (Stylus/Sass)",
+        count: 9,
     },
     {
         column: 1,
-        row: 1,
-        title: "Vite",
-        count: 5,
+        title: "Material UI",
+        count: 10,
     },
     {
         column: 1,
-        row: 1,
-        title: "Webpack",
-        count: 4,
+        title: "Responsive Web Design",
+        count: 10,
     },
     {
-        column: 2,
-        row: 1,
-        title: "Data Structure",
-        count: 8,
-    },
-    {
-        column: 2,
-        row: 1,
+        column: 1,
         title: "Git",
+        count: 8,
+    },
+    {
+        column: 2,
+        title: "Graphql and Rest Api",
+        count: 8,
+    },
+    {
+        column: 2,
+        title: "Data Structure",
         count: 7,
     },
     {
         column: 2,
-        row: 1,
+        title: "PWA",
+        count: 4,
+    },
+    {
+        column: 2,
+        title: "Websocket",
+        count: 8,
+    },
+    {
+        column: 2,
+        title: "Webpack",
+        count: 7,
+    },
+    {
+        column: 2,
+        title: "Vite",
+        count: 7,
+    },
+    {
+        column: 2,
+        title: "Threejs",
+        count: 4,
+    },
+    {
+        column: 2,
         title: "Ubuntu",
         count: 4,
     },
     {
         column: 2,
-        row: 1,
-        title: "MySQL",
-        count: 5,
-    },
-    {
-        column: 2,
-        row: 1,
-        title: "Node.js",
-        count: 3,
-    },
-    {
-        column: 2,
-        row: 1,
-        title: "Express.js",
-        count: 2,
-    },
-    {
-        column: 2,
-        row: 1,
         title: "English",
         count: 9,
-    },
-    {
-        column: 2,
-        row: 1,
-        title: "Deno",
-        count: 1,
-    },
-    {
-        column: 2,
-        row: 1,
-        title: "Test",
-        count: 2,
     },
 ];
 
