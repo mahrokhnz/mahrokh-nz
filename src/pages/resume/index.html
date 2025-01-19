@@ -20,10 +20,14 @@
 
     body .resumeContainer {
         width: 210mm;
-        height: 297mm;
+        /*height: 297mm;*/
         display: flex;
         font-family: cormorantGaramondMedium, serif;
         position: relative;
+    }
+
+    .pageBreak {
+        page-break-before: always;
     }
 
     body .resumeContainer .menuItems {
@@ -54,16 +58,20 @@
         height: 8mm;
     }
 
+    body .resumeContainer .menuItems .summary {
+        top: 70mm;
+    }
+
     body .resumeContainer .menuItems .workExperience {
-        top: 60mm;
+        top: 120mm;
     }
 
     body .resumeContainer .menuItems .education {
-        top: 169mm;
+        top: 253mm;
     }
 
     body .resumeContainer .menuItems .skill {
-        top: 230mm;
+        top: 315mm;
     }
 
     body .resumeContainer .content .info {
@@ -104,7 +112,7 @@
         width: 8mm;
         background-color: #282828;
         margin-top: -10.5mm;
-        padding-bottom: 5mm;
+        padding-bottom: 6mm;
     }
 
     body .resumeContainer .content .info .socialWrapper .social .socialImg {
@@ -129,16 +137,20 @@
         background-color: #bdc3c7;
     }
 
+    body .resumeContainer .content .summaryHorizontalLine {
+        top: 82mm;
+    }
+
     body .resumeContainer .content .workHorizontalLine {
-        top: 70mm;
+        top: 132mm;
     }
 
     body .resumeContainer .content .educationHorizontalLine {
-        top: 179mm;
+        top: 265mm;
     }
 
     body .resumeContainer .content .skillHorizontalLine {
-        top: 240mm;
+        top: 328mm;
     }
 
     body .resumeContainer .content .title {
@@ -146,22 +158,35 @@
         left: 10mm;
     }
 
+    body .resumeContainer .content .summaryTitle {
+        top: 73mm;
+    }
+
     body .resumeContainer .content .workTitle {
-        top: 61mm;
+        top: 122mm;
     }
 
     body .resumeContainer .content .educationTitle {
-        top: 170mm;
+        top: 255mm;
     }
 
     body .resumeContainer .content .skillTitle {
-        top: 231mm;
+        top: 318mm;
     }
 
     body .resumeContainer .content .section {
         display: flex;
-        margin-top: 28mm;
         position: relative;
+    }
+
+    body .resumeContainer .content .summarySection {
+        font-size: 3.7mm;
+        line-height: 5mm;
+        margin-top: 31mm;
+    }
+
+    body .resumeContainer .content .workExperienceSection {
+        margin-top: 37mm;
     }
 
     body .resumeContainer .content .workExperienceSection .experiences {
@@ -189,11 +214,11 @@
     }
 
     body .resumeContainer .content .workExperienceSection .verticalLine .pointTwo {
-        top: 25mm;
+        top: 37mm;
     }
 
     body .resumeContainer .content .workExperienceSection .verticalLine .pointThree {
-        top: 52mm;
+        top: 78mm;
     }
 
     body .resumeContainer .content .workExperienceSection .experiences .experienceWrapper {
@@ -233,9 +258,23 @@
         font-size: 3.5mm;
     }
 
+    body .resumeContainer .content .tags {
+        display: flex;
+        gap: 0.8mm;
+        flex-wrap: wrap;
+        font-size: 3.1mm;
+    }
+
+    body .resumeContainer .content .tags .tag {
+        background: #282828;
+        color: white;
+        padding: 0.6mm 1.2mm;
+        border-radius: 2mm;
+    }
+
     body .resumeContainer .content .educationSection {
         justify-content: space-between;
-        padding-top: 3mm;
+        margin-top: 115px;
     }
 
     body .resumeContainer .content .educationSection .degree {
@@ -245,7 +284,7 @@
     body .resumeContainer .content .skillSection {
         display: flex;
         justify-content: space-between;
-        padding-top: 3mm;
+        margin-top: 106px;
     }
 
     body .resumeContainer .content .section .wrapper {
@@ -284,6 +323,9 @@
         <div class="personalInfo">
             RESUME
         </div>
+        <div class="menuItem summary">
+            <img alt="" class="menuItemImg" src="../../../public/icons/clipboard-list-check-regular.svg">
+        </div>
         <div class="menuItem workExperience">
             <img alt="" class="menuItemImg" src="../../../public/icons/suitcase-regular.svg">
         </div>
@@ -307,16 +349,29 @@
                     <img alt="" class="socialImg" src="../../../public/icons/mobile-button-regular.svg">
                     <img alt="" class="socialImg" src="../../../public/icons/envelope-regular.svg">
                     <img alt="" class="socialImg" src="../../../public/icons/globe-regular.svg">
+                    <img alt="" class="socialImg" src="../../../public/icons/linkedin-normal.svg">
                     <img alt="" class="socialImg" src="../../../public/icons/location-dot-regular.svg">
                 </div>
                 <div class="address">
-                    <span>-</span>
+                    <span>+98 921 257 93 99</span>
                     <span>mahrokh.nz@gmail.com</span>
-                    <span>www.mahrokhnz.ir</span>
+                    <a href="https://www.mahrokhnz.ir" target="_blank">www.mahrokhnz.ir</a>
+                    <a href="https://www.linkedin.com/in/mahrokh-nabizadeh-335326144/" target="_blank">LinkedIn</a>
                     <span>Tehran, Iran</span>
                 </div>
             </div>
         </div>
+
+        <h3 class="title summaryTitle">SUMMARY</h3>
+        <div class="horizontalLine summaryHorizontalLine"></div>
+        <section class="summarySection section">
+            <p>
+                A Frontend Developer that work from 2021 with a passion for building efficient, user-centric web
+                applications. I focus on
+                creating high-quality, performance-driven solutions. I’m continuously improving my skills and exploring
+                new technologies.
+            </p>
+        </section>
 
         <h3 class="title workTitle">WORK EXPERIENCE</h3>
         <div class="horizontalLine workHorizontalLine"></div>
@@ -334,6 +389,20 @@
                         <span class="info">Maadiran | Tehran, Iran</span>
                         <p class="moreInfo">
                             I'm working on Maadiran credit project, A panel for sales agents and managers.
+                        <div class="tags">
+                            <span class="tag">Reactjs</span>
+                            <span class="tag">Nextjs</span>
+                            <span class="tag">Javascript</span>
+                            <span class="tag">Typescript</span>
+                            <span class="tag">Sass</span>
+                            <span class="tag">Css</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">Rest Api</span>
+                            <span class="tag">Webpack</span>
+                            <span class="tag">Material UI</span>
+                            <span class="tag">PWA</span>
+                            <span class="tag">Responsive Web Design</span>
+                        </div>
                         </p>
                     </div>
                 </div>
@@ -346,6 +415,23 @@
                             I worked on different projects like Rasayesh event websites, Rasayesh style guide,
                             several panels
                             like attendee, admin, company, and also Pharket website and panels.
+                        <div class="tags">
+                            <span class="tag">Reactjs</span>
+                            <span class="tag">Javascript</span>
+                            <span class="tag">Typescript</span>
+                            <span class="tag">Stylus</span>
+                            <span class="tag">Sass</span>
+                            <span class="tag">Css</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">Graphql</span>
+                            <span class="tag">Rest Api</span>
+                            <span class="tag">Webpack</span>
+                            <span class="tag">Data Structure</span>
+                            <span class="tag">Material UI</span>
+                            <span class="tag">Websocket</span>
+                            <span class="tag">Responsive Web Design</span>
+                            <span class="tag">Threejs</span>
+                        </div>
                         </p>
                     </div>
                 </div>
@@ -355,24 +441,16 @@
                         <h4 class="subsectionTitle">Software Documenter</h4>
                         <span class="info">Mabna | Tehran, Iran</span>
                         <p class="moreInfo">
-                            I created many documents, videos and graphic contents for some software of Mabna group. and also I launched and
+                            I created many documents, videos and graphic contents for some software of Mabna group. and
+                            also I launched and
                             managed Mabna Learning Management System (LMS).
                         </p>
                     </div>
                 </div>
-<!--                <div class="experienceWrapper">-->
-<!--                    <span class="date">2016 - 2020</span>-->
-<!--                    <div class="experience subsection">-->
-<!--                        <h4 class="subsectionTitle">Content Specialist</h4>-->
-<!--                        <span class="info">Peyke Bartar | Tehran, Iran</span>-->
-<!--                        <p class="moreInfo">-->
-<!--                            I started my work experience in content creating, like visual and written contents. these-->
-<!--                            experiences were in sub-sets of Peyke Bartar like Zibamoon and Dunro.-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                </div>-->
             </div>
         </section>
+
+<!--        <div class="pageBreak"></div>-->
 
         <h3 class="title educationTitle">EDUCATION</h3>
         <div class="horizontalLine educationHorizontalLine"></div>
@@ -397,7 +475,7 @@
         <div class="horizontalLine skillHorizontalLine"></div>
         <section class="section skillSection">
             <div class="wrapper software">
-                <h4 class="subsectionTitle">Software and Skills</h4>
+                <h4 class="subsectionTitle">Hard Skills</h4>
                 <div class="items">
                     <ul class="subsection">
                         <li>Reactjs</li>
@@ -426,15 +504,15 @@
                 </div>
             </div>
             <div class="wrapper professional">
-                <h4 class="subsectionTitle">Professional</h4>
+                <h4 class="subsectionTitle">Soft Skills</h4>
                 <div class="items">
                     <ul class="subsection">
+                        <li>Problem Solving</li>
                         <li>Team Work</li>
-                        <li>Problem Solving skills</li>
-                        <li>Responsible</li>
-                        <li>Decision-making Power</li>
-                        <li>Planning</li>
-                        <li>Writing Skills</li>
+                        <li>Effective Communication</li>
+                        <li>Time Management</li>
+                        <li>Analytical Thinking</li>
+                        <li>Adaptability and Flexibility</li>
                     </ul>
                 </div>
             </div>
