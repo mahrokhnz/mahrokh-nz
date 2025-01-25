@@ -5,321 +5,10 @@
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link rel="stylesheet" href="index.css">
     <title>My Resume</title>
 </head>
 <style>
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
-
-    body .resumeContainer {
-        display: flex;
-        flex-direction: column;
-    }
-
-    body .resumeContainer .resumeWrapper {
-        width: 210mm;
-        height: 297mm;
-        display: flex;
-        font-family: cormorantGaramondMedium, serif;
-        position: relative;
-    }
-
-    .pageBreak {
-        page-break-before: always;
-    }
-
-    body .resumeContainer .resumeWrapper .menuItems {
-        flex: 0 1 0;
-        min-width: 25mm;
-        background-color: #363740;
-        color: #fff;
-        position: relative;
-    }
-
-    body .resumeContainer .resumeWrapper .content {
-        padding: 10.5mm 10mm;
-        position: relative;
-        flex-grow: 1;
-    }
-
-    body .resumeContainer .resumeWrapper .menuItems .personalInfo {
-        transform: rotateZ(-90deg) translateX(-90%) translateY(100%);
-        letter-spacing: 1.5mm;
-    }
-
-    body .resumeContainer .resumeWrapper .menuItems .menuItem {
-        position: absolute;
-        left: 13mm;
-    }
-
-    body .resumeContainer .resumeWrapper .menuItems .menuItem .menuItemImg {
-        width: 8mm;
-        height: 8mm;
-    }
-
-    body .resumeContainer .resumeWrapper .menuItems .summary {
-        top: 70mm;
-    }
-
-    body .resumeContainer .resumeWrapper .menuItems .workExperience {
-        top: 120mm;
-    }
-
-    body .resumeContainer .resumeWrapper .menuItems .education {
-        top: 18mm;
-    }
-
-    body .resumeContainer .resumeWrapper .menuItems .skill {
-        top: 82mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .info {
-        display: flex;
-    }
-
-    body .resumeContainer .resumeWrapper .content .info .nameWrapper {
-        display: flex;
-        flex-direction: column;
-        margin-right: 40mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .info .nameWrapper .firstname {
-        font-size: 9mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .info .nameWrapper .lastname {
-        font-size: 14mm;
-        margin-bottom: 2mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .info .nameWrapper .profession {
-        font-size: 4.8mm;
-        letter-spacing: 1.5mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .info .socialWrapper {
-        display: flex;
-        gap: 5mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .info .socialWrapper .social {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 5mm;
-        width: 8mm;
-        background-color: #363740;
-        margin-top: -10.5mm;
-        padding-bottom: 6mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .info .socialWrapper .social .socialImg {
-        width: 4mm;
-        height: 4mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .info .socialWrapper .address {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5mm;
-        padding-bottom: 5mm;
-        font-size: 4.5mm
-    }
-
-    body .resumeContainer .resumeWrapper .content .horizontalLine {
-        position: absolute;
-        left: -12mm;
-        width: 100%;
-        height: 0.5mm;
-        background-color: #bdc3c7;
-    }
-
-    body .resumeContainer .resumeWrapper .content .summaryHorizontalLine {
-        top: 82mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .workHorizontalLine {
-        top: 132mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .educationHorizontalLine {
-        top: 30mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .skillHorizontalLine {
-        top: 95mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .title {
-        position: absolute;
-        left: 10mm;
-        font-size: 5.6mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .summaryTitle {
-        top: 73mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .workTitle {
-        top: 122mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .educationTitle {
-        top: 20mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .skillTitle {
-        top: 85mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .section {
-        display: flex;
-        position: relative;
-    }
-
-    body .resumeContainer .resumeWrapper .content .summarySection {
-        font-size: 4.5mm;
-        line-height: 5.5mm;
-        margin-top: 31mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .workExperienceSection {
-        margin-top: 34mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .workExperienceSection .experiences {
-        display: flex;
-        flex-direction: column;
-        gap: 6mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .workExperienceSection .verticalLine {
-        position: absolute;
-        left: 35mm;
-        width: 0.7mm;
-        height: 100%;
-        background-color: #bdc3c7;
-    }
-
-    body .resumeContainer .resumeWrapper .content .workExperienceSection .verticalLine .point {
-        position: absolute;
-        top: 2mm;
-        width: 2.2mm;
-        height: 2.2mm;
-        transform: translateX(-40%);
-        border-radius: 5rem;
-        background-color: #000;
-    }
-
-    body .resumeContainer .resumeWrapper .content .workExperienceSection .verticalLine .pointTwo {
-        top: 37mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .workExperienceSection .verticalLine .pointThree {
-        top: 78mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .workExperienceSection .experiences .experienceWrapper {
-        display: flex;
-        gap: 24mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .workExperienceSection .experiences .experienceWrapper .experience {
-        display: flex;
-        flex-direction: column;
-    }
-
-    body .resumeContainer .resumeWrapper .content .experienceWrapper .date {
-        font-size: 4.8mm;
-        color: #000;
-    }
-
-    body .resumeContainer .resumeWrapper .content .subsection {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5mm;
-    }
-
-    /*TODO: fix styles*/
-
-    body .resumeContainer .resumeWrapper .content .experience {
-        flex: 1 0 0;
-    }
-
-    body .resumeContainer .resumeWrapper .content .subsectionTitle {
-        font-size: 5.1mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .info {
-        font-size: 4.8mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .moreInfo {
-        font-size: 4.5mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .tags {
-        display: flex;
-        gap: 0.8mm;
-        flex-wrap: wrap;
-        font-size: 3.7mm;
-        margin-top: 2.5mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .tags .tag {
-        background: #282828;
-        color: white;
-        padding: 0.6mm 1.2mm;
-        border-radius: 2mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .educationSection {
-        justify-content: space-between;
-        margin-top: 95px;
-    }
-
-    body .resumeContainer .resumeWrapper .content .educationSection .degree {
-        width: 75mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .skillSection {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 106px;
-    }
-
-    body .resumeContainer .resumeWrapper .content .section .wrapper {
-        display: flex;
-        list-style-type: none;
-    }
-
-    body .resumeContainer .resumeWrapper .content .skillSection {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    body .resumeContainer .resumeWrapper .content .skillSection .wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 3mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .skillSection .wrapper .items {
-        list-style-type: none;
-        display: flex;
-        gap: 15mm;
-    }
-
-    body .resumeContainer .resumeWrapper .content .skillSection .wrapper .items .subsection {
-        font-size: 4.5mm;
-        list-style-type: none;
-    }
-
 </style>
 <body>
 <div class="resumeContainer">
@@ -352,7 +41,7 @@
                         <img alt="" class="socialImg" src="../../../public/icons/location-dot-regular.svg">
                     </div>
                     <div class="address">
-                        <span>+98 921 257 93 99</span>
+                        <span>-</span>
                         <span>mahrokh.nz@gmail.com</span>
                         <a href="https://www.mahrokhnz.ir" target="_blank">www.mahrokhnz.ir</a>
                         <a href="https://www.linkedin.com/in/mahrokh-nabizadeh-335326144/" target="_blank">LinkedIn</a>
@@ -460,6 +149,9 @@
             <div class="menuItem skill">
                 <img alt="" class="menuItemImg" src="../../../public/icons/pencil-slash-regular.svg">
             </div>
+            <div class="menuItem language">
+                <img alt="" class="menuItemImg" src="../../../public/icons/language-regular.svg">
+            </div>
         </aside>
         <aside class="content">
             <h3 class="title educationTitle">EDUCATION</h3>
@@ -527,7 +219,23 @@
                     </div>
                 </div>
             </section>
-<!--            TODO add language-->
+
+            <h3 class="title languageTitle">LANGUAGES</h3>
+            <div class="horizontalLine languageHorizontalLine"></div>
+            <section class="languageSection section">
+                <div class="degree subsection">
+                    <h4 class="subsectionTitle">English</h4>
+                    <span class="info">Safir Language Academy | Tehran, Iran</span>
+                    <p class="moreInfo">
+                        36 semester and 864 hours for advanced level</p>
+                    <p class="moreInfo">
+                        16 semester and 384 hours for upper-intermediate level</p>
+                </div>
+                <div class="degree subsection">
+                    <h4 class="subsectionTitle">Persian</h4>
+                    <span class="info">Native</span>
+                </div>
+            </section>
         </aside>
     </main>
 </div>

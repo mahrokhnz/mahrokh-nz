@@ -1,0 +1,326 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.pageBreak {
+    page-break-before: always;
+}
+
+body .resumeContainer {
+    display: flex;
+    flex-direction: column;
+
+    .resumeWrapper {
+        width: 210mm;
+        height: 297mm;
+        display: flex;
+        font-family: cormorantGaramondMedium, serif;
+        position: relative;
+
+        .menuItems {
+            flex: 0 1 0;
+            min-width: 25mm;
+            background-color: #363740;
+            color: #fff;
+            position: relative;
+
+            .personalInfo {
+                transform: rotateZ(-90deg) translateX(-90%) translateY(100%);
+                letter-spacing: 1.5mm;
+            }
+
+            .menuItem {
+                position: absolute;
+                left: 13mm;
+
+                .menuItemImg {
+                    width: 8mm;
+                    height: 8mm;
+                }
+            }
+
+            .summary {
+                top: 66mm;
+            }
+
+            .workExperience {
+                top: 122mm;
+            }
+
+            .education {
+                top: 10mm;
+            }
+
+            .skill {
+                top: 92mm;
+            }
+
+            .language {
+                top: 178mm;
+            }
+        }
+
+        .content {
+            padding: 10.5mm 10mm;
+            position: relative;
+            flex-grow: 1;
+
+            .info {
+                display: flex;
+
+                .socialWrapper {
+                    display: flex;
+                    gap: 6mm;
+
+                    .social {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: flex-end;
+                        gap: 5.7mm;
+                        width: 8mm;
+                        background-color: #363740;
+                        margin-top: -11mm;
+                        padding-bottom: 5mm;
+
+
+                        .socialImg {
+                            width: 4.5mm;
+                            height: 4.5mm;
+                        }
+                    }
+
+                    .address {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        gap: 5mm;
+                        font-size: 4.5mm;
+                        padding-bottom: 4.6mm;
+                    }
+                }
+
+                .nameWrapper {
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 40mm;
+
+                    .firstname {
+                        font-size: 9mm;
+                    }
+
+                    .lastname {
+                        font-size: 14mm;
+                        margin-bottom: 2mm;
+                    }
+
+                    .profession {
+                        font-size: 4.8mm;
+                        letter-spacing: 1.5mm;
+                    }
+                }
+            }
+
+            .horizontalLine {
+                position: absolute;
+                left: -12mm;
+                width: 100%;
+                height: 0.5mm;
+                background-color: #bdc3c7;
+            }
+
+            .summaryHorizontalLine {
+                top: 80mm;
+            }
+
+            .workHorizontalLine {
+                top: 135mm;
+            }
+
+            .educationHorizontalLine {
+                top: 22mm;
+            }
+
+            .skillHorizontalLine {
+                top: 107mm;
+            }
+
+            .languageHorizontalLine {
+                top: 191mm;
+            }
+
+            .title {
+                position: absolute;
+                left: 10mm;
+                font-size: 5.6mm;
+            }
+
+            .summaryTitle {
+                top: 68mm;
+            }
+
+            .workTitle {
+                top: 123mm;
+            }
+
+            .educationTitle {
+                top: 11mm;
+            }
+
+            .skillTitle {
+                top: 95mm;
+            }
+
+            .languageTitle {
+                top: 179mm;
+            }
+
+            .section {
+                display: flex;
+                position: relative;
+
+                .wrapper {
+                    display: flex;
+                    list-style-type: none;
+                }
+            }
+
+            .summarySection {
+                font-size: 4.5mm;
+                line-height: 5.5mm;
+                margin-top: 25mm;
+            }
+
+            .workExperienceSection {
+                margin-top: 35mm;
+
+                .experiences {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6mm;
+
+                    .experienceWrapper {
+                        display: flex;
+                        gap: 24mm;
+
+                        .experience {
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                        .date {
+                            font-size: 4.8mm;
+                            color: #000;
+                        }
+                    }
+                }
+
+                .verticalLine {
+                    position: absolute;
+                    left: 35mm;
+                    width: 0.7mm;
+                    height: 100%;
+                    background-color: #bdc3c7;
+
+                    .point {
+                        position: absolute;
+                        top: 2mm;
+                        width: 2.2mm;
+                        height: 2.2mm;
+                        transform: translateX(-40%);
+                        border-radius: 5rem;
+                        background-color: #000;
+                    }
+
+                    .pointTwo {
+                        top: 51mm;
+                    }
+
+                    .pointThree {
+                        top: 111mm;
+                    }
+                }
+            }
+
+            .subsection {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5mm;
+            }
+
+            .experience {
+                flex: 1 0 0;
+            }
+
+            .subsectionTitle {
+                font-size: 5.1mm;
+            }
+
+            .info {
+                font-size: 4.8mm;
+            }
+
+            .moreInfo {
+                font-size: 4.5mm;
+            }
+
+            .tags {
+                display: flex;
+                gap: 0.8mm;
+                flex-wrap: wrap;
+                font-size: 3.7mm;
+                margin-top: 2.5mm;
+
+                .tag {
+                    background: #282828;
+                    color: white;
+                    padding: 0.6mm 1.2mm;
+                    border-radius: 2mm;
+                }
+            }
+
+            .educationSection {
+                justify-content: space-between;
+                margin-top: 73px;
+
+                .degree {
+                    width: 75mm;
+                }
+            }
+
+            .skillSection {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 140px;
+
+                .wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3mm;
+
+                    .items {
+                        list-style-type: none;
+                        display: flex;
+                        gap: 15mm;
+
+                        .subsection {
+                            font-size: 4.5mm;
+                            list-style-type: none;
+                        }
+                    }
+                }
+            }
+
+            .languageSection {
+                justify-content: space-between;
+                margin-top: 130px;
+
+                .degree {
+                    width: 75mm;
+                }
+            }
+        }
+    }
+}
