@@ -1,0 +1,21 @@
+.container
+  display: flex
+  flex-direction: column
+  padding: 4rem 8rem
+  font-family: josefInSansMedium, serif
+  background-color: var(--primaryColor)
+  height: 100vh
+  box-sizing: border-box
+  scroll-snap-align: end
+
+@media only screen and (max-width: 1300px)
+  .container
+    padding: 4rem 6rem
+
+@media only screen and (max-width: 840px)
+  .container
+    padding: 2rem 4rem
+
+@media only screen and (max-width: 465px)
+  .container
+    padding: 2rem

@@ -1,5 +1,5 @@
 import styles from "./page.module.sass";
-import Container from "@/app/ui/container/page";
+import Container from "@/app/_ui/container/page";
 
 export default function Home() {
   return (
