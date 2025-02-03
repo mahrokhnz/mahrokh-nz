@@ -1,5 +1,25 @@
 :root {
-  --primaryColor: #fff;
+  --primaryColor: #272d40;
+  --secondaryColor: #282633;
+  --firstWaveColor: #3e4657;
+  --secondWaveColor: #485266;
+  --textColor: #ffffff;
+  --neutralColor: #808188;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --primaryColor: #ffffff;
+    --secondaryColor: #e2e2e7;
+    --firstWaveColor: #544df0;
+    --secondWaveColor: #6e6af4;
+    --textColor: #000000;
+    --neutralColor: #808188;
+  }
+}
+
+html.light {
+  --primaryColor: #ffffff;
   --secondaryColor: #e2e2e7;
   --firstWaveColor: #544df0;
   --secondWaveColor: #6e6af4;
@@ -7,15 +27,13 @@
   --neutralColor: #808188;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primaryColor: #272d40;
-    --secondaryColor: #282633;
-    --firstWaveColor: #3e4657;
-    --secondWaveColor: #485266;
-    --textColor: #ffffff;
-    --neutralColor: #808188;
-  }
+html.dark {
+  --primaryColor: #272d40;
+  --secondaryColor: #282633;
+  --firstWaveColor: #3e4657;
+  --secondWaveColor: #485266;
+  --textColor: #ffffff;
+  --neutralColor: #808188
 }
 
 html, body, div, span, applet, object, iframe,
@@ -45,6 +63,8 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
+  background-color: var(--primaryColor);
+  color: var(--textColor);
   line-height: 1;
 }
 

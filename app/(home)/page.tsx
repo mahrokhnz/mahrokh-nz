@@ -1,10 +1,26 @@
 import styles from "./page.module.sass";
-import Container from "@/app/_ui/container/page";
+import cls from "@/utils/class_names";
+import Canvas from "@/app/_ui/constellation/page";
+import SvgPath from "@/app/_ui/svg_path/page";
+import type {Metadata} from "next";
+
+// TODO: add in every page
+export const metadata: Metadata = {
+    title: "MAHrokh | Home",
+    description: "This is my personal website that generated with Next js",
+};
 
 export default function Home() {
   return (
-      <Container>
-        hi
-      </Container>
+      <section className={styles.home}>
+          {/*<contact-component></contact-component>*/}
+          <div className={styles.nameWrapper}>
+              <h1>I&#39;m Mahrokh Nabizadeh.</h1>
+              <h2>Frontend Developer</h2>
+          </div>
+
+          <SvgPath />
+          <Canvas />
+      </section>
   );
 }
