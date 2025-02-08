@@ -47,10 +47,11 @@ export default function RootLayout({
         <ThemeProvider>
             <html lang="en">
             <body className={myFont.className}>
-            <Header/>
-            <Container>
-                {children}
-            </Container>
+                <Header/>
+
+                <Container>
+                    {children}
+                </Container>
             </body>
             </html>
         </ThemeProvider>

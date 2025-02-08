@@ -1,6 +1,7 @@
 .header
   z-index: 5
   position: fixed
+  padding: 2rem 6rem
   width: 100%
 
   .navbar
@@ -25,8 +26,14 @@
       align-items: center
       gap: 2.3rem
 
+@media only screen and (max-width: 840px)
+  .header
+    padding: 2rem
+
 @media only screen and (max-width: 465px)
   .header
+    padding: 1rem
+
     .navbar
       .logo
         .moon
