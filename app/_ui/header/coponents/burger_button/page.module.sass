@@ -1,21 +1,43 @@
-.container
-  display: flex
-  flex-direction: column
-  padding: 4rem 8rem
-  font-family: josefInSansMedium, serif
-  background-color: var(--primaryColor)
-  height: 100vh
-  box-sizing: border-box
-  scroll-snap-align: end
+.hamburgerMenu
+  display: none
 
-@media only screen and (max-width: 1300px)
-  .container
-    padding: 4rem 6rem
+  .line
+    display: block
+    height: 0.15rem
+    width: 100%
+    border-radius: 10px
+    background: var(--textColor)
+
+    .line1
+      transform-origin: 0 0
+      transition: transform 0.4s ease-in-out
+
+    .line2
+      transition: transform 0.2s ease-in-out
+
+    .line3
+      transform-origin: 0 100%
+      transition: transform 0.4s ease-in-out
+
+    &.open
+      .line1
+        transform: rotate(45deg)
+
+      .line2
+        transform: scaleY(0)
+
+      .line3
+        transform: rotate(-45deg)
+
+      .headerMenu
+        display: block
 
 @media only screen and (max-width: 840px)
-  .container
-    padding: 2rem 4rem
-
-@media only screen and (max-width: 465px)
-  .container
-    padding: 2rem
+  .hamburgerMenu
+    height: 22px
+    width: 30px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    cursor: pointer
+    z-index: 6

@@ -1,38 +1,34 @@
 .contactWrapper
   display: flex
-  transform: rotate(-90deg)
-  margin-top: 8rem
   gap: 2rem
-  z-index: 1
 
   .iconWrapper
     display: flex
     align-items: center
     justify-content: center
-    box-sizing: border-box
     border-radius: 0.3rem
     border: 2px var(--primaryColor) solid
-    transition: border 0.3s ease-in-out
 
     &:hover
-      border: 2px var(--second-wave-color) solid
+      border: 2px var(--secondWaveColor) solid
 
     .contactIcon
-      font-size: 20px
+      font-size: 28px
+      color: var(--secondWaveColor)
       cursor: pointer
 
-.footerContactWrapper
-  transform: rotate(0)
-  margin-top: 0
+  //&.footerContactWrapper
+  //  transform: rotate(0)
+    margin-top: 0
 
-@media only screen and (max-width: 840px)
-  .contactWrapper
-    transform: rotate(-90deg) translateY(-140%)
-
-    .iconWrapper
-      font-size: 18px
-
-@media only screen and (max-width: 640px)
-  .contactWrapper
-    transform: rotate(-90deg) translateY(-140%)
+//@media only screen and (max-width: 840px)
+//  .contactWrapper
+//    transform: rotate(-90deg) translateY(-140%)
+//
+//    .iconWrapper
+//      font-size: 18px
+//
+//@media only screen and (max-width: 640px)
+//  .contactWrapper
+//    transform: rotate(-90deg) translateY(-140%)
 

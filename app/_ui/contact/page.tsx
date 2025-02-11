@@ -4,7 +4,6 @@ import { FaHackerrank } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import cls from "@/utils/class_names";
 
-
 export default function Contact({isFooter = false}) {
     return (
         <div className={cls(styles.contactWrapper, isFooter && styles.footerContactWrapper)}>

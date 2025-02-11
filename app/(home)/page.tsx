@@ -10,12 +10,11 @@ export const metadata: Metadata = metadataCreator('Home', 'Passionate frontend d
 export default function Home() {
   return (
       <section className={styles.home}>
-          <Contact />
           <div className={styles.nameWrapper}>
               <h1>I&#39;m Mahrokh Nabizadeh.</h1>
               <h2>Frontend Developer</h2>
           </div>
-
+          <Contact />
           <SvgPath />
           <Canvas />
       </section>
