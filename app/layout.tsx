@@ -46,6 +46,8 @@ const myFont = localFont({
 });
 
 export default function RootLayout({ children }) {
+
+    console.log('hi')
     return (
         <ThemeProvider>
             <html lang="en">
