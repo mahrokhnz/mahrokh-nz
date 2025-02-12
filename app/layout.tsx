@@ -51,9 +51,7 @@ export default function RootLayout({ children }) {
             <html lang="en">
             <body className={myFont.className}>
             <Header />
-            <Container>
-                {children}
-            </Container>
+            {children}
             </body>
             </html>
         </ThemeProvider>

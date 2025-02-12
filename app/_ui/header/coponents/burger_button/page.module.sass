@@ -1,12 +1,22 @@
 .hamburgerMenu
   display: none
 
-  .line
-    display: block
-    height: 0.15rem
-    width: 100%
-    border-radius: 10px
-    background: var(--textColor)
+@media only screen and (max-width: 840px)
+  .hamburgerMenu
+    height: 22px
+    width: 30px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    cursor: pointer
+    z-index: 6
+
+    .line
+      display: block
+      height: 0.15rem
+      width: 100%
+      border-radius: 10px
+      background: var(--textColor)
 
     .line1
       transform-origin: 0 0
@@ -28,16 +38,3 @@
 
       .line3
         transform: rotate(-45deg)
-
-      .headerMenu
-        display: block
-
-@media only screen and (max-width: 840px)
-  .hamburgerMenu
-    height: 22px
-    width: 30px
-    display: flex
-    flex-direction: column
-    justify-content: space-between
-    cursor: pointer
-    z-index: 6

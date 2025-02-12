@@ -1,22 +1,16 @@
 import styles from "./page.module.sass";
-import Canvas from "@/app/_ui/constellation/page";
-import SvgPath from "@/app/_ui/svg_path/page";
 import type {Metadata} from "next";
 import {metadataCreator} from "@/utils/metadata";
-import Contact from "@/app/_ui/contact/page";
+import View from "@/app/(home)/_sections/(view)/page";
+import Skills from "@/app/(home)/_sections/(skills)/page";
 
 export const metadata: Metadata = metadataCreator('Home', 'Passionate frontend developer creating visually stunning, user-friendly websites with expertise in HTML, CSS, JavaScript, React and Next. Let\'s bring your digital vision to life!' )
 
 export default function Home() {
   return (
-      <section className={styles.home}>
-          <div className={styles.nameWrapper}>
-              <h1>I&#39;m Mahrokh Nabizadeh.</h1>
-              <h2>Frontend Developer</h2>
-          </div>
-          <Contact />
-          <SvgPath />
-          <Canvas />
-      </section>
+      <main className={styles.homeContainer}>
+          <View></View>
+          <Skills></Skills>
+      </main>
   );
 }

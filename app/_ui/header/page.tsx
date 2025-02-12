@@ -7,7 +7,7 @@ import BurgerButton from "@/app/_ui/header/coponents/burger_button/page";
 import {useState} from "react";
 
 export default function Header() {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState<boolean>(false);
 
     return (
             <header className={styles.header}>
@@ -19,7 +19,7 @@ export default function Header() {
                     <div className={styles.wrapper}>
                         <Menu isOpen={isOpen}/>
                         <Theme/>
-                        <BurgerButton isOpen={isOpen}/>
+                        <BurgerButton isOpen={isOpen} onClickHandler={() => setIsOpen(!isOpen)} />
                     </div>
                 </nav>
             </header>
