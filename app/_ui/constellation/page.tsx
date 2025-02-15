@@ -30,7 +30,6 @@ const numberOfStars = (width: number) => {
 };
 
 const headerBoundary = (width: number) => {
-    console.log(width)
     if (width > 1000) {
         return 120;
     } else if (width > 200) {

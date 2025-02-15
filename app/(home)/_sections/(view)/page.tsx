@@ -8,13 +8,13 @@ export default function View() {
   return (
       <section className={styles.view}>
           <Container>
+              <Canvas/>
               <div className={styles.nameWrapper}>
                   <h1>I&#39;m Mahrokh Nabizadeh.</h1>
                   <h2>Frontend Developer</h2>
+                  <Contact/>
               </div>
-              <Contact/>
               <SvgPath/>
-              <Canvas/>
           </Container>
       </section>
   );
