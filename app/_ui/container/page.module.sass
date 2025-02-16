@@ -1,7 +1,6 @@
 //TODO
 @import "../../mixins.sass"
 
-// TODO header situation
 .container
   display: flex
   flex-direction: column
@@ -9,10 +8,11 @@
   background-color: var(--primaryColor)
   box-sizing: border-box
   scroll-snap-align: end
-  min-height: 100vh
+  min-height: calc(100vh - 112px)
 
   @include respond-to('tablet')
     padding: 2rem 4rem
 
   @include respond-to('phone')
     padding: 2rem
+    min-height: calc(100vh - 74px)
