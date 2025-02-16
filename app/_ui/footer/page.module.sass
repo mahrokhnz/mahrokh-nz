@@ -1,0 +1,35 @@
+@import "../../mixins.sass"
+
+.footerWrapper
+  display: flex
+  flex-direction: column
+  gap: 2rem
+  justify-content: center
+  height: unset
+  padding: 2rem 6rem
+  background-color: var(--firstWaveColor)
+
+  .footer
+    display: flex
+    align-items: center
+    flex-direction: column
+    gap: 2rem
+
+  .separator
+    height: 0.1rem
+    background-color: var(--neutralColor)
+    opacity: 0.5
+
+  .copyWrite
+    font-size: 0.8rem
+    align-self: center
+
+  @include respond-to('tablet')
+    padding: 2rem
+    gap: 1.3rem
+
+    .footer
+      gap: 1.3rem
+
+  @include respond-to('phone')
+    padding: 1.1rem

@@ -3,6 +3,7 @@ import '../theme/colors.sass';
 import localFont from 'next/font/local';
 import Header from "@/app/_ui/header/page";
 import { ThemeProvider } from "@/context/theme_context";
+import Footer from "@/app/_ui/footer/page";
 
 const myFont = localFont({
     src: [
@@ -51,6 +52,7 @@ export default function RootLayout({ children }) {
             <body className={myFont.className}>
             <Header />
             {children}
+            <Footer />
             </body>
             </html>
         </ThemeProvider>

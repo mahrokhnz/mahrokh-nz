@@ -1,7 +1,7 @@
 "use client"
 
 import styles from "./page.module.sass";
-import Menu from "@/app/_ui/header/coponents/menu/page";
+import Menu from "@/app/_ui/menu/page";
 import Theme from "@/app/_ui/header/coponents/theme/page";
 import BurgerButton from "@/app/_ui/header/coponents/burger_button/page";
 import {useState} from "react";
@@ -20,7 +20,7 @@ export default function Header() {
                         </div>
                     </Link>
                     <div className={styles.wrapper}>
-                        <Menu isOpen={isOpen}/>
+                        <Menu isOpen={isOpen} />
                         <Theme/>
                         <BurgerButton isOpen={isOpen} onClickHandler={() => setIsOpen(!isOpen)} />
                     </div>
