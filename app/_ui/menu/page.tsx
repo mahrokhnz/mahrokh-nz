@@ -10,7 +10,7 @@ interface MenuProps {
 export default function Menu({ isOpen, isFooter }: MenuProps) {
     return (
         <ul className={cls(!isFooter ? styles.headerMenu : styles.footerMenu ,styles.menu, isOpen && styles.open)}>
-            <li><Link href="/public">Home</Link></li>
+            <li><Link href="/">Home</Link></li>
             <li><Link href="/about">About</Link></li>
             <li><Link href="/projects">Projects</Link></li>
             <li><Link href="/resume">Resume</Link></li>

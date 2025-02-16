@@ -46,7 +46,7 @@ const myFont = localFont({
 });
 
 export default function RootLayout({ children }) {
-    return (
+        return (
         <ThemeProvider>
             <html lang="en">
             <body className={myFont.className}>
