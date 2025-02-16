@@ -1,3 +1,5 @@
+@import "../../mixins.sass"
+
 .header
   position: fixed
   z-index: 1
@@ -27,17 +29,11 @@
       align-items: center
       gap: 2rem
 
-@media only screen and (max-width: 1300px)
-  .header
-    padding: 2rem 4rem
-
-@media only screen and (max-width: 840px)
-  .header
+  @include respond-to('tablet')
     padding: 2rem
 
-@media only screen and (max-width: 465px)
-  .header
-    padding: 1rem
+  @include respond-to('phone')
+    padding: 1.1rem
 
     .navbar
       .logo

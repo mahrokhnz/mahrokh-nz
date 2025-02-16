@@ -1,15 +1,17 @@
+@import "../../../mixins.sass"
+
 .view
   display: flex
   flex-direction: column
   padding-top: 100px
   height: 100vh
-  z-index: 2
   gap: 8rem
 
   .nameWrapper
     display: flex
     flex-direction: column
     gap: 3rem
+    z-index: 1
 
     h1
       font-size: 4rem
@@ -20,35 +22,24 @@
       font-size: 2rem
       color: var(--neutralColor)
 
-@media only screen and (max-width: 1120px)
-  .view
-    .nameWrapper
-      h1
-        font-size: 3rem
-
-@media only screen and (max-width: 940px)
-  .view
-    .nameWrapper
-      h1
-        font-size: 2.5rem
-
-@media only screen and (max-width: 840px)
-  .view
-    .nameWrapper
-      h1
-        font-size: 2rem
-
-@media only screen and (max-width: 640px)
-  .view
+  @include respond-to('tablet')
     gap: 4rem
 
     .nameWrapper
       gap: 2rem
 
-@media only screen and (max-width: 400px)
-  .view
+      h1
+        font-size: 2rem
+
+  @include respond-to('phone')
     align-items: center
 
     .nameWrapper
       align-items: center
       text-align: center
+
+      h1
+        font-size: 2rem
+
+      h2
+        font-size: 1.5rem

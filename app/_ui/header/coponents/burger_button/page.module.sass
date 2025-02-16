@@ -1,8 +1,9 @@
+@import "../../../../mixins"
+
 .hamburgerMenu
   display: none
 
-@media only screen and (max-width: 840px)
-  .hamburgerMenu
+  @include respond-to('tablet')
     height: 22px
     width: 30px
     display: flex

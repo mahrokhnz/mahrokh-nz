@@ -1,21 +1,18 @@
+//TODO
+@import "../../mixins.sass"
+
+// TODO header situation
 .container
   display: flex
   flex-direction: column
   padding: 4rem 8rem
-  font-family: josefInSansMedium, serif
   background-color: var(--primaryColor)
-  height: 100vh
   box-sizing: border-box
   scroll-snap-align: end
+  min-height: 100vh
 
-@media only screen and (max-width: 1300px)
-  .container
-    padding: 4rem 6rem
-
-@media only screen and (max-width: 840px)
-  .container
+  @include respond-to('tablet')
     padding: 2rem 4rem
 
-@media only screen and (max-width: 465px)
-  .container
+  @include respond-to('phone')
     padding: 2rem
