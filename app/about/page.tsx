@@ -2,6 +2,10 @@ import styles from "./page.module.sass";
 import Container from "@/app/_ui/container/page";
 import myImage from '@/public/images/Mahrokh-Nabizadeh.jpg'
 import Image from "next/image";
+import type {Metadata} from "next";
+import {metadataCreator} from "@/utils/metadata";
+
+export const metadata: Metadata = metadataCreator('About', 'This page is about me' )
 
 export default function About() {
     return (

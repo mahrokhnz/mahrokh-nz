@@ -108,5 +108,43 @@
       "title": "English",
       "count": 9
     }
+  ],
+
+  "projects": [
+    {
+      "id": 1,
+      "title": "First Project",
+      "description": "This is First Project"
+    },
+    {
+      "id": 2,
+      "title": "Second Project",
+      "description": "This is Second Project"
+    },
+    {
+      "id": 3,
+      "title": "Third Project",
+      "description": "This is Third Project"
+    },
+    {
+      "id": 4,
+      "title": "Forth Project",
+      "description": "This is Forth Project"
+    },
+    {
+      "id": 5,
+      "title": "Fifth Project",
+      "description": "This is Fifth Project"
+    },
+    {
+      "id": 6,
+      "title": "Sixth Project",
+      "description": "This is Sixth Project"
+    },
+    {
+      "id": 7,
+      "title": "Seventh Project",
+      "description": "This is Seventh Project"
+    }
   ]
 }
