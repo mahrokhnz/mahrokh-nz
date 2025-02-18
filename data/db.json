@@ -113,38 +113,81 @@
   "projects": [
     {
       "id": 1,
-      "title": "First Project",
-      "description": "This is First Project"
+      "title": "100 Days Of Code",
+      "description": "Frontend challenges which lead to more mastery of basic skills",
+      "skills": [
+        "Javascript",
+        "HTML",
+        "CSS"
+      ],
+      "demo": "https://mahrokhnz.github.io/100-days-of-code/",
+      "code": "https://github.com/mahrokhnz/100-days-of-code"
     },
     {
       "id": 2,
-      "title": "Second Project",
-      "description": "This is Second Project"
+      "title": "Reactjs Challenges",
+      "description": "Challenges which lead to more mastery of React Library",
+      "skills": [
+        "Reactjs",
+        "CSS",
+        "Webpack"
+      ],
+      "demo": "https://mahrokhnz.github.io/react-js/",
+      "code": "https://github.com/mahrokhnz/react-js"
     },
     {
       "id": 3,
-      "title": "Third Project",
-      "description": "This is Third Project"
+      "title": "Data Structure",
+      "description": "Basic skills for learning structure, algorithm, search and testing, based on class components",
+      "skills": [
+        "Deno",
+        "Typescript"
+      ],
+      "code": "https://github.com/mahrokhnz/data-structure"
     },
     {
       "id": 4,
-      "title": "Forth Project",
-      "description": "This is Forth Project"
+      "title": "Personal Website",
+      "description": "My portfolio and professional journey in frontend development",
+      "skills": [
+        "Nextjs",
+        "Typescript",
+        "Sass"
+      ],
+      "code": "https://github.com/mahrokhnz/data-structure"
     },
     {
       "id": 5,
-      "title": "Fifth Project",
-      "description": "This is Fifth Project"
+      "title": "Chatroom",
+      "description": "Learning Websocket and its concept based on class components",
+      "skills": [
+        "Javascript",
+        "HTML",
+        "CSS"
+      ],
+      "code": "https://github.com/mahrokhnz/chatroom"
     },
     {
       "id": 6,
-      "title": "Sixth Project",
-      "description": "This is Sixth Project"
+      "title": "Note App",
+      "description": "A PWA Full stack app",
+      "skills": [
+        "Reactjs",
+        "CSS"
+      ],
+      "code": "https://github.com/mahrokhnz/notes/tree/main"
     },
     {
       "id": 7,
-      "title": "Seventh Project",
-      "description": "This is Seventh Project"
+      "title": "Nextjs App Router",
+      "description": "Finished next.js app router course",
+      "skills": [
+        "Nexts",
+        "Typescript",
+        "Tailwind",
+        "CSS"
+      ],
+      "code": "https://github.com/mahrokhnz/next-js"
     }
   ]
 }

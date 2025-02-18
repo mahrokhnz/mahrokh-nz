@@ -9,7 +9,7 @@ import { FaChevronRight } from "react-icons/fa6";
 import { FaChevronLeft } from "react-icons/fa6";
 
 // export const metadata: Metadata = metadataCreator('Projects', 'This page is about me' )
-const itemsToShow = 5
+const itemsToShow = 6
 
 export default function Projects() {
     const {projects} = data;
@@ -21,7 +21,10 @@ export default function Projects() {
         const currentProjectIndex = newProjects.findIndex((project) => project.id === currentId)
 
         newProjects.splice(currentProjectIndex, 1)
-        return newProjects.slice(startIndex, startIndex + itemsToShow)
+
+        return Array.from({ length: itemsToShow }, (_, index) => {
+            return newProjects[(startIndex + index) % newProjects.length];
+        });
     }, [projects, currentId, startIndex])
 
     useEffect(() => {
@@ -51,18 +54,20 @@ export default function Projects() {
     }, [])
 
     const clickPrev = () => {
-        setStartIndex((prevIndex) => (prevIndex - 1 + sliderItems.length) % sliderItems.length);
+        setStartIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length)
     }
 
     const clickNext = () => {
-        setStartIndex((prevIndex) => (prevIndex + 1) % sliderItems.length)
+        setStartIndex((prevIndex) => (prevIndex + 1) % projects.length)
     }
+
+    console.log(sliderItems)
 
     return (
         <main className={styles.projectsWrapper}>
             <Container>
                 <section className={styles.projects}>
-                    <ProjectCard data={projects.find(project => project.id === currentId)} />
+                    <ProjectCard isCurrent={true} data={projects.find(project => project.id === currentId)} />
                     <div className={styles.slider}>
                         <FaChevronLeft onClick={clickPrev}/>
                         <div className={styles.sliderItems}>

@@ -1,14 +1,19 @@
 import styles from "./page.module.sass";
 import cls from "@/utils/class_names";
+import Image from "next/image";
+import myImage from "@/public/images/Mahrokh-Nabizadeh.jpg";
 
-export default function ProjectCard({data, clickHandler, className = ''}) {
+export default function ProjectCard({data, clickHandler, className = '', isCurrent = false}) {
     return (
-        <div className={cls(styles.projectWrapper, className)} style={{border: '1px blue solid', height: '200px', width: '100px', textAlign: 'center'}} onClick={() => clickHandler(data.id)}>
-            <div>
-
-            </div>
+        <div className={cls(styles.projectWrapper, isCurrent && styles.currentProjectWrapper, className)}
+             onClick={() => clickHandler(data.id)}>
             <div>
                 {data.id}
+            </div>
+
+            <div className={styles.imageWrapper}>
+                <Image className={styles.projectImage} src={myImage} alt='Mahrokh Nabizadeh' width={500} height={600}
+                       style={{objectFit: "cover"}}/>
             </div>
         </div>
     );
