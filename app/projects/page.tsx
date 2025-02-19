@@ -9,7 +9,7 @@ import { FaChevronRight } from "react-icons/fa6";
 import { FaChevronLeft } from "react-icons/fa6";
 
 // export const metadata: Metadata = metadataCreator('Projects', 'This page is about me' )
-const itemsToShow = 6
+const itemsToShow = 4
 
 export default function Projects() {
     const {projects} = data;
@@ -61,21 +61,19 @@ export default function Projects() {
         setStartIndex((prevIndex) => (prevIndex + 1) % projects.length)
     }
 
-    console.log(sliderItems)
-
     return (
         <main className={styles.projectsWrapper}>
             <Container>
                 <section className={styles.projects}>
-                    <ProjectCard isCurrent={true} data={projects.find(project => project.id === currentId)} />
+                    <ProjectCard className={styles.currentItem} isCurrent={true} data={projects.find(project => project.id === currentId)} />
                     <div className={styles.slider}>
-                        <FaChevronLeft onClick={clickPrev}/>
+                        <FaChevronLeft className={styles.chevronIcon} onClick={clickPrev}/>
                         <div className={styles.sliderItems}>
                             {sliderItems.map((item) => (
                                 <ProjectCard className={styles.item} key={item.id} data={item} clickHandler={(id) => setCurrentId(id)} />
                             ))}
                         </div>
-                        <FaChevronRight onClick={clickNext}/>
+                        <FaChevronRight className={styles.chevronIcon} onClick={clickNext}/>
                     </div>
                 </section>
             </Container>

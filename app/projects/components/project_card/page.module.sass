@@ -1,14 +1,52 @@
 .projectWrapper
   display: flex
-  justify-content: space-between
+  flex-direction: column-reverse
+  align-items: center
   gap: 20px
+  cursor: pointer
+  background: var(--secondWaveColor)
 
   &.currentProjectWrapper
-    height: 400px
+    flex-direction: row
+    cursor: none
+    max-height: 50vh
+
+    .content
+      padding: 5rem
+
+      .title
+        font-size: 35px
+        text-align: left
+
+    .imageWrapper
+      width: 50%
+
+  .content
+    display: flex
+    flex-direction: column
+    flex-grow: 1
+    gap: 20px
+    width: 50%
+
+    .title
+      font-size: 18px
+      margin-bottom: 20px
+      text-align: center
+
+    .skills
+      display: flex
+      gap: 0.5rem
+
+      .skill
+        font-size: 14px
+        padding: 4px 8px
+        border-radius: 15px
+        background: var(--neutralColor)
 
   .imageWrapper
-    width: 50%
+    flex-grow: 1
     height: 100%
+    width: 100%
 
     .projectImage
       width: 100%
