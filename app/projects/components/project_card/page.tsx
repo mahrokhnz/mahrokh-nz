@@ -4,8 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import {Button} from "@mui/material";
 import { FaRegEye } from "react-icons/fa";
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 
 export default function ProjectCard({data, clickHandler, className = '', isCurrent = false}) {
+    const isMobile = useMediaQuery('(max-width: 600px)');
+
     return (
         <div className={cls(styles.projectWrapper, isCurrent && styles.currentProjectWrapper, className)}
              onClick={() => {
@@ -27,12 +31,12 @@ export default function ProjectCard({data, clickHandler, className = '', isCurre
 
                         <div className={styles.links}>
                             {data.code && (<Link  href={data.code}>
-                                <Button className={styles.button} variant='contained' startIcon={<FaRegEye />}>
+                                <Button size={isMobile ? 'small' : 'medium'} className={styles.button} variant='contained' startIcon={<FaRegEye />}>
                                     Code
                                 </Button>
                             </Link>)}
                             {data.demo && (<Link href={data.demo}>
-                                <Button className={styles.button} variant='contained' startIcon={<FaRegEye />}>
+                                <Button size={isMobile ? 'small' : 'medium'} className={styles.button} variant='contained' startIcon={<FaRegEye />}>
                                     DEMO
                                 </Button>
                             </Link>)}

@@ -1,3 +1,5 @@
+@import "../mixins"
+
 .projectsWrapper
   padding-top: 100px
 
@@ -23,6 +25,17 @@
         display: grid
         grid-template-columns: repeat(4, 1fr)
         gap: 2rem
+        justify-content: center
+
+        @include respond-to('small-desktop')
+          grid-template-columns: repeat(3, 1fr)
+          justify-items: center
+
+        @include respond-to('tablet')
+          grid-template-columns: repeat(2, 1fr)
+
+        @include respond-to('big-phone')
+          grid-template-columns: repeat(1, 1fr)
 
       .chevronIcon
         position: absolute
@@ -32,11 +45,17 @@
         opacity: 0.3
         transition: opacity 0.3s ease-in-out
 
+        @include respond-to('desktop')
+          font-size: 80px
+
+        @include respond-to('small-desktop')
+          font-size: 50px
+
       .chevronLeft
         left: 0
 
         &:hover
-         opacity: 1
+          opacity: 1
 
       .chevronRight
         right: 0

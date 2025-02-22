@@ -2,6 +2,15 @@
   @if $breakpoint == 'phone'
     @media (max-width: 465px)
       @content
+  @if $breakpoint == 'big-phone'
+    @media (max-width: 600px)
+      @content
   @else if $breakpoint == 'tablet'
     @media (max-width: 840px)
+      @content
+  @else if $breakpoint == 'small-desktop'
+    @media (max-width: 1024px)
+      @content
+  @else if $breakpoint == 'desktop'
+    @media (max-width: 1600px)
       @content
