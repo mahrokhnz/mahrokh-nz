@@ -114,7 +114,7 @@
     {
       "id": 1,
       "title": "100 Days Of Code",
-      "description": "Frontend challenges which lead to more mastery of basic skills",
+      "description": "This is a commitment to code for every day for 100 days. This repository documents the journey, showcasing daily progress, challenges faced, and solutions implemented. The project covers a wide range of topics, including web development, algorithms, data structures, and more. Each day, new code snippets, projects, and learning experiences are added, providing a comprehensive log of the coding journey. This project is perfect for anyone looking to improve their coding skills, stay motivated, and track their progress over an extended period.",
       "skills": [
         "Javascript",
         "HTML",
@@ -127,7 +127,7 @@
     {
       "id": 2,
       "title": "Reactjs Challenges",
-      "description": "Challenges which lead to more mastery of React Library",
+      "description": "The react-js project is dedicated to showcasing various React.js applications and components. This project aims to provide a collection of practical examples and reusable components that can be used in different React.js projects. The repository includes implementations of common features such as state management, routing, and API integration, demonstrating best practices and efficient coding techniques. Each example is well-documented and easy to understand, making it a valuable resource for developers looking to enhance their React.js skills or find inspiration for their own projects.",
       "skills": [
         "Reactjs",
         "CSS",
@@ -140,10 +140,10 @@
     {
       "id": 3,
       "title": "Data Structure",
-      "description": "Basic skills for learning structure, algorithm, search and testing, based on class components",
+      "description": "This is a TypeScript-based project focused on implementing various data structures. This project aims to provide a comprehensive collection of data structures, which can be used as a reference or for educational purposes. The repository includes implementations of common data structures such as arrays, linked lists, stacks, queues, trees, and more. Each data structure is implemented with clear and concise code, making it easy to understand and use. This project is ideal for developers looking to deepen their understanding of data structures or for those who need reliable implementations for their own projects.",
       "skills": [
-        "Deno",
-        "Typescript"
+        "Typescript",
+        "Deno"
       ],
       "code": "https://github.com/mahrokhnz/data-structure",
       "image": "/images/projects/datastructure.jpeg"
@@ -151,19 +151,19 @@
     {
       "id": 4,
       "title": "Personal Website",
-      "description": "My portfolio and professional journey in frontend development",
+      "description": "This is a repository containing configuration files for the GitHub profile of Mahrokh. This project serves as a central hub for managing and organizing various settings and configurations related to the GitHub profile. It includes customizations, themes, and other essential files that help maintain a personalized and efficient GitHub experience. This repository is ideal for developers looking to streamline their GitHub profile management and ensure a consistent and professional appearance across their projects.",
       "skills": [
         "Nextjs",
         "Typescript",
         "Sass"
       ],
-      "code": "https://github.com/mahrokhnz/data-structure",
+      "code": "https://github.com/mahrokhnz/mahrokh-nz",
       "image": "/images/projects/personalwebsite.png"
     },
     {
       "id": 5,
       "title": "Chatroom",
-      "description": "Learning Websocket and its concept based on class components",
+      "description": "The chatroom project is a repository focused on creating a real-time chat application. This project aims to provide a platform where users can communicate with each other in real-time through a web-based interface. The repository includes the implementation of both the server-side and client-side components, utilizing technologies such as Go, JavaScript, CSS, and HTML. The chatroom application supports features like user authentication, message broadcasting, and private messaging. This project is ideal for developers looking to understand the intricacies of building a real-time communication system or for those who want to contribute to an open-source chat application.",
       "skills": [
         "Javascript",
         "HTML",
@@ -175,7 +175,7 @@
     {
       "id": 6,
       "title": "Note App",
-      "description": "A PWA Full stack app",
+      "description": "The notes project is a fullstask repository dedicated to organizing and storing various notes and documentation in a PWA app. This project serves as a central hub for keeping track of important information, ideas, and references. The repository includes notes on a wide range of topics, making it a valuable resource for personal use or for sharing knowledge with others. Each note is well-structured and easy to navigate, ensuring that users can quickly find the information they need. This project is ideal for anyone looking to maintain a well-organized collection of notes and documentation.\n\n",
       "skills": [
         "Reactjs",
         "CSS"
@@ -186,7 +186,7 @@
     {
       "id": 7,
       "title": "Nextjs App Router",
-      "description": "Finished next.js app router course",
+      "description": "The next-js project is a repository dedicated to showcasing various applications and components built with Next.js. This project aims to provide a collection of practical examples and reusable components that can be used in different Next.js projects. The repository includes implementations of common features such as server-side rendering, static site generation, API routes, and more. Each example is well-documented and easy to understand, making it a valuable resource for developers looking to enhance their Next.js skills or find inspiration for their own projects.",
       "skills": [
         "Nexts",
         "Typescript",

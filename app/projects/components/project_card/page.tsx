@@ -2,16 +2,17 @@ import styles from "./page.module.sass";
 import cls from "@/utils/class_names";
 import Image from "next/image";
 import Link from "next/link";
+import {Button} from "@mui/material";
+import { FaRegEye } from "react-icons/fa";
 
 export default function ProjectCard({data, clickHandler, className = '', isCurrent = false}) {
-    const img = data.image;
-
-    console.log({img})
-
-    console.log({data})
     return (
         <div className={cls(styles.projectWrapper, isCurrent && styles.currentProjectWrapper, className)}
-             onClick={() => clickHandler(data.id)}>
+             onClick={() => {
+                 if (!isCurrent) {
+                     clickHandler(data.id)
+                 }
+             }}>
             <div className={styles.content}>
                 <h2 className={styles.title}>{data.title}</h2>
                 {isCurrent && (
@@ -22,12 +23,19 @@ export default function ProjectCard({data, clickHandler, className = '', isCurre
                             ))}
                         </div>
 
-                        <p>{data.description}</p>
-
+                        <p className={styles.description}>{data.description}</p>
 
                         <div className={styles.links}>
-                            {data.demo && (<Link href={data.demo}>Demo</Link>)}
-                            {data.code && (<Link href={data.code}>Code</Link>)}
+                            {data.code && (<Link  href={data.code}>
+                                <Button className={styles.button} variant='contained' startIcon={<FaRegEye />}>
+                                    Code
+                                </Button>
+                            </Link>)}
+                            {data.demo && (<Link href={data.demo}>
+                                <Button className={styles.button} variant='contained' startIcon={<FaRegEye />}>
+                                    DEMO
+                                </Button>
+                            </Link>)}
                         </div>
                     </>
                 )}

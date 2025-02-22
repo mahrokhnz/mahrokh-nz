@@ -2,8 +2,11 @@ import "./globals.css";
 import '../theme/colors.sass';
 import localFont from 'next/font/local';
 import Header from "@/app/_ui/header/page";
-import { ThemeProvider } from "@/context/theme_context";
+import { CustomThemeProvider } from "@/context/theme_context";
+import { ThemeProvider } from '@mui/material/styles';
 import Footer from "@/app/_ui/footer/page";
+import {AppRouterCacheProvider} from "@mui/material-nextjs/v13-appRouter";
+import theme from "@/theme/theme";
 
 const myFont = localFont({
     src: [
@@ -47,14 +50,18 @@ const myFont = localFont({
 
 export default function RootLayout({ children }) {
         return (
-        <ThemeProvider>
+        <CustomThemeProvider>
             <html lang="en">
             <body className={myFont.className}>
-            <Header />
-            {children}
-            <Footer />
+                <AppRouterCacheProvider>
+                    <ThemeProvider theme={theme}>
+                        <Header />
+                        {children}
+                        <Footer />
+                    </ThemeProvider>
+                </AppRouterCacheProvider>
             </body>
             </html>
-        </ThemeProvider>
+        </CustomThemeProvider>
     );
 }

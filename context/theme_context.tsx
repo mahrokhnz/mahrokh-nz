@@ -2,18 +2,18 @@
 
 import React, {createContext, useState, useEffect, useContext, ReactNode} from 'react';
 
-interface ThemeContextType {
+interface CustomThemeContextType {
     theme: string;
     toggleTheme: () => void;
 }
 
-interface ThemeProviderProps {
+interface CustomCustomThemeProviderProps {
     children: ReactNode;
 }
 
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+const CustomThemeContext = createContext<CustomThemeContextType | undefined>(undefined);
 
-export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
+export const CustomThemeProvider: React.FC<CustomCustomThemeProviderProps> = ({ children }) => {
     const [theme, setTheme] = useState('dark');
 
     //TODO: default to dark
@@ -39,16 +39,16 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     };
 
     return (
-        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <CustomThemeContext.Provider value={{ theme, toggleTheme }}>
             {children}
-        </ThemeContext.Provider>
+        </CustomThemeContext.Provider>
     );
 };
 
 export const useTheme = () => {
-    const context = useContext(ThemeContext);
+    const context = useContext(CustomThemeContext);
     if (!context) {
-        throw new Error('useTheme must be used within a ThemeProvider');
+        throw new Error('useTheme must be used within a CustomThemeProvider');
     }
     return context;
 };

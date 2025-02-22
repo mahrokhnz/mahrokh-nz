@@ -7,6 +7,7 @@ import data from "@/data/db.json";
 import ProjectCard from "@/app/projects/components/project_card/page";
 import { FaChevronRight } from "react-icons/fa6";
 import { FaChevronLeft } from "react-icons/fa6";
+import cls from "@/utils/class_names";
 
 // export const metadata: Metadata = metadataCreator('Projects', 'This page is about me' )
 const itemsToShow = 4
@@ -67,13 +68,13 @@ export default function Projects() {
                 <section className={styles.projects}>
                     <ProjectCard className={styles.currentItem} isCurrent={true} data={projects.find(project => project.id === currentId)} />
                     <div className={styles.slider}>
-                        <FaChevronLeft className={styles.chevronIcon} onClick={clickPrev}/>
+                        <FaChevronLeft className={cls(styles.chevronIcon, styles.chevronLeft)} onClick={clickPrev}/>
                         <div className={styles.sliderItems}>
                             {sliderItems.map((item) => (
                                 <ProjectCard className={styles.item} key={item.id} data={item} clickHandler={(id) => setCurrentId(id)} />
                             ))}
                         </div>
-                        <FaChevronRight className={styles.chevronIcon} onClick={clickNext}/>
+                        <FaChevronRight className={cls(styles.chevronIcon, styles.chevronRight)} onClick={clickNext}/>
                     </div>
                 </section>
             </Container>
