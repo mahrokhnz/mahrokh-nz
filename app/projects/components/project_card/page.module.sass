@@ -6,9 +6,10 @@
   align-items: center
   gap: 12px
   cursor: pointer
-  background: var(--secondWaveColor)
+  background: var(--secondaryColor)
   padding: 10px
   border-radius: 5px
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px
 
   &.currentProjectWrapper
     padding: 30px
@@ -29,9 +30,14 @@
 
     .content
       padding-left: 50px
+      width: 50%
+      color: var(--textColor)
 
       @include respond-to('desktop')
         padding-left: 20px
+
+      @include respond-to('small-desktop')
+        width: 100%
 
       .links
         display: flex
@@ -45,14 +51,12 @@
 
     .imageWrapper
       width: 50%
-      height: 90%
 
   .content
     display: flex
     flex-direction: column
     flex-grow: 1
     gap: 20px
-    width: 50%
 
     .title
       font-size: 18px
@@ -68,6 +72,7 @@
         padding: 4px 8px
         border-radius: 15px
         background: var(--neutralColor)
+        color: white
 
     .description
       margin-top: 30px
