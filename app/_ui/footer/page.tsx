@@ -16,7 +16,7 @@ export default function Footer() {
             </div>
             <div className={styles.separator}></div>
             <span className={styles.copyWrite}>
-                © ${year} MAHrokh Tehran, Iran. All rights reserved.
+                © {year} MAHrokh Tehran, Iran. All rights reserved.
             </span>
         </footer>
     );

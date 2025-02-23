@@ -196,5 +196,63 @@
       "code": "https://github.com/mahrokhnz/next-js",
       "image": "/images/projects/nextjs.webp"
     }
+  ],
+  "skillsIcons": [
+    {
+      "id": 1,
+      "title": "CSS3",
+      "icon": "/images/skills/css3.svg",
+      "top": 98,
+      "left": 70
+    },
+    {
+      "id": 2,
+      "title": "javascript",
+      "icon": "/images/skills/javascript.svg",
+      "top": 50,
+      "left": 90
+    },
+    {
+      "id": 3,
+      "title": "html",
+      "icon": "/images/skills/html5.svg",
+      "top": 95,
+      "left": 0
+    },
+    {
+      "id": 4,
+      "title": "next",
+      "icon": "/images/skills/next.svg",
+      "top": 5,
+      "left": 0
+    },
+    {
+      "id": 5,
+      "title": "react",
+      "icon": "/images/skills/react.svg",
+      "top": -5,
+      "left": 70
+    },
+    {
+      "id": 6,
+      "title": "git",
+      "icon": "/images/skills/git.svg",
+      "top": 60,
+      "left": 5
+    },
+    {
+      "id": 7,
+      "title": "sass",
+      "icon": "/images/skills/sass.svg",
+      "top": 20,
+      "left": 95
+    },
+    {
+      "id": 8,
+      "title": "typescript",
+      "icon": "/images/skills/typescript.svg",
+      "top": 25,
+      "left": -15
+    }
   ]
 }
