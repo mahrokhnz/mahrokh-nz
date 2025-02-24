@@ -1,4 +1,3 @@
-import styles from "./page.module.sass";
 import type {Metadata} from "next";
 import {metadataCreator} from "@/utils/metadata";
 import View from "@/app/(home)/_sections/(view)/page";
@@ -8,7 +7,7 @@ export const metadata: Metadata = metadataCreator('Home', 'Passionate frontend d
 
 export default function Home() {
   return (
-      <main className={styles.homeContainer}>
+      <main>
           <View></View>
           <Skills></Skills>
       </main>

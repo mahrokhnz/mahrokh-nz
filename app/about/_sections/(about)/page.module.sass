@@ -1,0 +1,52 @@
+@import "../../../mixins.sass"
+
+.aboutWrapper
+  padding-top: 100px
+
+  .about
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    gap: 100px
+    justify-content: space-between
+
+    .contentWrapper
+      display: flex
+      gap: 100px
+      flex: 1
+
+      @include respond-to('tablet')
+        flex-direction: column
+
+        .imageWrapper
+          width: unset !important
+
+          .myImage
+            width: 100%
+
+      .imageWrapper
+        position: relative
+
+        .myImage
+          width: 30rem
+          height: 38rem
+          border-radius: 1.5rem
+          object-fit: cover
+
+        .skillIcon
+          border-radius: 0.2rem
+          position: absolute
+          object-fit: cover
+          z-index: 100
+
+      .infoWrapper
+        flex: 1
+        align-self: center
+
+        p
+          font-size: 1rem
+          color: var(--neutralColor)
+          line-height: 1.8
+
+        .button
+          margin-top: 20px

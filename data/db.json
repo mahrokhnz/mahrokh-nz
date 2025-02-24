@@ -230,7 +230,7 @@
       "id": 5,
       "title": "react",
       "icon": "/images/skills/react.svg",
-      "top": -5,
+      "top": -2,
       "left": 70
     },
     {
@@ -252,7 +252,23 @@
       "title": "typescript",
       "icon": "/images/skills/typescript.svg",
       "top": 25,
-      "left": -15
+      "left": -5
+    }
+  ],
+  "educations": [
+    {
+      "id": 1,
+      "image": "/images/University_of_Science_&_Culture.png",
+      "name": "University of Science and Culture",
+      "degree": "Masters's degree, Mater of Business Administration - MBA, Strategy",
+      "period": "Sep 2019 - Sep 2022"
+    },
+    {
+      "id": 2,
+      "image": "/images/University_of_Tehran.svg.png",
+      "name": "University of Tehran",
+      "degree": "Bachelor's degree, Mechanical Engineering",
+      "period": "Sep 2015 - Sep 2019"
     }
   ]
 }
