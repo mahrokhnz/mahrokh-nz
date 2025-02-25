@@ -13,8 +13,8 @@ export default function Menu({ isOpen, isFooter }: MenuProps) {
             <li><Link href="/">Home</Link></li>
             <li><Link href="/about">About</Link></li>
             <li><Link href="/projects">Projects</Link></li>
-            <li><Link href="/resume">Resume</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
+            <li className={styles.disabled}>Resume</li>
+            <li className={styles.disabled}>Contact</li>
         </ul>
     );
 }

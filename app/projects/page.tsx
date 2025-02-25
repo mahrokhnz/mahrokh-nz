@@ -10,7 +10,6 @@ import { FaChevronLeft } from "react-icons/fa6";
 import cls from "@/utils/class_names";
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-// export const metadata: Metadata = metadataCreator('Projects', 'This page is about me')
 const itemsToShow = 4;
 
 export default function Projects() {

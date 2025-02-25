@@ -151,7 +151,7 @@
     {
       "id": 4,
       "title": "Personal Website",
-      "description": "This is a repository containing configuration files for the GitHub profile of Mahrokh. This project serves as a central hub for managing and organizing various settings and configurations related to the GitHub profile. It includes customizations, themes, and other essential files that help maintain a personalized and efficient GitHub experience. This repository is ideal for developers looking to streamline their GitHub profile management and ensure a consistent and professional appearance across their projects.",
+      "description": "This is a personal website that showcases my skills and career as you can see.",
       "skills": [
         "Nextjs",
         "Typescript",
@@ -188,7 +188,7 @@
       "title": "Nextjs App Router",
       "description": "The next-js project is a repository dedicated to showcasing various applications and components built with Next.js. This project aims to provide a collection of practical examples and reusable components that can be used in different Next.js projects. The repository includes implementations of common features such as server-side rendering, static site generation, API routes, and more. Each example is well-documented and easy to understand, making it a valuable resource for developers looking to enhance their Next.js skills or find inspiration for their own projects.",
       "skills": [
-        "Nexts",
+        "Nextjs",
         "Typescript",
         "Tailwind",
         "CSS"
