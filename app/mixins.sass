@@ -11,6 +11,9 @@
   @else if $breakpoint == 'small-desktop'
     @media (max-width: 1024px)
       @content
+  @else if $breakpoint == 'medium-desktop'
+    @media (max-width: 1300px)
+      @content
   @else if $breakpoint == 'desktop'
     @media (max-width: 1600px)
       @content

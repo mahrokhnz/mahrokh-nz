@@ -1,3 +1,5 @@
+@import "../../../../../mixins.sass"
+
 .educationItem
   display: flex
   flex-direction: column
@@ -6,6 +8,9 @@
   border-radius: 0.5rem
   background-color: var(--primaryColor)
   width: 600px
+
+  @include respond-to('medium-desktop')
+    width: unset
 
   .universityWrapper
     display: flex

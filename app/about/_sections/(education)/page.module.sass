@@ -1,3 +1,5 @@
+@import "../../../mixins.sass"
+
 .education
   .educationContainer
     background: var(--secondaryColor)
@@ -6,3 +8,6 @@
       display: flex
       justify-content: space-between
       gap: 20px
+
+      @include respond-to('medium-desktop')
+        flex-direction: column

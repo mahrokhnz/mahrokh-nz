@@ -15,7 +15,7 @@
       gap: 100px
       flex: 1
 
-      @include respond-to('tablet')
+      @include respond-to('medium-desktop')
         flex-direction: column
 
         .imageWrapper
@@ -23,6 +23,9 @@
 
           .myImage
             width: 100%
+
+      @include respond-to('tablet')
+        gap: 120px
 
       .imageWrapper
         position: relative
@@ -39,9 +42,21 @@
           object-fit: cover
           z-index: 100
 
+          @include respond-to('tablet')
+            position: relative
+            top: 100% !important
+            left: 0 !important
+            margin-inline-end: 5px
+            margin-block-start: 8px
+            max-width: 40px
+            max-height: 40px
+
       .infoWrapper
         flex: 1
-        align-self: center
+        margin-top: 150px
+
+        @include respond-to('desktop')
+          margin-top: 0
 
         p
           font-size: 1rem
