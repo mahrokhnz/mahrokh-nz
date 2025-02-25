@@ -1,9 +1,7 @@
-@import "../../../../mixins"
-
 .hamburgerMenu
   display: none
 
-  @include respond-to('tablet')
+  @include mixins.respond-to('tablet')
     height: 22px
     width: 30px
     display: flex

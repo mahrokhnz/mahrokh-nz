@@ -4,7 +4,7 @@ import SectionTitle from "@/app/_ui/section_title/page";
 import data from "@/data/db.json";
 import EducationItem from "@/app/about/_sections/(education)/components/education_item/page";
 
-export default function Education() {
+function Education() {
     const {educations} = data
 
     return (
@@ -20,3 +20,5 @@ export default function Education() {
         </section>
     );
 }
+
+export default Education

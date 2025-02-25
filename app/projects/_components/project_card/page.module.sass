@@ -1,5 +1,3 @@
-@import "../../../mixins"
-
 .projectWrapper
   display: flex
   flex-direction: column-reverse
@@ -18,7 +16,7 @@
     cursor: auto
     height: 100%
 
-    @include respond-to('small-desktop')
+    @include mixins.respond-to('small-desktop')
       flex-direction: column-reverse
       align-items: normal
 
@@ -33,10 +31,10 @@
       width: 50%
       color: var(--textColor)
 
-      @include respond-to('desktop')
+      @include mixins.respond-to('desktop')
         padding-left: 20px
 
-      @include respond-to('small-desktop')
+      @include mixins.respond-to('small-desktop')
         width: 100%
 
       .links

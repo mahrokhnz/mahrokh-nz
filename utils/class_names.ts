@@ -1,4 +1,4 @@
-function cls(...classNames) {
+function cls(...classNames: any[]) {
 	return classNames.filter(Boolean).join(' ');
 }
 

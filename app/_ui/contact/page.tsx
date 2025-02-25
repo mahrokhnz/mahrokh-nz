@@ -4,7 +4,11 @@ import { FaHackerrank } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import cls from "@/utils/class_names";
 
-export default function Contact({isFooter = false}) {
+interface ContactProps {
+    isFooter?: boolean;
+}
+
+function Contact({isFooter = false}: ContactProps) {
     return (
         <div className={cls(styles.contactWrapper, isFooter && styles.footerContactWrapper)}>
             <a className={styles.iconWrapper} href="https://github.com/mahrokhnz" target="_blank">
@@ -19,3 +23,5 @@ export default function Contact({isFooter = false}) {
         </div>
     );
 }
+
+export default Contact

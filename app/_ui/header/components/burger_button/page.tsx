@@ -1,7 +1,13 @@
 import styles from "./page.module.sass";
 import cls from "@/utils/class_names";
+import {MouseEventHandler} from "react";
 
-export default function BurgerButton({isOpen, onClickHandler}) {
+interface BurgerButtonProps {
+    isOpen: boolean;
+    onClickHandler: MouseEventHandler<HTMLDivElement> | undefined
+}
+
+function BurgerButton({isOpen, onClickHandler}: BurgerButtonProps) {
   return (
       <div className={cls(styles.hamburgerMenu, isOpen && styles.open)} onClick={onClickHandler}>
           <span className={cls(styles.line, styles.line1)}></span>
@@ -10,3 +16,5 @@ export default function BurgerButton({isOpen, onClickHandler}) {
       </div>
   );
 }
+
+export default BurgerButton

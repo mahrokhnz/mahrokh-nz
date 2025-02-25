@@ -45,16 +45,22 @@ const Canvas: React.FC = () => {
         const ctx = canvas!.getContext('2d')!;
 
         const resizeCanvas = () => {
-            canvas!.width = window.innerWidth;
-            canvas!.height = window.innerHeight;
+            if (typeof window !== "undefined") {
+                canvas!.width = window.innerWidth;
+                canvas!.height = window.innerHeight;
+            }
         };
 
         resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
+        if (typeof window !== "undefined") {
+            window.addEventListener('resize', resizeCanvas);
+        }
 
         let mouseP: TMouse = { x: 0, y: 0 };
 
-        const stars: TStar[] = new Array(numberOfStars(window.innerWidth))
+        const windowWidth = typeof window !== "undefined" ? window.innerWidth : 0;
+
+        const stars: TStar[] = new Array(numberOfStars(windowWidth))
             .fill(0)
             .map(() => ({
                 x: Math.random() * canvas!.width,
@@ -126,8 +132,10 @@ const Canvas: React.FC = () => {
             stars.forEach((star) => {
                 const diff = pythagoras(mouse, star);
 
-                if (diff < 150 && star.y > headerBoundary(window.innerWidth)!) {
-                    nearStars.push(star);
+                if (typeof window !== "undefined") {
+                    if (diff < 150 && star.y > headerBoundary(window.innerWidth)!) {
+                        nearStars.push(star);
+                    }
                 }
             });
 
@@ -147,7 +155,9 @@ const Canvas: React.FC = () => {
         canvas!.addEventListener('mousemove', handleMouseMove);
 
         return () => {
-            window.removeEventListener('resize', resizeCanvas);
+            if (typeof window !== "undefined") {
+                window.removeEventListener('resize', resizeCanvas);
+            }
             canvas!.removeEventListener('mousemove', handleMouseMove);
         };
     }, []);

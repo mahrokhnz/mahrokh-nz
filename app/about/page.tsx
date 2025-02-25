@@ -1,11 +1,11 @@
 import type {Metadata} from "next";
-import {metadataCreator} from "@/utils/metadata";
+import metadataCreator from "@/utils/metadata";
 import AboutMe from "@/app/about/_sections/(about)/page";
 import Education from "@/app/about/_sections/(education)/page";
 
 export const metadata: Metadata = metadataCreator('About', 'About me' )
 
-export default function About() {
+function About() {
     return (
         <main>
             <AboutMe></AboutMe>
@@ -13,3 +13,5 @@ export default function About() {
         </main>
     );
 }
+
+export default About

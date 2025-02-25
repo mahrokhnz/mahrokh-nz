@@ -16,8 +16,6 @@ const CustomThemeContext = createContext<CustomThemeContextType | undefined>(und
 export const CustomThemeProvider: React.FC<CustomCustomThemeProviderProps> = ({ children }) => {
     const [theme, setTheme] = useState('dark');
 
-    //TODO: default to dark
-
     useEffect(() => {
         const storedTheme = localStorage.getItem('theme');
         if (storedTheme) {

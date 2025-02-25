@@ -4,7 +4,7 @@ import styles from "./page.module.sass";
 import Container from "@/app/_ui/container/page";
 import {useEffect, useMemo, useState} from "react";
 import data from "@/data/db.json";
-import ProjectCard from "@/app/projects/components/project_card/page";
+import ProjectCard from "@/app/projects/_components/project_card/page";
 import { FaChevronRight } from "react-icons/fa6";
 import { FaChevronLeft } from "react-icons/fa6";
 import cls from "@/utils/class_names";
@@ -12,7 +12,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 
 const itemsToShow = 4;
 
-export default function Projects() {
+function Projects() {
     const {projects} = data;
     const [currentId, setCurrentId] = useState(1);
     const [startIndex, setStartIndex] = useState(0);
@@ -39,7 +39,7 @@ export default function Projects() {
         }
     }, [startIndex, itemsToShowOnCurrentScreen]);
 
-    const changingSlides = (prev) => {
+    const changingSlides = (prev: number) => {
         const lastId = projects[projects.length - 1].id;
 
         if (prev >= lastId) {
@@ -67,16 +67,20 @@ export default function Projects() {
         setStartIndex((prevIndex) => (prevIndex + 1) % projects.length);
     };
 
+    const currentProject = projects.find(project => project.id === currentId)
+
     return (
         <main className={styles.projectsWrapper}>
             <Container>
                 <section className={styles.projects}>
-                    <ProjectCard className={styles.currentItem} isCurrent={true} data={projects.find(project => project.id === currentId)} />
+                    {currentProject && (
+                        <ProjectCard className={styles.currentItem} isCurrent={true} data={currentProject} />
+                    )}
                     <div className={styles.slider}>
                         <FaChevronLeft className={cls(styles.chevronIcon, styles.chevronLeft)} onClick={clickPrev} />
                         <div className={styles.sliderItems}>
                             {sliderItems.map((item) => (
-                                <ProjectCard className={styles.item} key={item.id} data={item} clickHandler={(id) => setCurrentId(id)} />
+                                <ProjectCard className={styles.item} key={item.id} data={item} clickHandler={(id: number) => setCurrentId(id)} />
                             ))}
                         </div>
                         <FaChevronRight className={cls(styles.chevronIcon, styles.chevronRight)} onClick={clickNext} />
@@ -86,3 +90,5 @@ export default function Projects() {
         </main>
     );
 }
+
+export default Projects

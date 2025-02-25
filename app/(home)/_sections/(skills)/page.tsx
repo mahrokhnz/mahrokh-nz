@@ -7,17 +7,18 @@ import {useMemo} from "react";
 import { useInView } from 'react-intersection-observer';
 import SkillsList from "@/app/(home)/_sections/(skills)/components/skill_list/page";
 import SectionTitle from "@/app/_ui/section_title/page";
+import {skillType} from "@/app/(home)/_sections/(skills)/type";
 
-export default function Skills() {
+function Skills() {
     const [ref, inView] = useInView({triggerOnce: true})
     const {skills} = data;
 
-    const {primary, secondary} = useMemo(() => {
-        const first = skills.filter((skill) => skill.column === 1)
-        const second = skills.filter((skill) => skill.column === 2)
+    const { primary, secondary } = useMemo(() => {
+        const first = skills.filter((skill) => skill.column === 1);
+        const second = skills.filter((skill) => skill.column === 2);
 
-        return {primary: first, secondary: second}
-    }, [skills])
+        return { primary: first as skillType[], secondary: second as skillType[] };
+    }, [skills]);
 
   return (
           <section className={styles.skills}>
@@ -31,3 +32,5 @@ export default function Skills() {
           </section>
   );
 }
+
+export default Skills;

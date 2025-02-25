@@ -1,8 +1,13 @@
 import styles from "./page.module.sass";
 import Image from "next/image";
 import React from "react";
+import {educationType} from "@/app/about/_sections/(education)/type";
 
-export default function EducationItem({data}) {
+interface IEducationItemProps {
+    data: educationType
+}
+
+function EducationItem({data}: IEducationItemProps) {
 
     return (
         <div className={styles.educationItem}>
@@ -25,3 +30,5 @@ export default function EducationItem({data}) {
         </div>
     );
 }
+
+export default EducationItem

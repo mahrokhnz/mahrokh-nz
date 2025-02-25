@@ -1,4 +1,4 @@
-import "./globals.css";
+import "./globals.sass";
 import '../theme/colors.sass';
 import localFont from 'next/font/local';
 import Header from "@/app/_ui/header/page";
@@ -48,7 +48,11 @@ const myFont = localFont({
     ]
 });
 
-export default function RootLayout({ children }) {
+interface IRootLayoutProps {
+    children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: IRootLayoutProps) {
         return (
         <CustomThemeProvider>
             <html lang="en">

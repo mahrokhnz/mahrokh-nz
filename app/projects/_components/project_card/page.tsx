@@ -5,15 +5,22 @@ import Link from "next/link";
 import {Button} from "@mui/material";
 import { FaRegEye } from "react-icons/fa";
 import useMediaQuery from '@mui/material/useMediaQuery';
+import {projectType} from "@/app/projects/type";
 
+interface IProjectCardProps {
+    data: projectType;
+    clickHandler?: (id: number) => void;
+    className: string;
+    isCurrent?: boolean;
+}
 
-export default function ProjectCard({data, clickHandler, className = '', isCurrent = false}) {
+function ProjectCard({data, clickHandler, className = '', isCurrent = false}: IProjectCardProps) {
     const isMobile = useMediaQuery('(max-width: 600px)');
 
     return (
         <div className={cls(styles.projectWrapper, isCurrent && styles.currentProjectWrapper, className)}
              onClick={() => {
-                 if (!isCurrent) {
+                 if (clickHandler instanceof Function) {
                      clickHandler(data.id)
                  }
              }}>
@@ -22,7 +29,7 @@ export default function ProjectCard({data, clickHandler, className = '', isCurre
                 {isCurrent && (
                     <>
                         <div className={styles.skills}>
-                            {data.skills.map((skill, index) => (
+                            {data.skills.map((skill: string, index: number) => (
                                 <span className={styles.skill} key={`Skill-${index + 1}`}>{skill}</span>
                             ))}
                         </div>
@@ -56,3 +63,5 @@ export default function ProjectCard({data, clickHandler, className = '', isCurre
         </div>
     );
 }
+
+export default ProjectCard

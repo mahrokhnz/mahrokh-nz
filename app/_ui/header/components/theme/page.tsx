@@ -6,7 +6,7 @@ import {useTheme} from "@/context/theme_context";
 import { LuSunMoon } from "react-icons/lu"
 import { IoMoonOutline } from "react-icons/io5";
 
-export default function Theme() {
+function Theme() {
     const { theme, toggleTheme } = useTheme();
 
     return (
@@ -19,3 +19,5 @@ export default function Theme() {
         </div>
     );
 }
+
+export default Theme

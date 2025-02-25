@@ -2,12 +2,12 @@
 
 import styles from "./page.module.sass";
 import Menu from "@/app/_ui/menu/page";
-import Theme from "@/app/_ui/header/coponents/theme/page";
-import BurgerButton from "@/app/_ui/header/coponents/burger_button/page";
+import Theme from "@/app/_ui/header/components/theme/page";
+import BurgerButton from "@/app/_ui/header/components/burger_button/page";
 import {useState} from "react";
 import Link from "next/link";
 
-export default function Header() {
+function Header() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     return (
@@ -28,3 +28,5 @@ export default function Header() {
             </header>
     );
 }
+
+export default Header

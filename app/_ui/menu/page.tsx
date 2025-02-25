@@ -7,7 +7,7 @@ interface MenuProps {
     isFooter?: boolean;
 }
 
-export default function Menu({ isOpen, isFooter }: MenuProps) {
+function Menu({ isOpen = false, isFooter = false }: MenuProps) {
     return (
         <ul className={cls(!isFooter ? styles.headerMenu : styles.footerMenu ,styles.menu, isOpen && styles.open)}>
             <li><Link href="/">Home</Link></li>
@@ -18,3 +18,5 @@ export default function Menu({ isOpen, isFooter }: MenuProps) {
         </ul>
     );
 }
+
+export default Menu

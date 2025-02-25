@@ -1,7 +1,13 @@
 import styles from "./page.module.sass";
 import Circle from "@/app/_ui/circle/page";
+import {skillType} from "@/app/(home)/_sections/(skills)/type";
 
-export default function SkillsList({data, inView}) {
+interface SkillsListProps {
+    data: skillType[];
+    inView: boolean;
+}
+
+function SkillsList({data, inView}: SkillsListProps) {
   return (
       <ul className={styles.listWrapper}>
           {
@@ -23,3 +29,5 @@ export default function SkillsList({data, inView}) {
       </ul>
   );
 }
+
+export default SkillsList;

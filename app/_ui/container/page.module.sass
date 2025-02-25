@@ -1,6 +1,3 @@
-//TODO
-@import "../../mixins.sass"
-
 .container
   display: flex
   flex-direction: column
@@ -10,9 +7,9 @@
   scroll-snap-align: end
   min-height: calc(100vh - 112px)
 
-  @include respond-to('tablet')
+  @include mixins.respond-to('tablet')
     padding: 2rem 4rem
 
-  @include respond-to('phone')
+  @include mixins.respond-to('phone')
     padding: 2rem
     min-height: calc(100vh - 74px)

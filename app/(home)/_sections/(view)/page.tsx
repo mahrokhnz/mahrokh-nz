@@ -4,7 +4,7 @@ import SvgPath from "@/app/_ui/svg_path/page";
 import Contact from "@/app/_ui/contact/page";
 import Container from "@/app/_ui/container/page";
 
-export default function View() {
+function View() {
   return (
       <section className={styles.view}>
           <Container>
@@ -19,3 +19,5 @@ export default function View() {
       </section>
   );
 }
+
+export default View
