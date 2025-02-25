@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "serve-json": "json-server --watch data/db.json --port 3001",
-    "deploy": "gh-pages -d out"
+    "serve-json": "json-server --watch data/db.json --port 3001"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
@@ -33,7 +32,6 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
-    "gh-pages": "^6.3.0",
     "typescript": "^5"
   }
 }
