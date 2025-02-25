@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "serve-json": "json-server --watch data/db.json --port 3001"
+    "serve-json": "json-server --watch data/db.json --port 3001",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
@@ -22,7 +23,8 @@
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0",
     "react-intersection-observer": "^9.15.1",
-    "sass": "^1.83.4"
+    "sass": "^1.83.4",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
@@ -31,6 +33,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
+    "gh-pages": "^6.3.0",
     "typescript": "^5"
   }
 }
