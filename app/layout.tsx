@@ -8,6 +8,8 @@ import Footer from "@/app/_ui/footer/page";
 import {AppRouterCacheProvider} from "@mui/material-nextjs/v13-appRouter";
 import theme from "@/theme/theme";
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 const myFont = localFont({
     src: [
         {
@@ -61,6 +63,7 @@ export default function RootLayout({ children }: IRootLayoutProps) {
                     <ThemeProvider theme={theme}>
                         <Header />
                         {children}
+                        <SpeedInsights />
                         <Footer />
                     </ThemeProvider>
                 </AppRouterCacheProvider>
