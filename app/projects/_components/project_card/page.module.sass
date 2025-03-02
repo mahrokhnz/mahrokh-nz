@@ -49,6 +49,8 @@
 
     .imageWrapper
       width: 50%
+      max-height: unset
+      aspect-ratio: unset
 
   .content
     display: flex
@@ -77,12 +79,16 @@
       line-height: 1.3
 
   .imageWrapper
-    flex-grow: 1
-    height: 100%
     width: 100%
+    height: 100%
     border-radius: 5px
+    background: var(--secondaryColor)
+    overflow: hidden
+    max-height: 127px
+    aspect-ratio: 4/3
 
     .projectImage
       width: 100%
       height: 100%
       border-radius: 5px
+      object-fit: cover

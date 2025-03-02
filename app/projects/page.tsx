@@ -10,17 +10,19 @@ import { FaChevronLeft } from "react-icons/fa6";
 import cls from "@/utils/class_names";
 import useMediaQuery from '@mui/material/useMediaQuery';
 
-const itemsToShow = 4;
+const itemsToShow = 6;
 
 function Projects() {
     const {projects} = data;
     const [currentId, setCurrentId] = useState(1);
     const [startIndex, setStartIndex] = useState(0);
-    const isSmallDesktop = useMediaQuery('(max-width: 1024px)');
-    const isBigPhone = useMediaQuery('(max-width: 600px)');
-    const isTablet = useMediaQuery('(max-width: 840px)');
 
-    const itemsToShowOnCurrentScreen = isBigPhone ? 1 : isTablet ? 2 : isSmallDesktop ? 3 : itemsToShow;
+    const isDesktop = useMediaQuery('(max-width: 1600px)');
+    const isSmallDesktop = useMediaQuery('(max-width: 1024px)');
+    const isTablet = useMediaQuery('(max-width: 840px)');
+    const isBigPhone = useMediaQuery('(max-width: 600px)');
+
+    const itemsToShowOnCurrentScreen = isBigPhone ? 1 : isTablet ? 2 : isSmallDesktop ? 3 : isDesktop ? 4 : itemsToShow;
 
     const sliderItems = useMemo(() => {
         const newProjects = [...projects];

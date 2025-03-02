@@ -20,14 +20,17 @@
       position: relative
 
       .sliderItems
+        flex-grow: 1
         display: grid
-        grid-template-columns: repeat(4, 1fr)
+        grid-template-columns: repeat(6, 1fr)
         gap: 2rem
         justify-content: center
 
+        @include mixins.respond-to('desktop')
+          grid-template-columns: repeat(4, 1fr)
+
         @include mixins.respond-to('small-desktop')
           grid-template-columns: repeat(3, 1fr)
-          justify-items: center
 
         @include mixins.respond-to('tablet')
           grid-template-columns: repeat(2, 1fr)
@@ -42,6 +45,7 @@
         cursor: pointer
         opacity: 0.3
         transition: opacity 0.3s ease-in-out
+        z-index: 2
 
         @include mixins.respond-to('desktop')
           font-size: 80px
@@ -60,6 +64,3 @@
 
         &:hover
           opacity: 1
-
-      .item
-        height: 100%

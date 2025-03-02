@@ -1,11 +1,12 @@
 import styles from "./page.module.sass";
 import cls from "@/utils/class_names";
-import Image from "next/image";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 import Link from "next/link";
-import {Button} from "@mui/material";
+import { Button } from "@mui/material";
 import { FaRegEye } from "react-icons/fa";
 import useMediaQuery from '@mui/material/useMediaQuery';
-import {projectType} from "@/app/projects/type";
+import { projectType } from "@/app/projects/type";
 
 interface IProjectCardProps {
     data: projectType;
@@ -14,7 +15,7 @@ interface IProjectCardProps {
     isCurrent?: boolean;
 }
 
-function ProjectCard({data, clickHandler, className = '', isCurrent = false}: IProjectCardProps) {
+function ProjectCard({ data, clickHandler, className = '', isCurrent = false }: IProjectCardProps) {
     const isMobile = useMediaQuery('(max-width: 600px)');
 
     return (
@@ -37,7 +38,7 @@ function ProjectCard({data, clickHandler, className = '', isCurrent = false}: IP
                         <p className={styles.description}>{data.description}</p>
 
                         <div className={styles.links}>
-                            {data.code && (<Link  href={data.code}>
+                            {data.code && (<Link href={data.code}>
                                 <Button size={isMobile ? 'small' : 'medium'} className={styles.button} variant='contained' startIcon={<FaRegEye />}>
                                     Code
                                 </Button>
@@ -55,13 +56,16 @@ function ProjectCard({data, clickHandler, className = '', isCurrent = false}: IP
 
             {data.image && (
                 <div className={styles.imageWrapper}>
-                    <Image className={styles.projectImage} src={data.image} alt='Mahrokh Nabizadeh' width={500}
-                           height={600}
-                           style={{objectFit: "cover"}}/>
+                    <LazyLoadImage
+                        className={styles.projectImage}
+                        src={data.image}
+                        alt={data.title}
+                        effect="blur"
+                    />
                 </div>
             )}
         </div>
     );
 }
 
-export default ProjectCard
+export default ProjectCard;
