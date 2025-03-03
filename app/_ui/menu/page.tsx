@@ -14,7 +14,7 @@ function Menu({ isOpen = false, isFooter = false }: MenuProps) {
             <li><Link href="/about">About</Link></li>
             <li><Link href="/projects">Projects</Link></li>
             <li className={styles.disabled}>Resume</li>
-            <li className={styles.disabled}>Contact</li>
+            <li><Link href="/contact">Contact</Link></li>
         </ul>
     );
 }
