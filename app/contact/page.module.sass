@@ -1,20 +1,3 @@
-.main
-    position: relative
-    width: 100%
-    height: 100%
-
-    // TODO
-    .svg
-        position: absolute
-        width: 100%
-        height: 100%
-        top: 0
-        left: 0
-        bottom: 0
-        right: 0
-        z-index: 0
-        opacity: 0.2
-
 .contactWrapper
     padding-top: 100px
 
@@ -23,16 +6,15 @@
 
         .rowWrapper
             display: flex
-            flex-grow: 1
             justify-content: space-between
-            gap: 100px
+            gap: 20px
 
             .content
                 display: flex
                 flex-direction: column
                 align-self: center
                 max-width: 500px
-                z-index: 1000
+                z-index: 1
 
                 .title
                     font-size: 40px
@@ -54,8 +36,11 @@
             .contactForm
                 padding: 30px 35px
                 border-radius: 20px
-                background: #fff
-                color: #000
+                background: rgba( 255, 255, 255, 0.7 )
+                box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )
+                backdrop-filter: blur( 3px )
+                -webkit-backdrop-filter: blur( 3px )
+                border: 1px solid rgba( 255, 255, 255, 0.18 )
                 z-index: 1
 
                 .subTitle
@@ -74,9 +59,56 @@
                         .textField
                             flex-grow: 1
 
-                        .phoneTextField
-                            flex-grow: 1
-                            background: #fff
-                            border-radius: 5px
+                    .textarea
+                        background: transparent
 
-                        // TODO texfields styles and colors
+            @include mixins.respond-to('medium-desktop')
+                .content
+                    max-width: 400px
+
+                    .title
+                        font-size: 35px
+
+                    .description
+                        font-size: 15px
+
+                    .email
+                        margin-top: 50px
+
+                .contactForm
+                    padding: 25px 30px
+                    flex-grow: 1
+
+                    .subTitle
+                        font-size: 30px
+                        margin-bottom: 30px
+
+                    fieldset
+                        gap: 10px
+
+                        .row
+                            flex-direction: column
+                            gap: 10px
+
+            @include mixins.respond-to('small-desktop')
+                flex-direction: column
+                gap: 50px
+
+                .content
+                    max-width: unset
+
+                    .email
+                        margin-top: 20px
+
+                .contactForm
+                    padding: 20px
+
+                    fieldset
+                        .row
+                            flex-direction: row
+
+            @include mixins.respond-to('big-phone')
+                .contactForm
+                    fieldset
+                        .row
+                            flex-direction: column
