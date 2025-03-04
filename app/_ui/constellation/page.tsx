@@ -37,7 +37,11 @@ const headerBoundary = (width: number) => {
     }
 };
 
-const Canvas: React.FC = () => {
+interface ICanvasProps {
+    onlyStarts?: boolean;
+}
+
+const Canvas = ({onlyStarts}: ICanvasProps) => {
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
     useEffect(() => {
@@ -115,7 +119,7 @@ const Canvas: React.FC = () => {
                 for (let j = 1; j < nearStars.length - 1; j++) {
                     const diff = pythagoras(nearStars[i], nearStars[j]);
 
-                    if (diff < 150) {
+                    if (diff < 150 && !onlyStarts) {
                         ctx.beginPath();
                         ctx.moveTo(nearStars[i].x, nearStars[i].y);
                         ctx.lineTo(nearStars[j].x, nearStars[j].y);
