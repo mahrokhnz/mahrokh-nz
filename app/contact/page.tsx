@@ -13,6 +13,7 @@ import {toast, ToastContainer} from "react-toastify";
 import {useTheme} from "@/context/theme_context";
 import MetadataComponent from "@/utils/client-metadata";
 import * as React from "react";
+import SectionTitle from "@/app/_ui/section_title/page";
 
 interface ITextFieldEventType {
     target: { name: string; value: string; };
@@ -117,7 +118,7 @@ function ContactMe(){
                     <Container className={styles.contact}>
                         <div className={styles.rowWrapper}>
                             <div className={styles.content}>
-                                <h1 className={styles.title}>Contact Me</h1>
+                                <SectionTitle text='Contact Me' alignment='flex-start' className={styles.title} />
                                 <p className={styles.description}>
                                     Feel free to reach out to me for any inquiries, collaborations, or just to say hi! Whether you have a question, a project idea, or simply want to connect, I&#39;m always eager to hear from you.
                                 </p>

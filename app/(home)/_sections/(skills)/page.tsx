@@ -23,7 +23,7 @@ function Skills() {
   return (
           <section className={styles.skills}>
               <Container className={styles.skillsContainer}>
-                  <SectionTitle text='Skills' />
+                  <SectionTitle text='My Skills' />
                   <div className={styles.skillsWrapper} ref={ref}>
                       <SkillsList data={primary} inView={inView}/>
                       <SkillsList data={secondary} inView={inView}/>

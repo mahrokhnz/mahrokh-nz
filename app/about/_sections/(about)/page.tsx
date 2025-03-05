@@ -9,6 +9,7 @@ import data from "@/data/db.json";
 import {Button} from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { FaDownload } from "react-icons/fa6";
+import SectionTitle from "@/app/_ui/section_title/page";
 
 function AboutMe () {
     const isMobile = useMediaQuery('(max-width: 600px)');
@@ -67,6 +68,7 @@ function AboutMe () {
                         ))}
                     </div>
                     <div className={styles.infoWrapper}>
+                        <SectionTitle text='About Me' className={styles.title} />
                         <p>
                             Hello! I&#39;m a passionate front-end developer with a unique journey and a diverse skill set.
                             My foray into the world of front-end development began in 2021, and since then, I&#39;ve been

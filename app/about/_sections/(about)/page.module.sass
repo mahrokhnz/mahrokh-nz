@@ -56,6 +56,18 @@
         @include mixins.respond-to('desktop')
           margin-top: 0
 
+        @include mixins.respond-to('big-phone')
+          margin-top: 10px
+
+        .title
+          margin-bottom: 3rem
+
+          @include mixins.respond-to('medium-desktop')
+            margin-bottom: 2rem
+
+          @include mixins.respond-to('phone')
+            margin-bottom: 1.5rem
+
         p
           font-size: 1rem
           color: var(--neutralColor)

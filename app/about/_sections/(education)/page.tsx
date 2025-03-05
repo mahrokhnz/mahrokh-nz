@@ -10,7 +10,7 @@ function Education() {
     return (
         <section className={styles.education}>
             <Container className={styles.educationContainer}>
-                <SectionTitle text='Education' />
+                <SectionTitle text='My Education' />
                 <div className={styles.educationWrapper}>
                     {educations.map((education) => (
                         <EducationItem key={education.id} data={education} />

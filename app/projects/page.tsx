@@ -2,7 +2,7 @@
 
 import styles from "./page.module.sass";
 import Container from "@/app/_ui/container/page";
-import {useEffect, useMemo, useState} from "react";
+import React, {useEffect, useMemo, useState} from "react";
 import data from "@/data/db.json";
 import ProjectCard from "@/app/projects/_components/project_card/page";
 import { FaChevronRight } from "react-icons/fa6";
@@ -10,6 +10,7 @@ import { FaChevronLeft } from "react-icons/fa6";
 import cls from "@/utils/class_names";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import MetadataComponent from "@/utils/client-metadata";
+import SectionTitle from "@/app/_ui/section_title/page";
 
 const itemsToShow = 6;
 
@@ -77,6 +78,7 @@ function Projects() {
             <MetadataComponent title='Projects' description={`Here, you'll find a selection of my most notable front-end development projects, showcasing my skills and expertise in creating dynamic and user-friendly websites and applications. Each project reflects my dedication to clean, efficient code and visually appealing design.`} />
             <main className={styles.projectsWrapper}>
                 <Container>
+                    <SectionTitle text='My Projects' />
                     <section className={styles.projects}>
                         {currentProject && (
                             <ProjectCard className={styles.currentItem} isCurrent={true} data={currentProject} />
