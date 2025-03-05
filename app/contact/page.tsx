@@ -105,7 +105,7 @@ function ContactMe(){
 
     return (
         <>
-            <MetadataComponent title='Contact' description={'Get in touch with me for any inquiries, collaborations, or just to say hello! Whether you have questions, project ideas, or simply want to connect, I\'m always eager to hear from you. Reach out via email or phone, and let\'s start a conversation!'} />
+            <MetadataComponent title='Contact' description={'Get in touch with MAHrokh, a skilled Front-End Developer. Contact me for inquiries about projects, collaborations, or any questions regarding web development.'} />
             <main className={styles.main}>
                 <Canvas onlyStarts={true}/>
                 <section className={styles.contactWrapper}>

@@ -75,7 +75,9 @@ function Projects() {
 
     return (
         <>
-            <MetadataComponent title='Projects' description={`Here, you'll find a selection of my most notable front-end development projects, showcasing my skills and expertise in creating dynamic and user-friendly websites and applications. Each project reflects my dedication to clean, efficient code and visually appealing design.`} />
+            <MetadataComponent title='Projects' description={`Explore the projects of MAHrokh, an experienced Front-End Developer. Discover innovative web development work in HTML, CSS, JavaScript, React, and Next.js.
+
+`} />
             <main className={styles.projectsWrapper}>
                 <Container>
                     <SectionTitle text='My Projects' />
