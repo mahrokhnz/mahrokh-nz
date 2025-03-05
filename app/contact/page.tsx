@@ -5,9 +5,8 @@ import emailjs from 'emailjs-com';
 import styles from './page.module.sass';
 import Container from "@/app/_ui/container/page";
 import {MdEmail} from "react-icons/md";
-import {Button, FormHelperText, TextareaAutosize, TextField} from "@mui/material";
+import {Button, TextField} from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import MuiPhoneNumber from "mui-phone-number";
 import Canvas from "@/app/_ui/constellation/page";
 import {toast, ToastContainer} from "react-toastify";
 import {useTheme} from "@/context/theme_context";
@@ -43,7 +42,6 @@ function ContactMe(){
         name: '',
         company: '',
         email: '',
-        phone: '',
         message: ''
     });
 
@@ -63,7 +61,7 @@ function ContactMe(){
                     if (result.status === 200) {
                         successNotify()
 
-                        setFormData({ name: '', company: '', email: '', phone: '', message: '' });
+                        setFormData({ name: '', company: '', email: '', message: '' });
                         setErrors({ name: '', company: '', email: '', message: '' });
 
                         setSendLoading(false);
@@ -105,10 +103,6 @@ function ContactMe(){
         }
     };
 
-    const onPhoneNumberChanged = (phoneNumber: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | string) => {
-        handleChangeTextField({target: {name: 'phone', value: phoneNumber.toString()}});
-    };
-
     return (
         <>
             <MetadataComponent title='Contact' description={'Get in touch with me for any inquiries, collaborations, or just to say hello! Whether you have questions, project ideas, or simply want to connect, I\'m always eager to hear from you. Reach out via email or phone, and let\'s start a conversation!'} />
@@ -127,8 +121,7 @@ function ContactMe(){
                                     <a href="mailto:mahrokh.nz@gmail.com">Mahrokh.nz@gmail.com</a>
                                 </div>
                             </div>
-
-                            <form className={styles.contactForm} onSubmit={handleSubmit}>
+                            <form className={styles.contactForm} style={{'--form-color': theme === 'dark' ? '#9fa0bb99' : '#e2e2e7' } as object} onSubmit={handleSubmit}>
                                 <h2 className={styles.subTitle}>
                                     Let&#39;s get in touch!
                                 </h2>
@@ -172,10 +165,8 @@ function ContactMe(){
                                             className={styles.textField}
                                             name="email"
                                         />
-                                        <MuiPhoneNumber defaultCountry="ir" onChange={(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | string) => onPhoneNumberChanged(e)} value={formData.phone} inputClass={styles.phoneTextField}/>
                                     </div>
-                                    <TextareaAutosize placeholder='Write your message...' className={styles.textarea} required value={formData.message} onChange={handleChangeTextField} name='message' maxRows='28' minRows='20'/>
-                                    {errors.message && (<FormHelperText style={{color: '#d32f2f'}}>{errors.message}</FormHelperText>)}
+                                    <TextField error={!!errors.message} helperText={errors.message} required multiline rows={10} placeholder='Write your message...' value={formData.message} onChange={handleChangeTextField} name="message" />
                                     <Button loading={sendLoading} onClick={handleSubmit} size={isMobile ? 'small' : 'medium'} variant='contained' type='submit' color='primary'>
                                         Send Message
                                     </Button>

@@ -16,7 +16,6 @@
                 max-width: 500px
                 z-index: 1
 
-
                 .title
                     margin-bottom: 3rem
 
@@ -36,11 +35,12 @@
             .contactForm
                 padding: 30px 35px
                 border-radius: 20px
-                background: rgba( 255, 255, 255, 0.7 )
-                box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )
+                background: var(--form-color)
+                opacity: 0.8
+                box-shadow: 0 2px 15px 0 #6e6af499
                 backdrop-filter: blur( 3px )
                 -webkit-backdrop-filter: blur( 3px )
-                border: 1px solid rgba( 255, 255, 255, 0.18 )
+                border: 1px solid #6e6af499
                 z-index: 1
 
                 .subTitle
@@ -61,6 +61,8 @@
 
                     .textarea
                         background: transparent
+                        border-color: rgba(0, 0, 0, 0.23)
+                        color: currentColor
 
             @include mixins.respond-to('medium-desktop')
                 .content
