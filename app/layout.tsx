@@ -1,5 +1,4 @@
 import "./globals.sass";
-import '../theme/colors.sass';
 import localFont from 'next/font/local';
 import Header from "@/app/_ui/header/page";
 import { CustomThemeProvider } from "@/context/theme_context";
