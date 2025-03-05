@@ -14,27 +14,32 @@ interface CustomCustomThemeProviderProps {
 const CustomThemeContext = createContext<CustomThemeContextType | undefined>(undefined);
 
 export const CustomThemeProvider: React.FC<CustomCustomThemeProviderProps> = ({ children }) => {
-    const [theme, setTheme] = useState('dark');
+    const [theme, setTheme] = useState<string | null>(null);
 
     useEffect(() => {
         const storedTheme = localStorage.getItem('theme');
         if (storedTheme) {
             setTheme(storedTheme);
         } else {
-            const initialTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            setTheme(initialTheme);
+            setTheme('dark'); // Set default theme to dark
         }
     }, []);
 
     useEffect(() => {
-        document.documentElement.classList.remove('light', 'dark');
-        document.documentElement.classList.add(theme);
-        localStorage.setItem('theme', theme);
+        if (theme) {
+            document.documentElement.classList.remove('light', 'dark');
+            document.documentElement.classList.add(theme);
+            localStorage.setItem('theme', theme);
+        }
     }, [theme]);
 
     const toggleTheme = () => {
         setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
     };
+
+    if (!theme) {
+        return null;
+    }
 
     return (
         <CustomThemeContext.Provider value={{ theme, toggleTheme }}>

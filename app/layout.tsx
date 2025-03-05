@@ -55,19 +55,19 @@ interface IRootLayoutProps {
 
 export default function RootLayout({ children }: IRootLayoutProps) {
         return (
-        <CustomThemeProvider>
             <html lang="en">
-            <body className={myFont.className}>
-                <AppRouterCacheProvider>
-                    <ThemeProvider theme={theme}>
-                        <Header />
-                        {children}
-                        <SpeedInsights />
-                        <Footer />
-                    </ThemeProvider>
-                </AppRouterCacheProvider>
-            </body>
+                <body className={myFont.className}>
+                    <CustomThemeProvider>
+                        <AppRouterCacheProvider>
+                            <ThemeProvider theme={theme}>
+                                <Header/>
+                                {children}
+                                <SpeedInsights/>
+                                <Footer/>
+                            </ThemeProvider>
+                        </AppRouterCacheProvider>
+                    </CustomThemeProvider>
+                </body>
             </html>
-        </CustomThemeProvider>
     );
 }
