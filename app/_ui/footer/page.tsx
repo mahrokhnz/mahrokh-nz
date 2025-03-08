@@ -1,5 +1,3 @@
-"use client"
-
 import styles from "./page.module.sass";
 import Menu from "@/app/_ui/menu/page";
 import Contact from "@/app/_ui/contact/page";

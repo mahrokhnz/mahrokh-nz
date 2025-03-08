@@ -1,33 +1,13 @@
-"use client"
-
-import styles from "./page.module.sass";
 import Container from "@/app/_ui/container/page";
-import data from '@/data/db.json'
-import {useMemo} from "react";
-import { useInView } from 'react-intersection-observer';
-import SkillsList from "@/app/(home)/_sections/(skills)/components/skill_list/page";
 import SectionTitle from "@/app/_ui/section_title/page";
-import {skillType} from "@/app/(home)/_sections/(skills)/type";
+import SkillsLists from "@/app/(home)/_sections/(skills)/components/skills_lists/page";
 
 function Skills() {
-    const [ref, inView] = useInView({triggerOnce: true})
-    const {skills} = data;
-
-    const { primary, secondary } = useMemo(() => {
-        const first = skills.filter((skill) => skill.column === 1);
-        const second = skills.filter((skill) => skill.column === 2);
-
-        return { primary: first as skillType[], secondary: second as skillType[] };
-    }, [skills]);
-
   return (
-          <section className={styles.skills}>
-              <Container className={styles.skillsContainer}>
+          <section>
+              <Container>
                   <SectionTitle text='My Skills' />
-                  <div className={styles.skillsWrapper} ref={ref}>
-                      <SkillsList data={primary} inView={inView}/>
-                      <SkillsList data={secondary} inView={inView}/>
-                  </div>
+                  <SkillsLists />
               </Container>
           </section>
   );
