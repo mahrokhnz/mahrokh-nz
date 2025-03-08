@@ -1,41 +1,16 @@
-"use client";
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from "./page.module.sass";
 import Container from "@/app/_ui/container/page";
 import myImage from '@/public/images/Mahrokh-Nabizadeh.jpg';
 import Image from "next/image";
 import data from "@/data/db.json";
-import {Button} from "@mui/material";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { FaDownload } from "react-icons/fa6";
 import SectionTitle from "@/app/_ui/section_title/page";
+import SkillIcons from "@/app/about/_sections/(about)/components/skill_icons/page";
+import {skillType} from "@/app/about/_sections/(about)/type";
 
 function AboutMe () {
-    const isMobile = useMediaQuery('(max-width: 600px)');
-    const { skillsIcons } = data;
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
-    useEffect(() => {
-        const handleMouseMove = (event: MouseEvent) => {
-            const { clientX, clientY } = event;
-            setMousePosition({ x: clientX, y: clientY });
-        };
-
-        document.addEventListener('mousemove', handleMouseMove);
-
-        return () => {
-            document.removeEventListener('mousemove', handleMouseMove);
-        };
-    }, []);
-
-    const calculateOffsetPercentage = (pos: number, maxOffset: number) => {
-        if (typeof window !== "undefined") {
-            return ((pos / window.innerWidth) * 2 - 1) * maxOffset;
-        } else {
-            return 0
-        }
-    }
+    // const isMobile = useMediaQuery('(max-width: 600px)');
+    const { skillsIcons } = data as { skillsIcons: unknown | skillType[] };
 
     return (
         <section className={styles.aboutWrapper}>
@@ -52,20 +27,7 @@ function AboutMe () {
                             layout="fill"
                         />
 
-                        {skillsIcons.map(skill => (
-                            <Image
-                                key={skill.id}
-                                className={styles.skillIcon}
-                                src={skill.icon}
-                                alt={skill.title}
-                                width={60}
-                                height={60}
-                                style={{
-                                    top: `${skill.top - calculateOffsetPercentage(mousePosition.y, 2)}%`,
-                                    left: `${skill.left - calculateOffsetPercentage(mousePosition.x, 2)}%`,
-                                }}
-                            />
-                        ))}
+                        <SkillIcons icons={skillsIcons} />
                     </div>
                     <div className={styles.infoWrapper}>
                         <SectionTitle text='About Me' className={styles.title} />
@@ -88,10 +50,10 @@ function AboutMe () {
                             Feel free to explore my portfolio and get in touch with me to discuss potential
                             collaborations or exciting projects. Let&#39;s create something amazing together!
                         </p>
-                        <Button disabled={true} size={isMobile ? 'small' : 'medium'} className={styles.button} variant='contained'
-                                startIcon={<FaDownload/>}>
-                            Download Resume
-                        </Button>
+                        {/*<Button disabled={true} size={isMobile ? 'small' : 'medium'} className={styles.button} variant='contained'*/}
+                        {/*        startIcon={<FaDownload/>}>*/}
+                        {/*    Download Resume*/}
+                        {/*</Button>*/}
                     </div>
                 </div>
             </Container>

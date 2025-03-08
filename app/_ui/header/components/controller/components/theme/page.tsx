@@ -1,5 +1,3 @@
-"use client"
-
 import styles from "./page.module.sass";
 import React from "react";
 import {useTheme} from "@/context/theme_context";

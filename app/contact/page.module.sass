@@ -32,38 +32,6 @@
                     .emailIcon
                         font-size: 25px
 
-            .contactForm
-                padding: 30px 35px
-                border-radius: 20px
-                background: var(--form-color)
-                opacity: 0.8
-                box-shadow: 0 2px 15px 0 #6e6af499
-                backdrop-filter: blur( 3px )
-                -webkit-backdrop-filter: blur( 3px )
-                border: 1px solid #6e6af499
-                z-index: 1
-
-                .subTitle
-                    font-size: 38px
-                    margin-bottom: 50px
-
-                fieldset
-                    display: flex
-                    flex-direction: column
-                    gap: 20px
-
-                    .row
-                        display: flex
-                        gap: 20px
-
-                        .textField
-                            flex-grow: 1
-
-                    .textarea
-                        background: transparent
-                        border-color: rgba(0, 0, 0, 0.23)
-                        color: currentColor
-
             @include mixins.respond-to('medium-desktop')
                 .content
                     max-width: 400px
@@ -77,21 +45,6 @@
                     .email
                         margin-top: 50px
 
-                .contactForm
-                    padding: 25px 30px
-                    flex-grow: 1
-
-                    .subTitle
-                        font-size: 30px
-                        margin-bottom: 30px
-
-                    fieldset
-                        gap: 10px
-
-                        .row
-                            flex-direction: column
-                            gap: 10px
-
             @include mixins.respond-to('small-desktop')
                 flex-direction: column
                 gap: 50px
@@ -101,13 +54,6 @@
 
                     .email
                         margin-top: 20px
-
-                .contactForm
-                    padding: 20px
-
-                    fieldset
-                        .row
-                            flex-direction: row
 
             @include mixins.respond-to('big-phone')
                 .contactForm
