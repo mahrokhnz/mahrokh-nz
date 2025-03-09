@@ -1,0 +1,28 @@
+.resumeContainer
+  display: flex
+  flex-direction: column
+  z-index: -1
+
+  .resumeWrapper
+    width: 210mm
+    height: 297mm
+    display: flex
+    gap: 60px
+    flex-direction: column
+    font-family: cormorantGaramondMedium, serif
+    position: relative
+    padding: 15mm 20mm
+    margin-left: 20mm
+    background: #fff
+    color: black
+    z-index: 0
+
+    &:after
+      content: ""
+      position: absolute
+      top: 0
+      left: -20mm
+      width: 33mm
+      height: 100%
+      background: #363740
+      z-index: -1
