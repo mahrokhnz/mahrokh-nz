@@ -17,7 +17,7 @@ function Header() {
           <ul className={styles.contactWrapper}>
              <li>
                  <CiMobile2 className={styles.icon} />
-                <span className={styles.text}>+98 921 257 93 99</span>
+                <span className={styles.text}>-</span>
              </li>
               <li>
                   <MdOutlineEmail className={styles.icon}/>
