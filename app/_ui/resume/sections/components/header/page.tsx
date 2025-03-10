@@ -1,5 +1,4 @@
 import styles from "./page.module.sass";
-import {CiLocationOn} from "react-icons/ci";
 import {MdLanguage, MdOutlineEmail} from "react-icons/md";
 import {FaLinkedin} from "react-icons/fa";
 import cls from "@/utils/class_names";

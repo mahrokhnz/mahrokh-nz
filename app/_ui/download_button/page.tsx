@@ -5,9 +5,9 @@ import { Button } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { FaDownload } from "react-icons/fa";
 import styles from "./page.module.sass";
-import Resume from "@/app/_ui/resume/page";
-import ReactDOMServer from "react-dom/server";
-import { jsPDF } from "jspdf";
+// import Resume from "@/app/_ui/resume/page";
+// import ReactDOMServer from "react-dom/server";
+// import { jsPDF } from "jspdf";
 
 function DownloadButton() {
     const isMobile = useMediaQuery("(max-width: 600px)");
