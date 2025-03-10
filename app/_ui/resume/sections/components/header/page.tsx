@@ -1,9 +1,11 @@
 import styles from "./page.module.sass";
-import {CiLocationOn, CiMobile2} from "react-icons/ci";
+import {CiLocationOn} from "react-icons/ci";
 import {MdLanguage, MdOutlineEmail} from "react-icons/md";
 import {FaLinkedin} from "react-icons/fa";
 import cls from "@/utils/class_names";
 import * as React from "react";
+import {HiOutlineDevicePhoneMobile} from "react-icons/hi2";
+import {GrLocation} from "react-icons/gr";
 
 function Header() {
   return (
@@ -16,7 +18,7 @@ function Header() {
 
           <ul className={styles.contactWrapper}>
              <li>
-                 <CiMobile2 className={styles.icon} />
+                 <HiOutlineDevicePhoneMobile className={styles.icon} />
                 <span className={styles.text}>-</span>
              </li>
               <li>
@@ -32,7 +34,7 @@ function Header() {
                   <a className={cls(styles.text, styles.link)} target='_blank' href="https://www.linkedin.com/in/mahrokh-nabizadeh-335326144/">Linkedin</a>
               </li>
               <li>
-                  <CiLocationOn className={styles.icon} />
+                  <GrLocation className={styles.icon} />
                   <span className={styles.text}>Tehran, Iran</span>
               </li>
           </ul>

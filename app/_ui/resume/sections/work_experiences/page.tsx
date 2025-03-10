@@ -1,15 +1,15 @@
 import styles from "./page.module.sass";
 import SectionTitle from "@/app/_ui/resume/sections/components/section_title/page";
-import {FaSuitcase} from "react-icons/fa";
 import data from "@/data/db.json";
 import Experience from "@/app/_ui/resume/sections/work_experiences/components/experience/page";
+import {RiSuitcaseLine} from "react-icons/ri";
 
 function WorkExperiencesSection() {
     const {resume: {menuItems: {experiences}}} = data;
 
   return (
       <section className={styles.sectionWrapper}>
-          <SectionTitle text='WORK EXPERIENCE' icon={FaSuitcase} />
+          <SectionTitle text='WORK EXPERIENCE' icon={RiSuitcaseLine} />
          <div className={styles.experiencesWrapper}>
              {experiences.map((experience) => (
                  <Experience key={experience.id} item={experience} />

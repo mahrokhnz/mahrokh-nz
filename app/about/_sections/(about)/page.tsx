@@ -7,9 +7,9 @@ import data from "@/data/db.json";
 import SectionTitle from "@/app/_ui/section_title/page";
 import SkillIcons from "@/app/about/_sections/(about)/components/skill_icons/page";
 import {skillType} from "@/app/about/_sections/(about)/type";
+import DownloadButton from "@/app/_ui/download_button/page";
 
 function AboutMe () {
-    // const isMobile = useMediaQuery('(max-width: 600px)');
     const { skillsIcons } = data as { skillsIcons: unknown | skillType[] };
 
     return (
@@ -50,10 +50,8 @@ function AboutMe () {
                             Feel free to explore my portfolio and get in touch with me to discuss potential
                             collaborations or exciting projects. Let&#39;s create something amazing together!
                         </p>
-                        {/*<Button disabled={true} size={isMobile ? 'small' : 'medium'} className={styles.button} variant='contained'*/}
-                        {/*        startIcon={<FaDownload/>}>*/}
-                        {/*    Download Resume*/}
-                        {/*</Button>*/}
+
+                        <DownloadButton />
                     </div>
                 </div>
             </Container>
