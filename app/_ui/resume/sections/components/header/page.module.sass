@@ -1,0 +1,63 @@
+.header
+  display: flex
+  justify-content: space-between
+  position: relative
+
+  &:before
+    content: "RESUME"
+    position: absolute
+    left: -35mm
+    top: 12mm
+    transform: rotate(-90deg)
+    letter-spacing: 2.5mm
+    font-size: 5mm
+    color: var(--whiteColor)
+    font-weight: 500
+
+  .nameWrapper
+    display: flex
+    flex-direction: column
+
+    .firstname
+      font-size: 9mm
+
+    .lastname
+      font-size: 14mm
+      margin-bottom: 2mm
+
+    .profession
+      font-size: 4.8mm
+      letter-spacing: 1.24mm
+
+  .contactWrapper
+    display: flex
+    flex-direction: column
+    gap: 5mm
+    position: relative
+
+    li
+      display: flex
+      gap: 10mm
+
+      .icon
+        font-size: 5mm
+        margin-left: 2.2mm
+        color: var(--whiteColor)
+
+      .text
+        font-size: 4.1mm
+
+      .link
+        color: var(--linkColor)
+        font-weight: 600
+        cursor: pointer
+
+    &:before
+      content: ""
+      position: absolute
+      top: -15mm
+      left: 0
+      background: var(--darkColor)
+      height: 140%
+      width: 10mm
+      z-index: -1

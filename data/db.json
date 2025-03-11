@@ -270,5 +270,180 @@
       "degree": "Bachelor's degree, Mechanical Engineering",
       "period": "Sep 2015 - Sep 2019"
     }
-  ]
+  ],
+
+  "resume": {
+    "menuItems": {
+      "experiences": [
+        {
+          "id": 1,
+          "period": "2024 - PRESENT",
+          "long": "",
+          "title": "Frontend Developer",
+          "company": "Maadiran | Tehran, Iran",
+          "description": "  I'm working on Maadiran credit project, A panel for sales agents and managers.",
+          "skills": ["Reactjs", "Nextjs", "Javascript", "Typescript", "Sass", "Css", "HTML", "Rest Api", "Webpack", "Material UI", "PWA", "Responsive Web Design"]
+        },
+        {
+          "id": 2,
+          "period": "2021 - 2024",
+          "long": "2 yrs and 11 mos",
+          "title": "Frontend Developer",
+          "company": "Hamresan | Tehran, Iran",
+          "description": "I worked on different projects like Rasayesh event websites, Rasayesh style guide, several panels like attendee, admin, company, and also Pharket website and panels.",
+          "skills": ["Reactjs", "Javascript", "Typescript", "stylus", "Sass", "Css", "HTML", "Graphql", "Rest Api", "Webpack", "Data Structure", "Material UI", "Websocket", "Responsive Web Design", "Threejs"]
+        },
+        {
+          "id": 3,
+          "period": "2020 - 2021",
+          "long": "1 yr and 4 mos",
+          "title": "Software Documenter",
+          "company": "Mabna | Tehran, Iran",
+          "description": "I created many documents, videos and graphic contents for some software of Mabna group. and also I launched and managed Mabna Learning Management System (LMS).",
+          "skills": []
+        }
+      ],
+      "educations": [
+        {
+          "id": 1,
+          "university": "University of Science and Culture | Tehran, Iran",
+          "degree": "Master of business Administration",
+          "period": "Sep 2019 - Sep 2022",
+          "moreInfo": "I studied MBA, my thesis is about repurchase intention in online retail stores, that I have got great score in defend session."
+        },
+        {
+          "id": 2,
+          "university": "University of Tehran | Tehran, Iran",
+          "degree": "Bachelor of engineering",
+          "period": "Sep 2015 - Sep 2019",
+          "moreInfo": "I studied Mechanical Engineering."
+        }
+      ],
+      "skills": {
+        "hard": [
+          {
+            "id": 1,
+            "title": "Reactjs"
+          },
+          {
+            "id": 2,
+            "title": "Nextjs"
+          },
+          {
+            "id": 3,
+            "title": "Javascript"
+          },
+          {
+            "id": 4,
+            "title": "Typescript"
+          },
+          {
+            "id": 5,
+            "title": "Sass"
+          },
+          {
+            "id": 6,
+            "title": "Css"
+          },
+          {
+            "id": 7,
+            "title": "HTML"
+          },
+          {
+            "id": 8,
+            "title": "Graphql"
+          },
+          {
+            "id": 9,
+            "title": "Rest Api"
+          },
+          {
+            "id": 10,
+            "title": "Webpack"
+          },
+          {
+            "id": 11,
+            "title": "Vite"
+          },
+          {
+            "id": 12,
+            "title": "Data Structure"
+          },
+          {
+            "id": 13,
+            "title": "Material UI"
+          },
+          {
+            "id": 14,
+            "title": "PWA"
+          },
+          {
+            "id": 15,
+            "title": "Websocket"
+          },
+          {
+            "id": 16,
+            "title": "Redux Toolkit"
+          },
+          {
+            "id": 17,
+            "title": "Responsive Web Design"
+          },
+          {
+            "id": 18,
+            "title": "Threejs"
+          },
+          {
+            "id": 19,
+            "title": "Git"
+          }
+        ],
+        "soft": [
+          {
+            "id": 1,
+            "title": "Problem Solving"
+          },
+          {
+            "id": 2,
+            "title": "Team Work"
+          },
+          {
+            "id": 3,
+            "title": "Effective Communication"
+          },
+          {
+            "id": 4,
+            "title": "Time Management"
+          },
+          {
+            "id": 5,
+            "title": "Analytical Thinking"
+          },
+          {
+            "id": 6,
+            "title": "Adaptability and Flexibility"
+          }
+        ]
+      },
+      "languages": [
+        {
+          "id": 1,
+          "name": "English",
+          "institute": "Safir Language Academy | Tehran, Iran",
+          "moreInfo": [
+            "36 semester and 864 hours in Advanced Level (2019)",
+            "16 semester and 384 hours in Upper-intermediate Level (2017)"
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Persian",
+          "institute": "",
+          "moreInfo": [
+            "Native"
+          ]
+        }
+      ]
+    }
+  }
 }
