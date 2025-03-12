@@ -12,10 +12,10 @@ interface SkillsListProps {
 function SkillsList({title, data}: SkillsListProps) {
   return (
       <div className={styles.wrapper}>
-          <h4>{title}</h4>
+          <h4 className={styles.title}>{title}</h4>
           <ul className={styles.skillsList}>
               {data.map((skill) => (
-                  <li key={skill.id}>
+                  <li className={styles.listItem} key={skill.id}>
                       {skill.title}
                   </li>
               ))}

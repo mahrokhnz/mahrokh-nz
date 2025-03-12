@@ -37,6 +37,7 @@
     "@types/react-lazy-load-image-component": "^1.6.4",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
+    "html2pdf.js": "^0.10.3",
     "typescript": "^5"
   }
 }
