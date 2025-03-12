@@ -23,9 +23,9 @@ function Experience({item}: ExperienceProps) {
           </div>
           <GoDotFill className={styles.icon}/>
           <div className={styles.content}>
-                <h4>{item.title}</h4>
-                <span>{item.company}</span>
-                <p>{item.description}</p>
+                <h4 className={styles.title}>{item.title}</h4>
+                <span className={styles.companyName}>{item.company}</span>
+                <p className={styles.workDescription}>{item.description}</p>
 
                 <ul className={styles.skillsWrapper}>
                     {item.skills && item.skills?.length > 0 && item.skills.map((skill: string, index: number) => (

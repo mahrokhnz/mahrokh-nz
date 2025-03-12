@@ -22,7 +22,7 @@ function Header() {
              </li>
               <li>
                   <MdOutlineEmail className={styles.icon}/>
-                  <a className={cls(styles.text, styles.link)} href="mailto:mahrokh.nz@gmail.com">Mahrokh.nz@gmail.com</a>
+                  <span>Mahrokh.nz@gmail.com</span>
               </li>
               <li>
                   <MdLanguage className={styles.icon} />
