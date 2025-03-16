@@ -3,11 +3,11 @@
 import {useRef, useState} from 'react';
 import emailjs from 'emailjs-com';
 import styles from './page.module.sass';
-import {Button, TextField} from "@mui/material";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import {TextField} from "@mui/material";
 import {toast, ToastContainer} from "react-toastify";
 import {useTheme} from "@/context/theme_context";
 import * as React from "react";
+import Button from "@/app/_ui/Button/page";
 
 type FormDataFieldsType = {
     name: string;
@@ -17,7 +17,6 @@ type FormDataFieldsType = {
 };
 
 function Form() {
-    const isMobile = useMediaQuery('(max-width: 600px)');
     const {theme} = useTheme()
     const formRef = useRef<HTMLFormElement>(null);
 
@@ -140,8 +139,7 @@ function Form() {
                     <TextField error={!!errors.message} helperText={errors.message} required multiline rows={10}
                                placeholder='Write your message...'
                                name="message"/>
-                    <Button loading={sendLoading} size={isMobile ? 'small' : 'medium'}
-                            variant='contained' type='submit' color='primary'>
+                    <Button loading={sendLoading} type='submit'>
                         Send Message
                     </Button>
                 </fieldset>
