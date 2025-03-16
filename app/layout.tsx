@@ -49,11 +49,11 @@ const myFont = localFont({
     ]
 });
 
-interface IRootLayoutProps {
+interface RootLayoutProps {
     children: React.ReactNode;
 }
 
-export default function RootLayout({ children }: IRootLayoutProps) {
+function RootLayout({ children }: RootLayoutProps) {
         return (
             <html lang="en">
                 <body className={myFont.className}>
@@ -71,3 +71,5 @@ export default function RootLayout({ children }: IRootLayoutProps) {
             </html>
     );
 }
+
+export default RootLayout;

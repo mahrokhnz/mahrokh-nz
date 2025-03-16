@@ -1,0 +1,26 @@
+.notFoundPage
+  height: 100vh
+  background: var(--secondaryColor)
+
+  .notFound
+    background: var(--secondaryColor)
+
+    .notFoundWrapper
+      flex-grow: 1
+      display: flex
+      flex-direction: column
+      align-items: center
+      height: 100%
+
+      .text
+        margin-bottom: 20px
+        font-size: 40px
+        font-weight: 700
+        color: #544df0
+        text-align: center
+
+        @include mixins.respond-to('tablet')
+          font-size: 3rem
+
+        @include mixins.respond-to('phone')
+          font-size: 2rem

@@ -1,13 +1,13 @@
 import styles from "./page.module.sass";
 import Image from "next/image";
 import React from "react";
-import {educationType} from "@/app/about/_sections/(education)/type";
+import {EducationType} from "@/app/about/_sections/(education)/type";
 
-interface IEducationItemProps {
-    data: educationType
+interface EducationItemProps {
+    data: EducationType
 }
 
-function EducationItem({data}: IEducationItemProps) {
+function EducationItem({data}: EducationItemProps) {
 
     return (
         <div className={styles.educationItem}>

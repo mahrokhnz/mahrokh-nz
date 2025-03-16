@@ -1,21 +1,18 @@
 "use client";
 
 import React from "react";
-import { Button } from "@mui/material";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import { FaDownload } from "react-icons/fa";
 import styles from "./page.module.sass";
 import Resume from "@/app/_ui/resume/page";
 import ReactDOMServer from "react-dom/server";
 import html2pdf from "html2pdf.js";
+import Button from "@/app/_ui/Button/page";
 
 interface DownloadButtonProps {
     className?: string
 }
 
 function DownloadButton({className}: DownloadButtonProps) {
-    const isMobile = useMediaQuery("(max-width: 600px)");
-
     const downloadHandler = async () => {
         const rawHtml = ReactDOMServer.renderToStaticMarkup(<Resume />);
 
@@ -52,9 +49,7 @@ function DownloadButton({className}: DownloadButtonProps) {
 
     return (
         <Button
-            size={isMobile ? "small" : "medium"}
             className={`${styles.button} ${className}`}
-            variant="contained"
             startIcon={<FaDownload />}
             onClick={downloadHandler}
         >

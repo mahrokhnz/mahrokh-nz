@@ -1,4 +1,4 @@
-export interface educationType {
+export type EducationType = {
     id: number;
     image: string;
     name: string;

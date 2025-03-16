@@ -3,21 +3,18 @@ import cls from "@/utils/class_names";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import Link from "next/link";
-import { Button } from "@mui/material";
 import { FaRegEye } from "react-icons/fa";
-import useMediaQuery from '@mui/material/useMediaQuery';
-import { projectType } from "@/app/projects/type";
+import { ProjectType } from "@/app/projects/type";
+import Button from "@/app/_ui/Button/page";
 
-interface IProjectCardProps {
-    data: projectType;
+interface ProjectCardProps {
+    data: ProjectType;
     clickHandler?: (id: number) => void;
     className: string;
     isCurrent?: boolean;
 }
 
-function ProjectCard({ data, clickHandler, className = '', isCurrent = false }: IProjectCardProps) {
-    const isMobile = useMediaQuery('(max-width: 600px)');
-
+function ProjectCard({ data, clickHandler, className = '', isCurrent = false }: ProjectCardProps) {
     return (
         <div className={cls(styles.projectWrapper, isCurrent && styles.currentProjectWrapper, className)}
              onClick={() => {
@@ -39,12 +36,12 @@ function ProjectCard({ data, clickHandler, className = '', isCurrent = false }: 
 
                         <div className={styles.links}>
                             {data.code && (<Link href={data.code}>
-                                <Button size={isMobile ? 'small' : 'medium'} className={styles.button} variant='contained' startIcon={<FaRegEye />}>
+                                <Button className={styles.button} startIcon={<FaRegEye />}>
                                     Code
                                 </Button>
                             </Link>)}
                             {data.demo && (<Link href={data.demo}>
-                                <Button size={isMobile ? 'small' : 'medium'} className={styles.button} variant='contained' startIcon={<FaRegEye />}>
+                                <Button className={styles.button} startIcon={<FaRegEye />}>
                                     DEMO
                                 </Button>
                             </Link>)}
