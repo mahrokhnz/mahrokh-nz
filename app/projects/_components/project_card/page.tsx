@@ -6,16 +6,16 @@ import Link from "next/link";
 import { Button } from "@mui/material";
 import { FaRegEye } from "react-icons/fa";
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { projectType } from "@/app/projects/type";
+import { ProjectType } from "@/app/projects/type";
 
-interface IProjectCardProps {
-    data: projectType;
+interface ProjectCardProps {
+    data: ProjectType;
     clickHandler?: (id: number) => void;
     className: string;
     isCurrent?: boolean;
 }
 
-function ProjectCard({ data, clickHandler, className = '', isCurrent = false }: IProjectCardProps) {
+function ProjectCard({ data, clickHandler, className = '', isCurrent = false }: ProjectCardProps) {
     const isMobile = useMediaQuery('(max-width: 600px)');
 
     return (

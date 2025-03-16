@@ -5,7 +5,7 @@ import data from '@/data/db.json'
 import {useMemo} from "react";
 import { useInView } from 'react-intersection-observer';
 import SkillsList from "@/app/(home)/_sections/(skills)/components/skills_lists/components/skill_list/page";
-import {skillType} from "@/app/(home)/_sections/(skills)/type";
+import {SkillType} from "@/app/(home)/_sections/(skills)/type";
 
 function SkillsLists() {
     const [ref, inView] = useInView({triggerOnce: true})
@@ -15,7 +15,7 @@ function SkillsLists() {
         const first = skills.filter((skill) => skill.column === 1);
         const second = skills.filter((skill) => skill.column === 2);
 
-        return { primary: first as skillType[], secondary: second as skillType[] };
+        return { primary: first as SkillType[], secondary: second as SkillType[] };
     }, [skills]);
 
   return (

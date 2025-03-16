@@ -37,11 +37,11 @@ const headerBoundary = (width: number) => {
     }
 };
 
-interface ICanvasProps {
+interface CanvasProps {
     onlyStarts?: boolean;
 }
 
-const Canvas = ({onlyStarts}: ICanvasProps) => {
+const Canvas = ({onlyStarts}: CanvasProps) => {
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
     useEffect(() => {

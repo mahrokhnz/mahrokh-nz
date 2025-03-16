@@ -1,9 +1,9 @@
 import styles from "./page.module.sass";
 import Circle from "@/app/_ui/circle/page";
-import {skillType} from "@/app/(home)/_sections/(skills)/type";
+import {SkillType} from "@/app/(home)/_sections/(skills)/type";
 
 interface SkillsListProps {
-    data: skillType[];
+    data: SkillType[];
     inView: boolean;
 }
 

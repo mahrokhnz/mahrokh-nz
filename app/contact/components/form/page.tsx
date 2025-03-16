@@ -9,7 +9,7 @@ import {toast, ToastContainer} from "react-toastify";
 import {useTheme} from "@/context/theme_context";
 import * as React from "react";
 
-type FormDataFieldsTypes = {
+type FormDataFieldsType = {
     name: string;
     company: string;
     email: string;
@@ -41,7 +41,7 @@ function Form() {
 
         if (formRef.current) {
             const formData = new FormData(formRef.current);
-            const { name, company, email, message } = Object.fromEntries(formData.entries()) as FormDataFieldsTypes;
+            const { name, company, email, message } = Object.fromEntries(formData.entries()) as FormDataFieldsType;
 
             if (name.length >= 3 && company.length >= 3 && email.length >= 7 && message.length >= 15) {
                 setSendLoading(true);

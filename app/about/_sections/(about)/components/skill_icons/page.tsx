@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import styles from "./page.module.sass";
 import Image from "next/image";
-import {skillType} from "@/app/about/_sections/(about)/type";
+import {SkillType} from "@/app/about/_sections/(about)/type";
 
 interface SkillIconProps {
-    icons: unknown | skillType[];
+    icons: unknown | SkillType[];
 }
 
 function SkillIcons({ icons }: SkillIconProps) {

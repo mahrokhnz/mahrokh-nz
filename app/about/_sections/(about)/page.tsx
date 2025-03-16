@@ -6,11 +6,11 @@ import Image from "next/image";
 import data from "@/data/db.json";
 import SectionTitle from "@/app/_ui/section_title/page";
 import SkillIcons from "@/app/about/_sections/(about)/components/skill_icons/page";
-import {skillType} from "@/app/about/_sections/(about)/type";
+import {SkillType} from "@/app/about/_sections/(about)/type";
 import DownloadButton from "@/app/_ui/download_button/page";
 
 function AboutMe () {
-    const { skillsIcons } = data as { skillsIcons: unknown | skillType[] };
+    const { skillsIcons } = data as { skillsIcons: unknown | SkillType[] };
 
     return (
         <section className={styles.aboutWrapper}>

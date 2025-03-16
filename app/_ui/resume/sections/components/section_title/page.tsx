@@ -1,12 +1,12 @@
 import styles from "./page.module.sass";
 import {IconType} from "react-icons";
 
-interface ISectionTitleProps {
+interface SectionTitleProps {
   text: string;
   icon: IconType;
 }
 
-function SectionTitle({text, icon: Icon}: ISectionTitleProps) {
+function SectionTitle({text, icon: Icon}: SectionTitleProps) {
   return (
       <div className={styles.sectionTitle}>
           <Icon className={styles.icon} />
