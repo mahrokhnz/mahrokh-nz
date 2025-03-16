@@ -1,16 +1,16 @@
 .aboutWrapper
-  padding-top: 100px
+  padding-top: 10rem
 
   .about
     display: flex
     flex-direction: row
     flex-wrap: wrap
-    gap: 100px
+    gap: 10rem
     justify-content: space-between
 
     .contentWrapper
       display: flex
-      gap: 100px
+      gap: 10rem
       flex: 1
 
       @include mixins.respond-to('medium-desktop')
@@ -23,7 +23,7 @@
             width: 100%
 
       @include mixins.respond-to('tablet')
-        gap: 120px
+        gap: 12rem
 
       .imageWrapper
         position: relative
@@ -36,13 +36,13 @@
 
       .infoWrapper
         flex: 1
-        margin-top: 150px
+        margin-top: 15rem
 
         @include mixins.respond-to('desktop')
           margin-top: 0
 
         @include mixins.respond-to('big-phone')
-          margin-top: 10px
+          margin-top: 1rem
 
         .title
           margin-bottom: 3rem

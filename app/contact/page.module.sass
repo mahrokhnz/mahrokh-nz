@@ -1,5 +1,5 @@
 .contactWrapper
-    padding-top: 100px
+    padding-top: 10rem
 
     .contact
         background: var(--secondaryColor)
@@ -7,53 +7,53 @@
         .rowWrapper
             display: flex
             justify-content: space-between
-            gap: 20px
+            gap: 2rem
 
             .content
                 display: flex
                 flex-direction: column
                 align-self: center
-                max-width: 500px
+                max-width: 50rem
                 z-index: 1
 
                 .title
                     margin-bottom: 3rem
 
                 .description
-                    font-size: 20px
+                    font-size: 2rem
                     line-height: 1.2
 
                 .email
                     display: flex
                     align-items: center
-                    gap: 15px
-                    margin-top: 80px
+                    gap: 1.5rem
+                    margin-top: 8rem
 
                     .emailIcon
-                        font-size: 25px
+                        font-size: 2.5rem
 
             @include mixins.respond-to('medium-desktop')
                 .content
-                    max-width: 400px
+                    max-width: 40rem
 
                     .title
                         margin-bottom: 2rem
 
                     .description
-                        font-size: 15px
+                        font-size: 1.5rem
 
                     .email
-                        margin-top: 50px
+                        margin-top: 5rem
 
             @include mixins.respond-to('small-desktop')
                 flex-direction: column
-                gap: 50px
+                gap: 5rem
 
                 .content
                     max-width: unset
 
                     .email
-                        margin-top: 20px
+                        margin-top: 2rem
 
             @include mixins.respond-to('big-phone')
                 .contactForm
