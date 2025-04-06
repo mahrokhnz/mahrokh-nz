@@ -1,0 +1,29 @@
+.contactWrapper
+  display: flex
+  gap: 2rem
+
+  .iconWrapper
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 0.3rem
+    border: 2px var(--primaryColor) solid
+    transition: border-color 0.3s ease-in-out
+
+    &:hover
+      border: 2px #544df0 solid
+
+    .contactIcon
+      font-size: 28px
+      color: #544df0
+      cursor: pointer
+
+  &.footerContactWrapper
+    .iconWrapper
+      border: 2px var(--firstWaveColor) solid
+
+      &:hover
+        border: 2px var(--neutralColor) solid
+
+      .contactIcon
+        color: var(--neutralColor)

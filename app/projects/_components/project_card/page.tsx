@@ -5,7 +5,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 import Link from "next/link";
 import { FaRegEye } from "react-icons/fa";
 import { ProjectType } from "@/app/projects/type";
-import Button from "@/app/_ui/Button/page";
+import Button from "@/components/Button/page";
 
 interface ProjectCardProps {
     data: ProjectType;

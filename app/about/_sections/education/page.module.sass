@@ -1,0 +1,11 @@
+.education
+  .educationContainer
+    background: var(--secondaryColor)
+
+    .educationWrapper
+      display: flex
+      justify-content: space-between
+      gap: 20px
+
+      @include mixins.respond-to('medium-desktop')
+        flex-direction: column

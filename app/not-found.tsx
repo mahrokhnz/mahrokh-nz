@@ -1,11 +1,11 @@
 "use client"
 
-import EyeCanvas from "@/app/_ui/eye/page";
-import Container from "@/app/_ui/container/page";
+import EyeCanvas from "@/components/eye/page";
+import Container from "@/components/container/page";
 import styles from './not-found.module.sass'
-import SectionTitle from "@/app/_ui/section_title/page";
+import SectionTitle from "@/components/section_title/page";
 import React from "react";
-import Button from "@/app/_ui/Button/page";
+import Button from "@/components/Button/page";
 import {useRouter} from "next/navigation";
 
 function NotFound() {

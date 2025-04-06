@@ -1,0 +1,15 @@
+.container
+  display: flex
+  flex-direction: column
+  padding: 4rem 8rem
+  background-color: var(--primaryColor)
+  box-sizing: border-box
+  scroll-snap-align: end
+  min-height: calc(100vh - 112px)
+
+  @include mixins.respond-to('tablet')
+    padding: 2rem 4rem
+
+  @include mixins.respond-to('phone')
+    padding: 2rem
+    min-height: calc(100vh - 74px)

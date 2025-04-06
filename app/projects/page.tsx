@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./page.module.sass";
-import Container from "@/app/_ui/container/page";
+import Container from "@/components/container/page";
 import React, {useEffect, useMemo, useState} from "react";
 import data from "@/data/db.json";
 import ProjectCard from "@/app/projects/_components/project_card/page";
@@ -10,7 +10,7 @@ import { FaChevronLeft } from "react-icons/fa6";
 import cls from "@/utils/class_names";
 import useMediaQuery from '@mui/material/useMediaQuery';
 import MetadataComponent from "@/utils/client-metadata";
-import SectionTitle from "@/app/_ui/section_title/page";
+import SectionTitle from "@/components/section_title/page";
 
 const itemsToShow = 6;
 

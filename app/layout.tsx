@@ -1,9 +1,9 @@
 import "./globals.sass";
 import localFont from 'next/font/local';
-import Header from "@/app/_ui/header/page";
+import Header from "@/components/header/page";
 import { CustomThemeProvider } from "@/context/theme_context";
 import { ThemeProvider } from '@mui/material/styles';
-import Footer from "@/app/_ui/footer/page";
+import Footer from "@/components/footer/page";
 import {AppRouterCacheProvider} from "@mui/material-nextjs/v13-appRouter";
 import theme from "@/theme/theme";
 

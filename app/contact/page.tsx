@@ -1,11 +1,11 @@
 import styles from './page.module.sass';
-import Container from "@/app/_ui/container/page";
+import Container from "@/components/container/page";
 import {MdEmail} from "react-icons/md";
-import Canvas from "@/app/_ui/constellation/page";
+import Canvas from "@/components/constellation/page";
 import MetadataComponent from "@/utils/client-metadata";
 import * as React from "react";
-import SectionTitle from "@/app/_ui/section_title/page";
-import Form from "@/app/contact/components/form/page";
+import SectionTitle from "@/components/section_title/page";
+import Form from "@/app/contact/_components/form/page";
 
 function ContactMe(){
     return (
