@@ -35,16 +35,16 @@ function ProjectCard({ data, clickHandler, className = '', isCurrent = false }: 
                         <p className={styles.description}>{data.description}</p>
 
                         <div className={styles.links}>
-                            {data.code && (<Link href={data.code}>
+                            {data.code && (<a href={data.code} target="_blank">
                                 <Button className={styles.button} startIcon={<FaRegEye />}>
                                     Code
                                 </Button>
-                            </Link>)}
-                            {data.demo && (<Link href={data.demo}>
+                            </a>)}
+                            {data.demo && (<a href={data.demo} target="_blank">
                                 <Button className={styles.button} startIcon={<FaRegEye />}>
                                     DEMO
                                 </Button>
-                            </Link>)}
+                            </a>)}
                         </div>
                     </>
                 )}
