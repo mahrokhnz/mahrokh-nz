@@ -2,7 +2,6 @@ import styles from "./page.module.sass";
 import cls from "@/utils/class_names";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
-import Link from "next/link";
 import { FaRegEye } from "react-icons/fa";
 import { ProjectType } from "@/app/projects/type";
 import Button from "@/components/Button/page";
