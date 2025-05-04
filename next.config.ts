@@ -14,6 +14,16 @@ const nextConfig: NextConfig = {
         includePaths: [path.join(__dirname, 'styles')],
         prependData: `@use '@/app/mixins.sass' as mixins`,
     },
+
+    experimental: {
+        scrollRestoration: true,
+    },
+
+    compiler: {
+        removeConsole: {
+            exclude: ['error'],
+        },
+    },
 };
 
 export default nextConfig;
