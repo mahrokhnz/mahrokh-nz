@@ -1,60 +1,51 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import { FaDownload } from "react-icons/fa";
 import styles from "./page.module.sass";
-import Resume from "@/components/resume/page";
-import ReactDOMServer from "react-dom/server";
-import html2pdf from "html2pdf.js";
 import Button from "@/components/Button/page";
+import dynamic from "next/dynamic";
+
+const Resume = dynamic(() => import("@/components/resume/page"), { ssr: false });
 
 interface DownloadButtonProps {
     className?: string
 }
 
-function DownloadButton({className}: DownloadButtonProps) {
-    const downloadHandler = async () => {
-        const rawHtml = ReactDOMServer.renderToStaticMarkup(<Resume />);
+function DownloadButton({ className }: DownloadButtonProps) {
+    const resumeRef = useRef<HTMLDivElement>(null);
 
-        const completeHtml = `
-        <!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Resume</title>
-                <style>
-                    body {
-                    margin: 0;
-                    padding: 0;
-                    }
-                </style>
-            </head>
-                <body>
-                    ${rawHtml}
-                </body>
-            </html>
-        `
+    const downloadHandler = async () => {
+        const html2pdf = (await import("html2pdf.js")).default;
+        if (!resumeRef.current) return;
 
         html2pdf()
             .set({
                 margin: [0, -10, -1, 0],
                 filename: 'Nabizadeh_CV.pdf',
-                html2canvas: {scale: 2},
-                jsPDF: {unit: 'mm', format: [210, 297], orientation: 'portrait'},
+                html2canvas: { scale: 2 },
+                jsPDF: { unit: 'mm', format: [210, 297], orientation: 'portrait' },
             })
-            .from(completeHtml)
+            .from(resumeRef.current)
             .save();
     };
 
     return (
-        <Button
-            className={`${styles.button} ${className}`}
-            startIcon={<FaDownload />}
-            onClick={downloadHandler}
-        >
-            Download Resume
-        </Button>
+        <>
+            <Button
+                className={`${styles.button} ${className}`}
+                startIcon={<FaDownload />}
+                onClick={downloadHandler}
+            >
+                Download Resume
+            </Button>
+
+            <div style={{ display: "none" }}>
+                <div ref={resumeRef}>
+                    <Resume />
+                </div>
+            </div>
+        </>
     );
 }
 

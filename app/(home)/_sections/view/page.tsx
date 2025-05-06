@@ -1,10 +1,10 @@
 import styles from "./page.module.sass";
-import SvgPath from "@/components/svg_path/page";
 import Contact from "@/components/contact/page";
 import Container from "@/components/container/page";
 import DownloadButton from "@/components/download_button/page";
 import React from "react";
 import LazyCanvasWrapper from "@/components/constellation/lazy_canvas_wrapper";
+import LazySvg from "@/components/svg_path/lazy_svg_path";
 
 function View() {
   return (
@@ -18,7 +18,7 @@ function View() {
                   <DownloadButton className={styles.downloadButton} />
               </div>
               <LazyCanvasWrapper />
-              <SvgPath/>
+              <LazySvg/>
           </Container>
       </section>
   );
