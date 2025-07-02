@@ -14,12 +14,29 @@ interface ExperienceProps {
     }
 }
 
+// TODO: test this
 function Experience({item}: ExperienceProps) {
+    function getDurationString(startDateStr: string, endDate: Date = new Date()): string {
+        const startDate = new Date(startDateStr);
+        let years = endDate.getFullYear() - startDate.getFullYear();
+        let months = endDate.getMonth() - startDate.getMonth();
+
+        if (months < 0) {
+            years--;
+            months += 12;
+        }
+
+        const yearPart = years > 0 ? `${years} ${years === 1 ? "yr" : "yrs"}` : "";
+        const monthPart = months > 0 ? `${months} mos` : "";
+
+        return [yearPart, monthPart].filter(Boolean).join(" and ");
+    }
+
   return (
       <div className={styles.wrapper}>
           <div className={styles.periodWrapper}>
               <span className={styles.period}>{item.period}</span>
-              {item.long && <span className={styles.long}>{item.long}</span>}
+              <span className={styles.long}>{item.long ? item.long : getDurationString("2025-05-22")}</span>
           </div>
           <GoDotFill className={styles.icon}/>
           <div className={styles.content}>
