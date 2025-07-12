@@ -14,7 +14,6 @@ interface ExperienceProps {
     }
 }
 
-// TODO: test this
 function Experience({item}: ExperienceProps) {
     function getDurationString(startDateStr: string, endDate: Date = new Date()): string {
         const startDate = new Date(startDateStr);
