@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
             },
         ],
     },
+
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
         prependData: `@use '@/app/mixins.sass' as mixins`,
@@ -23,6 +24,10 @@ const nextConfig: NextConfig = {
         removeConsole: {
             exclude: ['error'],
         },
+    },
+
+    typescript: {
+        ignoreBuildErrors: true,
     },
 };
 

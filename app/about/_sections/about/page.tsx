@@ -5,12 +5,12 @@ import myImage from '@/public/images/Mahrokh-Nabizadeh.jpg';
 import Image from "next/image";
 import data from "@/data/db.json";
 import SectionTitle from "@/components/section_title/page";
-import SkillIcons from "@/app/about/_sections/about/components/skill_icons/page";
+import SkillIcons from "./components/skill_icons/page";
 import {SkillType} from "@/app/about/_sections/about/type";
 import DownloadButton from "@/components/download_button/page";
 
 function AboutMe () {
-    const { skillsIcons } = data as { skillsIcons: unknown | SkillType[] };
+    const { skillsIcons } = data as { skillsIcons: SkillType[] };
 
     return (
         <section className={styles.aboutWrapper}>
@@ -27,7 +27,9 @@ function AboutMe () {
                             layout="fill"
                         />
 
-                        <SkillIcons icons={skillsIcons} />
+                        {Array.isArray(skillsIcons) && (
+                            <SkillIcons icons={skillsIcons} />
+                        )}
                     </div>
                     <div className={styles.infoWrapper}>
                         <SectionTitle text='About Me' className={styles.title} />

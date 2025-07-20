@@ -6,7 +6,7 @@ import Image from "next/image";
 import {SkillType} from "@/app/about/_sections/about/type";
 
 interface SkillIconProps {
-    icons: unknown | SkillType[];
+    icons: SkillType[];
 }
 
 function SkillIcons({ icons }: SkillIconProps) {
@@ -28,9 +28,8 @@ function SkillIcons({ icons }: SkillIconProps) {
     const calculateOffsetPercentage = (pos: number, maxOffset: number) => {
         if (typeof window !== "undefined") {
             return ((pos / window.innerWidth) * 2 - 1) * maxOffset;
-        } else {
-            return 0;
         }
+        return 0;
     };
 
     return (
@@ -44,8 +43,8 @@ function SkillIcons({ icons }: SkillIconProps) {
                     width={60}
                     height={60}
                     style={{
-                        top: `${parseFloat(skill.top) - calculateOffsetPercentage(mousePosition.y, 2)}%`,
-                        left: `${parseFloat(skill.left) - calculateOffsetPercentage(mousePosition.x, 2)}%`,
+                        top: `${skill.top - calculateOffsetPercentage(mousePosition.y, 2)}%`,
+                        left: `${skill.left - calculateOffsetPercentage(mousePosition.x, 2)}%`,
                     }}
                 />
             ))}
