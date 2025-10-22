@@ -12,6 +12,7 @@ model Post {
   id          String   @id @default(cuid())
   slug        String   @unique
   title       String
+  description String?
   excerpt     String?
   content     String
   coverImage  String?
