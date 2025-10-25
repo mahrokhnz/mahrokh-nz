@@ -39,7 +39,7 @@ function BlogRow({blogData}: BlogRowProps) {
                 <h1 className={styles.title}>{blogData.title}</h1>
                 <p className={styles.description}>{blogData.description}</p>
 
-                <Button className={styles.button} onClick={() => router.push(`/${blogData.slug}`)}>
+                <Button className={styles.button} onClick={() => router.push(`/blog/${blogData.slug}`)}>
                     Read More
                 </Button>
             </div>
