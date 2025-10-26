@@ -1,0 +1,73 @@
+.blogCard
+  display: flex
+  align-items: center
+  gap: 100px
+  justify-content: space-between
+
+  @include mixins.respond-to('desktop')
+    gap: 60px
+
+  @include mixins.respond-to('medium-desktop')
+    gap: 40px
+
+  @include mixins.respond-to('big-phone')
+    flex-direction: column
+
+  .blogImage
+    width: 30%
+    height: 30%
+    border-radius: 16px
+    object-fit: cover
+
+    @include mixins.respond-to('big-phone')
+      width: 100%
+      height: 50%
+
+  .summaryContent
+    display: flex
+    flex-direction: column
+    gap: 20px
+
+    @include mixins.respond-to('desktop')
+      gap: 10px
+
+    .info
+      font-size: 16px
+      color: var(--neutralColor)
+
+      @include mixins.respond-to('phone')
+        font-size: 14px
+
+    .title
+      font-size: 24px
+      font-weight: bold
+
+      @include mixins.respond-to('medium-desktop')
+        font-size: 20px
+
+      @include mixins.respond-to('tablet')
+        font-size: 18px
+
+      @include mixins.respond-to('phone')
+        font-size: 16px
+        font-weight: normal
+
+    .description
+      font-size: 1rem
+      line-height: 1.8
+      display: -webkit-box
+      -webkit-line-clamp: 2
+      -webkit-box-orient: vertical
+      overflow: hidden
+      text-overflow: ellipsis
+
+      @include mixins.respond-to('tablet')
+        font-size: 0.8rem
+        line-height: 1.5
+
+    .button
+      margin-top: 15px
+      align-self: flex-start
+
+      @include mixins.respond-to('medium-desktop')
+        margin-top: 5px
