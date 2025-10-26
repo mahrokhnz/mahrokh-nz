@@ -40,8 +40,6 @@ async function Blog({params}: { params: { slug: string } }) {
                                 src={post.coverImage}
                                 alt={post.title}
                                 loading="lazy"
-                                width={1200}
-                                height={630}
                                 className={styles.blogImage}
                             />
                         )}

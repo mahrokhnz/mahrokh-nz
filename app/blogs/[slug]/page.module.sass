@@ -5,7 +5,16 @@
     display: flex
     flex-direction: column
     align-items: center
-    gap: 40px
+
+    .blogImage
+      width: 100%
+      height: 500px
+      object-fit: cover
+      border-radius: 16px
+      margin-bottom: 25px
+
+      @include mixins.respond-to('medium-desktop')
+        height: 400px
 
     .articleContent
       section
@@ -15,14 +24,24 @@
           font-size: 30px
           margin-bottom: 20px
 
+          @include mixins.respond-to('tablet')
+            font-size: 20px
+
         p
           font-size: 18px
           line-height: 1.5
           color: var(--mediumGray)
           margin-bottom: 10px
 
+          @include mixins.respond-to('tablet')
+            font-size: 16px
+
         li
           position: relative
+          line-height: 1.5
+
+          @include mixins.respond-to('tablet')
+            font-size: 14px
 
           span
             margin-inline-start: 20px
@@ -38,11 +57,11 @@
           background-color: #544df0
           position: absolute
           left: 0
-          top: 50%
-          transform: translateY(-50%)
+          top: 10%
 
     .button
       align-self: flex-start
+      margin-bottom: 20px
 
       .arrowIcon
         width: 30px
