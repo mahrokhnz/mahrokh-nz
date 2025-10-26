@@ -4,6 +4,9 @@
   gap: 100px
   justify-content: space-between
 
+  @include mixins.respond-to('medium-desktop')
+    gap: 60px
+
   .blogImage
     width: 30%
     height: 30%

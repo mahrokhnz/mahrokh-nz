@@ -30,7 +30,7 @@ async function Blog({params}: { params: { slug: string } }) {
                 <Container>
                     <article className={styles.article}>
                         <Link href="/blogs" className={styles.button}>
-                            <FaArrowLeftLong/>
+                            <FaArrowLeftLong className={styles.arrowIcon}/>
                         </Link>
 
                         <SectionTitle text={post.title}/>
