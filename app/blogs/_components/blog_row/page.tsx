@@ -18,7 +18,7 @@ function BlogRow({blogData}: BlogRowProps) {
         <div className={styles.blogCard}>
             {blogData.coverImage ? (
                 <img
-                    src={blogData.coverImage}
+                    src={`/images/blog/${blogData.coverImage}`}
                     alt={blogData.title}
                     loading="lazy"
                     width={1200}

@@ -37,7 +37,7 @@ async function Blog({params}: { params: { slug: string } }) {
 
                         {post.coverImage && (
                             <img
-                                src={post.coverImage}
+                                src={`/images/blog/${post.coverImage}`}
                                 alt={post.title}
                                 loading="lazy"
                                 className={styles.blogImage}
