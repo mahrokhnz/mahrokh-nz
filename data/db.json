@@ -197,6 +197,7 @@
       "description": "This is a personal website that showcases my skills and career as you can see.",
       "skills": [
         "Nextjs",
+        "Prisma ORM",
         "Typescript",
         "Sass"
       ],

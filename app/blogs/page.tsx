@@ -34,7 +34,7 @@ async function Blogs() {
 
     return (
         <>
-            <MetadataComponent title='Blog'
+            <MetadataComponent title='Blogs'
                                description={'Explore articles about front-end development, React, CSS, and modern web design techniques to level up your coding and design skills.'}/>
             <main className={styles.blogsWrapper}>
                 <Container>
