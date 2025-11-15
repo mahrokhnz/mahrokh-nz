@@ -16,7 +16,7 @@ export type PostForSeo = Pick<
 type JsonLd = Record<string, unknown>;
 
 export function getArticleJsonLd(post: PostForSeo): JsonLd {
-    const ogImage = post.coverImage ? `${SITE_URL}/images/blog/${post.coverImage}` : DEFAULT_OG;
+    const ogImage = post.coverImage ? `${SITE_URL}/images/blogs/${post.coverImage}` : DEFAULT_OG;
 
     return {
         "@context": "https://schema.org",

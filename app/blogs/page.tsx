@@ -30,7 +30,11 @@ export type BlogType = {
 async function Blogs() {
     noStore();
 
-    const blogs: BlogType[] = await prisma.post.findMany();
+    const blogs: BlogType[] = await prisma.post.findMany({
+        orderBy: {
+            createdAt: 'desc'
+        }
+    });
 
     return (
         <>

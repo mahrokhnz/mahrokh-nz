@@ -48,7 +48,7 @@ async function Blog({params}: { params: { slug: string } }) {
 
                         {post.coverImage && (
                             <Image
-                                src={`/images/blog/${post.coverImage}`}
+                                src={`/images/blogs/${post.coverImage}`}
                                 alt={post.title}
                                 width={1200}
                                 height={630}
@@ -59,6 +59,12 @@ async function Blog({params}: { params: { slug: string } }) {
 
                         <div className={styles.articleContent} dangerouslySetInnerHTML={{__html: post.content}}/>
                     </article>
+
+                    <ul className={styles.tags}>
+                        {post.tags?.map((tag, index) => (
+                            <li className={styles.tag} key={`Tag-${index + 1}`}>{tag}</li>
+                        ))}
+                    </ul>
                 </Container>
             </main>
         </>
