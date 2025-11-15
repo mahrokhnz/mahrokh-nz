@@ -26,8 +26,8 @@
     },
     {
       "id": 5,
-      "title": "Blogs",
-      "link": "/blogs",
+      "title": "Blog",
+      "link": "/blog",
       "disabled": false
     }
   ],

@@ -37,10 +37,10 @@ async function Blog({params}: { params: { slug: string } }) {
             <Script id="ld-breadcrumbs" type="application/ld+json"
                     dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbLd)}}/>
 
-            <main className={styles.blogsWrapper}>
+            <main className={styles.blogWrapper}>
                 <Container>
                     <article className={styles.article}>
-                        <Link href="/blogs" className={styles.button}>
+                        <Link href="/blog" className={styles.button}>
                             <FaArrowLeftLong className={styles.arrowIcon}/>
                         </Link>
 
@@ -48,7 +48,7 @@ async function Blog({params}: { params: { slug: string } }) {
 
                         {post.coverImage && (
                             <Image
-                                src={`/images/blogs/${post.coverImage}`}
+                                src={`/images/blog/${post.coverImage}`}
                                 alt={post.title}
                                 width={1200}
                                 height={630}

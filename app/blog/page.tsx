@@ -1,4 +1,4 @@
-import BlogRow from "@/app/blogs/_components/blog_row/page";
+import BlogRow from "@/app/blog/_components/blog_row/page";
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -27,10 +27,10 @@ export type BlogType = {
     updatedAt: Date
 }
 
-async function Blogs() {
+async function Blog() {
     noStore();
 
-    const blogs: BlogType[] = await prisma.post.findMany({
+    const blog: BlogType[] = await prisma.post.findMany({
         orderBy: {
             createdAt: 'desc'
         }
@@ -38,13 +38,13 @@ async function Blogs() {
 
     return (
         <>
-            <MetadataComponent title='Blogs'
+            <MetadataComponent title='Blog'
                                description={'Explore articles about front-end development, React, CSS, and modern web design techniques to level up your coding and design skills.'}/>
-            <main className={styles.blogsWrapper}>
+            <main className={styles.blogWrapper}>
                 <Container>
-                    <SectionTitle text='My Blogs'/>
-                    <section className={styles.blogsList}>
-                        {blogs.map((blog: BlogType) => (
+                    <SectionTitle text='My Blog'/>
+                    <section className={styles.blogList}>
+                        {blog.map((blog: BlogType) => (
                             <BlogRow blogData={blog} key={blog.id}/>
                         ))}
                     </section>
@@ -54,4 +54,4 @@ async function Blogs() {
     );
 }
 
-export default Blogs;
+export default Blog;

@@ -5,7 +5,7 @@ import styles from "./page.module.sass";
 import TimeConvertor from "@/utils/time_convertor";
 import Button from "@/components/Button/page";
 import {useRouter} from "next/navigation";
-import {BlogType} from "@/app/blogs/page";
+import {BlogType} from "@/app/blog/page";
 
 interface BlogRowProps {
     blogData: BlogType
@@ -18,7 +18,7 @@ function BlogRow({blogData}: BlogRowProps) {
         <div className={styles.blogCard}>
             {blogData.coverImage ? (
                 <img
-                    src={`/images/blogs/${blogData.coverImage}`}
+                    src={`/images/blog/${blogData.coverImage}`}
                     alt={blogData.title}
                     loading="lazy"
                     width={1200}
@@ -39,7 +39,7 @@ function BlogRow({blogData}: BlogRowProps) {
                 <h1 className={styles.title}>{blogData.title}</h1>
                 <p className={styles.description}>{blogData.description}</p>
 
-                <Button className={styles.button} onClick={() => router.push(`/blogs/${blogData.slug}`)}>
+                <Button className={styles.button} onClick={() => router.push(`/blog/${blogData.slug}`)}>
                     Read More
                 </Button>
             </div>

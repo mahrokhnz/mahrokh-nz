@@ -15,7 +15,7 @@ export async function GET() {
         {loc: `${SITE_URL}/about`, lastmod: new Date(), changefreq: "monthly", priority: "0.90"},
         {loc: `${SITE_URL}/contact`, lastmod: new Date(), changefreq: "monthly", priority: "0.80"},
         {loc: `${SITE_URL}/projects`, lastmod: new Date(), changefreq: "monthly", priority: "0.70"},
-        {loc: `${SITE_URL}/blogs`, lastmod: new Date(), changefreq: "weekly", priority: "1.00"},
+        {loc: `${SITE_URL}/blog`, lastmod: new Date(), changefreq: "weekly", priority: "1.00"},
     ];
 
     const posts = await prisma.post.findMany({
@@ -25,7 +25,7 @@ export async function GET() {
     });
 
     const postUrls = posts.map(p => ({
-        loc: `${SITE_URL}/blogs/${p.slug}`,
+        loc: `${SITE_URL}/blog/${p.slug}`,
         lastmod: iso(p.updatedAt || p.createdAt),
         changefreq: "weekly",
         priority: "0.90",

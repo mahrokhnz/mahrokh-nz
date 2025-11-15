@@ -17,8 +17,8 @@ export async function generateMetadata({params}: { params: { slug: string } }): 
 
     const title = `${SITE_NAME} | ${post.title}`;
     const description = post.description ?? "";
-    const url = `${SITE_URL}/blogs/${post.slug}`;
-    const ogImage = post.coverImage ? `${SITE_URL}/images/blogs/${post.coverImage}` : DEFAULT_OG;
+    const url = `${SITE_URL}/blog/${post.slug}`;
+    const ogImage = post.coverImage ? `${SITE_URL}/images/blog/${post.coverImage}` : DEFAULT_OG;
 
     const extras: PostSeoExtras = {
         authorName: 'Mahrokh Nabizadeh',
