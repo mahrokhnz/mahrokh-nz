@@ -1,7 +1,6 @@
 "use client";
 
 import React, {useEffect, useRef} from "react";
-import styles from "./page.module.sass";
 
 type TStar = {
     x: number;
@@ -162,7 +161,7 @@ const Canvas = ({onlyStarts = false}: CanvasProps) => {
         };
     }, [onlyStarts]);
 
-    return <canvas className={styles.canvas} ref={canvasRef}></canvas>;
+    return <canvas className="absolute inset-0 size-full opacity-60 z-0" ref={canvasRef}></canvas>;
 };
 
 export default Canvas;

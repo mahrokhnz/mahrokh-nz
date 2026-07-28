@@ -1,4 +1,3 @@
-import styles from "./page.module.sass";
 import SectionTitle from "@/components/resume/sections/components/section_title/page";
 import data from "@/data/db.json";
 import {LuPencilOff} from "react-icons/lu";
@@ -8,9 +7,9 @@ function SkillsSection() {
     const {resume: {menuItems: {skills: {hard, soft}}}} = data;
 
   return (
-      <section className={styles.sectionWrapper}>
+      <section>
           <SectionTitle text='SKILLS' icon={LuPencilOff} />
-          <div className={styles.skillsWrapper}>
+          <div className="flex gap-[8mm]">
               <SkillsList title='Hard Skills' data={hard} />
               <SkillsList title='Soft Skills' data={soft} />
           </div>

@@ -1,4 +1,3 @@
-import styles from "./page.module.sass";
 import {GoDotFill} from "react-icons/go";
 
 interface ExperienceProps {
@@ -37,22 +36,22 @@ function Experience({item}: ExperienceProps) {
 
 
     return (
-      <div className={styles.wrapper}>
-          <div className={styles.periodWrapper}>
-              <span className={styles.period}>{new Date(item.startDate).getFullYear()} - {item.endDate ? new Date(item.endDate).getFullYear() : new Date().getFullYear()}</span>
-              <span className={styles.long}>{getDurationString(item.startDate, item.endDate)}</span>
+      <div className="flex items-start justify-between gap-[4mm]">
+          <div className="flex w-[35mm] flex-col gap-[2mm]">
+              <span className="text-[4.8mm]">{new Date(item.startDate).getFullYear()} - {item.endDate ? new Date(item.endDate).getFullYear() : new Date().getFullYear()}</span>
+              <span className="text-[3.7mm]">{getDurationString(item.startDate, item.endDate)}</span>
           </div>
-          <GoDotFill className={styles.icon}/>
-          <div className={styles.content}>
-                <h4 className={styles.title}>{item.title}</h4>
-                <span className={styles.companyName}>{item.company}</span>
+          <GoDotFill className="text-[5mm]"/>
+          <div className="flex w-[122mm] flex-col gap-[2mm]">
+                <h4 className="text-[5.1mm] font-semibold">{item.title}</h4>
+                <span className="text-[4.7mm]">{item.company}</span>
               {item.description && (
-                  <p className={styles.workDescription}>{item.description}</p>
+                  <p className="text-[4.5mm]">{item.description}</p>
               )}
 
-                <ul className={styles.skillsWrapper}>
+                <ul className="mt-[2.5mm] flex flex-wrap gap-[0.8mm] text-[3.7mm]">
                     {item.skills && item.skills?.length > 0 && item.skills.map((skill: string, index: number) => (
-                        <li key={`Skill-${index + 1}`} className={styles.skill}>
+                        <li key={`Skill-${index + 1}`} className="rounded-[2mm] bg-(--darkColor) px-[1.2mm] py-[0.6mm] text-(--whiteColor)">
                             {skill}
                         </li>
                     ))}

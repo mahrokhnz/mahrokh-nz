@@ -1,5 +1,3 @@
-import styles from "./page.module.sass";
-
 interface SkillsListProps {
     title: string;
 
@@ -11,11 +9,11 @@ interface SkillsListProps {
 
 function SkillsList({title, data}: SkillsListProps) {
   return (
-      <div className={styles.wrapper}>
-          <h4 className={styles.title}>{title}</h4>
-          <ul className={styles.skillsList}>
+      <div>
+          <h4 className="mb-[2mm] text-[5.1mm] font-semibold">{title}</h4>
+          <ul className="grid auto-cols-max grid-flow-col grid-rows-7 gap-x-[5mm] gap-y-[2mm]">
               {data.map((skill) => (
-                  <li className={styles.listItem} key={skill.id}>
+                  <li className="text-[4.7mm] text-nowrap" key={skill.id}>
                       {skill.title}
                   </li>
               ))}

@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./page.module.sass";
 import Container from "@/components/container/page";
 import myImage from "@/public/images/Mahrokh-Nabizadeh.jpg";
 import data from "@/data/db.json";
@@ -13,25 +12,26 @@ function AboutMe() {
     const {skillsIcons} = data as {skillsIcons: SkillType[]};
 
     return (
-        <section className={styles.aboutWrapper}>
-            <Container className={styles.about}>
-                <div className={styles.contentWrapper}>
-                    <div className={styles.imageWrapper}>
+        <section className="pt-[100px]">
+            <Container className="flex flex-row flex-wrap justify-between gap-[100px]">
+                <div className="flex flex-1 gap-[100px] max-medium-desktop:flex-col max-tablet:gap-[120px]">
+                    <div className="relative h-[38rem] w-[30rem] max-w-full rounded-3xl max-medium-desktop:h-[28rem] max-medium-desktop:w-full">
                         <SkeletonImage
-                            className={styles.myImage}
+                            className="rounded-3xl object-cover"
                             src={myImage}
                             alt="Mahrokh Nabizadeh"
                             fill
                             sizes="(max-width: 1024px) 100vw, 30rem"
                             priority
-                            skeletonClassName={styles.myImageSkeleton}
+                            skeletonClassName="rounded-3xl"
+                            wrapperClassName="overflow-hidden rounded-3xl"
                         />
 
                         {Array.isArray(skillsIcons) && <SkillIcons icons={skillsIcons} />}
                     </div>
-                    <div className={styles.infoWrapper}>
-                        <SectionTitle text="About Me" className={styles.title} />
-                        <p>
+                    <div className="mt-[150px] flex-1 max-desktop:mt-0 max-big-phone:mt-2.5">
+                        <SectionTitle text="About Me" className="mb-12 max-medium-desktop:mb-8 max-phone:mb-6" />
+                        <p className="text-base leading-[1.8] text-(--neutralColor)">
                             Hello! I&#39;m a passionate front-end developer with a unique journey and a diverse skill set.
                             My foray into the world of front-end development began in 2021, and since then, I&#39;ve been
                             dedicated to creating engaging, user-friendly web experiences.

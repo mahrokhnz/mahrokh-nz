@@ -2,7 +2,6 @@
 
 import {useRef, useState} from 'react';
 import emailjs from 'emailjs-com';
-import styles from './page.module.sass';
 import {TextField} from "@mui/material";
 import {toast, ToastContainer} from "react-toastify";
 import {useTheme} from "@/context/theme_context";
@@ -95,14 +94,15 @@ function Form() {
 
     return (
         <>
-            <form className={styles.contactForm}
-                  style={{'--form-color': theme === 'dark' ? '#9fa0bb99' : '#e2e2e7'} as object}
+            <form
+                  className="z-[1] rounded-[20px] border border-solid border-[#6e6af499] bg-(--form-color) px-[35px] py-[30px] opacity-80 shadow-[0_2px_15px_0_#6e6af499] max-medium-desktop:grow max-medium-desktop:px-[30px] max-medium-desktop:py-[25px] max-small-desktop:p-5"
+                  style={{'--form-color': theme === 'dark' ? '#9fa0bb99' : '#e2e2e7'} as React.CSSProperties}
                   onSubmit={handleSubmit} ref={formRef}>
-                <h2 className={styles.subTitle}>
+                <h2 className="mb-[50px] text-[38px] max-medium-desktop:mb-[30px] max-medium-desktop:text-[30px]">
                     Let&#39;s get in touch!
                 </h2>
-                <fieldset>
-                    <div className={styles.row}>
+                <fieldset className="flex flex-col gap-5 max-medium-desktop:gap-2.5">
+                    <div className="flex gap-8 max-medium-desktop:flex-col max-medium-desktop:gap-2.5 max-small-desktop:flex-row">
                         <TextField
                             required
                             type='text'
@@ -110,7 +110,7 @@ function Form() {
                             label='Full Name'
                             error={!!errors.name}
                             helperText={errors.name}
-                            className={styles.textField}
+                            className="grow"
                             name="name"
                         />
                         <TextField
@@ -120,11 +120,11 @@ function Form() {
                             label='Company'
                             error={!!errors.company}
                             helperText={errors.company}
-                            className={styles.textField}
+                            className="grow"
                             name="company"
                         />
                     </div>
-                    <div className={styles.row}>
+                    <div className="flex gap-8 max-medium-desktop:flex-col max-medium-desktop:gap-2.5 max-small-desktop:flex-row">
                         <TextField
                             required
                             type='email'
@@ -132,7 +132,7 @@ function Form() {
                             label='Email Address'
                             error={!!errors.email}
                             helperText={errors.email}
-                            className={styles.textField}
+                            className="grow"
                             name="email"
                         />
                     </div>

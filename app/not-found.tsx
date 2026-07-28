@@ -2,7 +2,6 @@
 
 import EyeCanvas from "@/components/eye/page";
 import Container from "@/components/container/page";
-import styles from './not-found.module.sass'
 import SectionTitle from "@/components/section_title/page";
 import React from "react";
 import Button from "@/components/Button/page";
@@ -12,13 +11,13 @@ function NotFound() {
     const router = useRouter();
 
     return (
-        <section className={styles.notFoundPage}>
-            <Container className={styles.notFound}>
-                <div className={styles.notFoundWrapper}>
+        <section className="h-screen bg-(--secondaryColor)">
+            <Container className="bg-(--secondaryColor)">
+                <div className="flex h-full grow flex-col items-center">
                     <EyeCanvas />
-                    <span className={styles.text}>Looks Like You&#39;re Lost</span>
+                    <span className="mb-5 text-center text-[40px] font-bold text-[#544df0] max-tablet:text-[3rem] max-phone:text-[2rem]">Looks Like You&#39;re Lost</span>
                     <SectionTitle text='404 error' />
-                    <Button className={styles.button} onClick={() => router.replace('/')}>
+                    <Button onClick={() => router.replace('/')}>
                         back to home
                     </Button>
                 </div>

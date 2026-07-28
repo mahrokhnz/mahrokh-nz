@@ -4,7 +4,6 @@ import {prisma} from "@/lib/prisma";
 import Container from "@/components/container/page";
 import SectionTitle from "@/components/section_title/page";
 import React from "react";
-import styles from "./page.module.sass";
 import metadataCreator from "@/utils/server-metadata";
 import JsonLdScript from "@/components/seo/jsonld_script";
 import {getWebPageJsonLd} from "@/utils/seo/jsonld";
@@ -45,7 +44,7 @@ async function Blog() {
     });
 
     return (
-        <main className={styles.blogWrapper}>
+        <main className="flex flex-col gap-4 pt-[100px]">
             <JsonLdScript
                 id="ld-blog"
                 data={getWebPageJsonLd({
@@ -56,7 +55,7 @@ async function Blog() {
             />
             <Container>
                 <SectionTitle text="My Blog" />
-                <section className={styles.blogList}>
+                <section className="flex flex-col gap-12">
                     {blog.map((post: BlogType) => (
                         <BlogRow blogData={post} key={post.id} />
                     ))}

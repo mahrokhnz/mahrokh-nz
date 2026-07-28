@@ -1,4 +1,3 @@
-import styles from "./page.module.sass";
 import cls from "@/utils/class_names";
 
 interface CircleProps {
@@ -8,7 +7,13 @@ interface CircleProps {
 
 function Circle({filled, delay}: CircleProps) {
     return (
-            <div className={cls(styles.circle, filled ? styles.filled : '')} style={{ animationDelay: `${delay}s` }}></div>
+            <div
+                className={cls(
+                    "size-[1.2rem] rounded-full bg-(--neutralColor) opacity-20 max-tablet:size-4 max-phone:size-3",
+                    filled && "animate-fill"
+                )}
+                style={{ animationDelay: `${delay}s` }}
+            />
     );
 }
 

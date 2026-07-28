@@ -2,9 +2,9 @@
 
 import React, { useRef } from "react";
 import { FaDownload } from "react-icons/fa";
-import styles from "./page.module.sass";
 import Button from "@/components/Button/page";
 import dynamic from "next/dynamic";
+import cls from "@/utils/class_names";
 
 const Resume = dynamic(() => import("@/components/resume/page"), { ssr: false });
 
@@ -33,7 +33,7 @@ function DownloadButton({ className }: DownloadButtonProps) {
     return (
         <>
             <Button
-                className={`${styles.button} ${className}`}
+                className={cls("!mt-5", className)}
                 startIcon={<FaDownload />}
                 onClick={downloadHandler}
             >

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import styles from "./page.module.sass";
 import TimeConvertor from "@/utils/time_convertor";
 import Button from "@/components/Button/page";
 import {useRouter} from "next/navigation";
@@ -16,7 +15,7 @@ function BlogRow({blogData}: BlogRowProps) {
     const router = useRouter();
 
     return (
-        <div className={styles.blogCard}>
+        <div className="flex items-center justify-between gap-[100px] max-desktop:gap-[60px] max-medium-desktop:gap-10 max-big-phone:flex-col">
             {blogData.coverImage ? (
                 <SkeletonImage
                     src={`/images/blog/${blogData.coverImage}`}
@@ -24,13 +23,13 @@ function BlogRow({blogData}: BlogRowProps) {
                     width={480}
                     height={300}
                     sizes="(max-width: 600px) 100vw, 30vw"
-                    className={styles.blogImage}
-                    wrapperClassName={styles.blogImageWrapper}
+                    className="size-full rounded-2xl object-cover"
+                    wrapperClassName="w-[30%] shrink-0 overflow-hidden rounded-2xl aspect-[16/10] max-big-phone:w-full"
                 />
             ) : null}
 
-            <div className={styles.summaryContent}>
-                <div className={styles.info}>
+            <div className="flex flex-col gap-5 max-desktop:gap-2.5">
+                <div className="text-base text-(--neutralColor) max-phone:text-sm">
                     {blogData.publishedAt ? <span>{TimeConvertor(blogData.publishedAt)}</span> : null}
                     {" "}
                     .
@@ -38,10 +37,10 @@ function BlogRow({blogData}: BlogRowProps) {
                     <span>Mahrokh Nabizadeh</span>
                 </div>
 
-                <h1 className={styles.title}>{blogData.title}</h1>
-                <p className={styles.description}>{blogData.description}</p>
+                <h1 className="text-2xl font-bold max-medium-desktop:text-xl max-tablet:text-lg max-phone:text-base max-phone:font-normal">{blogData.title}</h1>
+                <p className="line-clamp-2 overflow-hidden text-ellipsis text-base leading-[1.8] max-tablet:text-[0.8rem] max-tablet:leading-[1.5]">{blogData.description}</p>
 
-                <Button className={styles.button} onClick={() => router.push(`/blog/${blogData.slug}`)}>
+                <Button className="mt-[15px] self-start max-medium-desktop:mt-[5px]" onClick={() => router.push(`/blog/${blogData.slug}`)}>
                     Read More
                 </Button>
             </div>

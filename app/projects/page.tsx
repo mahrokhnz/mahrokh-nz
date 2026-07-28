@@ -1,6 +1,5 @@
 "use client";
 
-import styles from "./page.module.sass";
 import Container from "@/components/container/page";
 import React, {useEffect, useMemo, useState} from "react";
 import data from "@/data/db.json";
@@ -79,26 +78,36 @@ function Projects() {
     const currentProject = projects.find((project) => project.id === currentId);
 
     return (
-        <main className={styles.projectsWrapper}>
+        <main className="pt-[100px]">
             <Container>
                 <SectionTitle text="My Projects" />
-                <section className={styles.projects}>
+                <section className="grid w-full grow grid-rows-2 gap-8">
                     {currentProject && (
-                        <ProjectCard className={styles.currentItem} isCurrent={true} data={currentProject} />
+                        <ProjectCard className="row-span-2" isCurrent={true} data={currentProject} />
                     )}
-                    <div className={styles.slider}>
-                        <FaChevronLeft className={cls(styles.chevronIcon, styles.chevronLeft)} onClick={clickPrev} />
-                        <div className={styles.sliderItems}>
+                    <div className="relative row-span-1 flex items-center justify-between gap-4">
+                        <FaChevronLeft
+                            className={cls(
+                                "absolute left-0 z-[2] cursor-pointer text-[110px] text-(--neutralColor) opacity-30 transition-opacity duration-300 ease-in-out hover:opacity-100 max-desktop:text-[80px] max-small-desktop:text-[50px]"
+                            )}
+                            onClick={clickPrev}
+                        />
+                        <div className="grid grow grid-cols-6 justify-center gap-8 max-desktop:grid-cols-4 max-small-desktop:grid-cols-3 max-tablet:grid-cols-2 max-big-phone:grid-cols-1">
                             {sliderItems.map((item) => (
                                 <ProjectCard
-                                    className={styles.item}
+                                    className=""
                                     key={item.id}
                                     data={item}
                                     clickHandler={(id: number) => setCurrentId(id)}
                                 />
                             ))}
                         </div>
-                        <FaChevronRight className={cls(styles.chevronIcon, styles.chevronRight)} onClick={clickNext} />
+                        <FaChevronRight
+                            className={cls(
+                                "absolute right-0 z-[2] cursor-pointer text-[110px] text-(--neutralColor) opacity-30 transition-opacity duration-300 ease-in-out hover:opacity-100 max-desktop:text-[80px] max-small-desktop:text-[50px]"
+                            )}
+                            onClick={clickNext}
+                        />
                     </div>
                 </section>
             </Container>

@@ -1,4 +1,3 @@
-import styles from "./page.module.sass";
 import React from "react";
 import {useTheme} from "@/context/theme_context";
 import { LuSunMoon } from "react-icons/lu"
@@ -8,11 +7,11 @@ function Theme() {
     const { theme, toggleTheme } = useTheme();
 
     return (
-        <div className={styles.theme} onClick={toggleTheme}>
+        <div className="size-6 cursor-pointer" onClick={toggleTheme}>
             {theme === 'light' ? (
-                <LuSunMoon className={styles.themeIcon} />
+                <LuSunMoon className="text-2xl text-(--textColor)" />
             ) : (
-                <IoMoonOutline className={styles.themeIcon} />
+                <IoMoonOutline className="text-2xl text-(--textColor)" />
             )}
         </div>
     );

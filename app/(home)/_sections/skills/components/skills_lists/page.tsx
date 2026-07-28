@@ -1,6 +1,5 @@
 "use client"
 
-import styles from "./page.module.sass";
 import data from '@/data/db.json'
 import {useMemo} from "react";
 import { useInView } from 'react-intersection-observer';
@@ -19,7 +18,7 @@ function SkillsLists() {
     }, [skills]);
 
   return (
-      <div className={styles.skillsWrapper} ref={ref}>
+      <div className="flex flex-wrap justify-between gap-20" ref={ref}>
           <SkillsList data={primary} inView={inView}/>
           <SkillsList data={secondary} inView={inView}/>
       </div>

@@ -4,7 +4,6 @@ import Image, {type ImageProps} from "next/image";
 import {useState} from "react";
 import {ImageSkeleton} from "@/components/skeleton/page";
 import cls from "@/utils/class_names";
-import styles from "./page.module.sass";
 
 type SkeletonImageProps = ImageProps & {
     wrapperClassName?: string;
@@ -23,14 +22,22 @@ function SkeletonImage({
     const [loaded, setLoaded] = useState(false);
 
     return (
-        <div className={cls(styles.wrapper, wrapperClassName)}>
-            {!loaded && <ImageSkeleton className={cls(styles.skeleton, skeletonClassName)} />}
+        <div className={cls(
+            fill ? "absolute inset-0" : "relative block size-full",
+            "overflow-hidden rounded-[inherit]",
+            wrapperClassName
+        )}>
+            {!loaded && <ImageSkeleton className={cls("absolute inset-0 z-[1]", skeletonClassName)} />}
             <Image
                 {...props}
                 fill={fill}
                 alt={alt}
                 data-fill={fill ? "" : undefined}
-                className={cls(styles.image, loaded && styles.loaded, className)}
+                className={cls(
+                    "skeleton-img object-cover opacity-0 transition-opacity duration-[0.25s] ease-in-out",
+                    loaded && "opacity-100",
+                    className
+                )}
                 onLoad={(event) => {
                     setLoaded(true);
                     onLoad?.(event);

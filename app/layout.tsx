@@ -1,4 +1,4 @@
-import "./globals.sass";
+import "./globals.css";
 import localFont from 'next/font/local';
 import type { Metadata, Viewport } from "next";
 import Header from "@/components/header/page";

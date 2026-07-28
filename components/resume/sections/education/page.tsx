@@ -1,4 +1,3 @@
-import styles from "./page.module.sass";
 import SectionTitle from "@/components/resume/sections/components/section_title/page";
 import {FaGraduationCap} from "react-icons/fa6";
 import data from "@/data/db.json";
@@ -8,9 +7,9 @@ function EducationSection() {
     const {resume: {menuItems: {educations}}} = data;
 
   return (
-      <section className={styles.sectionWrapper}>
+      <section>
           <SectionTitle text='EDUCATION' icon={FaGraduationCap} />
-          <div className={styles.educationWrapper}>
+          <div className="flex gap-[8mm]">
               {educations.map((education) => (
                   <EducationItem key={education.id} item={education} />
               ))}

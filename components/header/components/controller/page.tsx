@@ -1,6 +1,5 @@
 "use client"
 
-import styles from "./page.module.sass";
 import Menu from "@/components/menu/page";
 import Theme from "@/components/header/components/controller/components/theme/page";
 import BurgerButton from "@/components/header/components/controller/components/burger_button/page";
@@ -10,8 +9,8 @@ function Controller() {
     const [isOpen, setIsOpen] = useState<boolean>(false);
 
     return (
-        <div className={styles.wrapper}>
-            <Menu isOpen={isOpen} />
+        <div className="flex items-center gap-8 max-phone:gap-[0.8rem]">
+            <Menu isOpen={isOpen} onItemClick={() => setIsOpen(false)} />
             <Theme/>
             <BurgerButton isOpen={isOpen} onClickHandler={() => setIsOpen(!isOpen)} />
         </div>

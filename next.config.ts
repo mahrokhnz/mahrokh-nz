@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-import path from "node:path";
 import withPWAInit from "next-pwa";
 
 const withPWA = withPWAInit({
@@ -19,11 +18,6 @@ const nextConfig: NextConfig = {
                 search: '',
             },
         ],
-    },
-
-    sassOptions: {
-        includePaths: [path.join(__dirname, 'styles')],
-        prependData: `@use '@/app/mixins.sass' as mixins`,
     },
 
     experimental: {

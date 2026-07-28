@@ -1,4 +1,3 @@
-import styles from "./page.module.sass";
 import SectionTitle from "@/components/resume/sections/components/section_title/page";
 import data from "@/data/db.json";
 import Experience from "@/components/resume/sections/work_experiences/components/experience/page";
@@ -8,9 +7,9 @@ function WorkExperiencesSection() {
     const {resume: {menuItems: {experiences}}} = data;
 
   return (
-      <section className={styles.sectionWrapper}>
+      <section>
           <SectionTitle text='WORK EXPERIENCE' icon={RiSuitcaseLine} />
-         <div className={styles.experiencesWrapper}>
+         <div className="relative flex flex-col gap-[10mm] before:absolute before:left-[41.3mm] before:z-[-1] before:h-full before:w-[0.5mm] before:bg-(--lineColor) before:content-['']">
              {experiences.map((experience) => (
                  <Experience key={experience.id} item={experience} />
              ))}
