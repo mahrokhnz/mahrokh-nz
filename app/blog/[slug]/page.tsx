@@ -1,4 +1,4 @@
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
 import {notFound} from "next/navigation";

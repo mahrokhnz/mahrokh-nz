@@ -9,7 +9,7 @@ import metadataCreator from "@/utils/server-metadata";
 import JsonLdScript from "@/components/seo/jsonld_script";
 import {getWebPageJsonLd} from "@/utils/seo/jsonld";
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
 const BLOG_DESCRIPTION =
@@ -37,6 +37,10 @@ export type BlogType = {
 };
 
 async function Blog() {
+    // #region agent log
+    fetch('http://127.0.0.1:7590/ingest/77355d26-d6fa-477f-bdbc-57eddb6bcfd6',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'5cd3c0'},body:JSON.stringify({sessionId:'5cd3c0',runId:'post-fix',hypothesisId:'G',location:'app/blog/page.tsx:Blog',message:'Blog page rendered at runtime (not build prerender)',data:{dynamic:'force-dynamic'},timestamp:Date.now()})}).catch(()=>{});
+    // #endregion
+
     const blog: BlogType[] = await prisma.post.findMany({
         where: {published: true},
         orderBy: {

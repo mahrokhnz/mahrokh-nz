@@ -2,6 +2,7 @@ import {NextResponse} from "next/server";
 import {prisma} from "@/lib/prisma";
 import {SITE_URL} from "@/config/seo";
 
+export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
 function iso(d: Date | string | null | undefined) {
@@ -10,6 +11,10 @@ function iso(d: Date | string | null | undefined) {
 }
 
 export async function GET() {
+    // #region agent log
+    fetch('http://127.0.0.1:7590/ingest/77355d26-d6fa-477f-bdbc-57eddb6bcfd6',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'5cd3c0'},body:JSON.stringify({sessionId:'5cd3c0',runId:'post-fix',hypothesisId:'G',location:'app/sitemap.xml/route.ts:GET',message:'Sitemap generated at runtime (not build prerender)',data:{dynamic:'force-dynamic'},timestamp:Date.now()})}).catch(()=>{});
+    // #endregion
+
     const staticUrls = [
         {loc: `${SITE_URL}/`, lastmod: new Date(), changefreq: "monthly", priority: "1.00"},
         {loc: `${SITE_URL}/about`, lastmod: new Date(), changefreq: "monthly", priority: "0.90"},
