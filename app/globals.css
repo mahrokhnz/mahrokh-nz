@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+/*
+  Min-width theme breakpoints. Use max-* variants for desktop-first parity
+  with former Sass mixins (max-width). Tailwind sorts max-* so narrower
+  overrides win — same cascade as Sass (tablet then phone).
+  max-phone  → width < 466px  ≈ max-width: 465px
+  max-big-phone → width < 601px ≈ max-width: 600px
+  etc.
+*/
+@theme {
+  --breakpoint-phone: 466px;
+  --breakpoint-big-phone: 601px;
+  --breakpoint-tablet: 841px;
+  --breakpoint-small-desktop: 1025px;
+  --breakpoint-medium-desktop: 1301px;
+  --breakpoint-desktop: 1601px;
+}
+
+:root {
+  --primaryColor: #ffffff;
+  --secondaryColor: #e2e2e7;
+  --firstWaveColor: #544df0;
+  --secondWaveColor: #6e6af4;
+  --textColor: #000000;
+  --neutralColor: #808188;
+  --mediumGray: #979797;
+  --lineColor: #bdc3c7;
+  --whiteColor: #fff;
+  --darkColor: #363740;
+  --linkColor: #087ea4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primaryColor: #272d40;
+    --secondaryColor: #282633;
+    --firstWaveColor: #3e4657;
+    --secondWaveColor: #485266;
+    --textColor: #ffffff;
+    --neutralColor: #808188;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+}
+
+html.light {
+  --primaryColor: #ffffff;
+  --secondaryColor: #e2e2e7;
+  --firstWaveColor: #544df0;
+  --secondWaveColor: #6e6af4;
+  --textColor: #000000;
+  --neutralColor: #808188;
+}
+
+html.dark {
+  --primaryColor: #272d40;
+  --secondaryColor: #282633;
+  --firstWaveColor: #3e4657;
+  --secondWaveColor: #485266;
+  --textColor: #ffffff;
+  --neutralColor: #808188;
+}
+
+@layer base {
+  body {
+    background-color: var(--primaryColor);
+    color: var(--textColor);
+    line-height: 1;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ol,
+  ul {
+    list-style: none;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes fillAnimation {
+  from {
+    background-color: var(--neutralColor);
+    opacity: 0.2;
+  }
+  to {
+    background-color: var(--secondWaveColor);
+    opacity: 1;
+  }
+}
+
+@theme {
+  --animate-shimmer: shimmer 1.4s ease-in-out infinite;
+  --animate-fill: fillAnimation 0.5s forwards;
+}
+
+/* Blog article HTML from CMS */
+.prose-blog section {
+  margin-top: 30px;
+}
+
+.prose-blog section h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.prose-blog section p {
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--mediumGray);
+  margin-bottom: 10px;
+}
+
+.prose-blog section ul:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.prose-blog section li {
+  position: relative;
+  line-height: 1.5;
+}
+
+.prose-blog section li span {
+  margin-inline-start: 20px;
+}
+
+.prose-blog section li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.prose-blog section li:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #544df0;
+  position: absolute;
+  left: 0;
+  top: 10%;
+}
+
+@media (max-width: 840px) {
+  .prose-blog section h2 {
+    font-size: 20px;
+  }
+
+  .prose-blog section p {
+    font-size: 16px;
+  }
+
+  .prose-blog section li {
+    font-size: 14px;
+  }
+}
+
+/* Skeleton image: non-fill Next/Image sizing */
+.skeleton-img:not([data-fill]) {
+  width: 100% !important;
+  height: 100% !important;
+}
