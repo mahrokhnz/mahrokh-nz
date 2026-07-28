@@ -1,10 +1,6 @@
 'use client';
 import { createTheme } from '@mui/material/styles';
-
-export const AppColors = {
-    primary: '#544df0',
-    secondary: '#6e6af4',
-};
+import { AppColors } from "@/theme/colors";
 
 const theme = createTheme({
     typography: {
