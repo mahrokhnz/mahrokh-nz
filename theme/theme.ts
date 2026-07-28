@@ -1,6 +1,6 @@
 'use client';
-import { createTheme } from '@mui/material/styles';
-import { AppColors } from "@/theme/colors";
+import {createTheme} from '@mui/material/styles';
+import {AppColors} from "theme/colors";
 
 const theme = createTheme({
     typography: {
