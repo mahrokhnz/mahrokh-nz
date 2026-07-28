@@ -14,18 +14,25 @@
     },
     {
       "id": 3,
+      "title": "Labs",
+      "link": "/labs",
+      "disabled": false,
+      "badge": "beta"
+    },
+    {
+      "id": 4,
       "title": "Projects",
       "link": "/projects",
       "disabled": false
     },
     {
-      "id": 4,
+      "id": 5,
       "title": "Contact",
       "link": "/contact",
       "disabled": false
     },
     {
-      "id": 5,
+      "id": 6,
       "title": "Blog",
       "link": "/blog",
       "disabled": false
@@ -547,5 +554,87 @@
         }
       ]
     }
+  },
+  "labs": {
+    "hero": {
+      "badge": "ENGINEERING LABORATORY",
+      "titleLead": "Mahrokh",
+      "titleAccent": "Labs",
+      "description": "Interactive experiments, tools and frontend engineering playgrounds.",
+      "stats": [
+        { "id": 1, "value": "5", "label": "CATEGORIES" },
+        { "id": 2, "value": "25", "label": "EXPERIMENTS" },
+        { "id": 3, "value": "∞", "label": "CONTROLS" }
+      ]
+    },
+    "categories": [
+      {
+        "id": "interactive",
+        "title": "Interactive",
+        "description": "Interactive frontend experiments and playgrounds.",
+        "icon": "code",
+        "featured": true,
+        "cta": "Enter laboratory",
+        "experiments": [
+          { "id": 1, "title": "CSS 3D Cube Playground" },
+          { "id": 2, "title": "CSS Perspective Visualizer" },
+          { "id": 3, "title": "Mouse Interaction Playground" },
+          { "id": 4, "title": "Card Flip Playground" },
+          { "id": 5, "title": "Parallax Playground" }
+        ]
+      },
+      {
+        "id": "animation",
+        "title": "Animation",
+        "description": "Animation tools, timing curves, and motion playgrounds.",
+        "icon": "crosshair",
+        "experiments": [
+          { "id": 1, "title": "Animation Builder" },
+          { "id": 2, "title": "Easing Visualizer" },
+          { "id": 3, "title": "Timeline Playground" },
+          { "id": 4, "title": "Scroll Animation" },
+          { "id": 5, "title": "Text Animation" }
+        ]
+      },
+      {
+        "id": "performance",
+        "title": "Performance",
+        "description": "React rendering analysis and optimization tools.",
+        "icon": "chart",
+        "experiments": [
+          { "id": 1, "title": "React Rendering Playground" },
+          { "id": 2, "title": "Memo vs No Memo" },
+          { "id": 3, "title": "Virtualization Demo" },
+          { "id": 4, "title": "Image Loading Comparison" },
+          { "id": 5, "title": "Bundle Analysis" }
+        ]
+      },
+      {
+        "id": "css",
+        "title": "CSS Playground",
+        "description": "Visual builders for modern CSS layout and effects.",
+        "icon": "shield",
+        "experiments": [
+          { "id": 1, "title": "Flexbox Builder" },
+          { "id": 2, "title": "Grid Builder" },
+          { "id": 3, "title": "Container Queries" },
+          { "id": 4, "title": "Clamp Playground" },
+          { "id": 5, "title": "Blend Modes" }
+        ]
+      },
+      {
+        "id": "devtools",
+        "title": "Developer Tools",
+        "description": "Practical tools for everyday frontend engineering.",
+        "icon": "sliders",
+        "experiments": [
+          { "id": 1, "title": "SVG to JSX" },
+          { "id": 2, "title": "Gradient Generator" },
+          { "id": 3, "title": "Shadow Generator" },
+          { "id": 4, "title": "Color Palette" },
+          { "id": 5, "title": "Clamp Generator" }
+        ]
+      }
+    ]
   }
 }

@@ -14,6 +14,7 @@ export async function GET() {
     const staticUrls = [
         {loc: `${SITE_URL}/`, lastmod: new Date(), changefreq: "monthly", priority: "1.00"},
         {loc: `${SITE_URL}/about`, lastmod: new Date(), changefreq: "monthly", priority: "0.90"},
+        {loc: `${SITE_URL}/labs`, lastmod: new Date(), changefreq: "weekly", priority: "0.85"},
         {loc: `${SITE_URL}/contact`, lastmod: new Date(), changefreq: "monthly", priority: "0.80"},
         {loc: `${SITE_URL}/projects`, lastmod: new Date(), changefreq: "monthly", priority: "0.70"},
         {loc: `${SITE_URL}/blog`, lastmod: new Date(), changefreq: "weekly", priority: "1.00"},
