@@ -3,4 +3,4 @@ Disallow: /admin/
 Disallow: /private/
 Allow: /
 
-Sitemap: https://www.mahrokhnz.ir/sitemap.xml
+Sitemap: https://mahrokhnz.ir/sitemap.xml

@@ -1,56 +1,68 @@
+import type {Metadata} from "next";
 import BlogRow from "@/app/blog/_components/blog_row/page";
-
-export const dynamic = 'force-dynamic';
-export const revalidate = 0;
-export const runtime = 'nodejs';
-
-import {prisma} from '@/lib/prisma';
-import {unstable_noStore as noStore} from 'next/cache';
+import {prisma} from "@/lib/prisma";
 import Container from "@/components/container/page";
 import SectionTitle from "@/components/section_title/page";
 import React from "react";
-import MetadataComponent from "@/utils/client-metadata";
-import styles from './page.module.sass'
+import styles from "./page.module.sass";
+import metadataCreator from "@/utils/server-metadata";
+import JsonLdScript from "@/components/seo/jsonld_script";
+import {getWebPageJsonLd} from "@/utils/seo/jsonld";
+
+export const revalidate = 60;
+export const runtime = "nodejs";
+
+const BLOG_DESCRIPTION =
+    "Explore articles about front-end development, React, CSS, and modern web design techniques to level up your coding and design skills.";
+
+export const metadata: Metadata = metadataCreator({
+    title: "Blog",
+    description: BLOG_DESCRIPTION,
+    path: "/blog",
+});
 
 export type BlogType = {
-    id: string
-    slug: string
-    title: string
-    description: string | null
-    excerpt: string | null
-    content: string
-    coverImage: string | null
-    tags: string[]
-    published: boolean
-    publishedAt: Date | null
-    createdAt: Date
-    updatedAt: Date
-}
+    id: string;
+    slug: string;
+    title: string;
+    description: string | null;
+    excerpt: string | null;
+    content: string;
+    coverImage: string | null;
+    tags: string[];
+    published: boolean;
+    publishedAt: Date | null;
+    createdAt: Date;
+    updatedAt: Date;
+};
 
 async function Blog() {
-    noStore();
-
     const blog: BlogType[] = await prisma.post.findMany({
+        where: {published: true},
         orderBy: {
-            createdAt: 'desc'
-        }
+            createdAt: "desc",
+        },
     });
 
     return (
-        <>
-            <MetadataComponent title='Blog'
-                               description={'Explore articles about front-end development, React, CSS, and modern web design techniques to level up your coding and design skills.'}/>
-            <main className={styles.blogWrapper}>
-                <Container>
-                    <SectionTitle text='My Blog'/>
-                    <section className={styles.blogList}>
-                        {blog.map((blog: BlogType) => (
-                            <BlogRow blogData={blog} key={blog.id}/>
-                        ))}
-                    </section>
-                </Container>
-            </main>
-        </>
+        <main className={styles.blogWrapper}>
+            <JsonLdScript
+                id="ld-blog"
+                data={getWebPageJsonLd({
+                    title: "Blog",
+                    description: BLOG_DESCRIPTION,
+                    path: "/blog",
+                })}
+            />
+            <Container>
+                <SectionTitle text="My Blog" />
+                <section className={styles.blogList}>
+                    {blog.map((post: BlogType) => (
+                        <BlogRow blogData={post} key={post.id} />
+                    ))}
+                </section>
+            </Container>
+        </main>
     );
 }
 

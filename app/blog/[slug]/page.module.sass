@@ -6,15 +6,21 @@
     flex-direction: column
     align-items: center
 
-    .blogImage
+    .blogImageWrapper
       width: 100%
       height: 500px
-      object-fit: cover
       border-radius: 16px
       margin-bottom: 25px
+      overflow: hidden
 
       @include mixins.respond-to('medium-desktop')
         height: 400px
+
+    .blogImage
+      width: 100%
+      height: 100%
+      object-fit: cover
+      border-radius: 16px
 
     .articleContent
       section
