@@ -30,7 +30,7 @@ export function getArticleJsonLd(post: PostForSeo): JsonLd {
         publisher: {
             "@type": "Organization",
             name: SITE_NAME,
-            logo: {"@type": "ImageObject", url: `${SITE_URL}/images/logo.png`},
+            logo: {"@type": "ImageObject", url: `${SITE_URL}/icon-512.png`},
         },
         mainEntityOfPage: {"@type": "WebPage", "@id": `${SITE_URL}/blog/${post.slug}`},
     };

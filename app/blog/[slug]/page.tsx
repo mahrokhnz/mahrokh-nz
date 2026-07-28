@@ -1,5 +1,4 @@
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+export const revalidate = 60;
 export const runtime = "nodejs";
 
 import {notFound} from "next/navigation";
@@ -9,9 +8,9 @@ import styles from "./page.module.sass";
 import Container from "@/components/container/page";
 import SectionTitle from "@/components/section_title/page";
 import Link from "next/link";
-import Script from "next/script";
-import Image from "next/image";
 import {getArticleJsonLd, getBreadcrumbJsonLd, type PostForSeo} from "./seo/jsonld";
+import JsonLdScript from "@/components/seo/jsonld_script";
+import SkeletonImage from "@/components/skeleton_image/page";
 
 export {generateMetadata} from "./seo/metadata";
 import type {Post} from "@prisma/client";
@@ -23,8 +22,9 @@ async function getPost(slug: string): Promise<PostWithContent | null> {
     return p as unknown as PostWithContent | null;
 }
 
-async function Blog({params}: { params: { slug: string } }) {
-    const post = await getPost(params.slug);
+async function Blog({params}: {params: Promise<{slug: string}> | {slug: string}}) {
+    const resolvedParams = await Promise.resolve(params);
+    const post = await getPost(resolvedParams.slug);
     if (!post || !post.published) return notFound();
 
     const articleLd = getArticleJsonLd(post);
@@ -32,37 +32,39 @@ async function Blog({params}: { params: { slug: string } }) {
 
     return (
         <>
-            <Script id="ld-article" type="application/ld+json"
-                    dangerouslySetInnerHTML={{__html: JSON.stringify(articleLd)}}/>
-            <Script id="ld-breadcrumbs" type="application/ld+json"
-                    dangerouslySetInnerHTML={{__html: JSON.stringify(breadcrumbLd)}}/>
+            <JsonLdScript id="ld-article" data={articleLd} />
+            <JsonLdScript id="ld-breadcrumbs" data={breadcrumbLd} />
 
             <main className={styles.blogWrapper}>
                 <Container>
                     <article className={styles.article}>
                         <Link href="/blog" className={styles.button}>
-                            <FaArrowLeftLong className={styles.arrowIcon}/>
+                            <FaArrowLeftLong className={styles.arrowIcon} />
                         </Link>
 
-                        <SectionTitle text={post.title}/>
+                        <SectionTitle text={post.title} />
 
                         {post.coverImage && (
-                            <Image
+                            <SkeletonImage
                                 src={`/images/blog/${post.coverImage}`}
                                 alt={post.title}
                                 width={1200}
                                 height={630}
-                                loading="lazy"
+                                sizes="(max-width: 900px) 100vw, 900px"
+                                priority
                                 className={styles.blogImage}
+                                wrapperClassName={styles.blogImageWrapper}
                             />
                         )}
 
-                        <div className={styles.articleContent} dangerouslySetInnerHTML={{__html: post.content}}/>
+                        <div className={styles.articleContent} dangerouslySetInnerHTML={{__html: post.content}} />
                     </article>
 
                     <ul className={styles.tags}>
                         {post.tags?.map((tag, index) => (
-                            <li className={styles.tag} key={`Tag-${index + 1}`}>{tag}</li>
+                            <li className={styles.tag} key={`Tag-${index + 1}`}>
+                                {tag}
+                            </li>
                         ))}
                     </ul>
                 </Container>

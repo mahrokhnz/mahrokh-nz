@@ -1,10 +1,16 @@
-'use client';
+"use client";
 
-import dynamic from 'next/dynamic';
-import React from 'react';
+import dynamic from "next/dynamic";
+import React from "react";
 
-const LazyCanvas = dynamic(() => import('@/components/constellation/page'), { ssr: false });
+const LazyCanvas = dynamic(() => import("@/components/constellation/page"), {
+    ssr: false,
+});
 
-export default function LazyCanvasWrapper() {
-    return <LazyCanvas />;
+interface LazyCanvasWrapperProps {
+    onlyStarts?: boolean;
+}
+
+export default function LazyCanvasWrapper({onlyStarts = false}: LazyCanvasWrapperProps) {
+    return <LazyCanvas onlyStarts={onlyStarts} />;
 }

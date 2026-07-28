@@ -1,38 +1,36 @@
-import React from 'react';
+import React from "react";
 import styles from "./page.module.sass";
 import Container from "@/components/container/page";
-import myImage from '@/public/images/Mahrokh-Nabizadeh.jpg';
-import Image from "next/image";
+import myImage from "@/public/images/Mahrokh-Nabizadeh.jpg";
 import data from "@/data/db.json";
 import SectionTitle from "@/components/section_title/page";
 import SkillIcons from "./components/skill_icons/page";
 import {SkillType} from "@/app/about/_sections/about/type";
 import DownloadButton from "@/components/download_button/page";
+import SkeletonImage from "@/components/skeleton_image/page";
 
-function AboutMe () {
-    const { skillsIcons } = data as { skillsIcons: SkillType[] };
+function AboutMe() {
+    const {skillsIcons} = data as {skillsIcons: SkillType[]};
 
     return (
         <section className={styles.aboutWrapper}>
             <Container className={styles.about}>
                 <div className={styles.contentWrapper}>
-                    <div
-                        className={styles.imageWrapper}
-                        style={{position: 'relative', width: '500px', height: '600px'}}
-                    >
-                        <Image
+                    <div className={styles.imageWrapper}>
+                        <SkeletonImage
                             className={styles.myImage}
                             src={myImage}
-                            alt='Mahrokh Nabizadeh'
-                            layout="fill"
+                            alt="Mahrokh Nabizadeh"
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 30rem"
+                            priority
+                            skeletonClassName={styles.myImageSkeleton}
                         />
 
-                        {Array.isArray(skillsIcons) && (
-                            <SkillIcons icons={skillsIcons} />
-                        )}
+                        {Array.isArray(skillsIcons) && <SkillIcons icons={skillsIcons} />}
                     </div>
                     <div className={styles.infoWrapper}>
-                        <SectionTitle text='About Me' className={styles.title} />
+                        <SectionTitle text="About Me" className={styles.title} />
                         <p>
                             Hello! I&#39;m a passionate front-end developer with a unique journey and a diverse skill set.
                             My foray into the world of front-end development began in 2021, and since then, I&#39;ve been
@@ -59,6 +57,6 @@ function AboutMe () {
             </Container>
         </section>
     );
-};
+}
 
 export default AboutMe;
