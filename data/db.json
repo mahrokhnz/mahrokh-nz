@@ -576,11 +576,46 @@
         "featured": true,
         "cta": "Enter laboratory",
         "experiments": [
-          { "id": 1, "title": "CSS 3D Cube Playground" },
-          { "id": 2, "title": "CSS Perspective Visualizer" },
-          { "id": 3, "title": "Mouse Interaction Playground" },
-          { "id": 4, "title": "Card Flip Playground" },
-          { "id": 5, "title": "Parallax Playground" }
+          {
+            "id": 1,
+            "slug": "css-3d-cube-playground",
+            "title": "CSS 3D Cube Playground",
+            "description": "Manipulate a live 3D cube using only CSS transforms. Control rotation, scale, perspective, translation, and animation with real-time code generation.",
+            "tags": ["CSS", "3D Transforms", "Interactive"],
+            "status": "live"
+          },
+          {
+            "id": 2,
+            "slug": "css-perspective-visualizer",
+            "title": "CSS Perspective Visualizer",
+            "description": "Explore how CSS perspective values affect 3D depth and distortion in the browser rendering engine.",
+            "tags": ["CSS", "Perspective", "Visualization"],
+            "status": "soon"
+          },
+          {
+            "id": 3,
+            "slug": "mouse-interaction-playground",
+            "title": "Mouse Interaction Playground",
+            "description": "Test magnetic, repulsion, attraction, and follow behaviors using pointer events and spring physics.",
+            "tags": ["Pointer Events", "Physics", "Interactive"],
+            "status": "soon"
+          },
+          {
+            "id": 4,
+            "slug": "card-flip-playground",
+            "title": "Card Flip Playground",
+            "description": "Explore CSS 3D card flip animations with configurable timing, easing, and backface visibility controls.",
+            "tags": ["CSS", "3D", "Animation"],
+            "status": "soon"
+          },
+          {
+            "id": 5,
+            "slug": "parallax-playground",
+            "title": "Parallax Playground",
+            "description": "Build layered parallax scroll effects using CSS transforms and scroll-driven animations.",
+            "tags": ["Scroll", "Parallax", "CSS"],
+            "status": "soon"
+          }
         ]
       },
       {

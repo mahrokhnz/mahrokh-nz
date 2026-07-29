@@ -8,6 +8,7 @@ export type PageMetadataInput = {
     image?: string;
     type?: "website" | "article";
     noIndex?: boolean;
+    keywords?: string[];
 };
 
 function toAbsoluteUrl(path = "/") {
@@ -23,6 +24,7 @@ function metadataCreator({
     image = DEFAULT_OG,
     type = "website",
     noIndex = false,
+    keywords,
 }: PageMetadataInput): Metadata {
     const url = toAbsoluteUrl(path);
     const socialTitle = `${SITE_NAME} | ${title}`;
@@ -30,6 +32,7 @@ function metadataCreator({
     return {
         title,
         description,
+        ...(keywords?.length ? {keywords} : {}),
         alternates: {
             canonical: url,
         },
