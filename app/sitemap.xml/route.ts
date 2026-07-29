@@ -1,6 +1,12 @@
 import {NextResponse} from "next/server";
 import {prisma} from "@/lib/prisma";
 import {SITE_URL} from "@/config/seo";
+import {
+    getCategoryPath,
+    getExperimentPath,
+    getLabsCategories,
+    listLiveExperimentParams,
+} from "@/app/labs/seo/data";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
@@ -11,9 +17,26 @@ function iso(d: Date | string | null | undefined) {
 }
 
 export async function GET() {
+    const labsCategoryUrls = getLabsCategories().map((category) => ({
+        loc: `${SITE_URL}${getCategoryPath(category.id)}`,
+        lastmod: new Date(),
+        changefreq: "weekly",
+        priority: "0.80",
+    }));
+
+    const labsExperimentUrls = listLiveExperimentParams().map(({category, experiment}) => ({
+        loc: `${SITE_URL}${getExperimentPath(category, experiment)}`,
+        lastmod: new Date(),
+        changefreq: "weekly",
+        priority: "0.75",
+    }));
+
     const staticUrls = [
         {loc: `${SITE_URL}/`, lastmod: new Date(), changefreq: "monthly", priority: "1.00"},
         {loc: `${SITE_URL}/about`, lastmod: new Date(), changefreq: "monthly", priority: "0.90"},
+        {loc: `${SITE_URL}/labs`, lastmod: new Date(), changefreq: "weekly", priority: "0.85"},
+        ...labsCategoryUrls,
+        ...labsExperimentUrls,
         {loc: `${SITE_URL}/contact`, lastmod: new Date(), changefreq: "monthly", priority: "0.80"},
         {loc: `${SITE_URL}/projects`, lastmod: new Date(), changefreq: "monthly", priority: "0.70"},
         {loc: `${SITE_URL}/blog`, lastmod: new Date(), changefreq: "weekly", priority: "1.00"},
@@ -25,7 +48,7 @@ export async function GET() {
         orderBy: {updatedAt: "desc"},
     });
 
-    const postUrls = posts.map(p => ({
+    const postUrls = posts.map((p) => ({
         loc: `${SITE_URL}/blog/${p.slug}`,
         lastmod: iso(p.updatedAt || p.createdAt),
         changefreq: "weekly",
