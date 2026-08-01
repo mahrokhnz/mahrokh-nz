@@ -6,7 +6,7 @@ import LabsGrid from "@/app/labs/_components/labs_grid";
 import LabsBreadcrumb from "@/app/labs/_components/labs_breadcrumb";
 import ExperimentCard from "@/app/labs/_components/experiment_card";
 import {LABS_PATH} from "@/app/labs/seo/constants";
-import {getLabsCategories, getLabsCategory} from "@/app/labs/seo/data";
+import {getLabsCategories, getLabsCategory} from "@/app/labs/_lib/data";
 import {
     getCategoryBreadcrumbJsonLd,
     getCategoryItemListJsonLd,
@@ -41,7 +41,7 @@ async function CategoryPage({params}: CategoryPageProps) {
                 data={getCategoryItemListJsonLd(category)}
             />
 
-            <LabsSection className="overflow-hidden pb-10 pt-36 max-tablet:pt-28">
+            <LabsSection as="header" className="overflow-hidden pb-10 pt-36 max-tablet:pt-28">
                 <LabsGrid variant="category" />
 
                 <div className="relative" style={{animation: "labs-fade-up 0.7s ease-out both"}}>
@@ -62,27 +62,31 @@ async function CategoryPage({params}: CategoryPageProps) {
                                 {category.description}
                             </p>
                         </div>
-                        <span className="shrink-0 pb-1 text-[0.85rem] text-[var(--labs-muted)]">
+                        <p className="shrink-0 pb-1 text-[0.85rem] text-[var(--labs-muted)]">
                             {category.experiments.length} experiments
-                        </span>
+                        </p>
                     </div>
                 </div>
             </LabsSection>
 
-            <LabsSection className="flex flex-col gap-4 pb-24 max-tablet:pb-16">
-                <div
+            <LabsSection
+                className="flex flex-col gap-4 pb-24 max-tablet:pb-16"
+                aria-label={`${category.title} experiments`}
+            >
+                <ul
                     className="flex flex-col gap-4"
                     style={{animation: "labs-fade-up 0.8s ease-out 0.1s both"}}
                 >
                     {category.experiments.map((experiment, index) => (
-                        <ExperimentCard
-                            key={experiment.id}
-                            experiment={experiment}
-                            index={index}
-                            categoryId={category.id}
-                        />
+                        <li key={experiment.id}>
+                            <ExperimentCard
+                                experiment={experiment}
+                                index={index}
+                                categoryId={category.id}
+                            />
+                        </li>
                     ))}
-                </div>
+                </ul>
             </LabsSection>
         </LabsShell>
     );

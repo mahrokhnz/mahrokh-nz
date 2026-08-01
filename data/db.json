@@ -573,8 +573,6 @@
         "title": "Interactive",
         "description": "Interactive frontend experiments and playgrounds.",
         "icon": "code",
-        "featured": true,
-        "cta": "Enter laboratory",
         "experiments": [
           {
             "id": 1,
@@ -624,11 +622,46 @@
         "description": "Animation tools, timing curves, and motion playgrounds.",
         "icon": "crosshair",
         "experiments": [
-          { "id": 1, "title": "Animation Builder" },
-          { "id": 2, "title": "Easing Visualizer" },
-          { "id": 3, "title": "Timeline Playground" },
-          { "id": 4, "title": "Scroll Animation" },
-          { "id": 5, "title": "Text Animation" }
+          {
+            "id": 1,
+            "slug": "motion-playground",
+            "title": "Motion Playground",
+            "description": "Compose CSS transitions for UI components. Control transform, opacity, timing, and preview Button, Card, Modal, Tooltip, and Toast animations with live code generation.",
+            "tags": ["CSS", "Interactive", "Animation", "Experimental"],
+            "status": "live"
+          },
+          {
+            "id": 2,
+            "slug": "easing-visualizer",
+            "title": "Easing Visualizer",
+            "description": "Compare CSS and JavaScript easing curves with interactive timing previews.",
+            "tags": ["Animation", "Easing", "CSS"],
+            "status": "soon"
+          },
+          {
+            "id": 3,
+            "slug": "timeline-playground",
+            "title": "Timeline Playground",
+            "description": "Build sequenced animation timelines with delays, overlaps, and keyframe controls.",
+            "tags": ["Animation", "Timeline", "Interactive"],
+            "status": "soon"
+          },
+          {
+            "id": 4,
+            "slug": "scroll-animation",
+            "title": "Scroll Animation",
+            "description": "Experiment with scroll-driven animations and progress-linked transforms.",
+            "tags": ["Scroll", "Animation", "CSS"],
+            "status": "soon"
+          },
+          {
+            "id": 5,
+            "slug": "text-animation",
+            "title": "Text Animation",
+            "description": "Animate typography with split text, stagger, and reveal effects.",
+            "tags": ["Text", "Animation", "Interactive"],
+            "status": "soon"
+          }
         ]
       },
       {
@@ -637,11 +670,46 @@
         "description": "React rendering analysis and optimization tools.",
         "icon": "chart",
         "experiments": [
-          { "id": 1, "title": "React Rendering Playground" },
-          { "id": 2, "title": "Memo vs No Memo" },
-          { "id": 3, "title": "Virtualization Demo" },
-          { "id": 4, "title": "Image Loading Comparison" },
-          { "id": 5, "title": "Bundle Analysis" }
+          {
+            "id": 1,
+            "slug": "react-rendering-playground",
+            "title": "React Rendering Playground",
+            "description": "Inspect render behavior and compare update patterns in React components.",
+            "tags": ["React", "Performance"],
+            "status": "soon"
+          },
+          {
+            "id": 2,
+            "slug": "memo-vs-no-memo",
+            "title": "Memo vs No Memo",
+            "description": "Compare memoized and non-memoized React trees under the same update load.",
+            "tags": ["React", "Memo", "Performance"],
+            "status": "soon"
+          },
+          {
+            "id": 3,
+            "slug": "virtualization-demo",
+            "title": "Virtualization Demo",
+            "description": "Explore list virtualization strategies for large datasets.",
+            "tags": ["React", "Virtualization"],
+            "status": "soon"
+          },
+          {
+            "id": 4,
+            "slug": "image-loading-comparison",
+            "title": "Image Loading Comparison",
+            "description": "Compare lazy loading, priority hints, and image decoding strategies.",
+            "tags": ["Images", "Performance"],
+            "status": "soon"
+          },
+          {
+            "id": 5,
+            "slug": "bundle-analysis",
+            "title": "Bundle Analysis",
+            "description": "Visualize how code splitting and imports affect bundle size.",
+            "tags": ["Bundles", "Performance"],
+            "status": "soon"
+          }
         ]
       },
       {
@@ -650,11 +718,46 @@
         "description": "Visual builders for modern CSS layout and effects.",
         "icon": "shield",
         "experiments": [
-          { "id": 1, "title": "Flexbox Builder" },
-          { "id": 2, "title": "Grid Builder" },
-          { "id": 3, "title": "Container Queries" },
-          { "id": 4, "title": "Clamp Playground" },
-          { "id": 5, "title": "Blend Modes" }
+          {
+            "id": 1,
+            "slug": "flexbox-builder",
+            "title": "Flexbox Builder",
+            "description": "Visually compose flex layouts and export production-ready CSS.",
+            "tags": ["CSS", "Flexbox"],
+            "status": "soon"
+          },
+          {
+            "id": 2,
+            "slug": "grid-builder",
+            "title": "Grid Builder",
+            "description": "Design CSS Grid templates with interactive track and gap controls.",
+            "tags": ["CSS", "Grid"],
+            "status": "soon"
+          },
+          {
+            "id": 3,
+            "slug": "container-queries",
+            "title": "Container Queries",
+            "description": "Experiment with container query breakpoints and responsive components.",
+            "tags": ["CSS", "Container Queries"],
+            "status": "soon"
+          },
+          {
+            "id": 4,
+            "slug": "clamp-playground",
+            "title": "Clamp Playground",
+            "description": "Tune fluid type and spacing with CSS clamp() and live previews.",
+            "tags": ["CSS", "Clamp"],
+            "status": "soon"
+          },
+          {
+            "id": 5,
+            "slug": "blend-modes",
+            "title": "Blend Modes",
+            "description": "Explore CSS blend modes across layered shapes and imagery.",
+            "tags": ["CSS", "Blend Modes"],
+            "status": "soon"
+          }
         ]
       },
       {
@@ -663,11 +766,46 @@
         "description": "Practical tools for everyday frontend engineering.",
         "icon": "sliders",
         "experiments": [
-          { "id": 1, "title": "SVG to JSX" },
-          { "id": 2, "title": "Gradient Generator" },
-          { "id": 3, "title": "Shadow Generator" },
-          { "id": 4, "title": "Color Palette" },
-          { "id": 5, "title": "Clamp Generator" }
+          {
+            "id": 1,
+            "slug": "svg-to-jsx",
+            "title": "SVG to JSX",
+            "description": "Convert SVG markup into clean React JSX with attribute normalization.",
+            "tags": ["SVG", "React", "Tools"],
+            "status": "soon"
+          },
+          {
+            "id": 2,
+            "slug": "gradient-generator",
+            "title": "Gradient Generator",
+            "description": "Build CSS gradients and copy ready-to-use declarations.",
+            "tags": ["CSS", "Gradients", "Tools"],
+            "status": "soon"
+          },
+          {
+            "id": 3,
+            "slug": "shadow-generator",
+            "title": "Shadow Generator",
+            "description": "Design layered box shadows with live soft-light previews.",
+            "tags": ["CSS", "Shadows", "Tools"],
+            "status": "soon"
+          },
+          {
+            "id": 4,
+            "slug": "color-palette",
+            "title": "Color Palette",
+            "description": "Generate accessible color scales and export CSS variables.",
+            "tags": ["Color", "Accessibility", "Tools"],
+            "status": "soon"
+          },
+          {
+            "id": 5,
+            "slug": "clamp-generator",
+            "title": "Clamp Generator",
+            "description": "Generate clamp() expressions for fluid typography and spacing.",
+            "tags": ["CSS", "Clamp", "Tools"],
+            "status": "soon"
+          }
         ]
       }
     ]

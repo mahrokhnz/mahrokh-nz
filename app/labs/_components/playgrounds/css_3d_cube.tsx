@@ -1,8 +1,21 @@
 "use client";
 
 import {useMemo, useState} from "react";
-import cls from "@/utils/class_names";
 import LabsGrid from "@/app/labs/_components/labs_grid";
+import {
+    ControlButton,
+    ControlSection,
+    ControlSelect,
+    ControlSlider,
+    ControlsSidebar,
+    GeneratedCodePanel,
+} from "@/app/labs/_components/playgrounds/controls_sidebar";
+import {
+    PlaygroundShell,
+    TIMING_FUNCTIONS,
+    useCopyCss,
+    type TimingFunction,
+} from "@/app/labs/_components/playgrounds/shared";
 
 const CUBE_SIZE = 240;
 
@@ -18,16 +31,7 @@ const TRANSFORM_ORIGINS = [
     "bottom",
 ] as const;
 
-const TIMING_FUNCTIONS = [
-    "linear",
-    "ease",
-    "ease-in",
-    "ease-out",
-    "ease-in-out",
-] as const;
-
 type TransformOrigin = (typeof TRANSFORM_ORIGINS)[number];
-type TimingFunction = (typeof TIMING_FUNCTIONS)[number];
 
 type CubeState = {
     rotateX: number;
@@ -66,53 +70,8 @@ const FACES = [
     {id: "bottom", label: "BOTTOM", transform: `rotateX(-90deg) translateZ(${CUBE_SIZE / 2}px)`},
 ] as const;
 
-function SliderControl({
-    label,
-    value,
-    min,
-    max,
-    step,
-    display,
-    onChange,
-}: {
-    label: string;
-    value: number;
-    min: number;
-    max: number;
-    step: number;
-    display: string;
-    onChange: (value: number) => void;
-}) {
-    return (
-        <label className="flex flex-col gap-2">
-            <div className="flex items-center justify-between gap-3 text-[0.78rem]">
-                <span className="text-[var(--labs-muted)]">{label}</span>
-                <span className="font-mono text-[var(--labs-accent)]">{display}</span>
-            </div>
-            <input
-                type="range"
-                min={min}
-                max={max}
-                step={step}
-                value={value}
-                onChange={(event) => onChange(Number(event.target.value))}
-                className="labs-range h-1.5 w-full cursor-pointer appearance-none rounded-full bg-[rgba(139,139,255,0.18)]"
-            />
-        </label>
-    );
-}
-
-function SectionTitle({children}: {children: React.ReactNode}) {
-    return (
-        <h3 className="mb-3 text-[0.72rem] font-semibold tracking-[0.16em] text-[var(--labs-muted)]">
-            {children}
-        </h3>
-    );
-}
-
 function Css3dCubePlayground() {
     const [state, setState] = useState<CubeState>(DEFAULT_STATE);
-    const [copied, setCopied] = useState(false);
 
     const update = <K extends keyof CubeState>(key: K, value: CubeState[K]) => {
         setState((prev) => ({...prev, [key]: value}));
@@ -160,19 +119,14 @@ function Css3dCubePlayground() {
 .face.bottom { transform: rotateX(-90deg) translateZ(${CUBE_SIZE / 2}px); }`;
     }, [state.perspective, state.transformOrigin, baseTransform]);
 
-    const copyCss = async () => {
-        try {
-            await navigator.clipboard.writeText(generatedCss);
-            setCopied(true);
-            window.setTimeout(() => setCopied(false), 1600);
-        } catch {
-            setCopied(false);
-        }
-    };
+    const {copied, copyCss} = useCopyCss(generatedCss);
 
     return (
-        <div className="flex min-h-[calc(100vh-7.5rem)] gap-0 max-small-desktop:flex-col">
-            <div className="relative flex min-h-[420px] flex-1 items-center justify-center overflow-hidden">
+        <PlaygroundShell className="gap-0 max-small-desktop:flex-col">
+            <section
+                aria-label="Cube preview"
+                className="relative flex min-h-[420px] flex-1 items-center justify-center overflow-hidden"
+            >
                 <LabsGrid variant="scene" />
                 <div
                     className="relative flex items-center justify-center"
@@ -234,193 +188,142 @@ function Css3dCubePlayground() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <aside className="flex w-full max-w-[340px] shrink-0 flex-col border-l border-[var(--labs-border)] bg-[#08080e] max-small-desktop:max-w-none max-small-desktop:border-l-0 max-small-desktop:border-t">
-                <div className="flex items-center justify-between border-b border-[var(--labs-border)] px-5 py-4">
-                    <h2 className="text-[0.75rem] font-semibold tracking-[0.18em] text-[var(--labs-muted)]">
-                        CONTROLS
-                    </h2>
-                    <button
-                        type="button"
-                        onClick={() => setState(DEFAULT_STATE)}
-                        className="rounded-md border border-[var(--labs-border)] px-2.5 py-1 text-[0.75rem] text-[var(--labs-muted)] transition-colors hover:border-[var(--labs-border-strong)] hover:text-white"
-                    >
-                        Reset
-                    </button>
-                </div>
-
-                <div className="flex flex-1 flex-col gap-6 overflow-y-auto px-5 py-5">
-                    <section>
-                        <SectionTitle>ROTATE</SectionTitle>
-                        <div className="flex flex-col gap-4">
-                            <SliderControl
-                                label="Rotate X"
-                                value={state.rotateX}
-                                min={-180}
-                                max={180}
-                                step={1}
-                                display={`${state.rotateX}°`}
-                                onChange={(value) => update("rotateX", value)}
-                            />
-                            <SliderControl
-                                label="Rotate Y"
-                                value={state.rotateY}
-                                min={-180}
-                                max={180}
-                                step={1}
-                                display={`${state.rotateY}°`}
-                                onChange={(value) => update("rotateY", value)}
-                            />
-                            <SliderControl
-                                label="Rotate Z"
-                                value={state.rotateZ}
-                                min={-180}
-                                max={180}
-                                step={1}
-                                display={`${state.rotateZ}°`}
-                                onChange={(value) => update("rotateZ", value)}
-                            />
-                        </div>
-                    </section>
-
-                    <section className="border-t border-[var(--labs-border)] pt-5">
-                        <SectionTitle>SCALE</SectionTitle>
-                        <SliderControl
-                            label="Scale"
-                            value={state.scale}
-                            min={0.2}
-                            max={2}
-                            step={0.01}
-                            display={state.scale.toFixed(2)}
-                            onChange={(value) => update("scale", value)}
+            <ControlsSidebar
+                title="CONTROLS"
+                side="right"
+                maxWidthClassName="max-w-[340px]"
+                headerAction={
+                    <ControlButton onClick={() => setState(DEFAULT_STATE)}>Reset</ControlButton>
+                }
+            >
+                <ControlSection title="ROTATE">
+                    <div className="flex flex-col gap-4">
+                        <ControlSlider
+                            label="Rotate X"
+                            value={state.rotateX}
+                            min={-180}
+                            max={180}
+                            step={1}
+                            display={`${state.rotateX}°`}
+                            onChange={(value) => update("rotateX", value)}
                         />
-                    </section>
+                        <ControlSlider
+                            label="Rotate Y"
+                            value={state.rotateY}
+                            min={-180}
+                            max={180}
+                            step={1}
+                            display={`${state.rotateY}°`}
+                            onChange={(value) => update("rotateY", value)}
+                        />
+                        <ControlSlider
+                            label="Rotate Z"
+                            value={state.rotateZ}
+                            min={-180}
+                            max={180}
+                            step={1}
+                            display={`${state.rotateZ}°`}
+                            onChange={(value) => update("rotateZ", value)}
+                        />
+                    </div>
+                </ControlSection>
 
-                    <section className="border-t border-[var(--labs-border)] pt-5">
-                        <SectionTitle>PERSPECTIVE</SectionTitle>
-                        <div className="flex flex-col gap-4">
-                            <SliderControl
-                                label="Perspective"
-                                value={state.perspective}
-                                min={200}
-                                max={1600}
-                                step={10}
-                                display={`${state.perspective}px`}
-                                onChange={(value) => update("perspective", value)}
-                            />
-                            <label className="flex flex-col gap-2">
-                                <span className="text-[0.78rem] text-[var(--labs-muted)]">
-                                    Transform Origin
-                                </span>
-                                <select
-                                    value={state.transformOrigin}
-                                    onChange={(event) =>
-                                        update("transformOrigin", event.target.value as TransformOrigin)
-                                    }
-                                    className="rounded-md border border-[var(--labs-border)] bg-[#0c0c14] px-3 py-2 font-mono text-[0.8rem] text-[var(--labs-accent)] outline-none transition-colors focus:border-[var(--labs-border-strong)]"
-                                >
-                                    {TRANSFORM_ORIGINS.map((origin) => (
-                                        <option key={origin} value={origin}>
-                                            {origin}
-                                        </option>
-                                    ))}
-                                </select>
-                            </label>
-                        </div>
-                    </section>
+                <ControlSection title="SCALE" divided>
+                    <ControlSlider
+                        label="Scale"
+                        value={state.scale}
+                        min={0.2}
+                        max={2}
+                        step={0.01}
+                        display={state.scale.toFixed(2)}
+                        onChange={(value) => update("scale", value)}
+                    />
+                </ControlSection>
 
-                    <section className="border-t border-[var(--labs-border)] pt-5">
-                        <SectionTitle>TRANSLATE</SectionTitle>
-                        <div className="flex flex-col gap-4">
-                            <SliderControl
-                                label="Translate X"
-                                value={state.translateX}
-                                min={-200}
-                                max={200}
-                                step={1}
-                                display={`${state.translateX}px`}
-                                onChange={(value) => update("translateX", value)}
-                            />
-                            <SliderControl
-                                label="Translate Y"
-                                value={state.translateY}
-                                min={-200}
-                                max={200}
-                                step={1}
-                                display={`${state.translateY}px`}
-                                onChange={(value) => update("translateY", value)}
-                            />
-                            <SliderControl
-                                label="Translate Z"
-                                value={state.translateZ}
-                                min={-200}
-                                max={200}
-                                step={1}
-                                display={`${state.translateZ}px`}
-                                onChange={(value) => update("translateZ", value)}
-                            />
-                        </div>
-                    </section>
+                <ControlSection title="PERSPECTIVE" divided>
+                    <div className="flex flex-col gap-4">
+                        <ControlSlider
+                            label="Perspective"
+                            value={state.perspective}
+                            min={200}
+                            max={1600}
+                            step={10}
+                            display={`${state.perspective}px`}
+                            onChange={(value) => update("perspective", value)}
+                        />
+                        <ControlSelect
+                            label="Transform Origin"
+                            value={state.transformOrigin}
+                            options={TRANSFORM_ORIGINS}
+                            onChange={(value) => update("transformOrigin", value as TransformOrigin)}
+                        />
+                    </div>
+                </ControlSection>
 
-                    <section className="border-t border-[var(--labs-border)] pt-5">
-                        <SectionTitle>ANIMATION</SectionTitle>
-                        <div className="flex flex-col gap-4">
-                            <SliderControl
-                                label="Animation Speed"
-                                value={state.animationSpeed}
-                                min={0}
-                                max={5}
-                                step={0.1}
-                                display={state.animationSpeed.toFixed(1)}
-                                onChange={(value) => update("animationSpeed", value)}
-                            />
-                            <label className="flex flex-col gap-2">
-                                <span className="text-[0.78rem] text-[var(--labs-muted)]">
-                                    Timing Function
-                                </span>
-                                <select
-                                    value={state.timingFunction}
-                                    onChange={(event) =>
-                                        update("timingFunction", event.target.value as TimingFunction)
-                                    }
-                                    className="rounded-md border border-[var(--labs-border)] bg-[#0c0c14] px-3 py-2 font-mono text-[0.8rem] text-[var(--labs-accent)] outline-none transition-colors focus:border-[var(--labs-border-strong)]"
-                                >
-                                    {TIMING_FUNCTIONS.map((timing) => (
-                                        <option key={timing} value={timing}>
-                                            {timing}
-                                        </option>
-                                    ))}
-                                </select>
-                            </label>
-                        </div>
-                    </section>
+                <ControlSection title="TRANSLATE" divided>
+                    <div className="flex flex-col gap-4">
+                        <ControlSlider
+                            label="Translate X"
+                            value={state.translateX}
+                            min={-200}
+                            max={200}
+                            step={1}
+                            display={`${state.translateX}px`}
+                            onChange={(value) => update("translateX", value)}
+                        />
+                        <ControlSlider
+                            label="Translate Y"
+                            value={state.translateY}
+                            min={-200}
+                            max={200}
+                            step={1}
+                            display={`${state.translateY}px`}
+                            onChange={(value) => update("translateY", value)}
+                        />
+                        <ControlSlider
+                            label="Translate Z"
+                            value={state.translateZ}
+                            min={-200}
+                            max={200}
+                            step={1}
+                            display={`${state.translateZ}px`}
+                            onChange={(value) => update("translateZ", value)}
+                        />
+                    </div>
+                </ControlSection>
 
-                    <section className="border-t border-[var(--labs-border)] pt-5">
-                        <div className="mb-3 flex items-center justify-between gap-3">
-                            <h3 className="text-[0.72rem] font-semibold tracking-[0.16em] text-[var(--labs-muted)]">
-                                GENERATED CSS
-                            </h3>
-                            <button
-                                type="button"
-                                onClick={copyCss}
-                                className={cls(
-                                    "rounded-md border border-[var(--labs-border)] px-2.5 py-1 text-[0.75rem] transition-colors",
-                                    copied
-                                        ? "border-[var(--labs-accent)] text-[var(--labs-accent)]"
-                                        : "text-[var(--labs-muted)] hover:border-[var(--labs-border-strong)] hover:text-white"
-                                )}
-                            >
-                                {copied ? "Copied" : "Copy CSS"}
-                            </button>
-                        </div>
-                        <pre className="max-h-56 overflow-auto rounded-xl border border-[var(--labs-border)] bg-[#0a0a12] p-3 font-mono text-[0.7rem] leading-relaxed text-[rgba(190,190,255,0.88)]">
-                            {generatedCss}
-                        </pre>
-                    </section>
-                </div>
-            </aside>
-        </div>
+                <ControlSection title="ANIMATION" divided>
+                    <div className="flex flex-col gap-4">
+                        <ControlSlider
+                            label="Animation Speed"
+                            value={state.animationSpeed}
+                            min={0}
+                            max={5}
+                            step={0.1}
+                            display={state.animationSpeed.toFixed(1)}
+                            onChange={(value) => update("animationSpeed", value)}
+                        />
+                        <ControlSelect
+                            label="Timing Function"
+                            value={state.timingFunction}
+                            options={TIMING_FUNCTIONS}
+                            onChange={(value) => update("timingFunction", value as TimingFunction)}
+                        />
+                    </div>
+                </ControlSection>
+
+                <ControlSection title="GENERATED CSS" divided>
+                    <GeneratedCodePanel
+                        code={generatedCss}
+                        copied={copied}
+                        onCopy={copyCss}
+                        compact
+                    />
+                </ControlSection>
+            </ControlsSidebar>
+        </PlaygroundShell>
     );
 }
 

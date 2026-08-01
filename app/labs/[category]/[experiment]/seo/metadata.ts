@@ -6,7 +6,8 @@ import {
     getExperimentTags,
     getLabsCategory,
     getLabsExperiment,
-} from "@/app/labs/seo/data";
+    isLiveExperiment,
+} from "@/app/labs/_lib/data";
 
 export async function generateMetadata({
     params,
@@ -17,7 +18,7 @@ export async function generateMetadata({
     const category = getLabsCategory(categoryId);
     const experiment = category ? getLabsExperiment(category, experimentSlug) : undefined;
 
-    if (!category || !experiment) {
+    if (!category || !experiment || !isLiveExperiment(experiment)) {
         return {title: "Not found", robots: {index: false, follow: false}};
     }
 

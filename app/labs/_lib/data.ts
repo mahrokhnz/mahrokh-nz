@@ -1,11 +1,15 @@
 import data from "@/data/db.json";
 import {LABS_PATH} from "@/app/labs/seo/constants";
 
+type LabsHero = (typeof data.labs)["hero"];
 type LabsCategory = (typeof data.labs.categories)[number];
 type LabsExperiment = LabsCategory["experiments"][number];
-
 type ExperimentWithSlug = LabsExperiment & {slug: string};
 type LiveExperiment = ExperimentWithSlug & {status: "live"};
+
+export function getLabsHero(): LabsHero {
+    return data.labs.hero;
+}
 
 export function getLabsCategories(): LabsCategory[] {
     return data.labs.categories;
@@ -13,14 +17,6 @@ export function getLabsCategories(): LabsCategory[] {
 
 export function getLabsCategory(categoryId: string): LabsCategory | undefined {
     return data.labs.categories.find((category) => category.id === categoryId);
-}
-
-export function getFeaturedCategory(): LabsCategory | undefined {
-    return data.labs.categories.find((category) => "featured" in category && category.featured);
-}
-
-export function getSideCategories(): LabsCategory[] {
-    return data.labs.categories.filter((category) => !("featured" in category && category.featured));
 }
 
 export function hasSlug(experiment: LabsExperiment): experiment is ExperimentWithSlug {
@@ -40,11 +36,18 @@ export function getLabsExperiment(
     );
 }
 
-export function getExperimentDescription(experiment: LabsExperiment): string {
+export function getExperimentOwnDescription(experiment: LabsExperiment): string | undefined {
     if ("description" in experiment && experiment.description) {
         return experiment.description;
     }
-    return `${experiment.title} — interactive frontend lab experiment by Mahrokh Nabizadeh.`;
+    return undefined;
+}
+
+export function getExperimentDescription(experiment: LabsExperiment): string {
+    return (
+        getExperimentOwnDescription(experiment) ??
+        `${experiment.title} — interactive frontend lab experiment by Mahrokh Nabizadeh.`
+    );
 }
 
 export function getExperimentTags(experiment: LabsExperiment): string[] {
@@ -75,8 +78,4 @@ export function listLiveExperimentParams(): Array<{category: string; experiment:
     );
 }
 
-export function getCategoryCta(category: LabsCategory): string | undefined {
-    return "cta" in category && typeof category.cta === "string" ? category.cta : undefined;
-}
-
-export type {LabsCategory, LabsExperiment, ExperimentWithSlug, LiveExperiment};
+export type {LabsHero, LabsCategory, LabsExperiment, ExperimentWithSlug, LiveExperiment};

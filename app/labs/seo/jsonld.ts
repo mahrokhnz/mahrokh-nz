@@ -13,7 +13,7 @@ import {
     hasSlug,
     type LabsCategory,
     type LabsExperiment,
-} from "@/app/labs/seo/data";
+} from "@/app/labs/_lib/data";
 
 type JsonLd = Record<string, unknown>;
 

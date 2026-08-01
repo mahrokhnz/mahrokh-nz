@@ -6,7 +6,7 @@ import {
     getExperimentPath,
     getLabsCategories,
     listLiveExperimentParams,
-} from "@/app/labs/seo/data";
+} from "@/app/labs/_lib/data";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
