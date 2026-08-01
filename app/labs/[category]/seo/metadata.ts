@@ -1,6 +1,6 @@
 import type {Metadata} from "next";
 import metadataCreator from "@/utils/server-metadata";
-import {getCategoryPath, getLabsCategory} from "@/app/labs/seo/data";
+import {getCategoryPath, getLabsCategory} from "@/app/labs/_lib/data";
 
 export async function generateMetadata({
     params,

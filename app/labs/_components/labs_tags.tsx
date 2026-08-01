@@ -10,9 +10,9 @@ function LabsTags({tags, dimmed = false, className}: LabsTagsProps) {
     if (!tags.length) return null;
 
     return (
-        <div className={cls("flex flex-wrap gap-2", className)}>
+        <ul className={cls("flex flex-wrap gap-2", className)} aria-label="Tags">
             {tags.map((tag) => (
-                <span
+                <li
                     key={tag}
                     className={cls(
                         "rounded-md border border-[var(--labs-border)] px-2.5 py-1 text-[0.72rem] text-[var(--labs-muted)]",
@@ -20,9 +20,9 @@ function LabsTags({tags, dimmed = false, className}: LabsTagsProps) {
                     )}
                 >
                     {tag}
-                </span>
+                </li>
             ))}
-        </div>
+        </ul>
     );
 }
 

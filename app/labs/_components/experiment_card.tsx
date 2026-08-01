@@ -1,12 +1,14 @@
 import Link from "next/link";
 import cls from "@/utils/class_names";
 import LabsTags from "@/app/labs/_components/labs_tags";
+import {labsCardSurface} from "@/app/labs/_components/labs_card";
 import {
     getExperimentHref,
+    getExperimentOwnDescription,
     getExperimentTags,
     isLiveExperiment,
     type LabsExperiment,
-} from "@/app/labs/seo/data";
+} from "@/app/labs/_lib/data";
 
 interface ExperimentCardProps {
     experiment: LabsExperiment;
@@ -16,8 +18,8 @@ interface ExperimentCardProps {
 
 function ExperimentCard({experiment, index, categoryId}: ExperimentCardProps) {
     const isLive = isLiveExperiment(experiment);
-    const href = isLive ? getExperimentHref(categoryId, experiment) : undefined;
     const tags = getExperimentTags(experiment);
+    const description = getExperimentOwnDescription(experiment);
 
     const content = (
         <>
@@ -30,7 +32,7 @@ function ExperimentCard({experiment, index, categoryId}: ExperimentCardProps) {
                     <h2
                         className={cls(
                             "text-[1.05rem] font-semibold leading-snug",
-                            isLive ? "text-white" : "text-white/80"
+                            isLive ? "text-white" : "text-white/50"
                         )}
                     >
                         {experiment.title}
@@ -41,50 +43,58 @@ function ExperimentCard({experiment, index, categoryId}: ExperimentCardProps) {
                         </span>
                     ) : null}
                 </div>
-                {"description" in experiment && experiment.description ? (
+                {description ? (
                     <p
                         className={cls(
                             "max-w-2xl text-[0.9rem] leading-relaxed",
-                            isLive ? "text-[var(--labs-muted)]" : "text-[var(--labs-muted)]/70"
+                            isLive ? "text-[var(--labs-muted)]" : "text-[var(--labs-muted)]/50"
                         )}
                     >
-                        {experiment.description}
+                        {description}
                     </p>
                 ) : null}
             </div>
 
             <div className="flex shrink-0 flex-col items-end justify-between gap-4 self-stretch max-small-desktop:w-full max-small-desktop:flex-row max-small-desktop:items-center">
-                <LabsTags tags={tags} dimmed={!isLive} className="justify-end max-small-desktop:justify-start" />
+                <LabsTags
+                    tags={tags}
+                    dimmed={!isLive}
+                    className="justify-end max-small-desktop:justify-start"
+                />
 
                 {isLive ? (
                     <span className="text-[0.9rem] font-medium text-[var(--labs-accent)] transition-opacity group-hover:opacity-80">
                         Open →
                     </span>
-                ) : (
-                    <span className="text-[0.8rem] font-medium tracking-[0.08em] text-[var(--labs-muted)]/55">
-                        SOON
-                    </span>
-                )}
+                ) : null}
             </div>
         </>
     );
 
-    const className = cls(
-        "group flex items-start gap-5 rounded-2xl border border-[var(--labs-border)] bg-[var(--labs-card)] px-5 py-5 transition-all duration-300 max-small-desktop:flex-col max-phone:gap-4 max-phone:px-4 max-phone:py-4",
-        isLive
-            ? "hover:border-[var(--labs-border-strong)] hover:bg-[var(--labs-card-hover)]"
-            : "opacity-70"
-    );
-
-    if (href) {
+    if (isLive) {
         return (
-            <Link href={href} className={className}>
+            <Link
+                href={getExperimentHref(categoryId, experiment)}
+                className={labsCardSurface(
+                    "group flex items-start gap-5 px-5 py-5 transition-all max-small-desktop:flex-col max-phone:gap-4 max-phone:px-4 max-phone:py-4"
+                )}
+            >
                 {content}
             </Link>
         );
     }
 
-    return <article className={className}>{content}</article>;
+    return (
+        <article
+            aria-disabled="true"
+            className={labsCardSurface(
+                "pointer-events-none flex cursor-not-allowed items-start gap-5 px-5 py-5 opacity-50 max-small-desktop:flex-col max-phone:gap-4 max-phone:px-4 max-phone:py-4",
+                "hover:border-[var(--labs-border)] hover:bg-[var(--labs-card)]"
+            )}
+        >
+            {content}
+        </article>
+    );
 }
 
 export default ExperimentCard;
