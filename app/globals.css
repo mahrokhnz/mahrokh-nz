@@ -117,6 +117,13 @@ html.dark {
   margin-bottom: 20px;
 }
 
+.prose-blog section h3 {
+  font-size: 21px;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
 .prose-blog section p {
   font-size: 18px;
   line-height: 1.5;
@@ -152,9 +159,38 @@ html.dark {
   top: 10%;
 }
 
+.prose-blog section a {
+  color: #544df0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose-blog section code {
+  font-size: 0.9em;
+  padding: 2px 6px;
+  border-radius: 5px;
+  background-color: color-mix(in srgb, #544df0 12%, transparent);
+  color: var(--textColor);
+}
+
+.prose-blog section blockquote {
+  border-inline-start: 3px solid #544df0;
+  padding-inline-start: 15px;
+  margin: 20px 0;
+}
+
+.prose-blog section blockquote p {
+  font-style: italic;
+  margin-bottom: 0;
+}
+
 @media (max-width: 840px) {
   .prose-blog section h2 {
     font-size: 20px;
+  }
+
+  .prose-blog section h3 {
+    font-size: 17px;
   }
 
   .prose-blog section p {
