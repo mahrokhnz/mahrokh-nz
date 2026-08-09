@@ -1,52 +1,89 @@
 # Personal Website
 
-Welcome to my personal website! This is my online space to showcase my skills, projects, and ideas, built to reflect my personality and expertise in web development.
+Welcome to my personal website! This project is more than a portfolio—it's a place where I showcase my work, share technical knowledge, and experiment with modern frontend technologies.
+
+The website reflects my experience as a Frontend Engineer and serves as a space for projects, articles, and interactive engineering playgrounds.
 
 ## Features
 
-- **Responsive Design**: Optimized for viewing on various devices, from desktops to smartphones.  
-- **Portfolio Section**: Highlights of my professional work, projects, and achievements.  
-- **Blog Section**: A place where I share my thoughts, tutorials, and technical articles.  
-  - Built with **Prisma ORM** connected to a database for managing and storing blog posts.  
-  - Admin functionality to add, edit, and manage articles easily.  
-- **Contact Page**: Easy ways to connect with me, whether via email, social media links, or sending direct messages.
+- **Responsive Design**: Optimized for desktops, tablets, and mobile devices.
+- **Portfolio**: Showcases selected projects, experience, and technical skills.
+- **Mahrokh Labs**: A collection of interactive frontend experiments and engineering playgrounds.
+  - CSS 3D Cube Playground
+  - Interactive UI experiments
+  - Frontend engineering demos
+  - More labs coming soon
+- **Blog**
+  - Built with **Prisma ORM** and **PostgreSQL**
+  - Admin panel for creating and managing articles
+  - Technical articles and tutorials
+- **SEO Optimized**
+  - Dynamic metadata
+  - Open Graph support
+  - Structured metadata
+  - Optimized performance for search engines
+- **Dark / Light Theme**
+- **Contact Page**: Multiple ways to get in touch.
 
 ## Built With
 
 - **Next.js (App Router)**
+- **React 19**
 - **TypeScript**
 - **JavaScript (ES6+)**
-- **HTML5**
+- **Tailwind CSS**
+- **Material UI**
 - **SASS**
+- **HTML5**
 - **CSS3**
 - **Prisma ORM**
 - **PostgreSQL**
 
 ## Installation
 
-To run the website locally, follow these steps:
+Clone the repository:
 
-1. Clone the repository
-  ```bash
-  git clone git@github.com:mahrokhnz/mahrokh-nz.git
-  ```
+```bash
+git clone git@github.com:mahrokhnz/mahrokh-nz.git
+```
 
-2. Install dependencies
-  ```bash
-  npm install
-  ```
+Install dependencies:
 
-3. Start the server
-  ```bash
-  npm run dev
-  ```
+```bash
+npm install
+```
 
-4. Build project
-  ```bash
-  npm run build
-  ```
+Run the development server:
 
-5. Run build of project
-  ```bash
-  npm start
-  ```
+```bash
+npm run dev
+```
+
+Build the project:
+
+```bash
+npm run build
+```
+
+Start the production server:
+
+```bash
+npm start
+```
+
+## Roadmap
+
+- Expand Mahrokh Labs with more interactive playgrounds
+- Animation Lab
+- Performance Lab
+- CSS Playground
+- Developer Tools
+- Additional frontend engineering experiments
+
+## Live Demo
+
+🌐 https://www.mahrokhnz.ir
+
+## License
+
+This project is intended as my personal portfolio. Feel free to explore the source code for learning purposes, but please do not copy or redistribute the project as your own.
