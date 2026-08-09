@@ -1,7 +1,7 @@
 "use client";
 
 import {useMemo, useState} from "react";
-import LabsGrid from "@/app/labs/_components/labs_grid";
+import LabsGrid from "@/app/labs/_components/labs_grid/page";
 import {
     ControlButton,
     ControlSection,
@@ -9,13 +9,13 @@ import {
     ControlSlider,
     ControlsSidebar,
     GeneratedCodePanel,
-} from "@/app/labs/_components/playgrounds/controls_sidebar";
+} from "@/app/labs/_components/playgrounds/controls/page";
 import {
     PlaygroundShell,
     TIMING_FUNCTIONS,
     useCopyCss,
     type TimingFunction,
-} from "@/app/labs/_components/playgrounds/shared";
+} from "@/app/labs/_components/playgrounds/shared/page";
 
 const CUBE_SIZE = 240;
 

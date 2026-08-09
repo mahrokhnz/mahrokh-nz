@@ -161,9 +161,16 @@ interface GeneratedCodePanelProps {
     copied?: boolean;
     onCopy: () => void;
     compact?: boolean;
+    copyLabel?: string;
 }
 
-function GeneratedCodePanel({code, copied = false, onCopy, compact = false}: GeneratedCodePanelProps) {
+function GeneratedCodePanel({
+    code,
+    copied = false,
+    onCopy,
+    compact = false,
+    copyLabel = "Copy CSS",
+}: GeneratedCodePanelProps) {
     return (
         <figure className={cls("flex flex-col gap-4", compact && "gap-3")}>
             <pre
@@ -174,7 +181,7 @@ function GeneratedCodePanel({code, copied = false, onCopy, compact = false}: Gen
             >
                 <code>{code}</code>
             </pre>
-            <figcaption className="sr-only">Generated CSS</figcaption>
+            <figcaption className="sr-only">Generated code</figcaption>
             <button
                 type="button"
                 onClick={onCopy}
@@ -187,9 +194,41 @@ function GeneratedCodePanel({code, copied = false, onCopy, compact = false}: Gen
                 )}
             >
                 {!compact ? <LuCopy className="size-3.5" /> : null}
-                {copied ? "Copied" : "Copy CSS"}
+                {copied ? "Copied" : copyLabel}
             </button>
         </figure>
+    );
+}
+
+interface SegmentedButtonsProps<T extends string | number> {
+    options: Array<{label: string; value: T}>;
+    value: T;
+    onChange: (value: T) => void;
+}
+
+function SegmentedButtons<T extends string | number>({
+    options,
+    value,
+    onChange,
+}: SegmentedButtonsProps<T>) {
+    return (
+        <div className="flex rounded-lg border border-[var(--labs-border)] p-1">
+            {options.map((option) => (
+                <button
+                    key={String(option.value)}
+                    type="button"
+                    onClick={() => onChange(option.value)}
+                    className={cls(
+                        "flex-1 rounded-md px-2 py-1.5 text-[0.78rem] transition-colors",
+                        value === option.value
+                            ? "bg-[rgba(139,139,255,0.2)] text-[var(--labs-accent)]"
+                            : "text-[var(--labs-muted)] hover:text-white"
+                    )}
+                >
+                    {option.label}
+                </button>
+            ))}
+        </div>
     );
 }
 
@@ -200,4 +239,5 @@ export {
     ControlSelect,
     ControlButton,
     GeneratedCodePanel,
+    SegmentedButtons,
 };

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import CategoryIcon from "@/app/labs/_components/category_icon";
-import {labsCardSurface} from "@/app/labs/_components/labs_card";
+import CategoryIcon from "@/app/labs/_components/category_icon/page";
+import {labsCardSurface} from "@/app/labs/_components/labs_card/page";
 import {
     getCategoryPath,
     getExperimentHref,

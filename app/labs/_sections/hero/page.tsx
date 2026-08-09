@@ -1,5 +1,5 @@
-import LabsSection from "@/app/labs/_components/labs_section";
-import LabsGrid from "@/app/labs/_components/labs_grid";
+import LabsSection from "@/app/labs/_components/labs_section/page";
+import LabsGrid from "@/app/labs/_components/labs_grid/page";
 import {getLabsHero} from "@/app/labs/_lib/data";
 
 function LabsHero() {

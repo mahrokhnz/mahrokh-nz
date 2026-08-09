@@ -1,7 +1,7 @@
 import Link from "next/link";
 import cls from "@/utils/class_names";
-import LabsTags from "@/app/labs/_components/labs_tags";
-import {labsCardSurface} from "@/app/labs/_components/labs_card";
+import LabsTags from "@/app/labs/_components/labs_tags/page";
+import {labsCardSurface} from "@/app/labs/_components/labs_card/page";
 import {
     getExperimentHref,
     getExperimentOwnDescription,
@@ -66,7 +66,11 @@ function ExperimentCard({experiment, index, categoryId}: ExperimentCardProps) {
                     <span className="text-[0.9rem] font-medium text-[var(--labs-accent)] transition-opacity group-hover:opacity-80">
                         Open →
                     </span>
-                ) : null}
+                ) : (
+                    <span className="text-[0.72rem] font-semibold tracking-[0.12em] text-[var(--labs-muted)]/55">
+                        SOON
+                    </span>
+                )}
             </div>
         </>
     );

@@ -2,7 +2,7 @@ import type {Metadata} from "next";
 import metadataCreator from "@/utils/server-metadata";
 import JsonLdScript from "@/components/seo/jsonld_script";
 import {getWebPageJsonLd} from "@/utils/seo/jsonld";
-import LabsShell from "@/app/labs/_components/labs_shell";
+import LabsShell from "@/app/labs/_components/labs_shell/page";
 import LabsHero from "@/app/labs/_sections/hero/page";
 import LabsCategories from "@/app/labs/_sections/categories/page";
 import {LABS_DESCRIPTION, LABS_PATH} from "@/app/labs/seo/constants";
