@@ -673,41 +673,41 @@
           {
             "id": 1,
             "slug": "react-rendering-playground",
-            "title": "React Rendering Playground",
-            "description": "Inspect render behavior and compare update patterns in React components.",
-            "tags": ["React", "Performance"],
-            "status": "soon"
+            "title": "Rendering Playground",
+            "description": "Interactive React rendering playground. Compare Default, React.memo, useMemo, useCallback, and list virtualization with live re-render markers and performance metrics.",
+            "tags": ["React", "Performance", "Interactive", "React.memo", "useMemo", "useCallback", "Virtualization"],
+            "status": "live"
           },
           {
             "id": 2,
             "slug": "memo-vs-no-memo",
             "title": "Memo vs No Memo",
-            "description": "Compare memoized and non-memoized React trees under the same update load.",
-            "tags": ["React", "Memo", "Performance"],
+            "description": "Side-by-side comparison of memoized and non-memoized component trees under controlled state updates.",
+            "tags": ["React.memo", "Profiler", "Comparison"],
             "status": "soon"
           },
           {
             "id": 3,
             "slug": "virtualization-demo",
             "title": "Virtualization Demo",
-            "description": "Explore list virtualization strategies for large datasets.",
-            "tags": ["React", "Virtualization"],
+            "description": "Demonstrate how windowed rendering reduces DOM nodes. Compare react-window, react-virtual, and native approaches.",
+            "tags": ["virtualization", "DOM", "Scroll"],
             "status": "soon"
           },
           {
             "id": 4,
             "slug": "image-loading-comparison",
             "title": "Image Loading Comparison",
-            "description": "Compare lazy loading, priority hints, and image decoding strategies.",
-            "tags": ["Images", "Performance"],
+            "description": "Compare eager vs lazy loading, placeholder strategies, and progressive image rendering approaches.",
+            "tags": ["Images", "Lazy Loading", "LCP"],
             "status": "soon"
           },
           {
             "id": 5,
             "slug": "bundle-analysis",
             "title": "Bundle Analysis",
-            "description": "Visualize how code splitting and imports affect bundle size.",
-            "tags": ["Bundles", "Performance"],
+            "description": "Visual explorer for bundle composition, tree-shaking impact, and dynamic import strategies.",
+            "tags": ["Bundle", "Tree Shaking", "Imports"],
             "status": "soon"
           }
         ]

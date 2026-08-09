@@ -77,7 +77,15 @@ async function ExperimentPage({params}: ExperimentPageProps) {
                         ]}
                     />
                 </div>
-                <LabsTags tags={tags} />
+                <div className="flex flex-wrap items-center gap-3">
+                    <LabsTags tags={tags} />
+                    {isLiveExperiment(experiment) ? (
+                        <span className="inline-flex items-center gap-1.5 text-[0.8rem] text-[#4ade80]">
+                            <span className="size-1.5 rounded-full bg-[#4ade80]" aria-hidden />
+                            Live
+                        </span>
+                    ) : null}
+                </div>
             </header>
 
             <Playground />

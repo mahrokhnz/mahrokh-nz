@@ -66,7 +66,11 @@ function ExperimentCard({experiment, index, categoryId}: ExperimentCardProps) {
                     <span className="text-[0.9rem] font-medium text-[var(--labs-accent)] transition-opacity group-hover:opacity-80">
                         Open →
                     </span>
-                ) : null}
+                ) : (
+                    <span className="text-[0.72rem] font-semibold tracking-[0.12em] text-[var(--labs-muted)]/55">
+                        SOON
+                    </span>
+                )}
             </div>
         </>
     );

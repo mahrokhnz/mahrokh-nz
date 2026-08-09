@@ -225,6 +225,33 @@ html.labs-mode body {
   }
 }
 
+@keyframes labs-row-flash {
+  from {
+    box-shadow: inset 0 0 0 9999px rgba(139, 139, 255, 0.22);
+  }
+  to {
+    box-shadow: inset 0 0 0 9999px rgba(139, 139, 255, 0);
+  }
+}
+
+@keyframes labs-row-updated {
+  from {
+    box-shadow: inset 0 0 0 9999px rgba(232, 184, 74, 0.28);
+  }
+  to {
+    box-shadow: inset 0 0 0 9999px rgba(232, 184, 74, 0);
+  }
+}
+
+.labs-row-flash-a,
+.labs-row-flash-b {
+  animation: labs-row-flash 0.35s ease-out;
+}
+
+.labs-row-updated {
+  animation: labs-row-updated 0.45s ease-out;
+}
+
 .labs-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;

@@ -161,9 +161,16 @@ interface GeneratedCodePanelProps {
     copied?: boolean;
     onCopy: () => void;
     compact?: boolean;
+    copyLabel?: string;
 }
 
-function GeneratedCodePanel({code, copied = false, onCopy, compact = false}: GeneratedCodePanelProps) {
+function GeneratedCodePanel({
+    code,
+    copied = false,
+    onCopy,
+    compact = false,
+    copyLabel = "Copy CSS",
+}: GeneratedCodePanelProps) {
     return (
         <figure className={cls("flex flex-col gap-4", compact && "gap-3")}>
             <pre
@@ -174,7 +181,7 @@ function GeneratedCodePanel({code, copied = false, onCopy, compact = false}: Gen
             >
                 <code>{code}</code>
             </pre>
-            <figcaption className="sr-only">Generated CSS</figcaption>
+            <figcaption className="sr-only">Generated code</figcaption>
             <button
                 type="button"
                 onClick={onCopy}
@@ -187,7 +194,7 @@ function GeneratedCodePanel({code, copied = false, onCopy, compact = false}: Gen
                 )}
             >
                 {!compact ? <LuCopy className="size-3.5" /> : null}
-                {copied ? "Copied" : "Copy CSS"}
+                {copied ? "Copied" : copyLabel}
             </button>
         </figure>
     );
