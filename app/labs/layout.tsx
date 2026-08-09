@@ -1,4 +1,4 @@
-import LabsMode from "@/app/labs/_components/labs_mode";
+import LabsMode from "@/app/labs/_components/labs_mode/page";
 
 interface LabsLayoutProps {
     children: React.ReactNode;

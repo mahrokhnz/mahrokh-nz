@@ -200,6 +200,38 @@ function GeneratedCodePanel({
     );
 }
 
+interface SegmentedButtonsProps<T extends string | number> {
+    options: Array<{label: string; value: T}>;
+    value: T;
+    onChange: (value: T) => void;
+}
+
+function SegmentedButtons<T extends string | number>({
+    options,
+    value,
+    onChange,
+}: SegmentedButtonsProps<T>) {
+    return (
+        <div className="flex rounded-lg border border-[var(--labs-border)] p-1">
+            {options.map((option) => (
+                <button
+                    key={String(option.value)}
+                    type="button"
+                    onClick={() => onChange(option.value)}
+                    className={cls(
+                        "flex-1 rounded-md px-2 py-1.5 text-[0.78rem] transition-colors",
+                        value === option.value
+                            ? "bg-[rgba(139,139,255,0.2)] text-[var(--labs-accent)]"
+                            : "text-[var(--labs-muted)] hover:text-white"
+                    )}
+                >
+                    {option.label}
+                </button>
+            ))}
+        </div>
+    );
+}
+
 export {
     ControlsSidebar,
     ControlSection,
@@ -207,4 +239,5 @@ export {
     ControlSelect,
     ControlButton,
     GeneratedCodePanel,
+    SegmentedButtons,
 };

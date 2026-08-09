@@ -1,5 +1,5 @@
-import LabsSection from "@/app/labs/_components/labs_section";
-import CategoryCard from "@/app/labs/_components/category_card";
+import LabsSection from "@/app/labs/_components/labs_section/page";
+import CategoryCard from "@/app/labs/_components/category_card/page";
 import {getLabsCategories} from "@/app/labs/_lib/data";
 
 function LabsCategories() {

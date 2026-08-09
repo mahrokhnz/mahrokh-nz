@@ -1,7 +1,7 @@
 import type {ComponentType} from "react";
-import Css3dCubePlayground from "@/app/labs/_components/playgrounds/css_3d_cube";
-import MotionPlayground from "@/app/labs/_components/playgrounds/motion_playground";
-import RenderingPlayground from "@/app/labs/_components/playgrounds/rendering_playground";
+import Css3dCubePlayground from "@/app/labs/_components/playgrounds/css_3d_cube/page";
+import MotionPlayground from "@/app/labs/_components/playgrounds/motion/page";
+import RenderingPlayground from "@/app/labs/_components/playgrounds/rendering/page";
 
 const EXPERIMENT_PLAYGROUNDS: Record<string, ComponentType> = {
     "css-3d-cube-playground": Css3dCubePlayground,

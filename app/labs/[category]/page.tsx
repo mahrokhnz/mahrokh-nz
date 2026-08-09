@@ -1,10 +1,10 @@
 import {notFound} from "next/navigation";
 import JsonLdScript from "@/components/seo/jsonld_script";
-import LabsShell from "@/app/labs/_components/labs_shell";
-import LabsSection from "@/app/labs/_components/labs_section";
-import LabsGrid from "@/app/labs/_components/labs_grid";
-import LabsBreadcrumb from "@/app/labs/_components/labs_breadcrumb";
-import ExperimentCard from "@/app/labs/_components/experiment_card";
+import LabsShell from "@/app/labs/_components/labs_shell/page";
+import LabsSection from "@/app/labs/_components/labs_section/page";
+import LabsGrid from "@/app/labs/_components/labs_grid/page";
+import LabsBreadcrumb from "@/app/labs/_components/labs_breadcrumb/page";
+import ExperimentCard from "@/app/labs/_components/experiment_card/page";
 import {LABS_PATH} from "@/app/labs/seo/constants";
 import {getLabsCategories, getLabsCategory} from "@/app/labs/_lib/data";
 import {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import cls from "@/utils/class_names";
-import LabsTags from "@/app/labs/_components/labs_tags";
-import {labsCardSurface} from "@/app/labs/_components/labs_card";
+import LabsTags from "@/app/labs/_components/labs_tags/page";
+import {labsCardSurface} from "@/app/labs/_components/labs_card/page";
 import {
     getExperimentHref,
     getExperimentOwnDescription,

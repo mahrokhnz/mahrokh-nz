@@ -2,19 +2,19 @@
 
 import {useCallback, useEffect, useMemo, useRef, useState} from "react";
 import cls from "@/utils/class_names";
-import LabsGrid from "@/app/labs/_components/labs_grid";
+import LabsGrid from "@/app/labs/_components/labs_grid/page";
 import {
     ControlSection,
     ControlSlider,
     ControlsSidebar,
     GeneratedCodePanel,
-} from "@/app/labs/_components/playgrounds/controls_sidebar";
+} from "@/app/labs/_components/playgrounds/controls/page";
 import {
     PlaygroundShell,
     TIMING_OPTIONS,
     useCopyCss,
     type TimingFunction,
-} from "@/app/labs/_components/playgrounds/shared";
+} from "@/app/labs/_components/playgrounds/shared/page";
 import {LuPlay, LuPause} from "react-icons/lu";
 
 type ComponentKey = "button" | "card" | "modal" | "tooltip" | "toast";

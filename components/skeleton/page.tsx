@@ -92,3 +92,20 @@ export function ContactPageSkeleton() {
         </div>
     );
 }
+
+export function LabsPageSkeleton() {
+    return (
+        <div className="flex flex-col gap-10 px-8 py-28 max-phone:px-4" aria-hidden="true">
+            <div className="flex flex-col gap-4">
+                <SkeletonPulse className="h-3 w-[120px]" />
+                <SkeletonPulse className="h-10 w-[280px] max-w-[70%]" />
+                <SkeletonPulse className="h-3.5 w-full max-w-[520px]" />
+            </div>
+            <div className="grid grid-cols-3 gap-4 max-small-desktop:grid-cols-1">
+                <SkeletonPulse className="h-40 rounded-2xl" />
+                <SkeletonPulse className="h-40 rounded-2xl" />
+                <SkeletonPulse className="h-40 rounded-2xl" />
+            </div>
+        </div>
+    );
+}

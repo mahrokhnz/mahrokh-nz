@@ -1,10 +1,7 @@
 import {notFound} from "next/navigation";
 import JsonLdScript from "@/components/seo/jsonld_script";
-import cls from "@/utils/class_names";
-import LabsShell from "@/app/labs/_components/labs_shell";
-import LabsBreadcrumb from "@/app/labs/_components/labs_breadcrumb";
-import LabsTags from "@/app/labs/_components/labs_tags";
-import {labsPadding} from "@/app/labs/_components/labs_section";
+import LabsShell from "@/app/labs/_components/labs_shell/page";
+import ExperimentToolbar from "@/app/labs/_components/experiment_toolbar/page";
 import {getExperimentPlayground} from "@/app/labs/_components/playgrounds/registry";
 import {LABS_PATH} from "@/app/labs/seo/constants";
 import {
@@ -42,8 +39,6 @@ async function ExperimentPage({params}: ExperimentPageProps) {
         notFound();
     }
 
-    const tags = getExperimentTags(experiment);
-
     return (
         <LabsShell>
             <JsonLdScript
@@ -59,34 +54,17 @@ async function ExperimentPage({params}: ExperimentPageProps) {
                 data={getExperimentAppJsonLd(category, experiment, experimentSlug)}
             />
 
-            <header
-                className={cls(
-                    "flex items-center justify-between gap-4 border-b border-[var(--labs-border)] py-4 pt-28 max-phone:flex-col max-phone:items-start",
-                    labsPadding
-                )}
-            >
-                <div>
-                    <h1 className="sr-only">{experiment.title}</h1>
-                    <p className="sr-only">{getExperimentDescription(experiment)}</p>
-                    <LabsBreadcrumb
-                        variant="mono"
-                        items={[
-                            {label: "Labs", href: LABS_PATH},
-                            {label: category.title, href: getCategoryPath(category.id)},
-                            {label: experiment.title},
-                        ]}
-                    />
-                </div>
-                <div className="flex flex-wrap items-center gap-3">
-                    <LabsTags tags={tags} />
-                    {isLiveExperiment(experiment) ? (
-                        <span className="inline-flex items-center gap-1.5 text-[0.8rem] text-[#4ade80]">
-                            <span className="size-1.5 rounded-full bg-[#4ade80]" aria-hidden />
-                            Live
-                        </span>
-                    ) : null}
-                </div>
-            </header>
+            <ExperimentToolbar
+                title={experiment.title}
+                description={getExperimentDescription(experiment)}
+                breadcrumbItems={[
+                    {label: "Labs", href: LABS_PATH},
+                    {label: category.title, href: getCategoryPath(category.id)},
+                    {label: experiment.title},
+                ]}
+                tags={getExperimentTags(experiment)}
+                isLive={isLiveExperiment(experiment)}
+            />
 
             <Playground />
         </LabsShell>
