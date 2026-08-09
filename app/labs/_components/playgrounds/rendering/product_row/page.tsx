@@ -2,7 +2,7 @@
 
 import {memo, useLayoutEffect, type CSSProperties} from "react";
 import cls from "@/utils/class_names";
-import type {Complexity, Product, RowStatus} from "../constants";
+import {runHeavyRowWork, type Complexity, type Product, type RowStatus} from "../constants";
 
 export type ProductRowProps = {
     product: Product;
@@ -27,11 +27,8 @@ function ProductRowView({
         onRendered(product.id);
     });
 
-    if (complexity === "high") {
-        let checksum = 0;
-        for (let i = 0; i < 80; i += 1) checksum += (product.price * (i + 3)) % 97;
-        void checksum;
-    }
+    // Paid only when this row actually renders — skipped memo rows avoid this cost.
+    runHeavyRowWork(product, complexity);
 
     return (
         <button

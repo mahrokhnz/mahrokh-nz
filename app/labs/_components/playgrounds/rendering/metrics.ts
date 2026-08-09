@@ -14,9 +14,11 @@ export function buildMetrics(input: {
     let commitMs = Math.max(0.12, (domNodes / 70) * 2.3 * complexityFactor);
     let paintMs = Math.max(0.1, (domNodes / 70) * 1.05 * complexityFactor + 0.15);
 
+    if (strategy === "memo") renderMs *= 0.42;
     if (strategy === "usememo") renderMs *= 0.5;
     if (strategy === "usecallback") renderMs *= 0.55;
     if (strategy === "virtualized") {
+        renderMs *= 0.35;
         commitMs *= 0.4;
         paintMs *= 0.45;
     }

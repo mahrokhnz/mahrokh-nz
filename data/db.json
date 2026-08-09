@@ -675,7 +675,7 @@
             "slug": "react-rendering-playground",
             "title": "Rendering Playground",
             "description": "Interactive React rendering playground. Compare Default, React.memo, useMemo, useCallback, and list virtualization with live re-render markers and performance metrics.",
-            "tags": ["React", "Performance", "Interactive", "React.memo", "useMemo", "useCallback", "Virtualization"],
+            "tags": ["React", "Performance", "Interactive"],
             "status": "live"
           },
           {

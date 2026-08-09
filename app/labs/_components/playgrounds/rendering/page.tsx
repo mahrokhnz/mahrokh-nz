@@ -13,6 +13,9 @@ import {
 import {PlaygroundShell, useCopyCss} from "@/app/labs/_components/playgrounds/shared/page";
 import {LuSearch} from "react-icons/lu";
 import {
+    BENCHMARK_ITERATIONS,
+    BENCHMARK_PHASE_LABEL,
+    BENCHMARK_STRATEGIES,
     CODE_SNIPPETS,
     CODE_TABS,
     COMPLEXITY_OPTIONS,
@@ -23,7 +26,9 @@ import {
     TOTAL_ITEMS,
     createProducts,
     formatNumber,
+    getWhatChangedLines,
     sortProducts,
+    type BenchmarkPhase,
     type CodeTab,
     type Complexity,
     type ItemPreset,
@@ -34,6 +39,25 @@ import {
 } from "./constants";
 import {buildMetrics} from "./metrics";
 import ProductRowView, {MemoProductRow} from "./product_row/page";
+
+function sleep(ms: number) {
+    return new Promise<void>((resolve) => {
+        window.setTimeout(resolve, ms);
+    });
+}
+
+function waitPaint() {
+    return new Promise<void>((resolve) => {
+        window.requestAnimationFrame(() => {
+            window.requestAnimationFrame(() => resolve());
+        });
+    });
+}
+
+function average(values: number[]) {
+    if (values.length === 0) return 0;
+    return values.reduce((sum, value) => sum + value, 0) / values.length;
+}
 
 function TimelineBar({
     label,
@@ -69,7 +93,7 @@ function TimelineBar({
 
 function RenderingPlayground() {
     const [strategy, setStrategy] = useState<Strategy>("default");
-    const [showCount, setShowCount] = useState<ItemPreset>(10);
+    const [showCount, setShowCount] = useState<ItemPreset>(100);
     const [complexity, setComplexity] = useState<Complexity>("med");
     const [query, setQuery] = useState("");
     const [selectedId, setSelectedId] = useState<number | null>(1);
@@ -88,10 +112,15 @@ function RenderingPlayground() {
     });
     const [scrollTop, setScrollTop] = useState(0);
     const [viewportHeight, setViewportHeight] = useState(420);
+    const [benchPhase, setBenchPhase] = useState<BenchmarkPhase>("idle");
+    const [benchmarkAverages, setBenchmarkAverages] = useState<Array<{label: string; ms: number}> | null>(
+        null
+    );
 
     const scrollRef = useRef<HTMLDivElement | null>(null);
     const renderedBucket = useRef<Set<number>>(new Set());
     const measuringRef = useRef(false);
+    const skipAutoMeasureRef = useRef(false);
     const latestRef = useRef({
         strategy,
         complexity,
@@ -153,10 +182,9 @@ function RenderingPlayground() {
         setSelectedId(id);
     };
 
-    const onSelect =
-        strategy === "usecallback" || strategy === "usememo" || strategy === "virtualized"
-            ? stableSelect
-            : unstableSelect;
+    // Stable handler so React.memo / useCallback / useMemo can skip unchanged rows.
+    // Default keeps an unstable handler so every row re-renders on parent updates.
+    const onSelect = strategy === "default" ? unstableSelect : stableSelect;
 
     useEffect(() => {
         const node = scrollRef.current;
@@ -230,8 +258,80 @@ function RenderingPlayground() {
         finalizePass(performance.now() - started);
     }, [finalizePass]);
 
+    const measurePass = useCallback(async () => {
+        measuringRef.current = true;
+        renderedBucket.current = new Set();
+
+        const started = performance.now();
+        setParentTick((value) => value + 1);
+        await waitPaint();
+        const elapsed = performance.now() - started;
+
+        const latest = latestRef.current;
+        const rendered = new Set(renderedBucket.current);
+        const domNodes = latest.isVirtualized ? latest.visibleLength : latest.productsLength;
+        const nextMetrics = buildMetrics({
+            strategy: latest.strategy,
+            complexity: latest.complexity,
+            renderedCount: Math.max(rendered.size, latest.isVirtualized ? domNodes : 0),
+            domNodes,
+            computeMs: elapsed,
+        });
+
+        setRenderedIds(rendered);
+        setMetrics(nextMetrics);
+        measuringRef.current = false;
+        renderedBucket.current = new Set();
+
+        // Blend wall-clock with modeled cost so averages stay informative without claiming lab precision.
+        return elapsed * 0.45 + nextMetrics.lastMs * 0.55;
+    }, []);
+
+    const runBenchmark = useCallback(async () => {
+        if (skipAutoMeasureRef.current) return;
+
+        skipAutoMeasureRef.current = true;
+        const restoreStrategy = latestRef.current.strategy;
+        setBenchmarkAverages(null);
+        setBenchPhase("preparing");
+        await sleep(350);
+
+        setBenchPhase("running");
+        const samples: Partial<Record<Strategy, number[]>> = {};
+
+        for (const item of BENCHMARK_STRATEGIES) {
+            setStrategy(item.key);
+            await sleep(40);
+            await waitPaint();
+
+            const passes: number[] = [];
+            for (let index = 0; index < BENCHMARK_ITERATIONS; index += 1) {
+                const ms = await measurePass();
+                passes.push(ms);
+                await sleep(20);
+            }
+            samples[item.key] = passes;
+        }
+
+        setBenchPhase("analyzing");
+        await sleep(300);
+
+        setBenchmarkAverages(
+            BENCHMARK_STRATEGIES.map((item) => ({
+                label: item.label,
+                ms: average(samples[item.key] ?? []),
+            }))
+        );
+
+        setStrategy(restoreStrategy);
+        await waitPaint();
+        setBenchPhase("done");
+        skipAutoMeasureRef.current = false;
+    }, [measurePass]);
+
     // Keep preview/metrics in sync when controls change.
     useEffect(() => {
+        if (skipAutoMeasureRef.current) return;
         const timer = window.setTimeout(() => {
             runParentUpdate();
         }, 0);
@@ -245,20 +345,23 @@ function RenderingPlayground() {
     }, [strategy]);
 
     const resetAll = () => {
+        skipAutoMeasureRef.current = false;
         setQuery("");
         setSelectedId(1);
-        setShowCount(10);
+        setShowCount(100);
         setComplexity("med");
         setStrategy("default");
         setVisualize(true);
         setScrollTop(0);
         if (scrollRef.current) scrollRef.current.scrollTop = 0;
         setRenderedIds(new Set());
+        setBenchPhase("idle");
+        setBenchmarkAverages(null);
         setMetrics({
             lastMs: 0,
             renders: 0,
             fps: 60,
-            domNodes: 10,
+            domNodes: 100,
             renderMs: 0,
             commitMs: 0,
             paintMs: 0,
@@ -268,6 +371,13 @@ function RenderingPlayground() {
     const code = CODE_SNIPPETS[codeTab];
     const {copied, copyCss: copyCode} = useCopyCss(code);
     const strategyMeta = STRATEGIES.find((item) => item.key === strategy) ?? STRATEGIES[0];
+    const whatChangedListCount = isVirtualized ? visibleProducts.length : products.length;
+    const whatChangedLines = getWhatChangedLines({
+        strategy,
+        listCount: whatChangedListCount,
+        renderedCount: metrics.renders || renderedIds.size,
+        domUpdates: metrics.domNodes || whatChangedListCount,
+    });
 
     const rowStatus = (product: Product): RowStatus => {
         if (!visualize) return "skipped";
@@ -363,15 +473,22 @@ function RenderingPlayground() {
                         <div className="flex flex-col gap-2.5">
                             <button
                                 type="button"
-                                onClick={runParentUpdate}
-                                className="rounded-xl bg-[linear-gradient(135deg,#6e6ef0,#8b8bff)] px-4 py-3 text-[0.9rem] font-semibold text-white shadow-[0_0_24px_rgba(139,139,255,0.25)] transition-opacity hover:opacity-90"
+                                onClick={runBenchmark}
+                                disabled={benchPhase === "preparing" || benchPhase === "running" || benchPhase === "analyzing"}
+                                className="rounded-xl bg-[linear-gradient(135deg,#6e6ef0,#8b8bff)] px-4 py-3 text-[0.9rem] font-semibold text-white shadow-[0_0_24px_rgba(139,139,255,0.25)] transition-opacity hover:opacity-90 disabled:cursor-wait disabled:opacity-70"
                             >
                                 Run Benchmark
                             </button>
+                            {benchPhase !== "idle" ? (
+                                <p className="font-mono text-[0.78rem] text-[var(--labs-accent)]">
+                                    {BENCHMARK_PHASE_LABEL[benchPhase]}
+                                </p>
+                            ) : null}
                             <button
                                 type="button"
                                 onClick={resetAll}
-                                className="text-[0.8rem] text-[var(--labs-muted)] transition-colors hover:text-white"
+                                disabled={benchPhase === "preparing" || benchPhase === "running" || benchPhase === "analyzing"}
+                                className="text-[0.8rem] text-[var(--labs-muted)] transition-colors hover:text-white disabled:opacity-50"
                             >
                                 Reset
                             </button>
@@ -501,6 +618,25 @@ function RenderingPlayground() {
                                 </div>
                             ))}
                         </div>
+
+                        {benchmarkAverages ? (
+                            <div className="mt-5 rounded-xl border border-[var(--labs-border)] bg-[#0a0a12] px-3.5 py-3.5">
+                                <p className="mb-3 text-[0.72rem] font-semibold tracking-[0.14em] text-[var(--labs-muted)]">
+                                    AVERAGE RENDER
+                                </p>
+                                <dl className="flex flex-col gap-2">
+                                    {benchmarkAverages.map((row) => (
+                                        <div
+                                            key={row.label}
+                                            className="flex items-center justify-between gap-3 font-mono text-[0.82rem]"
+                                        >
+                                            <dt className="text-[var(--labs-muted)]">{row.label}</dt>
+                                            <dd className="text-white">{row.ms.toFixed(1)} ms</dd>
+                                        </div>
+                                    ))}
+                                </dl>
+                            </div>
+                        ) : null}
                     </ControlSection>
 
                     <ControlSection title="TIMELINE" divided>
@@ -513,9 +649,25 @@ function RenderingPlayground() {
                     </ControlSection>
 
                     <ControlSection title="WHAT CHANGED" divided>
-                        <p className="text-[0.8rem] leading-relaxed text-[var(--labs-muted)]">
-                            {strategyMeta.summary}
-                        </p>
+                        <div className="flex flex-col gap-1 font-mono text-[0.78rem] leading-relaxed text-[var(--labs-muted)]">
+                            {whatChangedLines.map((line, index) => (
+                                <div key={`${line}-${index}`} className="flex flex-col gap-1">
+                                    {index > 0 ? (
+                                        <span className="text-[var(--labs-accent)]/55" aria-hidden>
+                                            ↓
+                                        </span>
+                                    ) : null}
+                                    <span
+                                        className={cls(
+                                            (line.includes("skipped") || line.includes("rendered") || line.includes("DOM")) &&
+                                                "text-white"
+                                        )}
+                                    >
+                                        {line}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
                     </ControlSection>
 
                     <ControlSection title="IMPLEMENTATION" divided>
