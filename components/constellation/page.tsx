@@ -59,13 +59,20 @@ const Canvas = ({onlyStarts = false}: CanvasProps) => {
 
         let mouse: TMouse | null = null;
 
+        const accent =
+            getComputedStyle(document.documentElement).getPropertyValue("--firstWaveColor").trim() ||
+            "#be185d";
+        const muted =
+            getComputedStyle(document.documentElement).getPropertyValue("--neutralColor").trim() ||
+            "#9d6b8a";
+
         const stars: TStar[] = new Array(numberOfStars(logicalWidth || window.innerWidth))
             .fill(0)
             .map(() => ({
                 x: Math.random() * (logicalWidth || window.innerWidth),
                 y: Math.random() * (logicalHeight || window.innerHeight),
                 r: 0.9,
-                color: "#808188",
+                color: muted,
                 sx: 0.1 - Math.random() * 0.5,
                 sy: 0.1 - Math.random() * 0.5,
             }));
@@ -100,7 +107,7 @@ const Canvas = ({onlyStarts = false}: CanvasProps) => {
                     ctx.beginPath();
                     ctx.moveTo(mouse!.x, mouse!.y);
                     ctx.lineTo(star.x, star.y);
-                    ctx.strokeStyle = "rgba(255, 0, 180, 0.3)";
+                    ctx.strokeStyle = `${accent}4d`;
                     ctx.stroke();
                     ctx.closePath();
                 }
@@ -113,7 +120,7 @@ const Canvas = ({onlyStarts = false}: CanvasProps) => {
                         ctx.beginPath();
                         ctx.moveTo(nearStars[i].x, nearStars[i].y);
                         ctx.lineTo(nearStars[j].x, nearStars[j].y);
-                        ctx.strokeStyle = "rgba(255, 0, 180, 0.5)";
+                        ctx.strokeStyle = `${accent}80`;
                         ctx.stroke();
                         ctx.closePath();
                     }

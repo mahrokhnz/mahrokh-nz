@@ -38,9 +38,9 @@ function ContactMe() {
                             <p className="text-[20px] leading-[1.2] max-medium-desktop:text-[15px]">
                                 Feel free to reach out to me for any inquiries, collaborations, or just to say hi! Whether you have a question, a project idea, or simply want to connect, I&#39;m always eager to hear from you.
                             </p>
-                            <div className="mt-20 flex items-center gap-[15px] max-medium-desktop:mt-[50px] max-small-desktop:mt-5">
+                            <div className="mt-20 flex items-center gap-[15px] text-(--firstWaveColor) max-medium-desktop:mt-[50px] max-small-desktop:mt-5">
                                 <MdEmail className="text-[25px]" />
-                                <a href="mailto:mahrokh.nz@gmail.com">Mahrokh.nz@gmail.com</a>
+                                <a className="underline-offset-2 hover:underline" href="mailto:mahrokh.nz@gmail.com">Mahrokh.nz@gmail.com</a>
                             </div>
                         </div>
                         <Form />
