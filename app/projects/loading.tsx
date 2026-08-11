@@ -3,8 +3,10 @@ import {ProjectsPageSkeleton} from "@/components/skeleton/page";
 
 export default function ProjectsLoading() {
     return (
-        <Container>
-            <ProjectsPageSkeleton />
-        </Container>
+        <main className="pt-[100px]">
+            <Container>
+                <ProjectsPageSkeleton />
+            </Container>
+        </main>
     );
 }

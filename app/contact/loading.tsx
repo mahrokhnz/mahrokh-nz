@@ -3,8 +3,12 @@ import {ContactPageSkeleton} from "@/components/skeleton/page";
 
 export default function ContactLoading() {
     return (
-        <Container>
-            <ContactPageSkeleton />
-        </Container>
+        <main>
+            <section className="pt-[100px]">
+                <Container className="bg-(--secondaryColor)">
+                    <ContactPageSkeleton />
+                </Container>
+            </section>
+        </main>
     );
 }

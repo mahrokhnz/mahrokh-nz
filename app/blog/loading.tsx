@@ -3,8 +3,10 @@ import {BlogListSkeleton} from "@/components/skeleton/page";
 
 export default function BlogLoading() {
     return (
-        <Container>
-            <BlogListSkeleton />
-        </Container>
+        <main className="flex flex-col gap-4 pt-[100px]">
+            <Container>
+                <BlogListSkeleton />
+            </Container>
+        </main>
     );
 }
