@@ -128,6 +128,9 @@ html.dark {
 @theme {
     --animate-shimmer: shimmer 1.4s ease-in-out infinite;
     --animate-fill: fillAnimation 0.5s forwards;
+    --animate-fill-fast: fillAnimation 0.22s forwards;
+    --animate-fill-med: fillAnimation 0.5s forwards;
+    --animate-fill-low: fillAnimation 0.95s forwards;
 }
 
 /* Blog article HTML from CMS */
