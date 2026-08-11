@@ -1,115 +1,102 @@
 "use client";
 
 import Container from "@/components/container/page";
-import React, {useEffect, useMemo, useState} from "react";
+import React, {useState} from "react";
 import data from "@/data/db.json";
-import ProjectCard from "@/app/projects/_components/project_card/page";
-import {FaChevronRight, FaChevronLeft} from "react-icons/fa6";
-import cls from "@/utils/class_names";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import SectionTitle from "@/components/section_title/page";
+import ProjectCard from "@/app/projects/_components/project_card/page";
+import cls from "@/utils/class_names";
 
-const itemsToShow = 6;
+const ALL_TAG = "All";
 
 function Projects() {
     const {projects} = data;
-    const [currentId, setCurrentId] = useState(1);
-    const [startIndex, setStartIndex] = useState(0);
 
-    const isDesktop = useMediaQuery("(max-width: 1600px)");
-    const isSmallDesktop = useMediaQuery("(max-width: 1024px)");
-    const isTablet = useMediaQuery("(max-width: 840px)");
-    const isBigPhone = useMediaQuery("(max-width: 600px)");
+    const allTags = Array.from(
+        new Set(projects.flatMap((p) => p.skills))
+    );
 
-    const itemsToShowOnCurrentScreen = isBigPhone
-        ? 1
-        : isTablet
-          ? 2
-          : isSmallDesktop
-            ? 3
-            : isDesktop
-              ? 4
-              : itemsToShow;
+    const [activeTag, setActiveTag] = useState<string>(ALL_TAG);
+    const [selectedId, setSelectedId] = useState<number | null>(null);
 
-    const sliderItems = useMemo(() => {
-        const newProjects = [...projects];
-        const currentProjectIndex = newProjects.findIndex((project) => project.id === currentId);
+    const filteredProjects =
+        activeTag === ALL_TAG
+            ? projects
+            : projects.filter((p) => p.skills.includes(activeTag));
 
-        newProjects.splice(currentProjectIndex, 1);
+    const selectedProject = projects.find((p) => p.id === selectedId) ?? null;
 
-        return Array.from({length: itemsToShowOnCurrentScreen}, (_, index) => {
-            return newProjects[(startIndex + index) % newProjects.length];
-        });
-    }, [projects, currentId, startIndex, itemsToShowOnCurrentScreen]);
-
-    useEffect(() => {
-        if (sliderItems.length < itemsToShowOnCurrentScreen) {
-            sliderItems.push(...sliderItems.slice(0, itemsToShowOnCurrentScreen - sliderItems.length));
-        }
-    }, [startIndex, itemsToShowOnCurrentScreen, sliderItems]);
-
-    const changingSlides = (prev: number) => {
-        const lastId = projects[projects.length - 1].id;
-
-        if (prev >= lastId) {
-            return 1;
-        }
-        return prev + 1;
+    const handleCardClick = (id: number) => {
+        setSelectedId((prev) => (prev === id ? null : id));
     };
-
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setCurrentId(changingSlides);
-        }, 5000);
-
-        return () => {
-            clearInterval(intervalId);
-        };
-    }, []);
-
-    const clickPrev = () => {
-        setStartIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
-    };
-
-    const clickNext = () => {
-        setStartIndex((prevIndex) => (prevIndex + 1) % projects.length);
-    };
-
-    const currentProject = projects.find((project) => project.id === currentId);
 
     return (
         <main className="pt-[100px]">
             <Container>
                 <SectionTitle text="My Projects" />
-                <section className="grid w-full grow grid-rows-2 gap-8">
-                    {currentProject && (
-                        <ProjectCard className="row-span-2" isCurrent={true} data={currentProject} />
-                    )}
-                    <div className="relative row-span-1 flex items-center justify-between gap-4">
-                        <FaChevronLeft
+
+                <div className="mb-10 flex flex-wrap gap-2">
+                    <button
+                        onClick={() => {
+                            setActiveTag(ALL_TAG);
+                            setSelectedId(null);
+                        }}
+                        className={cls(
+                            "rounded-full border px-4 py-1.5 text-sm transition-all duration-200",
+                            activeTag === ALL_TAG
+                                ? "border-(--firstWaveColor) bg-(--firstWaveColor) text-white"
+                                : "border-(--neutralColor) text-(--neutralColor) hover:border-(--firstWaveColor) hover:text-(--firstWaveColor)"
+                        )}
+                    >
+                        All
+                    </button>
+                    {allTags.map((tag) => (
+                        <button
+                            key={tag}
+                            onClick={() => {
+                                setActiveTag(tag);
+                                setSelectedId(null);
+                            }}
                             className={cls(
-                                "absolute left-0 z-[2] cursor-pointer text-[110px] text-(--neutralColor) opacity-30 transition-opacity duration-300 ease-in-out hover:opacity-100 max-desktop:text-[80px] max-small-desktop:text-[50px]"
+                                "rounded-full border px-4 py-1.5 text-sm transition-all duration-200",
+                                activeTag === tag
+                                    ? "border-(--firstWaveColor) bg-(--firstWaveColor) text-white"
+                                    : "border-(--neutralColor) text-(--neutralColor) hover:border-(--firstWaveColor) hover:text-(--firstWaveColor)"
                             )}
-                            onClick={clickPrev}
-                        />
-                        <div className="grid grow grid-cols-6 justify-center gap-8 max-desktop:grid-cols-4 max-small-desktop:grid-cols-3 max-tablet:grid-cols-2 max-big-phone:grid-cols-1">
-                            {sliderItems.map((item) => (
-                                <ProjectCard
-                                    className=""
-                                    key={item.id}
-                                    data={item}
-                                    clickHandler={(id: number) => setCurrentId(id)}
-                                />
-                            ))}
-                        </div>
-                        <FaChevronRight
-                            className={cls(
-                                "absolute right-0 z-[2] cursor-pointer text-[110px] text-(--neutralColor) opacity-30 transition-opacity duration-300 ease-in-out hover:opacity-100 max-desktop:text-[80px] max-small-desktop:text-[50px]"
-                            )}
-                            onClick={clickNext}
+                        >
+                            {tag}
+                        </button>
+                    ))}
+                </div>
+
+                {selectedProject && (
+                    <div className="mb-10">
+                        <ProjectCard
+                            data={selectedProject}
+                            isCurrent={true}
+                            className=""
+                            clickHandler={() => setSelectedId(null)}
                         />
                     </div>
+                )}
+
+                <section className="grid grid-cols-3 gap-6 max-small-desktop:grid-cols-2 max-tablet:grid-cols-2 max-big-phone:grid-cols-1">
+                    {filteredProjects.map((project) => (
+                        <ProjectCard
+                            key={project.id}
+                            data={project}
+                            className={cls(
+                                "transition-transform duration-200 hover:-translate-y-1",
+                                selectedId === project.id && "ring-2 ring-(--firstWaveColor)"
+                            )}
+                            clickHandler={handleCardClick}
+                        />
+                    ))}
                 </section>
+
+                {filteredProjects.length === 0 && (
+                    <p className="mt-10 text-center text-(--neutralColor)">No projects found for this filter.</p>
+                )}
             </Container>
         </main>
     );
