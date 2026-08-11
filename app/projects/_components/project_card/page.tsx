@@ -37,7 +37,7 @@ function ProjectCard({data, clickHandler, className = "", isCurrent = false}: Pr
                     <>
                         <div className="flex gap-2">
                             {data.skills.map((skill: string, index: number) => (
-                                <span className="rounded-[15px] bg-(--neutralColor) px-2 py-1 text-base text-white" key={`Skill-${index + 1}`}>
+                                <span className="rounded-[15px] bg-(--accentSolid) px-2 py-1 text-base text-white" key={`Skill-${index + 1}`}>
                                     {skill}
                                 </span>
                             ))}

@@ -21,7 +21,7 @@ async function getPost(slug: string): Promise<PostWithContent | null> {
     return p as unknown as PostWithContent | null;
 }
 
-async function Blog({params}: {params: Promise<{slug: string}> | {slug: string}}) {
+async function Blog({params}: { params: Promise<{ slug: string }> | { slug: string } }) {
     const resolvedParams = await Promise.resolve(params);
     const post = await getPost(resolvedParams.slug);
     if (!post || !post.published) return notFound();
@@ -31,17 +31,17 @@ async function Blog({params}: {params: Promise<{slug: string}> | {slug: string}}
 
     return (
         <>
-            <JsonLdScript id="ld-article" data={articleLd} />
-            <JsonLdScript id="ld-breadcrumbs" data={breadcrumbLd} />
+            <JsonLdScript id="ld-article" data={articleLd}/>
+            <JsonLdScript id="ld-breadcrumbs" data={breadcrumbLd}/>
 
             <main className="pt-[100px]">
                 <Container>
                     <article className="flex flex-col items-center">
                         <Link href="/blog" className="mb-5 self-start">
-                            <FaArrowLeftLong className="size-[30px]" />
+                            <FaArrowLeftLong className="size-[30px]"/>
                         </Link>
 
-                        <SectionTitle text={post.title} />
+                        <SectionTitle text={post.title}/>
 
                         {post.coverImage && (
                             <SkeletonImage
@@ -56,12 +56,15 @@ async function Blog({params}: {params: Promise<{slug: string}> | {slug: string}}
                             />
                         )}
 
-                        <div className="prose-blog" dangerouslySetInnerHTML={{__html: post.content}} />
+                        <div className="prose-blog" dangerouslySetInnerHTML={{__html: post.content}}/>
                     </article>
 
                     <ul className="mt-[30px] flex flex-wrap gap-[5px]">
                         {post.tags?.map((tag, index) => (
-                            <li className="whitespace-nowrap rounded-[5px] bg-[#544df0] px-2 py-1 text-sm text-white" key={`Tag-${index + 1}`}>
+                            <li
+                                className="whitespace-nowrap rounded-[5px] bg-(--accentSolid) px-2 py-1 text-sm text-white"
+                                key={`Tag-${index + 1}`}
+                            >
                                 {tag}
                             </li>
                         ))}

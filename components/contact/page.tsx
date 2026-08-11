@@ -1,6 +1,6 @@
-import { FaGithubSquare } from "react-icons/fa";
-import { FaHackerrank } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
+import {FaGithubSquare} from "react-icons/fa";
+import {FaHackerrank} from "react-icons/fa";
+import {FaLinkedin} from "react-icons/fa";
 import cls from "@/utils/class_names";
 
 interface ContactProps {
@@ -10,13 +10,13 @@ interface ContactProps {
 const iconLinkClass = (isFooter: boolean) => cls(
     "flex items-center justify-center rounded-[0.3rem] border-2 border-solid transition-[border-color] duration-300 ease-in-out",
     isFooter
-        ? "border-(--firstWaveColor) hover:border-(--neutralColor)"
-        : "border-(--primaryColor) hover:border-[#544df0]"
+        ? "border-(--footerLine) hover:border-(--footerText)"
+        : "border-(--primaryColor) hover:border-(--firstWaveColor)"
 );
 
 const iconClass = (isFooter: boolean) => cls(
     "cursor-pointer text-[28px]",
-    isFooter ? "text-(--neutralColor)" : "text-[#544df0]"
+    isFooter ? "text-(--footerText)" : "text-(--firstWaveColor)"
 );
 
 function Contact({isFooter = false}: ContactProps) {
@@ -28,7 +28,7 @@ function Contact({isFooter = false}: ContactProps) {
                 target="_blank"
                 aria-label="GitHub Profile"
             >
-                <FaGithubSquare className={iconClass(isFooter)} />
+                <FaGithubSquare className={iconClass(isFooter)}/>
             </a>
             <a
                 className={iconLinkClass(isFooter)}
@@ -36,7 +36,7 @@ function Contact({isFooter = false}: ContactProps) {
                 target="_blank"
                 aria-label="HackerRank Profile"
             >
-                <FaHackerrank className={iconClass(isFooter)} />
+                <FaHackerrank className={iconClass(isFooter)}/>
             </a>
             <a
                 className={iconLinkClass(isFooter)}
@@ -44,7 +44,7 @@ function Contact({isFooter = false}: ContactProps) {
                 target="_blank"
                 aria-label="LinkedIn Profile"
             >
-                <FaLinkedin className={iconClass(isFooter)} />
+                <FaLinkedin className={iconClass(isFooter)}/>
             </a>
         </div>
     );

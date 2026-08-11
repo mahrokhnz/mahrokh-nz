@@ -18,6 +18,7 @@ type FormDataFieldsType = {
 function Form() {
     const {theme} = useTheme()
     const formRef = useRef<HTMLFormElement>(null);
+    const isDark = theme === "dark";
 
     const [sendLoading, setSendLoading] = useState(false);
     const [errors, setErrors] = useState({
@@ -26,6 +27,60 @@ function Form() {
         email: '',
         message: ''
     });
+
+    const fieldSx = isDark
+        ? {
+              "& .MuiInputBase-root": {
+                  color: "#fdf2f8",
+                  backgroundColor: "rgba(15, 10, 15, 0.55)",
+              },
+              "& .MuiInputLabel-root": {
+                  color: "#d4b3c8",
+              },
+              "& .MuiInputLabel-root.Mui-focused": {
+                  color: "#f472b6",
+              },
+              "& .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "rgba(244, 114, 182, 0.45)",
+              },
+              "&:hover .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "#f472b6",
+              },
+              "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "#f472b6",
+              },
+              "& .MuiFormHelperText-root": {
+                  color: "#e8b4cb",
+              },
+              "& .MuiFormHelperText-root.Mui-error": {
+                  color: "#fb7185",
+              },
+              "& .MuiInputBase-input::placeholder": {
+                  color: "rgba(253, 242, 248, 0.45)",
+                  opacity: 1,
+              },
+          }
+        : {
+              "& .MuiInputBase-root": {
+                  color: "#1a0a14",
+                  backgroundColor: "rgba(255, 255, 255, 0.72)",
+              },
+              "& .MuiInputLabel-root": {
+                  color: "#9d6b8a",
+              },
+              "& .MuiInputLabel-root.Mui-focused": {
+                  color: "#be185d",
+              },
+              "& .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "rgba(190, 24, 93, 0.35)",
+              },
+              "&:hover .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "#be185d",
+              },
+              "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "#be185d",
+              },
+          };
 
     const resetErrors = () => {
         setErrors({name: '', company: '', email: '', message: ''});
@@ -95,10 +150,10 @@ function Form() {
     return (
         <>
             <form
-                  className="z-[1] rounded-[20px] border border-solid border-[#6e6af499] bg-(--form-color) px-[35px] py-[30px] opacity-80 shadow-[0_2px_15px_0_#6e6af499] max-medium-desktop:grow max-medium-desktop:px-[30px] max-medium-desktop:py-[25px] max-small-desktop:p-5"
-                  style={{'--form-color': theme === 'dark' ? '#9fa0bb99' : '#e2e2e7'} as React.CSSProperties}
+                  className="z-[1] rounded-[20px] border border-solid border-[color-mix(in_srgb,var(--firstWaveColor)_55%,transparent)] bg-(--form-color) px-[35px] py-[30px] text-(--textColor) shadow-[0_8px_28px_0_color-mix(in_srgb,var(--firstWaveColor)_28%,transparent)] max-medium-desktop:grow max-medium-desktop:px-[30px] max-medium-desktop:py-[25px] max-small-desktop:p-5"
+                  style={{'--form-color': isDark ? '#3a2236' : '#fff7fb'} as React.CSSProperties}
                   onSubmit={handleSubmit} ref={formRef}>
-                <h2 className="mb-[50px] text-[38px] max-medium-desktop:mb-[30px] max-medium-desktop:text-[30px]">
+                <h2 className="mb-[50px] text-[38px] text-(--textColor) max-medium-desktop:mb-[30px] max-medium-desktop:text-[30px]">
                     Let&#39;s get in touch!
                 </h2>
                 <fieldset className="flex flex-col gap-5 max-medium-desktop:gap-2.5">
@@ -112,6 +167,7 @@ function Form() {
                             helperText={errors.name}
                             className="grow"
                             name="name"
+                            sx={fieldSx}
                         />
                         <TextField
                             required
@@ -122,6 +178,7 @@ function Form() {
                             helperText={errors.company}
                             className="grow"
                             name="company"
+                            sx={fieldSx}
                         />
                     </div>
                     <div className="flex gap-8 max-medium-desktop:flex-col max-medium-desktop:gap-2.5 max-small-desktop:flex-row">
@@ -134,11 +191,19 @@ function Form() {
                             helperText={errors.email}
                             className="grow"
                             name="email"
+                            sx={fieldSx}
                         />
                     </div>
-                    <TextField error={!!errors.message} helperText={errors.message} required multiline rows={10}
-                               placeholder='Write your message...'
-                               name="message"/>
+                    <TextField
+                        error={!!errors.message}
+                        helperText={errors.message}
+                        required
+                        multiline
+                        rows={10}
+                        placeholder='Write your message...'
+                        name="message"
+                        sx={fieldSx}
+                    />
                     <Button loading={sendLoading} type='submit'>
                         Send Message
                     </Button>

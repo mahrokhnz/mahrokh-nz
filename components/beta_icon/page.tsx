@@ -29,7 +29,7 @@ function BetaIcon({className}: BetaIconProps) {
 
 interface BetaBadgeProps {
     className?: string;
-    variant?: "default" | "labs";
+    variant?: "default" | "labs" | "footer";
 }
 
 function BetaBadge({className, variant = "default"}: BetaBadgeProps) {
@@ -39,9 +39,12 @@ function BetaBadge({className, variant = "default"}: BetaBadgeProps) {
             aria-label="Beta"
             className={cls(
                 "inline-flex size-[1.1rem] items-center justify-center rounded-[0.25rem] border text-[0.7rem] leading-none max-tablet:size-5",
-                variant === "labs"
-                    ? "border-[rgba(139,139,255,0.45)] bg-[rgba(110,110,240,0.35)] text-[var(--labs-accent)]"
-                    : "border-(--firstWaveColor) bg-(--firstWaveColor)/20 text-(--firstWaveColor)",
+                variant === "labs" &&
+                    "border-[rgba(139,139,255,0.45)] bg-[rgba(110,110,240,0.35)] text-[var(--labs-accent)]",
+                variant === "footer" &&
+                    "border-(--footerLine) bg-white/15 text-(--footerText)",
+                variant === "default" &&
+                    "border-(--firstWaveColor) bg-(--firstWaveColor)/20 text-(--firstWaveColor)",
                 className
             )}
         >

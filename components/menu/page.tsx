@@ -20,11 +20,11 @@ function Menu({isOpen = false, isFooter = false, onItemClick}: MenuProps) {
     return (
         <ul
             className={cls(
-                "flex gap-8 text-(--neutralColor)",
+                "flex gap-8",
+                isFooter ? "flex-wrap justify-center gap-4 text-(--footerMuted)" : "text-(--neutralColor)",
                 !isFooter &&
-                    "max-tablet:fixed max-tablet:inset-0 max-tablet:flex max-tablet:h-screen max-tablet:flex-col max-tablet:items-center max-tablet:justify-center max-tablet:bg-(--neutralColor) max-tablet:text-(--textColor) max-tablet:z-[5] max-tablet:transition-transform max-tablet:duration-300 max-tablet:ease-in-out",
+                    "max-tablet:fixed max-tablet:inset-0 max-tablet:z-[5] max-tablet:flex max-tablet:h-screen max-tablet:flex-col max-tablet:items-center max-tablet:justify-center max-tablet:bg-(--secondaryColor) max-tablet:text-(--textColor) max-tablet:transition-transform max-tablet:duration-300 max-tablet:ease-in-out",
                 !isFooter && (isOpen ? "max-tablet:translate-x-0" : "max-tablet:-translate-x-full"),
-                isFooter && "flex-wrap justify-center gap-4",
                 isLabs && !isFooter && "max-tablet:bg-[#050508]"
             )}
         >
@@ -45,12 +45,18 @@ function Menu({isOpen = false, isFooter = false, onItemClick}: MenuProps) {
                             onClick={onItemClick}
                             className={cls(
                                 "inline-flex items-center gap-1.5 transition-colors duration-300",
-                                isActive && (isLabs ? "text-[var(--labs-accent)]" : "text-(--textColor)"),
-                                !isActive && "hover:text-(--textColor)"
+                                isFooter && isActive && "text-(--footerText)",
+                                isFooter && !isActive && "hover:text-(--footerText)",
+                                !isFooter && isActive && (isLabs ? "text-[var(--labs-accent)]" : "text-(--textColor)"),
+                                !isFooter && !isActive && "hover:text-(--textColor)"
                             )}
                         >
                             {item.title}
-                            {hasBeta ? <BetaBadge variant={isLabs ? "labs" : "default"} /> : null}
+                            {hasBeta ? (
+                                <BetaBadge
+                                    variant={isFooter ? "footer" : isLabs ? "labs" : "default"}
+                                />
+                            ) : null}
                         </Link>
                     </li>
                 );
