@@ -57,12 +57,15 @@ export function ProjectsPageSkeleton() {
     return (
         <div className="flex flex-col gap-10 py-[100px]">
             <SkeletonPulse className="h-9 w-[220px] max-w-[60%]" />
-            <ProjectCardSkeleton />
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] gap-4">
-                <ProjectCardSkeleton />
-                <ProjectCardSkeleton />
-                <ProjectCardSkeleton />
-                <ProjectCardSkeleton />
+            <div className="flex flex-wrap gap-2">
+                {Array.from({length: 6}).map((_, i) => (
+                    <SkeletonPulse key={i} className="h-8 w-16 rounded-full" />
+                ))}
+            </div>
+            <div className="grid grid-cols-3 gap-6 max-small-desktop:grid-cols-2 max-big-phone:grid-cols-1">
+                {Array.from({length: 6}).map((_, i) => (
+                    <ProjectCardSkeleton key={i} />
+                ))}
             </div>
         </div>
     );

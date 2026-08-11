@@ -172,7 +172,7 @@
       ],
       "demo": "https://mahrokhnz.github.io/100-days-of-code/",
       "code": "https://github.com/mahrokhnz/100-days-of-code",
-      "image": "/images/projects/100daysofcode.jpg"
+      "image": "/images/projects/100-days-of-code.png"
     },
     {
       "id": 2,
@@ -185,7 +185,7 @@
       ],
       "demo": "https://mahrokhnz.github.io/react-js/",
       "code": "https://github.com/mahrokhnz/react-js",
-      "image": "/images/projects/reactjs.jpg"
+      "image": "/images/projects/reactjs-challenges.png"
     },
     {
       "id": 3,
@@ -196,7 +196,7 @@
         "Deno"
       ],
       "code": "https://github.com/mahrokhnz/data-structure",
-      "image": "/images/projects/datastructure.jpeg"
+      "image": "/images/projects/data-structure.png"
     },
     {
       "id": 4,
@@ -206,10 +206,10 @@
         "Nextjs",
         "Prisma ORM",
         "Typescript",
-        "Sass"
+        "Tailwindcss"
       ],
       "code": "https://github.com/mahrokhnz/mahrokh-nz",
-      "image": "/images/projects/personalwebsite.png"
+      "image": "/images/projects/personal-website.png"
     },
     {
       "id": 5,
@@ -221,7 +221,7 @@
         "CSS"
       ],
       "code": "https://github.com/mahrokhnz/chatroom",
-      "image": "/images/projects/chatroom.webp"
+      "image": "/images/projects/chatroom.png"
     },
     {
       "id": 6,
@@ -232,7 +232,7 @@
         "CSS"
       ],
       "code": "https://github.com/mahrokhnz/notes/tree/main",
-      "image": "/images/projects/notes.jpeg"
+      "image": "/images/projects/note-app.png"
     },
     {
       "id": 7,
@@ -241,11 +241,11 @@
       "skills": [
         "Nextjs",
         "Typescript",
-        "Tailwind",
+        "Tailwindcss",
         "CSS"
       ],
       "code": "https://github.com/mahrokhnz/next-js",
-      "image": "/images/projects/nextjs.webp"
+      "image": "/images/projects/nextjs-app-router.png"
     }
   ],
   "skillsIcons": [
