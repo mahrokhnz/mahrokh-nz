@@ -2,6 +2,7 @@
 
 import {useCallback, useEffect, useRef, useState} from "react";
 import cls from "@/utils/class_names";
+import LabsGrid from "@/app/labs/_components/labs_grid/page";
 
 export const TIMING_FUNCTIONS = [
     "linear",
@@ -57,6 +58,47 @@ export function PlaygroundShell({children, className}: PlaygroundShellProps) {
             className={cls("flex min-h-[calc(100vh-7.5rem)]", className)}
         >
             {children}
+        </section>
+    );
+}
+
+interface PlaygroundPreviewProps {
+    ariaLabel: string;
+    title?: string;
+    meta?: React.ReactNode;
+    children: React.ReactNode;
+    className?: string;
+    contentClassName?: string;
+}
+
+export function PlaygroundPreview({
+    ariaLabel,
+    title = "PREVIEW",
+    meta,
+    children,
+    className,
+    contentClassName,
+}: PlaygroundPreviewProps) {
+    return (
+        <section
+            aria-label={ariaLabel}
+            className={cls("relative flex min-h-[480px] flex-1 flex-col", className)}
+        >
+            <header className="flex items-center justify-between gap-3 border-b border-[var(--labs-border)] px-5 py-3">
+                <h2 className="text-[0.72rem] font-semibold tracking-[0.16em] text-[var(--labs-muted)]">
+                    {title}
+                </h2>
+                {meta}
+            </header>
+            <div
+                className={cls(
+                    "relative flex min-h-[360px] flex-1 flex-col overflow-hidden p-5",
+                    contentClassName
+                )}
+            >
+                <LabsGrid variant="scene" />
+                {children}
+            </div>
         </section>
     );
 }
