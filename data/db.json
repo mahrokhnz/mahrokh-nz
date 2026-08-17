@@ -722,9 +722,9 @@
             "id": 1,
             "slug": "flexbox-builder",
             "title": "Flexbox Builder",
-            "description": "Visually compose flex layouts and export production-ready CSS.",
-            "tags": ["CSS", "Flexbox"],
-            "status": "soon"
+            "description": "Build and experiment with CSS Flexbox layouts in real time.",
+            "tags": ["CSS", "Layout", "Interactive"],
+            "status": "live"
           },
           {
             "id": 2,

@@ -68,6 +68,18 @@ function ControlSection({title, divided = false, headerAction, children}: Contro
     );
 }
 
+function ControlHint({hint}: {hint: string}) {
+    return (
+        <span
+            title={hint}
+            className="inline-flex size-3.5 shrink-0 cursor-help items-center justify-center rounded-full border border-[var(--labs-border)] text-[0.55rem] leading-none text-[var(--labs-muted)]"
+        >
+            ?
+            <span className="sr-only">. {hint}</span>
+        </span>
+    );
+}
+
 interface ControlSliderProps {
     label: string;
     value: number;
@@ -75,14 +87,18 @@ interface ControlSliderProps {
     max: number;
     step: number;
     display: string;
+    hint?: string;
     onChange: (value: number) => void;
 }
 
-function ControlSlider({label, value, min, max, step, display, onChange}: ControlSliderProps) {
+function ControlSlider({label, value, min, max, step, display, hint, onChange}: ControlSliderProps) {
     return (
         <label className="flex flex-col gap-2">
             <div className="flex items-center justify-between gap-3 text-[0.78rem]">
-                <span className="text-[var(--labs-muted)]">{label}</span>
+                <span className={cls("text-[var(--labs-muted)]", hint && "inline-flex items-center gap-1.5")}>
+                    {label}
+                    {hint ? <ControlHint hint={hint} /> : null}
+                </span>
                 <span className="font-mono text-[var(--labs-accent)]">{display}</span>
             </div>
             <input
@@ -91,6 +107,7 @@ function ControlSlider({label, value, min, max, step, display, onChange}: Contro
                 max={max}
                 step={step}
                 value={value}
+                aria-valuetext={display}
                 onChange={(event) => onChange(Number(event.target.value))}
                 className="labs-range h-1.5 w-full cursor-pointer appearance-none rounded-full bg-[rgba(139,139,255,0.18)]"
             />
@@ -98,24 +115,33 @@ function ControlSlider({label, value, min, max, step, display, onChange}: Contro
     );
 }
 
-interface ControlSelectProps {
+interface ControlSelectProps<T extends string> {
     label: string;
-    value: string;
-    options: readonly string[] | Array<{value: string; label: string}>;
-    onChange: (value: string) => void;
+    value: T;
+    options: readonly T[] | ReadonlyArray<{value: T; label: string}>;
+    hint?: string;
+    onChange: (value: T) => void;
 }
 
-function ControlSelect({label, value, options, onChange}: ControlSelectProps) {
+function ControlSelect<T extends string>({label, value, options, hint, onChange}: ControlSelectProps<T>) {
     const normalized = options.map((option) =>
         typeof option === "string" ? {value: option, label: option} : option
     );
 
     return (
         <label className="flex flex-col gap-2">
-            <span className="text-[0.78rem] text-[var(--labs-muted)]">{label}</span>
+            <span
+                className={cls(
+                    "text-[0.78rem] text-[var(--labs-muted)]",
+                    hint && "inline-flex items-center gap-1.5"
+                )}
+            >
+                {label}
+                {hint ? <ControlHint hint={hint} /> : null}
+            </span>
             <select
                 value={value}
-                onChange={(event) => onChange(event.target.value)}
+                onChange={(event) => onChange(event.target.value as T)}
                 className="rounded-md border border-[var(--labs-border)] bg-[#0c0c14] px-3 py-2 font-mono text-[0.8rem] text-[var(--labs-accent)] outline-none transition-colors focus:border-[var(--labs-border-strong)]"
             >
                 {normalized.map((option) => (
@@ -125,6 +151,41 @@ function ControlSelect({label, value, options, onChange}: ControlSelectProps) {
                 ))}
             </select>
         </label>
+    );
+}
+
+function ControlStack({children}: {children: React.ReactNode}) {
+    return <div className="flex flex-col gap-4">{children}</div>;
+}
+
+interface ControlButtonGroupProps<T extends string | number> {
+    options: Array<{label: React.ReactNode; value: T}>;
+    value?: T | null;
+    onChange: (value: T) => void;
+    className?: string;
+    buttonClassName?: string;
+}
+
+function ControlButtonGroup<T extends string | number>({
+    options,
+    value,
+    onChange,
+    className,
+    buttonClassName,
+}: ControlButtonGroupProps<T>) {
+    return (
+        <div className={cls("flex flex-wrap gap-1.5", className)}>
+            {options.map((option) => (
+                <ControlButton
+                    key={String(option.value)}
+                    active={value === option.value}
+                    className={buttonClassName}
+                    onClick={() => onChange(option.value)}
+                >
+                    {option.label}
+                </ControlButton>
+            ))}
+        </div>
     );
 }
 
@@ -141,6 +202,7 @@ function ControlButton({children, onClick, active, muted, className}: ControlBut
         <button
             type="button"
             onClick={onClick}
+            aria-pressed={typeof active === "boolean" ? active : undefined}
             className={cls(
                 "rounded-md border px-2.5 py-1 text-[0.75rem] transition-colors",
                 active
@@ -235,9 +297,11 @@ function SegmentedButtons<T extends string | number>({
 export {
     ControlsSidebar,
     ControlSection,
+    ControlStack,
     ControlSlider,
     ControlSelect,
     ControlButton,
+    ControlButtonGroup,
     GeneratedCodePanel,
     SegmentedButtons,
 };
