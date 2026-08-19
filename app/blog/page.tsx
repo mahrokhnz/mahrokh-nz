@@ -1,9 +1,10 @@
 import type {Metadata} from "next";
 import BlogRow from "@/app/blog/_components/blog_row/page";
+import Pagination from "@/app/blog/_components/pagination/page";
 import {prisma} from "@/lib/prisma";
 import Container from "@/components/container/page";
 import SectionTitle from "@/components/section_title/page";
-import React from "react";
+import React, {Suspense} from "react";
 import metadataCreator from "@/utils/server-metadata";
 import JsonLdScript from "@/components/seo/jsonld_script";
 import {getWebPageJsonLd} from "@/utils/seo/jsonld";
@@ -13,6 +14,8 @@ export const runtime = "nodejs";
 
 const BLOG_DESCRIPTION =
     "Explore articles about front-end development, React, CSS, and modern web design techniques to level up your coding and design skills.";
+
+const POSTS_PER_PAGE = 5;
 
 export const metadata: Metadata = metadataCreator({
     title: "Blog",
@@ -35,13 +38,25 @@ export type BlogType = {
     updatedAt: Date;
 };
 
-async function Blog() {
-    const blog: BlogType[] = await prisma.post.findMany({
-        where: {published: true},
-        orderBy: {
-            createdAt: "desc",
-        },
-    });
+interface BlogPageProps {
+    searchParams: Promise<{ page?: string }>;
+}
+
+async function Blog({ searchParams }: BlogPageProps) {
+    const { page } = await searchParams;
+    const currentPage = Math.max(1, parseInt(page ?? "1", 10));
+
+    const [total, blog] = await Promise.all([
+        prisma.post.count({ where: { published: true } }),
+        prisma.post.findMany({
+            where: { published: true },
+            orderBy: { createdAt: "desc" },
+            skip: (currentPage - 1) * POSTS_PER_PAGE,
+            take: POSTS_PER_PAGE,
+        }),
+    ]);
+
+    const totalPages = Math.ceil(total / POSTS_PER_PAGE);
 
     return (
         <main className="flex flex-col gap-4 pt-[100px]">
@@ -60,6 +75,9 @@ async function Blog() {
                         <BlogRow blogData={post} key={post.id} />
                     ))}
                 </section>
+                <Suspense>
+                    <Pagination currentPage={currentPage} totalPages={totalPages} />
+                </Suspense>
             </Container>
         </main>
     );
