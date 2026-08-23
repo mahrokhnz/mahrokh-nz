@@ -770,9 +770,9 @@
             "id": 1,
             "slug": "svg-to-jsx",
             "title": "SVG to JSX",
-            "description": "Convert SVG markup into clean React JSX with attribute normalization.",
-            "tags": ["SVG", "React", "Tools"],
-            "status": "soon"
+            "description": "Convert SVG markup into React-ready JSX.",
+            "tags": ["React", "SVG", "Developer Tool"],
+            "status": "live"
           },
           {
             "id": 2,
