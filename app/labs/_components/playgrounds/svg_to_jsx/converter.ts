@@ -72,7 +72,6 @@ const ATTRIBUTE_MAP: Record<string, string> = {
     "shape-rendering": "shapeRendering",
     "strikethrough-position": "strikethroughPosition",
     "strikethrough-thickness": "strikethroughThickness",
-    "stroke-linecap": "strokeLinecap",
     "text-anchor": "textAnchor",
     "text-decoration": "textDecoration",
     "text-rendering": "textRendering",
