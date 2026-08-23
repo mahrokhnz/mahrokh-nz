@@ -4,7 +4,6 @@ import type { Metadata, Viewport } from "next";
 import Header from "@/components/header/page";
 import { CustomThemeProvider } from "@/context/theme_context";
 import { ThemeProvider } from '@mui/material/styles';
-import Footer from "@/components/footer/page";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import theme from "@/theme/theme";
 import { SITE_NAME, SITE_URL } from "@/config/seo";
@@ -66,7 +65,6 @@ function RootLayout({ children }: RootLayoutProps) {
                 <ThemeProvider theme={theme}>
                     <Header />
                     {children}
-                    <Footer />
                     <SpeedInsights />
                     <Analytics />
                 </ThemeProvider>
