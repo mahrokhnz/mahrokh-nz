@@ -1,5 +1,5 @@
 import Circle, {type CircleFillSpeed} from "@/components/circle/page";
-import {SkillType} from "@/app/(site)/(home)/_sections/skills/type";
+import {SkillType} from "../../../type";
 
 const STAGGER_SECONDS: Record<CircleFillSpeed, number> = {
     fast: 0.04,

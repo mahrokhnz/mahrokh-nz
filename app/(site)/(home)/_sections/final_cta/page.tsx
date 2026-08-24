@@ -2,7 +2,7 @@ import {Suspense} from "react";
 import Link from "next/link";
 import Container from "@/components/container/page";
 import Button from "@/components/Button/page";
-import ArrowLink from "@/app/(site)/(home)/_components/arrow_link/page";
+import ArrowLink from "../../_components/arrow_link/page";
 import {HomeCtaSkeleton} from "@/components/skeleton/page";
 
 async function FinalCtaContent() {

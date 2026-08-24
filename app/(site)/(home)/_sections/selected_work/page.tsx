@@ -3,7 +3,7 @@ import data from "@/data/db.json";
 import Container from "@/components/container/page";
 import SectionTitle from "@/components/section_title/page";
 import SkeletonImage from "@/components/skeleton_image/page";
-import ArrowLink from "@/app/(site)/(home)/_components/arrow_link/page";
+import ArrowLink from "../../_components/arrow_link/page";
 import cls from "@/utils/class_names";
 import type {ProjectType} from "@/app/(site)/projects/type";
 
