@@ -6,7 +6,7 @@ function Skills() {
   return (
           <section>
               <Container>
-                  <SectionTitle text='My Skills' />
+                  <SectionTitle text='Technical Expertise' />
                   <SkillsLists />
               </Container>
           </section>

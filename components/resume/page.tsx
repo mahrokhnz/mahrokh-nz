@@ -1,25 +1,43 @@
 import SummarySection from "@/components/resume/sections/summary/page";
 import Header from "@/components/resume/sections/components/header/page";
 import WorkExperiencesSection from "@/components/resume/sections/work_experiences/page";
-import EducationSection from "@/components/resume/sections/education/page";
-import SkillsSection from "@/components/resume/sections/skills/page";
-import LanguagesSection from "@/components/resume/sections/Languages/page";
+import ProjectsSection from "@/components/resume/sections/projects/page";
+import LabsSection from "@/components/resume/sections/labs/page";
+import PortfolioSection from "@/components/resume/sections/portfolio/page";
+import SupportingSection from "@/components/resume/sections/supporting/page";
+import {ReactNode} from "react";
+
+function ResumePage({children}: { children: ReactNode }) {
+    return (
+        <div
+            data-resume-page
+            className="relative w-[210mm] overflow-hidden bg-(--whiteColor) font-[cormorantGaramondMedium,serif] [page-break-after:always]"
+            style={{color: "#111111"}}
+        >
+            <div className="absolute inset-y-0 left-0 z-0 w-[33mm] bg-(--darkColor)"/>
+            <div className="relative z-[1] flex h-full flex-col gap-[6mm] pl-[40mm] pr-[20mm] py-[12mm]">
+                {children}
+            </div>
+        </div>
+    );
+}
 
 function Resume() {
-  return (
-      <div className="z-[-1] flex flex-col">
-        <div className="relative z-0 ml-[20mm] flex h-[297mm] w-[210mm] flex-col gap-[10mm] bg-(--whiteColor) px-[20mm] py-[15mm] font-[cormorantGaramondMedium,serif] text-black [page-break-after:always] after:absolute after:top-0 after:left-[-20mm] after:z-[-1] after:h-full after:w-[33mm] after:bg-(--darkColor) after:content-['']">
-            <Header />
-            <SummarySection />
-            <WorkExperiencesSection />
+    return (
+        <div className="flex flex-col">
+            <ResumePage>
+                <Header/>
+                <SummarySection/>
+                <WorkExperiencesSection/>
+            </ResumePage>
+            <ResumePage>
+                <ProjectsSection/>
+                <LabsSection/>
+                <PortfolioSection/>
+                <SupportingSection/>
+            </ResumePage>
         </div>
-        <div className="relative z-0 ml-[20mm] flex h-[297mm] w-[210mm] flex-col gap-[10mm] bg-(--whiteColor) px-[20mm] py-[15mm] font-[cormorantGaramondMedium,serif] text-black [page-break-after:always] after:absolute after:top-0 after:left-[-20mm] after:z-[-1] after:h-full after:w-[33mm] after:bg-(--darkColor) after:content-['']">
-            <EducationSection />
-            <SkillsSection />
-            <LanguagesSection />
-        </div>
-      </div>
-  );
+    );
 }
 
 export default Resume;

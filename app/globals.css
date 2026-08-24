@@ -257,6 +257,10 @@ html.labs-mode body {
     color: #ffffff;
 }
 
+.html2pdf__overlay {
+    pointer-events: none !important;
+}
+
 @keyframes labs-fade-up {
     from {
         opacity: 0;

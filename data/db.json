@@ -345,19 +345,19 @@
           "endDate": "",
           "title": "Frontend Developer",
           "company": "Golrang Industrial Group | Tehran, Iran",
-          "description": "Working on Simorgh Mart, Customer and Visitor Club and Backoffice.",
+          "highlights": [
+            "Built frontend features for Simorgh Mart, Customer & Visitor Club, and internal backoffice dashboards.",
+            "Developed reusable React and Next.js components and application flows for customer and admin surfaces.",
+            "Improved UI consistency, performance and frontend architecture with TypeScript and Redux Toolkit.",
+            "Collaborated with product and backend teams to ship PWA-ready dashboard experiences."
+          ],
           "skills": [
-            "Reactjs",
-            "Nextjs",
-            "Javascript",
-            "Typescript",
-            "Tailwindcss",
-            "HTML",
-            "Rest Api",
-            "Webpack",
-            "PWA",
-            "Redux Toolkit",
-            "Responsive Web Design"
+            "React",
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS",
+            "REST API",
+            "Redux Toolkit"
           ]
         },
         {
@@ -366,20 +366,19 @@
           "endDate": "2025-05-21",
           "title": "Frontend Developer",
           "company": "Maadiran | Tehran, Iran",
-          "description": "Worked on Maadiran credit project, A panel for sales agents and managers.",
+          "highlights": [
+            "Built and maintained frontend features for Maadiran's credit platform, including dashboards used by sales agents and managers.",
+            "Developed reusable React components and frontend flows for the credit platform and internal management dashboards.",
+            "Improved dashboard usability and component consistency across agent and manager views.",
+            "Collaborated with product and backend teams to deliver reliable credit-platform workflows."
+          ],
           "skills": [
-            "Reactjs",
-            "Nextjs",
-            "Javascript",
-            "Typescript",
-            "Sass",
-            "Css",
-            "HTML",
-            "Rest Api",
-            "Webpack",
+            "React",
+            "Next.js",
+            "TypeScript",
             "Material UI",
-            "PWA",
-            "Responsive Web Design"
+            "REST API",
+            "Sass"
           ]
         },
         {
@@ -388,124 +387,107 @@
           "endDate": "2024-10-21",
           "title": "Frontend Developer",
           "company": "Hamresan | Tehran, Iran",
-          "description": "Worked on different projects like Rasayesh event websites, Rasayesh style guide, several panels like attendee, admin, company, and also Pharket website and panels.",
+          "highlights": [
+            "Built event websites, a shared style guide and multi-role panels for Rasayesh (attendee, admin and company).",
+            "Developed the Pharket website and related panels with React, TypeScript and real-time WebSocket features.",
+            "Improved frontend consistency through reusable UI patterns across multiple product surfaces.",
+            "Collaborated with designers and engineers on interactive experiences, including Three.js work."
+          ],
           "skills": [
-            "Reactjs",
-            "Javascript",
-            "Typescript",
-            "stylus",
-            "Sass",
-            "Css",
-            "HTML",
-            "Graphql",
-            "Rest Api",
-            "Webpack",
-            "Data Structure",
+            "React",
+            "TypeScript",
+            "GraphQL",
+            "REST API",
             "Material UI",
-            "Websocket",
-            "Responsive Web Design",
-            "Threejs"
+            "WebSocket",
+            "Three.js"
           ]
         }
+      ],
+      "projects": [
+        {
+          "id": 1,
+          "title": "Personal Website",
+          "description": "Portfolio built with Next.js, TypeScript and Tailwind CSS — projects, labs and interactive frontend work.",
+          "skills": ["Next.js", "TypeScript", "Tailwind CSS"],
+          "url": "https://www.mahrokhnz.ir/"
+        },
+        {
+          "id": 2,
+          "title": "Next.js App Router",
+          "description": "Practical Next.js examples covering routing, rendering patterns and reusable UI.",
+          "skills": ["Next.js", "TypeScript", "Tailwind CSS"],
+          "url": "https://github.com/mahrokhnz/next-js"
+        },
+        {
+          "id": 3,
+          "title": "React Challenges",
+          "description": "A collection of React applications and reusable components covering state, routing and API integration.",
+          "skills": ["React", "JavaScript", "Webpack"],
+          "url": "https://mahrokhnz.github.io/react-js/"
+        }
+      ],
+      "labs": {
+        "url": "https://www.mahrokhnz.ir/labs",
+        "items": [
+          {
+            "id": 1,
+            "title": "Rendering Playground",
+            "description": "Compare React rendering strategies with live re-render markers and performance metrics."
+          },
+          {
+            "id": 2,
+            "title": "Flexbox Builder",
+            "description": "Build and experiment with CSS Flexbox layouts in real time."
+          }
+        ]
+      },
+      "portfolio": {
+        "url": "https://www.mahrokhnz.ir/",
+        "label": "www.mahrokhnz.ir",
+        "text": "Explore projects, labs and interactive frontend work on the live site."
+      },
+      "stack": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "REST API",
+        "Redux Toolkit",
+        "GraphQL",
+        "Material UI"
       ],
       "educations": [
         {
           "id": 1,
           "university": "University of Science and Culture | Tehran, Iran",
-          "degree": "Master of business Administration",
+          "degree": "Master of Business Administration",
           "period": "Sep 2019 - Sep 2022",
-          "moreInfo": "I studied MBA, my thesis is about repurchase intention in online retail stores, that I have got great score in defend session."
+          "moreInfo": "Thesis on repurchase intention in online retail stores."
         },
         {
           "id": 2,
           "university": "University of Tehran | Tehran, Iran",
           "degree": "Bachelor of engineering",
           "period": "Sep 2015 - Sep 2019",
-          "moreInfo": "I studied Mechanical Engineering."
+          "moreInfo": "Mechanical Engineering."
         }
       ],
       "skills": {
         "hard": [
-          {
-            "id": 1,
-            "title": "Reactjs"
-          },
-          {
-            "id": 2,
-            "title": "Nextjs"
-          },
-          {
-            "id": 3,
-            "title": "Javascript"
-          },
-          {
-            "id": 4,
-            "title": "Typescript"
-          },
-          {
-            "id": 5,
-            "title": "Tailwindcss"
-          },
-          {
-            "id": 6,
-            "title": "Sass"
-          },
-          {
-            "id": 7,
-            "title": "Css"
-          },
-          {
-            "id": 8,
-            "title": "HTML"
-          },
-          {
-            "id": 9,
-            "title": "Graphql"
-          },
-          {
-            "id": 10,
-            "title": "Rest Api"
-          },
-          {
-            "id": 11,
-            "title": "Webpack"
-          },
-          {
-            "id": 12,
-            "title": "Vite"
-          },
-          {
-            "id": 13,
-            "title": "Data Structure"
-          },
-          {
-            "id": 14,
-            "title": "Material UI"
-          },
-          {
-            "id": 15,
-            "title": "PWA"
-          },
-          {
-            "id": 16,
-            "title": "Websocket"
-          },
-          {
-            "id": 17,
-            "title": "Redux Toolkit"
-          },
-          {
-            "id": 18,
-            "title": "Responsive Web Design"
-          },
-          {
-            "id": 19,
-            "title": "Threejs"
-          },
-          {
-            "id": 20,
-            "title": "Git"
-          }
+          { "id": 1, "title": "React" },
+          { "id": 2, "title": "Next.js" },
+          { "id": 3, "title": "TypeScript" },
+          { "id": 4, "title": "JavaScript" },
+          { "id": 5, "title": "Tailwind CSS" },
+          { "id": 6, "title": "Redux Toolkit" },
+          { "id": 7, "title": "REST API" },
+          { "id": 8, "title": "GraphQL" },
+          { "id": 9, "title": "Material UI" },
+          { "id": 10, "title": "PWA" },
+          { "id": 11, "title": "WebSocket" },
+          { "id": 12, "title": "Three.js" },
+          { "id": 13, "title": "Git" }
         ],
         "soft": [
           {
@@ -540,8 +522,7 @@
           "name": "English",
           "institute": "Safir Language Academy | Tehran, Iran",
           "moreInfo": [
-            "36 semester and 864 hours in Advanced Level (2019)",
-            "16 semester and 384 hours in Upper-intermediate Level (2017)"
+            "Advanced"
           ]
         },
         {
