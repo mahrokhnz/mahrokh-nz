@@ -21,7 +21,7 @@ function SkillsList({data, inView, playId, speed = "med"}: SkillsListProps) {
         <ul className="flex grow flex-col gap-8">
             {data.map((skill) => (
                 <li key={skill.id} className="flex justify-between gap-8">
-                    <h3 className="text-[1.5rem] max-tablet:text-[1.3rem] max-phone:text-base">
+                    <h3 className="text-[1.2rem] font-light max-tablet:text-[1.05rem] max-phone:text-[0.95rem]">
                         {skill.title}
                     </h3>
                     <div className="flex gap-[0.4rem]">

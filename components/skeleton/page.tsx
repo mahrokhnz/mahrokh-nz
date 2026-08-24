@@ -1,4 +1,5 @@
 import cls from "@/utils/class_names";
+import Container from "@/components/container/page";
 
 type SkeletonProps = {
     className?: string;
@@ -60,6 +61,129 @@ export function AboutImageSkeleton({className = ""}: SkeletonProps) {
     );
 }
 
+export function HomeAboutSkeleton() {
+    return (
+        <section>
+            <Container className="min-h-0">
+                <SkeletonPulse className="mb-16 h-[2.8rem] w-[min(100%,18.5rem)] self-center max-tablet:mb-12 max-tablet:h-[2.5rem] max-phone:mb-8 max-phone:h-6 max-phone:w-[11rem]" />
+                <div className="mx-auto flex max-w-[640px] flex-col gap-6 text-center">
+                    <div className="flex flex-col items-center gap-[0.5rem]">
+                        <SkeletonPulse className="h-[1.8rem] w-full" />
+                        <SkeletonPulse className="h-[1.8rem] w-[74%]" />
+                    </div>
+                    <div className="flex flex-col items-center gap-[0.5rem]">
+                        <SkeletonPulse className="h-[1.8rem] w-full" />
+                        <SkeletonPulse className="h-[1.8rem] w-[88%]" />
+                    </div>
+                    <div className="flex justify-center pt-2">
+                        <SkeletonPulse className="h-4 w-[9.25rem]" />
+                    </div>
+                </div>
+            </Container>
+        </section>
+    );
+}
+
+export function HomeCtaSkeleton() {
+    return (
+        <section className="pb-8">
+            <Container className="min-h-0">
+                <div className="relative mx-auto flex max-w-[640px] flex-col items-center gap-6 overflow-hidden rounded-2xl border border-[color-mix(in_srgb,var(--firstWaveColor)_18%,transparent)] bg-[color-mix(in_srgb,var(--primaryColor)_50%,transparent)] px-8 py-12 text-center shadow-[0_8px_32px_color-mix(in_srgb,var(--firstWaveColor)_12%,transparent)] backdrop-blur-md max-phone:px-6 max-phone:py-10">
+                    <div
+                        aria-hidden
+                        className="pointer-events-none absolute -top-16 left-1/2 size-56 -translate-x-1/2 rounded-full bg-[color-mix(in_srgb,var(--firstWaveColor)_18%,transparent)] blur-3xl"
+                    />
+                    <div
+                        aria-hidden
+                        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[color-mix(in_srgb,var(--firstWaveColor)_45%,transparent)] to-transparent"
+                    />
+                    <SkeletonPulse className="relative z-[1] h-[2.6rem] w-[min(100%,26rem)] max-phone:h-8" />
+                    <div className="relative z-[1] flex w-full flex-col items-center gap-[0.5rem]">
+                        <SkeletonPulse className="h-[1.8rem] w-[92%]" />
+                        <SkeletonPulse className="h-[1.8rem] w-[78%]" />
+                    </div>
+                    <div className="relative z-[1] flex flex-wrap items-center justify-center gap-4 pt-2">
+                        <SkeletonPulse className="h-10 w-[8.25rem] rounded-md" />
+                        <SkeletonPulse className="h-4 w-[8rem]" />
+                    </div>
+                </div>
+            </Container>
+        </section>
+    );
+}
+
+function HomeSectionShell({
+    children,
+    className = "",
+}: {
+    children: React.ReactNode;
+    className?: string;
+}) {
+    return (
+        <section>
+            <div
+                className={cls(
+                    "box-border flex min-h-0 flex-col bg-(--primaryColor) px-32 py-16 max-tablet:px-16 max-tablet:py-8 max-phone:p-8",
+                    className
+                )}
+            >
+                {children}
+            </div>
+        </section>
+    );
+}
+
+function HomeSelectedWorkCardSkeleton() {
+    return (
+        <div
+            className="flex flex-col overflow-hidden rounded-2xl border border-[color-mix(in_srgb,var(--firstWaveColor)_14%,transparent)] bg-[color-mix(in_srgb,var(--primaryColor)_55%,transparent)] backdrop-blur-md"
+            aria-hidden="true"
+        >
+            <SkeletonPulse className="aspect-[4/3] w-full rounded-none" />
+            <div className="flex flex-col gap-3 p-4">
+                <SkeletonPulse className="h-4 w-[55%]" />
+                <SkeletonPulse className="h-3.5 w-full" />
+                <SkeletonPulse className="h-3.5 w-[85%]" />
+                <SkeletonPulse className="h-3 w-[60%]" />
+                <SkeletonPulse className="mt-1 h-3.5 w-[110px]" />
+            </div>
+        </div>
+    );
+}
+
+function HomeLabsCardSkeleton() {
+    return (
+        <div className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-[#0c0c12] p-5">
+            <SkeletonPulse className="h-5 w-[70%] !bg-[#1a1a24]" />
+            <SkeletonPulse className="h-3.5 w-full !bg-[#1a1a24]" />
+            <SkeletonPulse className="h-3.5 w-[90%] !bg-[#1a1a24]" />
+            <SkeletonPulse className="h-3.5 w-[75%] !bg-[#1a1a24]" />
+            <div className="flex gap-2">
+                <SkeletonPulse className="h-6 w-14 rounded-full !bg-[#1a1a24]" />
+                <SkeletonPulse className="h-6 w-16 rounded-full !bg-[#1a1a24]" />
+                <SkeletonPulse className="h-6 w-12 rounded-full !bg-[#1a1a24]" />
+            </div>
+            <SkeletonPulse className="mt-auto h-3.5 w-[70px] !bg-[#1a1a24]" />
+        </div>
+    );
+}
+
+function HomeSkillRowSkeleton() {
+    return (
+        <li className="flex items-center justify-between gap-8">
+            <SkeletonPulse className="h-[1.2rem] w-[38%] max-tablet:h-[1.05rem] max-phone:h-[0.95rem]" />
+            <div className="flex gap-[0.4rem]">
+                {Array.from({length: 10}).map((_, i) => (
+                    <SkeletonPulse
+                        key={i}
+                        className="size-[1.2rem] rounded-full max-tablet:size-4 max-phone:size-3"
+                    />
+                ))}
+            </div>
+        </li>
+    );
+}
+
 export function HomePageSkeleton() {
     return (
         <div className="flex flex-col" aria-hidden="true">
@@ -78,23 +202,46 @@ export function HomePageSkeleton() {
                 </div>
             </section>
 
-            <section>
-                <div className="box-border flex min-h-0 flex-col bg-(--primaryColor) px-32 py-16 max-tablet:px-16 max-tablet:py-8 max-phone:p-8">
-                    <TitleSkeleton />
-                    <div className="flex flex-wrap justify-between gap-20">
-                        {Array.from({length: 2}).map((_, col) => (
-                            <ul key={col} className="flex grow flex-col gap-8">
-                                {Array.from({length: 5}).map((__, row) => (
-                                    <li key={row} className="flex justify-between gap-8">
-                                        <SkeletonPulse className="h-4 w-[40%]" />
-                                        <SkeletonPulse className="h-4 w-[30%]" />
-                                    </li>
+            <HomeSectionShell>
+                <TitleSkeleton />
+                <SkeletonPulse className="-mt-10 mb-12 h-4 w-[min(100%,420px)] self-center max-tablet:-mt-8 max-tablet:mb-10 max-phone:-mt-4 max-phone:mb-8 max-phone:h-3.5" />
+                <div className="grid grid-cols-3 gap-6 max-small-desktop:grid-cols-2 max-tablet:grid-cols-2 max-big-phone:grid-cols-1">
+                    {Array.from({length: 3}).map((_, i) => (
+                        <HomeSelectedWorkCardSkeleton key={i} />
+                    ))}
+                </div>
+                <SkeletonPulse className="mx-auto mt-12 h-4 w-[160px] max-phone:mt-8" />
+            </HomeSectionShell>
+
+            <HomeSectionShell className="!bg-[#050508]">
+                <TitleSkeleton className="!bg-[#1a1a24]" />
+                <SkeletonPulse className="-mt-10 mb-12 h-4 w-[min(100%,420px)] self-center !bg-[#1a1a24] max-tablet:-mt-8 max-tablet:mb-10 max-phone:-mt-4 max-phone:mb-8 max-phone:h-3.5" />
+                <div className="grid grid-cols-3 gap-5 max-small-desktop:grid-cols-2 max-tablet:grid-cols-1">
+                    {Array.from({length: 3}).map((_, i) => (
+                        <HomeLabsCardSkeleton key={i} />
+                    ))}
+                </div>
+                <SkeletonPulse className="mx-auto mt-12 h-4 w-[140px] !bg-[#1a1a24] max-phone:mt-8" />
+            </HomeSectionShell>
+
+            <HomeSectionShell>
+                <TitleSkeleton />
+                <div className="grid w-full grid-cols-2 gap-x-20 gap-y-14 max-tablet:grid-cols-1">
+                    {Array.from({length: 4}).map((_, col) => (
+                        <div key={col} className="flex flex-col gap-8">
+                            <SkeletonPulse className="h-[1.45rem] w-[55%] max-tablet:h-[1.25rem] max-phone:h-[1.05rem]" />
+                            <ul className="flex flex-col gap-8">
+                                {Array.from({length: col === 3 ? 2 : 6}).map((__, row) => (
+                                    <HomeSkillRowSkeleton key={row} />
                                 ))}
                             </ul>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
-            </section>
+            </HomeSectionShell>
+
+            <HomeAboutSkeleton />
+            <HomeCtaSkeleton />
         </div>
     );
 }
