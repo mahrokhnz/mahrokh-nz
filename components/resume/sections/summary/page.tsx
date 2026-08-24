@@ -1,17 +1,21 @@
 import {LuClipboardList} from "react-icons/lu";
 import SectionTitle from "@/components/resume/sections/components/section_title/page";
+import data from "@/data/db.json";
 
 function SummarySection() {
-  return (
-      <section>
-          <SectionTitle text='SUMMARY' icon={LuClipboardList} />
-          <p className="text-[4.5mm] leading-[1.2]">
-              A Frontend Developer that work from 2021 with a passion for building efficient, user-centric and responsive web
-              applications. I focus on creating high-quality, performance-driven solutions. I’m continuously improving
-              my skills and exploring new technologies.
-          </p>
-      </section>
-  );
+    const {resume: {menuItems: {stack}}} = data;
+
+    return (
+        <section>
+            <SectionTitle text="SUMMARY" icon={LuClipboardList}/>
+            <p className="text-[4.2mm] leading-[1.3]">
+                Frontend Developer with 6+ years of experience building web applications
+                and interactive experiences. I focus on React, Next.js and TypeScript,
+                with an emphasis on frontend architecture, performance and high-quality UI.
+            </p>
+            <p className="mt-[2mm] text-[3.6mm] leading-[1.3]">{stack.join(" · ")}</p>
+        </section>
+    );
 }
 
 export default SummarySection;

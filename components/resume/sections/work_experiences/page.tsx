@@ -6,16 +6,21 @@ import {RiSuitcaseLine} from "react-icons/ri";
 function WorkExperiencesSection() {
     const {resume: {menuItems: {experiences}}} = data;
 
-  return (
-      <section>
-          <SectionTitle text='WORK EXPERIENCE' icon={RiSuitcaseLine} />
-         <div className="relative flex flex-col gap-[10mm] before:absolute before:left-[41.3mm] before:z-[-1] before:h-full before:w-[0.5mm] before:bg-(--lineColor) before:content-['']">
-             {experiences.map((experience) => (
-                 <Experience key={experience.id} item={experience} />
-             ))}
-         </div>
-      </section>
-  );
+    return (
+        <section>
+            <SectionTitle
+                text="EXPERIENCE"
+                icon={RiSuitcaseLine}
+                lead="Product work that proves I ship frontend applications."
+            />
+            <div
+                className="relative flex flex-col gap-[5mm] before:absolute before:left-[36.5mm] before:z-[-1] before:h-full before:w-[0.5mm] before:bg-(--lineColor) before:content-['']">
+                {experiences.map((experience) => (
+                    <Experience key={experience.id} item={experience}/>
+                ))}
+            </div>
+        </section>
+    );
 }
 
 export default WorkExperiencesSection;
