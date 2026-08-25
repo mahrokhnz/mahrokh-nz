@@ -10,7 +10,6 @@ function LabsSection() {
             <SectionTitle
                 text="LABS"
                 icon={LuFlaskConical}
-                lead="Interactive experiments that show how deeply I understand frontend."
             />
             <div className="flex flex-col gap-[3mm]">
                 {labs.items.map((lab) => (
@@ -26,7 +25,7 @@ function LabsSection() {
                 target="_blank"
                 rel="noreferrer"
             >
-                See more → {labs.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}
+                Explore all labs → {labs.url.replace(/^https?:\/\//, "").replace(/\/$/, "")}
             </a>
         </section>
     );

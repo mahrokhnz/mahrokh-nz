@@ -10,7 +10,6 @@ function ProjectsSection() {
             <SectionTitle
                 text="PROJECTS"
                 icon={LuLayers}
-                lead="Selected work that proves the same in public."
             />
             <div className="flex flex-col gap-[3.5mm]">
                 {projects.map((project) => (

@@ -11,7 +11,6 @@ function WorkExperiencesSection() {
             <SectionTitle
                 text="EXPERIENCE"
                 icon={RiSuitcaseLine}
-                lead="Product work that proves I ship frontend applications."
             />
             <div
                 className="relative flex flex-col gap-[5mm] before:absolute before:left-[36.5mm] before:z-[-1] before:h-full before:w-[0.5mm] before:bg-(--lineColor) before:content-['']">

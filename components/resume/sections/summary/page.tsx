@@ -10,8 +10,8 @@ function SummarySection() {
             <SectionTitle text="SUMMARY" icon={LuClipboardList}/>
             <p className="text-[4.2mm] leading-[1.3]">
                 Frontend Developer with 6+ years of experience building web applications
-                and interactive experiences. I focus on React, Next.js and TypeScript,
-                with an emphasis on frontend architecture, performance and high-quality UI.
+                and interactive experiences. I specialize in React, Next.js and TypeScript,
+                with a focus on frontend architecture, performance and high-quality UI.
             </p>
             <p className="mt-[2mm] text-[3.6mm] leading-[1.3]">{stack.join(" · ")}</p>
         </section>

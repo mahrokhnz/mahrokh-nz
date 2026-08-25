@@ -102,7 +102,7 @@
     {
       "id": 11,
       "column": 2,
-      "title": "Graphql and Rest Api",
+      "title": "Graphql and Rest Apis",
       "count": 8
     },
     {
@@ -349,14 +349,14 @@
             "Built frontend features for Simorgh Mart, Customer & Visitor Club, and internal backoffice dashboards.",
             "Developed reusable React and Next.js components and application flows for customer and admin surfaces.",
             "Improved UI consistency, performance and frontend architecture with TypeScript and Redux Toolkit.",
-            "Collaborated with product and backend teams to ship PWA-ready dashboard experiences."
+            "Collaborated with product and backend teams on PWA dashboards."
           ],
           "skills": [
             "React",
             "Next.js",
             "TypeScript",
             "Tailwind CSS",
-            "REST API",
+            "REST APIs",
             "Redux Toolkit"
           ]
         },
@@ -369,15 +369,14 @@
           "highlights": [
             "Built and maintained frontend features for Maadiran's credit platform, including dashboards used by sales agents and managers.",
             "Developed reusable React components and frontend flows for the credit platform and internal management dashboards.",
-            "Improved dashboard usability and component consistency across agent and manager views.",
-            "Collaborated with product and backend teams to deliver reliable credit-platform workflows."
+            "Improved dashboard usability and component consistency across agent and manager views."
           ],
           "skills": [
             "React",
             "Next.js",
             "TypeScript",
             "Material UI",
-            "REST API",
+            "REST APIs",
             "Sass"
           ]
         },
@@ -397,7 +396,7 @@
             "React",
             "TypeScript",
             "GraphQL",
-            "REST API",
+            "REST APIs",
             "Material UI",
             "WebSocket",
             "Three.js"
@@ -408,22 +407,37 @@
         {
           "id": 1,
           "title": "Personal Website",
-          "description": "Portfolio built with Next.js, TypeScript and Tailwind CSS — projects, labs and interactive frontend work.",
-          "skills": ["Next.js", "TypeScript", "Tailwind CSS"],
+          "description": "Portfolio with projects, labs and interactive frontend experiments.",
+          "skills": [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "Prisma",
+            "PostgreSQL"
+          ],
           "url": "https://www.mahrokhnz.ir/"
         },
         {
           "id": 2,
           "title": "Next.js App Router",
           "description": "Practical Next.js examples covering routing, rendering patterns and reusable UI.",
-          "skills": ["Next.js", "TypeScript", "Tailwind CSS"],
+          "skills": [
+            "Next.js",
+            "TypeScript",
+            "Tailwind CSS"
+          ],
           "url": "https://github.com/mahrokhnz/next-js"
         },
         {
           "id": 3,
           "title": "React Challenges",
           "description": "A collection of React applications and reusable components covering state, routing and API integration.",
-          "skills": ["React", "JavaScript", "Webpack"],
+          "skills": [
+            "React",
+            "JavaScript",
+            "Webpack"
+          ],
           "url": "https://mahrokhnz.github.io/react-js/"
         }
       ],
@@ -433,86 +447,135 @@
           {
             "id": 1,
             "title": "Rendering Playground",
-            "description": "Compare React rendering strategies with live re-render markers and performance metrics."
+            "description": "React / Performance — compare rendering strategies with live re-render markers."
           },
           {
             "id": 2,
             "title": "Flexbox Builder",
-            "description": "Build and experiment with CSS Flexbox layouts in real time."
+            "description": "CSS / Layout — build and experiment with Flexbox layouts in real time."
+          },
+          {
+            "id": 3,
+            "title": "Motion Playground",
+            "description": "Animation / Interaction — compose CSS transitions for UI components with live previews."
           }
         ]
-      },
-      "portfolio": {
-        "url": "https://www.mahrokhnz.ir/",
-        "label": "www.mahrokhnz.ir",
-        "text": "Explore projects, labs and interactive frontend work on the live site."
       },
       "stack": [
         "React",
         "Next.js",
         "TypeScript",
+        "JavaScript",
         "Tailwind CSS",
-        "REST API",
         "Redux Toolkit",
-        "GraphQL",
-        "Material UI"
+        "REST APIs",
+        "GraphQL"
       ],
       "educations": [
         {
           "id": 1,
           "university": "University of Science and Culture | Tehran, Iran",
           "degree": "Master of Business Administration",
-          "period": "Sep 2019 - Sep 2022",
-          "moreInfo": "Thesis on repurchase intention in online retail stores."
+          "period": "Sep 2019 - Sep 2022"
         },
         {
           "id": 2,
           "university": "University of Tehran | Tehran, Iran",
-          "degree": "Bachelor of engineering",
-          "period": "Sep 2015 - Sep 2019",
-          "moreInfo": "Mechanical Engineering."
+          "degree": "Mechanical Engineering",
+          "period": "Sep 2015 - Sep 2019"
         }
       ],
       "skills": {
         "hard": [
-          { "id": 1, "title": "React" },
-          { "id": 2, "title": "Next.js" },
-          { "id": 3, "title": "TypeScript" },
-          { "id": 4, "title": "JavaScript" },
-          { "id": 5, "title": "Tailwind CSS" },
-          { "id": 6, "title": "Redux Toolkit" },
-          { "id": 7, "title": "REST API" },
-          { "id": 8, "title": "GraphQL" },
-          { "id": 9, "title": "Material UI" },
-          { "id": 10, "title": "PWA" },
-          { "id": 11, "title": "WebSocket" },
-          { "id": 12, "title": "Three.js" },
-          { "id": 13, "title": "Git" }
-        ],
-        "soft": [
           {
             "id": 1,
-            "title": "Problem Solving"
+            "title": "React"
           },
           {
             "id": 2,
-            "title": "Team Work"
+            "title": "Next.js"
           },
           {
             "id": 3,
-            "title": "Effective Communication"
+            "title": "TypeScript"
           },
           {
             "id": 4,
-            "title": "Time Management"
+            "title": "JavaScript"
           },
           {
             "id": 5,
-            "title": "Analytical Thinking"
+            "title": "Tailwind CSS"
           },
           {
             "id": 6,
-            "title": "Adaptability and Flexibility"
+            "title": "Sass"
+          },
+          {
+            "id": 7,
+            "title": "Redux Toolkit"
+          },
+          {
+            "id": 8,
+            "title": "REST APIs"
+          },
+          {
+            "id": 9,
+            "title": "GraphQL"
+          },
+          {
+            "id": 10,
+            "title": "Material UI"
+          },
+          {
+            "id": 11,
+            "title": "WebSocket"
+          },
+          {
+            "id": 12,
+            "title": "PWA"
+          },
+          {
+            "id": 13,
+            "title": "Three.js"
+          },
+          {
+            "id": 14,
+            "title": "Git"
+          },
+          {
+            "id": 15,
+            "title": "Webpack"
+          },
+          {
+            "id": 16,
+            "title": "Vite"
+          }
+        ],
+        "focus": [
+          {
+            "id": 1,
+            "title": "Frontend Architecture"
+          },
+          {
+            "id": 2,
+            "title": "Component Architecture"
+          },
+          {
+            "id": 3,
+            "title": "Performance"
+          },
+          {
+            "id": 4,
+            "title": "Responsive Web Design"
+          },
+          {
+            "id": 5,
+            "title": "API Integration"
+          },
+          {
+            "id": 6,
+            "title": "SEO"
           }
         ]
       },
@@ -527,10 +590,10 @@
         },
         {
           "id": 2,
-          "name": "Persian",
-          "institute": "",
+          "name": "Istanbul Turkish",
+          "institute": "Self Study, Duolingo",
           "moreInfo": [
-            "Native"
+            "Basic"
           ]
         }
       ]
@@ -543,9 +606,21 @@
       "titleAccent": "Labs",
       "description": "Interactive experiments, tools and frontend engineering playgrounds.",
       "stats": [
-        { "id": 1, "value": "5", "label": "CATEGORIES" },
-        { "id": 2, "value": "25", "label": "EXPERIMENTS" },
-        { "id": 3, "value": "∞", "label": "CONTROLS" }
+        {
+          "id": 1,
+          "value": "5",
+          "label": "CATEGORIES"
+        },
+        {
+          "id": 2,
+          "value": "25",
+          "label": "EXPERIMENTS"
+        },
+        {
+          "id": 3,
+          "value": "∞",
+          "label": "CONTROLS"
+        }
       ]
     },
     "categories": [
@@ -560,7 +635,11 @@
             "slug": "css-3d-cube-playground",
             "title": "CSS 3D Cube Playground",
             "description": "Manipulate a live 3D cube using only CSS transforms. Control rotation, scale, perspective, translation, and animation with real-time code generation.",
-            "tags": ["CSS", "3D Transforms", "Interactive"],
+            "tags": [
+              "CSS",
+              "3D Transforms",
+              "Interactive"
+            ],
             "status": "live"
           },
           {
@@ -568,7 +647,11 @@
             "slug": "css-perspective-visualizer",
             "title": "CSS Perspective Visualizer",
             "description": "Explore how CSS perspective values affect 3D depth and distortion in the browser rendering engine.",
-            "tags": ["CSS", "Perspective", "Visualization"],
+            "tags": [
+              "CSS",
+              "Perspective",
+              "Visualization"
+            ],
             "status": "soon"
           },
           {
@@ -576,7 +659,11 @@
             "slug": "mouse-interaction-playground",
             "title": "Mouse Interaction Playground",
             "description": "Test magnetic, repulsion, attraction, and follow behaviors using pointer events and spring physics.",
-            "tags": ["Pointer Events", "Physics", "Interactive"],
+            "tags": [
+              "Pointer Events",
+              "Physics",
+              "Interactive"
+            ],
             "status": "soon"
           },
           {
@@ -584,7 +671,11 @@
             "slug": "card-flip-playground",
             "title": "Card Flip Playground",
             "description": "Explore CSS 3D card flip animations with configurable timing, easing, and backface visibility controls.",
-            "tags": ["CSS", "3D", "Animation"],
+            "tags": [
+              "CSS",
+              "3D",
+              "Animation"
+            ],
             "status": "soon"
           },
           {
@@ -592,7 +683,11 @@
             "slug": "parallax-playground",
             "title": "Parallax Playground",
             "description": "Build layered parallax scroll effects using CSS transforms and scroll-driven animations.",
-            "tags": ["Scroll", "Parallax", "CSS"],
+            "tags": [
+              "Scroll",
+              "Parallax",
+              "CSS"
+            ],
             "status": "soon"
           }
         ]
@@ -608,7 +703,12 @@
             "slug": "motion-playground",
             "title": "Motion Playground",
             "description": "Compose CSS transitions for UI components. Control transform, opacity, timing, and preview Button, Card, Modal, Tooltip, and Toast animations with live code generation.",
-            "tags": ["CSS", "Interactive", "Animation", "Experimental"],
+            "tags": [
+              "CSS",
+              "Interactive",
+              "Animation",
+              "Experimental"
+            ],
             "status": "live"
           },
           {
@@ -616,7 +716,11 @@
             "slug": "easing-visualizer",
             "title": "Easing Visualizer",
             "description": "Compare CSS and JavaScript easing curves with interactive timing previews.",
-            "tags": ["Animation", "Easing", "CSS"],
+            "tags": [
+              "Animation",
+              "Easing",
+              "CSS"
+            ],
             "status": "soon"
           },
           {
@@ -624,7 +728,11 @@
             "slug": "timeline-playground",
             "title": "Timeline Playground",
             "description": "Build sequenced animation timelines with delays, overlaps, and keyframe controls.",
-            "tags": ["Animation", "Timeline", "Interactive"],
+            "tags": [
+              "Animation",
+              "Timeline",
+              "Interactive"
+            ],
             "status": "soon"
           },
           {
@@ -632,7 +740,11 @@
             "slug": "scroll-animation",
             "title": "Scroll Animation",
             "description": "Experiment with scroll-driven animations and progress-linked transforms.",
-            "tags": ["Scroll", "Animation", "CSS"],
+            "tags": [
+              "Scroll",
+              "Animation",
+              "CSS"
+            ],
             "status": "soon"
           },
           {
@@ -640,7 +752,11 @@
             "slug": "text-animation",
             "title": "Text Animation",
             "description": "Animate typography with split text, stagger, and reveal effects.",
-            "tags": ["Text", "Animation", "Interactive"],
+            "tags": [
+              "Text",
+              "Animation",
+              "Interactive"
+            ],
             "status": "soon"
           }
         ]
@@ -656,7 +772,11 @@
             "slug": "react-rendering-playground",
             "title": "Rendering Playground",
             "description": "Interactive React rendering playground. Compare Default, React.memo, useMemo, useCallback, and list virtualization with live re-render markers and performance metrics.",
-            "tags": ["React", "Performance", "Interactive"],
+            "tags": [
+              "React",
+              "Performance",
+              "Interactive"
+            ],
             "status": "live"
           },
           {
@@ -664,7 +784,11 @@
             "slug": "memo-vs-no-memo",
             "title": "Memo vs No Memo",
             "description": "Side-by-side comparison of memoized and non-memoized component trees under controlled state updates.",
-            "tags": ["React.memo", "Profiler", "Comparison"],
+            "tags": [
+              "React.memo",
+              "Profiler",
+              "Comparison"
+            ],
             "status": "soon"
           },
           {
@@ -672,7 +796,11 @@
             "slug": "virtualization-demo",
             "title": "Virtualization Demo",
             "description": "Demonstrate how windowed rendering reduces DOM nodes. Compare react-window, react-virtual, and native approaches.",
-            "tags": ["virtualization", "DOM", "Scroll"],
+            "tags": [
+              "virtualization",
+              "DOM",
+              "Scroll"
+            ],
             "status": "soon"
           },
           {
@@ -680,7 +808,11 @@
             "slug": "image-loading-comparison",
             "title": "Image Loading Comparison",
             "description": "Compare eager vs lazy loading, placeholder strategies, and progressive image rendering approaches.",
-            "tags": ["Images", "Lazy Loading", "LCP"],
+            "tags": [
+              "Images",
+              "Lazy Loading",
+              "LCP"
+            ],
             "status": "soon"
           },
           {
@@ -688,7 +820,11 @@
             "slug": "bundle-analysis",
             "title": "Bundle Analysis",
             "description": "Visual explorer for bundle composition, tree-shaking impact, and dynamic import strategies.",
-            "tags": ["Bundle", "Tree Shaking", "Imports"],
+            "tags": [
+              "Bundle",
+              "Tree Shaking",
+              "Imports"
+            ],
             "status": "soon"
           }
         ]
@@ -704,7 +840,11 @@
             "slug": "flexbox-builder",
             "title": "Flexbox Builder",
             "description": "Build and experiment with CSS Flexbox layouts in real time.",
-            "tags": ["CSS", "Layout", "Interactive"],
+            "tags": [
+              "CSS",
+              "Layout",
+              "Interactive"
+            ],
             "status": "live"
           },
           {
@@ -712,7 +852,10 @@
             "slug": "grid-builder",
             "title": "Grid Builder",
             "description": "Design CSS Grid templates with interactive track and gap controls.",
-            "tags": ["CSS", "Grid"],
+            "tags": [
+              "CSS",
+              "Grid"
+            ],
             "status": "soon"
           },
           {
@@ -720,7 +863,10 @@
             "slug": "container-queries",
             "title": "Container Queries",
             "description": "Experiment with container query breakpoints and responsive components.",
-            "tags": ["CSS", "Container Queries"],
+            "tags": [
+              "CSS",
+              "Container Queries"
+            ],
             "status": "soon"
           },
           {
@@ -728,7 +874,10 @@
             "slug": "clamp-playground",
             "title": "Clamp Playground",
             "description": "Tune fluid type and spacing with CSS clamp() and live previews.",
-            "tags": ["CSS", "Clamp"],
+            "tags": [
+              "CSS",
+              "Clamp"
+            ],
             "status": "soon"
           },
           {
@@ -736,7 +885,10 @@
             "slug": "blend-modes",
             "title": "Blend Modes",
             "description": "Explore CSS blend modes across layered shapes and imagery.",
-            "tags": ["CSS", "Blend Modes"],
+            "tags": [
+              "CSS",
+              "Blend Modes"
+            ],
             "status": "soon"
           }
         ]
@@ -752,7 +904,11 @@
             "slug": "svg-to-jsx",
             "title": "SVG to JSX",
             "description": "Convert SVG markup into React-ready JSX.",
-            "tags": ["React", "SVG", "Developer Tool"],
+            "tags": [
+              "React",
+              "SVG",
+              "Developer Tool"
+            ],
             "status": "live"
           },
           {
@@ -760,7 +916,11 @@
             "slug": "gradient-generator",
             "title": "Gradient Generator",
             "description": "Build CSS gradients and copy ready-to-use declarations.",
-            "tags": ["CSS", "Gradients", "Tools"],
+            "tags": [
+              "CSS",
+              "Gradients",
+              "Tools"
+            ],
             "status": "soon"
           },
           {
@@ -768,7 +928,11 @@
             "slug": "shadow-generator",
             "title": "Shadow Generator",
             "description": "Design layered box shadows with live soft-light previews.",
-            "tags": ["CSS", "Shadows", "Tools"],
+            "tags": [
+              "CSS",
+              "Shadows",
+              "Tools"
+            ],
             "status": "soon"
           },
           {
@@ -776,7 +940,11 @@
             "slug": "color-palette",
             "title": "Color Palette",
             "description": "Generate accessible color scales and export CSS variables.",
-            "tags": ["Color", "Accessibility", "Tools"],
+            "tags": [
+              "Color",
+              "Accessibility",
+              "Tools"
+            ],
             "status": "soon"
           },
           {
@@ -784,7 +952,11 @@
             "slug": "clamp-generator",
             "title": "Clamp Generator",
             "description": "Generate clamp() expressions for fluid typography and spacing.",
-            "tags": ["CSS", "Clamp", "Tools"],
+            "tags": [
+              "CSS",
+              "Clamp",
+              "Tools"
+            ],
             "status": "soon"
           }
         ]

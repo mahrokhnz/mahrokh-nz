@@ -3,8 +3,9 @@ import Header from "@/components/resume/sections/components/header/page";
 import WorkExperiencesSection from "@/components/resume/sections/work_experiences/page";
 import ProjectsSection from "@/components/resume/sections/projects/page";
 import LabsSection from "@/components/resume/sections/labs/page";
-import PortfolioSection from "@/components/resume/sections/portfolio/page";
-import SupportingSection from "@/components/resume/sections/supporting/page";
+import SkillsSection from "@/components/resume/sections/skills/page";
+import EducationSection from "@/components/resume/sections/education/page";
+import LanguagesSection from "@/components/resume/sections/Languages/page";
 import {ReactNode} from "react";
 
 function ResumePage({children}: { children: ReactNode }) {
@@ -33,8 +34,9 @@ function Resume() {
             <ResumePage>
                 <ProjectsSection/>
                 <LabsSection/>
-                <PortfolioSection/>
-                <SupportingSection/>
+                <SkillsSection/>
+                <EducationSection/>
+                <LanguagesSection/>
             </ResumePage>
         </div>
     );
