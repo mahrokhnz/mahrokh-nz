@@ -291,6 +291,15 @@ html.labs-mode body {
     }
 }
 
+@keyframes labs-easing-move {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(var(--labs-easing-travel, 100%));
+    }
+}
+
 @keyframes labs-row-flash {
     from {
         box-shadow: inset 0 0 0 9999px rgba(139, 139, 255, 0.22);

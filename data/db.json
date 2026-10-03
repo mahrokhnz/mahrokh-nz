@@ -714,14 +714,14 @@
           {
             "id": 2,
             "slug": "easing-visualizer",
-            "title": "Easing Visualizer",
-            "description": "Compare CSS and JavaScript easing curves with interactive timing previews.",
+            "title": "CSS Easing Visualizer",
+            "description": "Explore how different CSS easing functions affect animation timing and motion.",
             "tags": [
               "Animation",
               "Easing",
               "CSS"
             ],
-            "status": "soon"
+            "status": "live"
           },
           {
             "id": 3,
