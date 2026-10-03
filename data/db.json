@@ -646,13 +646,13 @@
             "id": 2,
             "slug": "css-perspective-visualizer",
             "title": "CSS Perspective Visualizer",
-            "description": "Explore how CSS perspective values affect 3D depth and distortion in the browser rendering engine.",
+            "description": "Explore how CSS perspective changes the appearance and depth of 3D elements.",
             "tags": [
               "CSS",
               "Perspective",
               "Visualization"
             ],
-            "status": "soon"
+            "status": "live"
           },
           {
             "id": 3,
